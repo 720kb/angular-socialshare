@@ -72,7 +72,7 @@ Angular socialshare allows you to use some options via `attribute` data
 ####Sharing Provider
 You can set the social platform you want to share on using the `socialshare-provider=""` attribute.
 
-#Here is the full list of the actual available Providers:
+#Here is the full list of all the available Providers:
 
 - facebook
 - twitter
