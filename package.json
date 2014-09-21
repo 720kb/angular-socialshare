@@ -1,0 +1,39 @@
+{
+  "name": "angular-socialshare",
+  "version": "0.1.1",
+  "description": "A social urls and content sharing directive for angularjs.",
+  "homepage": "http://720kb.github.io/angular-socialshare",
+  "keywords": [
+  "date",
+  "socialshare",
+  "input"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/720kb/angular-socialshare.git"
+    },
+    "license": "MIT",
+    "devDependencies": {
+      "connect-modrewrite": "*",
+      "grunt": "*",
+      "grunt-concurrent": "*",
+      "grunt-contrib-connect": "*",
+      "grunt-contrib-csslint": "*",
+      "grunt-contrib-cssmin": "*",
+      "grunt-contrib-uglify": "*",
+      "grunt-contrib-watch": "*",
+      "grunt-eslint": "*"
+      },
+      "author": {
+        "name": "Filippo Oretti",
+        "email": "filippo.oretti@gmail.com",
+        "url": "https://github.com/45kb"
+        },
+        "contributors": [
+        {
+          "name": "Dario Andrei",
+          "email": "wouldgo84@gmail.com",
+          "url": "https://github.com/wouldgo"
+        }
+        ]
+      }
