@@ -2,149 +2,246 @@
 <html ng-app="720kb">
 <head>
   <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css">
-  <link rel="stylesheet" type="text/css" href="http://720kb.github.io/csshelper/assets/ext/src/helper.css">
+  <link rel="stylesheet" type="text/css" href="//720kb.github.io/csshelper/assets/ext/src/helper.css">
+  <link rel="stylesheet" type="text/css" href="//yastatic.net/highlightjs/8.2/styles/vs.min.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/awful.css">
   <title>Angularjs Socialshare</title>
 </head>
-<body class="center-content">
+<body>
   <div class="separator100"></div>
-  <div class="col6 offset-left2">
-    <div>
-      <button class="btn btn-medium font-bold"
-      socialshare
-      socialshare-provider="facebook"
-      socialshare-text="720kb"
-      socialshare-url="http://720kb.net"
-      socialshare-popup-height="300"
-      socialshare-popup-width="400"
-      socialshare-trigger="click" >
-      <i class="fa fa-facebook"></i> Share on Facebook
-    </button>
+  <h1 class="center-content color-default font-xx-large">Angularjs Socialshare</h1>
+  <div class="separator10"></div>
+  <h5 class="center-content font-light color-muted">
+    A simple pure angularjs directive <br>that helps you sharing urls and content on social platforms
+  </h5>
+  <div class="separator50"></div>
+  <div class="line-compress line-max">
+    <div class="line">
+      <div class="separator10"></div>
+      <div class="color-muted center-content">
+        Try it out , click on some of the buttons below
+      </div>
+      <div class="separator10"></div>
+      <div class="line">
+        <div class="col2">
+          <div class="line-compress">
+            <button class="btn btn-medium center-content radius3 bg-white" socialshare socialshare-provider="facebook" socialshare-url="http://720kb.net">
+             <i class="fa fa-facebook"></i> Facebook
+           </button>
+         </div>
+       </div>
+       <div class="col2">
+        <div class="line-compress">
+          <a class="btn btn-medium center-content radius3 bg-white" socialshare socialshare socialshare-provider="twitter" socialshare-text="Woa" socialshare-url="http://720kb.net" socialshare-hashtags="720kb, development, angularjs, opensource" >
+            <i class="fa fa-twitter"></i> Twitter
+          </a>
+        </div>
+      </div>
+      <div class="col2">
+        <div class="line-compress">
+          <a class="btn btn-medium center-content radius3 bg-white" socialshare socialshare-provider="google+" socialshare-url="http://720kb.net">
+           <i class="fa fa-google-plus"></i>  Google +
+         </a>
+       </div>
+     </div>
+     <div class="col2">
+      <div class="line-compress">
+        <a class="btn btn-medium center-content radius3 bg-white" socialshare socialshare-provider="linkedin" socialshare-text="720kb.net" socialshare-url="http://720kb.net" >
+          <i class="fa fa-linkedin"></i> Linkedin
+        </a>
+      </div>
+    </div>
+    <div class="col2">
+      <div class="line-compress">
+        <a class="btn btn-medium center-content radius3 bg-white" socialshare socialshare-provider="pinterest" socialshare-text="Woa!" socialshare-media="http://720kb.net/assets/img/logo.png" socialshare-url="http://720kb.net" >
+         <i class="fa fa-pinterest"></i>  Pinterest
+       </a>
+     </div>
+   </div>
+
+ </div>
+ <div class="separator10"></div>
+ <div class="line">
+  <div class="col2">
+    <div class="line-compress">
+      <a class="btn btn-medium center-content radius3 bg-white" socialshare socialshare-provider="stumbleupon" socialshare-url="http://720kb.net">
+        <i class="fa fa-stumbleupon"></i>  Stumble
+      </a>
+    </div>
   </div>
-  <div class="separator30"></div>
-  <div>
-    <button class="btn btn-medium font-bold"
-    socialshare
-    socialshare-provider="twitter"
-    socialshare-hashtags="720kb, apps, opensource, development, internet"
-    socialshare-text="720kb"
-    socialshare-url="http://720kb.net"
-    socialshare-popup-height="300"
-    socialshare-popup-width="400"
-    socialshare-trigger="click" >
-    <i class="fa fa-twitter"></i> Share on Twitter
+  <div class="col2">
+    <div class="line-compress">
+      <a class="btn btn-medium center-content radius3 bg-white" socialshare socialshare-provider="reddit" socialshare-text="720kb is enought!" socialshare-url="http://720kb.net">
+       <i class="fa fa-reddit"></i>  Reddit
+     </a>
+   </div>
+ </div>
+ <div class="col2">
+  <div class="line-compress">
+    <a class="btn btn-medium center-content radius3 bg-white" socialshare socialshare-provider="tumblr" socialshare-text="Woa!" socialshare-url="http://720kb.net" >
+     <i class="fa fa-tumblr"></i>  Tumblr
+   </a>
+ </div>
+</div>
+<div class="col2">
+  <div class="line-compress">
+    <a class="btn btn-medium center-content radius3 bg-white" socialshare socialshare-provider="vk" socialshare-url="http://720kb.net" >
+     <i class="fa fa-vk"></i> Vk
+   </a>
+ </div>
+</div>
+<div class="col2">
+  <div class="line-compress">
+    <a class="btn btn-medium center-content radius3 bg-white" socialshare socialshare-provider="delicious" socialshare-url="http://720kb.net" >
+      <i class="fa fa-delicious"></i> Delicious
+    </a>
+  </div>
+</div>
+</div>
+<div class="separator10"></div>
+<div class="line">
+  <div class="col2 offset-left4">
+    <div class="line-compress">
+      <a class="btn btn-medium center-content radius3 bg-white" socialshare socialshare-provider="digg" socialshare-url="http://720kb.net" >
+        <i class="fa fa-digg"></i> Digg
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="separator30"></div>
+<h2>Usage</h2>
+<div class="separator15"></div>
+<h4>Html</h4>
+<small class="font-medium font-small color-muted">
+  Add the <b>socialshare</b> attribute to any of your elements
+</small>
+<div class="separator10"></div>
+<code hljs="">
+  <button socialshare socialshare-provider="facebook" socialshare-url="http://720kb.net">
+    Share on facebook
   </button>
-</div>
+</code>
+<div class="separator15"></div>
+<h4>Javascript</h4>
+<small class="font-medium font-small color-muted">
+  Add the socialshare module dependency
+</small>
+<div class="separator10"></div>
+<code hljs="">
+  angular.module('app', [
+  '720kb.socialshare'
+  ]);
+
+</code>
 <div class="separator30"></div>
-<div>
-  <button class="btn btn-medium font-bold"
-  socialshare
-  socialshare-provider="stumbleupon"
-  socialshare-text="720kb"
-  socialshare-url="http://720kb.net"
-  socialshare-popup-height="300"
-  socialshare-popup-width="400"
-  socialshare-trigger="click" >
-  <i class="fa fa-stumbleupon"></i> Share on Stumble
-</button>
+<h2>Options</h2>
+<div class="separator15"></div>
+<h4>Sharing Provider</h4>
+<small class=" font-small color-muted">
+  Set the platform you want to share on, use only lowercase (<i>twitter, facebook, google+, vk, stumbleupon, digg, delicious, reddit, pinterest, tumblr</i>)
+</small>
+<div class="separator10"></div>
+<code hljs="">
+  <button socialshare socialshare-provider="twitter" socialshare-url="http://720kb.net">
+    Share on twitter
+  </button>
+</code>
+<div class="separator15"></div>
+<h4>Sharing Url</h4>
+<small class=" font-small color-muted">
+  Use <b>socialshare-url=""</b> to set the url to share
+</small>
+<div class="separator10"></div>
+<code hljs="">
+  <button socialshare socialshare-provider="reddit" socialshare-url="http://720kb.net">
+    Share me
+  </button>
+</code>
+<div class="separator15"></div>
+<h4>Sharing Content</h4>
+<small class=" font-small color-muted">
+  Use <b>socialshare-text=""</b> to set the content to share
+</small>
+<div class="separator10"></div>
+<code hljs="">
+  <button socialshare socialshare-provider="tumblr" socialshare-text="720kb is enought" socialshare-url="http://720kb.net">
+    Share me
+  </button>
+</code>
+<div class="separator15"></div>
+<h4>Sharing Media</h4>
+<small class=" font-small color-muted">
+  Use <b>socialshare-media=""</b> to set the media to share (for example, you will use it for pinterest)
+</small>
+<div class="separator10"></div>
+<code hljs="">
+  <button socialshare socialshare-provider="pinterest" socialshare-media="http://720kb.net/assets/img/logo.png" socialshare-url="http://720kb.net">
+    Share a media
+  </button>
+</code>
+<div class="separator15"></div>
+<h4>Sharing Hashtags</h4>
+<small class=" font-small color-muted">
+  Use <b>socialshare-hastags=""</b> to set the hashtags to share (for example, you will use it for twitter)
+</small>
+<div class="separator10"></div>
+<code hljs="">
+  <button socialshare socialshare-provider="twitter" socialshare-hashtags="720kb, opensource, angularjs" socialshare-url="http://720kb.net">
+    Share with hashtags
+  </button>
+</code>
+<div class="separator15"></div>
+<h4>Sharing Event Trigger</h4>
+<small class=" font-small color-muted">
+  Use <b>socialshare-trigger=""</b> to set the event trigger to share (you can use all the <i>element.bind()</i> accepted triggers of angularjs)
+</small>
+<div class="separator10"></div>
+<code hljs="">
+  <button socialshare socialshare-provider="facebook" socialshare-trigger="mouseover" socialshare-url="http://720kb.net">
+    Share on mouseover
+  </button>
+</code>
+<div class="separator15"></div>
+<h4>Sharing Popup size</h4>
+<small class=" font-small color-muted">
+  Use <b>socialshare-popup-height=""</b> and <b>socialshare-popup-width=""</b> to set sharer popup sizes
+</small>
+<div class="separator10"></div>
+<code hljs="">
+  <button socialshare socialshare-provider="facebook" socialshare-popup-height="800" socialshare-popup-width="800" socialshare-url="http://720kb.net">
+    Share with a bigger popup
+  </button>
+</code>
+<div class="separator15"></div>
+
 </div>
-<div class="separator30"></div>
-<div>
-  <button class="btn btn-medium font-bold"
-  socialshare
-  socialshare-provider="reddit"
-  socialshare-text="720kb"
-  socialshare-url="http://720kb.net"
-  socialshare-popup-height="300"
-  socialshare-popup-width="400"
-  socialshare-trigger="click" >
-  <i class="fa fa-reddit"></i> Share on Reddit
-</button>
 </div>
-<div class="separator30"></div>
-<div>
-  <button class="btn btn-medium font-bold"
-  socialshare
-  socialshare-provider="linkedin"
-  socialshare-text="720kb"
-  socialshare-url="http://720kb.net"
-  socialshare-popup-height="300"
-  socialshare-popup-width="400"
-  socialshare-trigger="click" >
-  <i class="fa fa-linkedin"></i> Share on Linkedin
-</button>
-</div>
-<div class="separator30"></div>
-<div>
-  <button class="btn btn-medium font-bold"
-  socialshare
-  socialshare-media="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTWGNvatNjOUyli3tBacDdAHmienfptFVStj_olGCWmaUXoIGYI"
-  socialshare-provider="pinterest"
-  socialshare-text="720kb"
-  socialshare-url="http://720kb.net"
-  socialshare-popup-height="300"
-  socialshare-popup-width="400"
-  socialshare-trigger="click" >
-  <i class="fa fa-pinterest"></i> Share on Pinterest
-</button>
-</div>
-<div class="separator30"></div>
-<div>
-  <button class="btn btn-medium font-bold"
-  socialshare
-  socialshare-provider="digg"
-  socialshare-text="720kb"
-  socialshare-url="http://720kb.net"
-  socialshare-popup-height="300"
-  socialshare-popup-width="400"
-  socialshare-trigger="click" >
-  <i class="fa fa-digg"></i> Share on Digg
-</button>
-</div>
-<div class="separator30"></div>
-<div>
-  <button class="btn btn-medium font-bold"
-  socialshare
-  socialshare-provider="tumblr"
-  socialshare-text="720kb"
-  socialshare-url="http://720kb.net"
-  socialshare-popup-height="300"
-  socialshare-popup-width="400"
-  socialshare-trigger="click" >
-  <i class="fa fa-tumblr"></i> Share on Tumblr
-</button>
-</div>
-<div class="separator30"></div>
-<div>
-  <button class="btn btn-medium font-bold"
-  socialshare
-  socialshare-provider="delicious"
-  socialshare-text="720kb"
-  socialshare-url="http://720kb.net"
-  socialshare-popup-height="300"
-  socialshare-popup-width="400"
-  socialshare-trigger="click" >
-  <i class="fa fa-delicious"></i> Share on Delicious
-</button>
-</div>
-<div class="separator30"></div>
-<div>
-  <button class="btn btn-medium font-bold"
-  socialshare
-  socialshare-provider="vk"
-  socialshare-text="720kb"
-  socialshare-url="http://720kb.net"
-  socialshare-popup-height="300"
-  socialshare-popup-width="400"
-  socialshare-trigger="click" >
-  <i class="fa fa-vk"></i> Share on Vk
-</button>
-</div>
-<div class="separator30"></div>
+<!--Github fork me ribbon-->
+<a href="https://github.com/720kb/angular-socialshare">
+  <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/52760788cde945287fbb584134c4cbc2bc36f904/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f77686974655f6666666666662e706e67" alt="Github Source" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png">
+</a>
+<!--footer-->
 <div class="separator100"></div>
-</div>
+<div class="hr"></div>
+<div class="separator15"></div>
+<div class="center-content">Brought to you by <a href="//720kb.net">720kb</a></div>
+<div class="separator50"></div>
 <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.0-rc.0/angular.min.js"></script>
 <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.0-rc.0/angular-route.min.js"></script>
-<script type="text/javascript" src="src/js/angular-socialshare.js"></script>
+<script type="text/javascript" src="assets/js/angular-socialshare.js"></script>
+<script src="//yandex.st/highlightjs/8.0/highlight.min.js"></script>
+<script type="text/javascript" src="//pc035860.github.io/angular-highlightjs/angular-highlightjs.min.js"></script>
 <script type="text/javascript" src="assets/js/index.js"></script>
+<!--G analytics-->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-54770488-1', 'auto');
+ga('send', 'pageview');
+</script>
+</body>
 </body>
 </html>

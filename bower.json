@@ -12,7 +12,7 @@
     "angularjs"
   ],
   "license": "MIT",
-  "homepage": "http://720kb.github.io/angular-tooltips",
+  "homepage": "http://720kb.github.io/angular-tooltips/",
   "private": true,
   "ignore": [
     "**/.*",

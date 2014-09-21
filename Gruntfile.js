@@ -1,26 +1,15 @@
-/*global module, require*/
-(function setUp(module, require) {
+/*global module*/
+(function setUp(module) {
   'use strict';
-
-  var banner = ['/*!',
-      ' * Angular Socialshare v<%= pkg.version %>',
-      ' *',
-      ' * Released under the MIT license',
-      ' * www.opensource.org/licenses/MIT',
-      ' *',
-      ' * <%= grunt.template.today("yyyy-mm-dd") %>',
-      ' */\n\n'].join('\n')
-    , modRewrite = require('connect-modrewrite');
 
   module.exports = function doGrunt(grunt) {
 
     grunt.initConfig({
       'pkg': grunt.file.readJSON('package.json'),
       'confs': {
-        'dist': 'dist',
         'config': 'config',
-        'css': 'src/css',
-        'js': 'src/js',
+        'css': 'assets/css',
+        'js': 'assets/js',
         'serverPort': 8000
       },
       'csslint': {
@@ -42,61 +31,12 @@
           '<%= confs.js %>/**/*.js'
         ]
       },
-      'uglify': {
-        'options': {
-          'sourceMap': true,
-          'sourceMapName': '<%= confs.dist %>/angular-socialshare.sourcemap.map',
-          'preserveComments': false,
-          'report': 'gzip',
-          'banner': banner
-        },
-        'minifyTarget': {
-          'files': {
-            '<%= confs.dist %>/angular-socialshare.min.js': [
-              '<%= confs.js %>/angular-socialshare.js'
-            ]
-          }
-        }
-      },
-      'cssmin': {
-        'options': {
-          'report': 'gzip',
-          'banner': banner
-        },
-        'minifyTarget': {
-          'files': {
-            '<%= confs.dist %>/angular-socialshare.min.css': [
-              '<%= confs.css %>/angular-socialshare.css'
-            ]
-          }
-        }
-      },
       'connect': {
         'server': {
           'options': {
             'port': '<%= confs.serverPort %>',
             'base': '.',
-            'keepalive': true,
-            'middleware': function manageMiddlewares(connect, options) {
-              var middlewares = []
-                , directory = options.directory || options.base[options.base.length - 1];
-
-              // enable Angular's HTML5 mode
-              middlewares.push(modRewrite(['!\\.html|\\.js|\\.svg|\\.css|\\.png|\\.gif$ /index.html [L]']));
-
-              if (!Array.isArray(options.base)) {
-                options.base = [options.base];
-              }
-              options.base.forEach(function forEachOption(base) {
-                // Serve static files.
-                middlewares.push(connect.static(base));
-              });
-
-              // Make directory browse-able.
-              middlewares.push(connect.directory(directory));
-
-              return middlewares;
-            }
+            'keepalive': true
           }
         }
       },
@@ -132,8 +72,6 @@
 
     grunt.loadNpmTasks('grunt-contrib-csslint');
     grunt.loadNpmTasks('grunt-eslint');
-    grunt.loadNpmTasks('grunt-contrib-uglify');
-    grunt.loadNpmTasks('grunt-contrib-cssmin');
 
     grunt.loadNpmTasks('grunt-concurrent');
     grunt.loadNpmTasks('grunt-contrib-connect');
@@ -144,12 +82,5 @@
       'eslint',
       'concurrent:dev'
     ]);
-
-    grunt.registerTask('prod', [
-      'csslint',
-      'eslint',
-      'cssmin',
-      'uglify'
-    ]);
   };
-}(module, require));
+}(module));

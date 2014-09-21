@@ -1,0 +1,36 @@
+@font-face {
+  font-family:'Avenir';
+  src: url('../fonts/avenir-medium.eot');
+  src: url('../fonts/avenir-medium.eot') format('embedded-opentype'), url('../fonts/avenir-medium.woff2') format('woff2'), url('../fonts/avenir-medium.woff') format('woff'), url('../fonts/avenir-medium.ttf') format('truetype'), url('../fonts/avenir-medium.svg#AvenirMedium') format('svg');
+}
+body {
+  font-family:'Avenir', Arial;
+  background: #eff4f6;
+}
+/*Fonts*/
+.font-fontawesome{
+  font-family: 'FontAwesome';
+}
+.font-xx-large{
+  font-size:35px;
+}
+.font-small{
+	font-size: 12px;
+}
+/*Layout*/
+.line-max{
+  float:none;
+  margin:0 auto;
+  max-width: 600px;
+}
+/*Colors*/
+.color-default{
+  color:#04C9DB;
+}
+/*Extra*/
+code.hljs{
+	border-radius:5px;
+	padding-bottom:0;
+	padding-top:15px;
+	background: rgba(255,255,255,0.7);
+}
