@@ -1,11 +1,11 @@
-AngularJS Tooltips
+Angular Socialshare
 ==================
 
 
-Angularjs Tooltips is a pure angularjs directive that generates a tooltip calendar on your element.
+Angular Socialshare is an angularjs directive for sharing urls and content on social networks such as (facebook, google+, twitter, pinterest and so on).
 
 
-The Angularjs Tooltips is developed by [720kb](http://720kb.net).
+The angular socialshare is developed by [720kb](http://720kb.net).
 
 ##Requirements
 
@@ -13,7 +13,7 @@ The Angularjs Tooltips is developed by [720kb](http://720kb.net).
 AngularJS v1.2+
 
 ##Screen
-![Angularjs tooltips](http://i.imgur.com/2rOwAbQ.png)
+![Angular socialshare](http://i.imgur.com/WL03mNH.png)
 
 ###Browser support
 
@@ -31,27 +31,24 @@ IE    ![mmm](http://i.imgur.com/iAIwqCL.png)
 
 ## Load
 
-To use the directive, include the javascript and css files of Angularjs Tooltips in your web page:
+To use the directive, include the angular socialshare's javascript file in your web page:
 
 ```html
 <!DOCTYPE HTML>
 <html>
-<head>
-  <script src="src/js/angular-tooltips.js"></script>
-  <link href="src/css/angular-tooltips.css" rel="stylesheet" type="text/css" />
-</head>
 <body ng-app="app">
- //.....
+  //.....
+  <script src="src/js/angular-socialshare.js"></script>
 </body>
 </html>
 ```
 
 ##Install
-Add the 720kb.tooltips module dependency
+Add the 720kb.socialshare module dependency
 
 ```js
 angular.module('app', [
-  '720kb.tooltips'
+  '720kb.socialshare'
  ]);
 ```
 
@@ -60,47 +57,138 @@ Call the directive wherever you want in your html page
 
 ```html
 
-<a href="#" tooltips title="tooltip">Tooltip me</a>
+<a href="#"
+socialshare
+socialshare-provider="facebook"
+socialshare-text="720kb angular-socialshare"
+socialshare-url="http://720kb.net">
+Share me
+</a>
 
 ```
 ##Options
-Angularjs tooltips allows you to use some options via `attribute`  data
+Angular socialshare allows you to use some options via `attribute` data
 
-####Tooltip position
-You can set your tooltip to show on `left` or `right` or `top` or `bottom` position
-using the `tooltip-side=""` attribute
+####Sharing Provider
+You can set the social platform you want to share on using the `socialshare-provider=""` attribute.
+
+#Here is the full list of all the available Providers:
+
+- facebook
+- twitter
+- vk
+- stumbleupon
+- google+
+- digg
+- delicious
+- tumblr
+- pinterest
+- reddit
+
+* use them all in lowercase (`socialshare-proivder="delicious"`)
+
 ```html
-<a href="#" tooltips title="tip" tooltip-side="top">Tooltip me</a>
-<a href="#" tooltips title="tip" tooltip-side="bottom">Tooltip me</a>
-<a href="#" tooltips title="tip" tooltip-side="left">Tooltip me</a>
-<a href="#" tooltips title="tip" tooltip-side="right">Tooltip me</a>
+<a href="#"
+socialshare
+socialshare-provider="reddit"
+socialshare-text="720kb is enought!" >
+Share me
+</a>
 ```
-####Tooltip content
-You can set your tooltip content (text/html doesn't matter)
-using the `tooltip-content=""` attribute
+
+####Sharing url
+You can set the url to share using the `socialshare-url=""` attribute
+```html
+<a href="#"
+socialshare
+socialshare-provider="google+"
+socialshare-url="http://my_page_url">
+Share me
+</a>
+```
+####Sharing content
+You can set the text to share using the `socialshare-text=""` attribute
 
 ```html
-<a href="#" tooltips title="Tooltip" tooltip-content="<i>Woa!</i>">Tooltip me</a>
+<a href="#"
+socialshare
+socialshare-provider="facebook"
+socialshare-text="720kb is enought!">
+Share me
+</a>
+```
+####Sharing media
+You can set the media source to share using the `socialshare-media=""` attribute (for example, you will use it for pinterest)
+
+```html
+<a href="#"
+socialshare
+socialshare-provider="pinterest"
+socialshare-media="http://720kb.net/assets/img/logo.png">
+Share me
+</a>
 ```
 
-####Tooltip size
-You can set your tooltip size (small || medium || large)
-using the `tooltip-size=""` attribute
+####Sharing hashtags
+You can set the hashtags to share using the `socialshare-hashtags=""` attribute (for example, you will use it for twitter)
 
 ```html
-<a href="#" tooltips title="tip" tooltip-size="small">Tooltip me</a>
-<a href="#" tooltips title="tip"tooltip-size="medium">Tooltip me</a>
-<a href="#" tooltips title="tip" tooltip-size="large">Tooltip me</a>
+<a href="#"
+socialshare
+socialshare-provider="twitter"
+socialshare-url="http://720kb.net"
+socialshare-media="woa, wonderful, interesting">
+Share me
+</a>
+```
+
+####Sharing Event Trigger
+You can choose to bind a different event trigger for showing up the sharer popup using the `socialshare-trigger=""` attribute (you can use any angular `element.bind()` event you want)
+
+```html
+<a href="#"
+socialshare
+socialshare-provider="reddit"
+socialshare-text="Sharing on mouseover"
+socialshare-trigger="mouseover">
+Share me when mouse is over
+</a>
+```
+or a set of
+
+```html
+<a href="#"
+socialshare
+socialshare-provider="reddit"
+socialshare-text="Sharing on mouseover"
+socialshare-trigger="focusout mouseleave">
+Share me when focusout or mouseleave
+</a>
+```
+
+####Sharing Popup Size
+you can set a specific Height or Width for the sharing popup using the `socialshare-popup-height=""` and `socialshare-popup-width=""` attributes
+
+```html
+<a href="#"
+socialshare
+socialshare-provider="reddit"
+socialshare-url="http://720kb.net"
+socialshare-text="Sharing it!"
+socialshare-popup-height="800"
+socialshare-popup-width="800">
+Share with a bigger popup
+</a>
 ```
 
 ## Example
 
-###[Live demo](https://720kb.github.io/angularjs-tooltips)
+###[Live demo](https://720kb.github.io/angular-socialshare)
 
 
 ##Contributing
 
-We will be much greatful if you help us making this project to grow up. 
+We will be much greatful if you help us making this project to grow up.
 Feel free to contribute by forking, opening issues, pull requests etc.
 
 ## License
