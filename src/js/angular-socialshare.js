@@ -38,7 +38,7 @@
         $scope.googlePlusShare = function manageGooglePlusShare (data) {
 
           $window.open(
-            '//www.plus.google.com/share?url=' + encodeURI(data.url)
+            '//plus.google.com/share?url=' + encodeURI(data.url)
             ,'sharer', 'toolbar=0,status=0,width=' + data.popupWidth + ',height=' + data.popupHeight);
         };
 
