@@ -77,6 +77,7 @@ You can set the social platform you want to share on using the `socialshare-prov
 - facebook
 - twitter
 - vk
+- linkedin
 - stumbleupon
 - google+
 - digg
