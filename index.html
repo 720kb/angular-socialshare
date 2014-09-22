@@ -12,7 +12,7 @@
   <h1 class="center-content color-default font-xx-large">Angularjs Socialshare</h1>
   <div class="separator10"></div>
   <h5 class="center-content font-light color-muted">
-    A simple pure angularjs directive <br>that helps you sharing urls and content on social platforms
+    An angularjs directive <br>that helps you sharing urls and content on social platforms
   </h5>
   <div class="separator50"></div>
   <div class="line-compress line-max">
@@ -64,7 +64,7 @@
  <div class="line">
   <div class="col2">
     <div class="line-compress">
-      <a class="btn btn-medium center-content radius3 bg-white" socialshare socialshare-provider="stumbleupon" socialshare-url="http://720kb.net">
+      <a class="btn btn-medium center-content radius3 bg-white" socialshare socialshare-provider="stumbleupon" socialshare-text="720kb is enought" socialshare-url="http://720kb.net">
         <i class="fa fa-stumbleupon"></i>  Stumble
       </a>
     </div>
@@ -92,7 +92,7 @@
 </div>
 <div class="col2">
   <div class="line-compress">
-    <a class="btn btn-medium center-content radius3 bg-white" socialshare socialshare-provider="delicious" socialshare-url="http://720kb.net" >
+    <a class="btn btn-medium center-content radius3 bg-white" socialshare socialshare-provider="delicious" socialshare-text="720kb is enought" socialshare-url="http://720kb.net" >
       <i class="fa fa-delicious"></i> Delicious
     </a>
   </div>
@@ -102,7 +102,7 @@
 <div class="line">
   <div class="col2 offset-left4">
     <div class="line-compress">
-      <a class="btn btn-medium center-content radius3 bg-white" socialshare socialshare-provider="digg" socialshare-url="http://720kb.net" >
+      <a class="btn btn-medium center-content radius3 bg-white" socialshare socialshare-provider="digg" socialshare-text="720kb is enought" socialshare-url="http://720kb.net" >
         <i class="fa fa-digg"></i> Digg
       </a>
     </div>
@@ -121,6 +121,7 @@
   <button socialshare socialshare-provider="facebook" socialshare-url="http://720kb.net">
     Share on facebook
   </button>
+
 </code>
 <div class="separator15"></div>
 <h4>Javascript</h4>
@@ -146,72 +147,79 @@
   <button socialshare socialshare-provider="twitter" socialshare-url="http://720kb.net">
     Share on twitter
   </button>
+
 </code>
 <div class="separator15"></div>
 <h4>Sharing Url</h4>
 <small class=" font-small color-muted">
-  Use <b>socialshare-url=""</b> to set the url to share
+  You can use the <b>socialshare-url=""</b> attribute to set the url to share
 </small>
 <div class="separator10"></div>
 <code hljs="">
   <button socialshare socialshare-provider="reddit" socialshare-url="http://720kb.net">
     Share me
   </button>
+
 </code>
 <div class="separator15"></div>
 <h4>Sharing Content</h4>
 <small class=" font-small color-muted">
-  Use <b>socialshare-text=""</b> to set the content to share
+  You can use the <b>socialshare-text=""</b> attribute to set the content to share
 </small>
 <div class="separator10"></div>
 <code hljs="">
   <button socialshare socialshare-provider="tumblr" socialshare-text="720kb is enought" socialshare-url="http://720kb.net">
     Share me
   </button>
+
 </code>
 <div class="separator15"></div>
 <h4>Sharing Media</h4>
 <small class=" font-small color-muted">
-  Use <b>socialshare-media=""</b> to set the media to share (for example, you will use it for pinterest)
+  You can use the <b>socialshare-media=""</b> attribute to set the media to share (for example, you will use it for pinterest)
 </small>
 <div class="separator10"></div>
 <code hljs="">
   <button socialshare socialshare-provider="pinterest" socialshare-media="http://720kb.net/assets/img/logo.png" socialshare-url="http://720kb.net">
     Share a media
   </button>
+
 </code>
 <div class="separator15"></div>
 <h4>Sharing Hashtags</h4>
 <small class=" font-small color-muted">
-  Use <b>socialshare-hastags=""</b> to set the hashtags to share (for example, you will use it for twitter)
+  You can use the <b>socialshare-hastags=""</b> attribute to set the hashtags to share (for example, you will use it for twitter)
 </small>
 <div class="separator10"></div>
 <code hljs="">
   <button socialshare socialshare-provider="twitter" socialshare-hashtags="720kb, opensource, angularjs" socialshare-url="http://720kb.net">
     Share with hashtags
   </button>
+
 </code>
 <div class="separator15"></div>
 <h4>Sharing Event Trigger</h4>
 <small class=" font-small color-muted">
-  Use <b>socialshare-trigger=""</b> to set the event trigger to share (you can use all the <i>element.bind()</i> accepted triggers of angularjs)
+  You can use the <b>socialshare-trigger=""</b> attribte to set the event trigger to share (you can use all the <i>element.bind()</i> accepted triggers of angularjs)
 </small>
 <div class="separator10"></div>
 <code hljs="">
   <button socialshare socialshare-provider="facebook" socialshare-trigger="mouseover" socialshare-url="http://720kb.net">
     Share on mouseover
   </button>
+
 </code>
 <div class="separator15"></div>
 <h4>Sharing Popup size</h4>
 <small class=" font-small color-muted">
-  Use <b>socialshare-popup-height=""</b> and <b>socialshare-popup-width=""</b> to set sharer popup sizes
+  You can use the <b>socialshare-popup-height=""</b> and <b>socialshare-popup-width=""</b> attributes to set sharer popup sizes
 </small>
 <div class="separator10"></div>
 <code hljs="">
   <button socialshare socialshare-provider="facebook" socialshare-popup-height="800" socialshare-popup-width="800" socialshare-url="http://720kb.net">
     Share with a bigger popup
   </button>
+
 </code>
 <div class="separator15"></div>
 
