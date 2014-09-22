@@ -137,7 +137,7 @@ You can set the hashtags to share using the `socialshare-hashtags=""` attribute 
 socialshare
 socialshare-provider="twitter"
 socialshare-url="http://720kb.net"
-socialshare-media="woa, wonderful, interesting">
+socialshare-hashtags="woa, wonderful, interesting">
 Share me
 </a>
 ```
