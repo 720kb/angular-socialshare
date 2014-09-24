@@ -8,19 +8,8 @@
       'pkg': grunt.file.readJSON('package.json'),
       'confs': {
         'config': 'config',
-        'css': 'assets/css',
         'js': 'assets/js',
         'serverPort': 8000
-      },
-      'csslint': {
-        'options': {
-          'csslintrc': '<%= confs.config %>/csslintrc.json'
-        },
-        'strict': {
-          'src': [
-            '<%= confs.css %>/**/*.css'
-          ]
-        }
       },
       'eslint': {
         'options': {
@@ -44,11 +33,9 @@
         'dev': {
           'files': [
             'Gruntfile.js',
-            '<%= confs.css %>/**/*.css',
             '<%= confs.js %>/**/*.js'
           ],
           'tasks': [
-            'csslint',
             'eslint'
           ],
           'options': {
@@ -70,7 +57,6 @@
       }
     });
 
-    grunt.loadNpmTasks('grunt-contrib-csslint');
     grunt.loadNpmTasks('grunt-eslint');
 
     grunt.loadNpmTasks('grunt-concurrent');
@@ -78,7 +64,6 @@
     grunt.loadNpmTasks('grunt-contrib-watch');
 
     grunt.registerTask('default', [
-      'csslint',
       'eslint',
       'concurrent:dev'
     ]);
