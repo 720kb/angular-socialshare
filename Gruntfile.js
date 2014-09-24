@@ -5,10 +5,11 @@
   var banner = ['/*!',
       ' * Angular Socialshare v<%= pkg.version %>',
       ' *',
-      ' * Released under the MIT license',
+      ' * Released by 720kb.net under the MIT license',
       ' * www.opensource.org/licenses/MIT',
       ' *',
       ' * <%= grunt.template.today("yyyy-mm-dd") %>',
+      ' * source link: //github.com/720kb/angular-socialshare',
       ' */\n\n'].join('\n')
     , modRewrite = require('connect-modrewrite');
 
@@ -19,19 +20,8 @@
       'confs': {
         'dist': 'dist',
         'config': 'config',
-        'css': 'src/css',
         'js': 'src/js',
         'serverPort': 8000
-      },
-      'csslint': {
-        'options': {
-          'csslintrc': '<%= confs.config %>/csslintrc.json'
-        },
-        'strict': {
-          'src': [
-            '<%= confs.css %>/**/*.css'
-          ]
-        }
       },
       'eslint': {
         'options': {
@@ -54,19 +44,6 @@
           'files': {
             '<%= confs.dist %>/angular-socialshare.min.js': [
               '<%= confs.js %>/angular-socialshare.js'
-            ]
-          }
-        }
-      },
-      'cssmin': {
-        'options': {
-          'report': 'gzip',
-          'banner': banner
-        },
-        'minifyTarget': {
-          'files': {
-            '<%= confs.dist %>/angular-socialshare.min.css': [
-              '<%= confs.css %>/angular-socialshare.css'
             ]
           }
         }
@@ -104,11 +81,9 @@
         'dev': {
           'files': [
             'Gruntfile.js',
-            '<%= confs.css %>/**/*.css',
             '<%= confs.js %>/**/*.js'
           ],
           'tasks': [
-            'csslint',
             'eslint'
           ],
           'options': {
@@ -130,25 +105,20 @@
       }
     });
 
-    grunt.loadNpmTasks('grunt-contrib-csslint');
     grunt.loadNpmTasks('grunt-eslint');
     grunt.loadNpmTasks('grunt-contrib-uglify');
-    grunt.loadNpmTasks('grunt-contrib-cssmin');
 
     grunt.loadNpmTasks('grunt-concurrent');
     grunt.loadNpmTasks('grunt-contrib-connect');
     grunt.loadNpmTasks('grunt-contrib-watch');
 
     grunt.registerTask('default', [
-      'csslint',
       'eslint',
       'concurrent:dev'
     ]);
 
     grunt.registerTask('prod', [
-      'csslint',
       'eslint',
-      'cssmin',
       'uglify'
     ]);
   };
