@@ -1,0 +1,3 @@
+[submodule "assets/ext"]
+	path = assets/ext
+	url = https://github.com/720kb/angular-socialshare.git
