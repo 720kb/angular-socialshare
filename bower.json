@@ -1,7 +1,7 @@
 {
-  "name": "angular-tooltips",
+  "name": "angular-socialshare",
   "version": "0.1.1",
-  "description": "A tooltips directive for angularjs.",
+  "description": "A social url and contents sharing directive for angularjs.",
   "authors": [
     "Filippo Oretti <filippo.oretti@gmail.com",
     "Dario Andrei <wouldgo84@gmail.com>"
@@ -12,13 +12,13 @@
     "angularjs"
   ],
   "license": "MIT",
-  "homepage": "http://720kb.github.io/angular-tooltips",
+  "homepage": "http://720kb.github.io/angular-socialshare/",
   "private": true,
   "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests"
+  "**/.*",
+  "node_modules",
+  "bower_components",
+  "test",
+  "tests"
   ]
 }
