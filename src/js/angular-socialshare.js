@@ -98,7 +98,7 @@
             ,'sharer', 'toolbar=0,status=0,width=' + data.popupWidth + ',height=' + data.popupHeight);
         };
 
-        element.bind(data.eventTrigger, function () {
+        element.bind(data.eventTrigger, function onEventTriggered() {
 
           switch (data.provider) {
             case 'facebook':
