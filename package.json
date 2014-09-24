@@ -1,9 +1,9 @@
 {
   "name": "angular-socialshare",
   "version": "0.1.1",
-  "description": "A social url and contents sharing directive for angularjs.",
-  "homepage": "http://720kb.github.io/angular-socialshare/",
-  "keywords": [
+  "description": "A social urls and content sharing directive for angularjs.",
+  "homepage": "http://720kb.githb.io/angular-socialshare",
+    "keywords": [
     "date",
     "socialshare",
     "input"
@@ -14,6 +14,7 @@
   },
   "license": "MIT",
   "devDependencies": {
+    "connect-modrewrite": "*",
     "grunt": "*",
     "grunt-concurrent": "*",
     "grunt-contrib-connect": "*",
