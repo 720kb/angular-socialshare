@@ -13,7 +13,6 @@
   ],
   "license": "MIT",
   "homepage": "http://720kb.github.io/angular-socialshare/",
-  "private": true,
   "ignore": [
   "**/.*",
   "node_modules",
