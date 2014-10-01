@@ -44,6 +44,16 @@ To use the directive, include the angular socialshare's javascript file in your 
 ```
 
 ##Install
+
+###Bower installation
+
+```
+$ bower install angularjs-socialshare --save
+```
+
+_then load the js files in your html_
+
+##Add module dependency
 Add the 720kb.socialshare module dependency
 
 ```js
