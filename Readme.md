@@ -53,7 +53,7 @@ $ bower install angularjs-socialshare --save
 
 _then load the js files in your html_
 
-##Add module dependency
+###Add module dependency
 Add the 720kb.socialshare module dependency
 
 ```js
