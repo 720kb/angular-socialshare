@@ -80,7 +80,7 @@
         $scope.tumblrShare = function manageTumblrShare (data) {
           //tumblr doesnt likes http:// or https:// actually its a mistery
           $window.open(
-            '//www.tumblr.com/share/link?url=' + encodeURI(data.url.replace('http://','').replace('https://')) + '&description=' + encodeURI(data.text)
+            '//www.tumblr.com/share/link?url=' + encodeURI(data.url.replace('http://', '').replace('https://')) + '&description=' + encodeURI(data.text)
             ,'sharer', 'toolbar=0,status=0,width=' + data.popupWidth + ',height=' + data.popupHeight);
         };
 
