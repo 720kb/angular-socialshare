@@ -16,6 +16,7 @@
           'text': attr.socialshareText,
           'media': attr.socialshareMedia,
           'hashtags': attr.socialshareHashtags,
+          'via': attr.socialshareVia,
           'popupHeight': attr.socialsharePopupHeight || 500,
           'popupWidth': attr.socialsharePopupWidth || 500,
           'eventTrigger': attr.socialshareTrigger || 'click'
@@ -31,7 +32,7 @@
         $scope.twitterShare = function manageTwitterShare (data) {
 
           $window.open(
-            '//www.twitter.com/intent/tweet?text=' + encodeURI(data.text) + '&hashtags=' + encodeURI(data.hashtags) + '&url=' + encodeURI(data.url)
+            '//www.twitter.com/intent/tweet?text=' + encodeURI(data.text) + '&via=' + encodeURI(data.via) + '&hashtags=' + encodeURI(data.hashtags) + '&url=' + encodeURI(data.url)
             ,'sharer', 'toolbar=0,status=0,width=' + data.popupWidth + ',height=' + data.popupHeight);
         };
 
