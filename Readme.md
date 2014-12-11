@@ -152,6 +152,20 @@ Share me
 </a>
 ```
 
+####Sharing "via"
+You can set the twitter via (actually no other social is allowing this tag) to share using the `socialshare-via=""` attribute
+
+```html
+<a href="#"
+socialshare
+socialshare-provider="twitter"
+socialshare-via="@720kb"
+socialshare-url="http://720kb.net"
+socialshare-hashtags="woa, wonderful, interesting">
+Share me
+</a>
+```
+
 ####Sharing Event Trigger
 You can choose to bind a different event trigger for showing up the sharer popup using the `socialshare-trigger=""` attribute (you can use any angular `element.bind()` event you want)
 
