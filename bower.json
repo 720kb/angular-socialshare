@@ -11,6 +11,9 @@
     "tooltips",
     "angularjs"
   ],
+  "main": [
+    "./dist/angular-socialshare.min.js"
+  ],
   "license": "MIT",
   "homepage": "http://720kb.github.io/angular-socialshare/",
   "ignore": [
