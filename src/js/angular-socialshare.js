@@ -1,26 +1,49 @@
 /*global angular*/
+/*eslint no-loop-func:0, func-names:0*/
 
 (function withAngular(angular) {
   'use strict';
 
   angular.module('720kb.socialshare', [])
-  .directive('socialshare', ['$window', function manageDirective ($window) {
+  .directive('socialshare', ['$window', '$location', function manageDirective ($window, $location) {
 
     return {
       'restrict': 'A',
       'link': function linkingFunction ($scope, element, attr) {
 
-        var data = {
-          'url': attr.socialshareUrl,
-          'provider': attr.socialshareProvider,
-          'text': attr.socialshareText,
-          'media': attr.socialshareMedia,
-          'hashtags': attr.socialshareHashtags,
-          'via': attr.socialshareVia,
-          'popupHeight': attr.socialsharePopupHeight || 500,
-          'popupWidth': attr.socialsharePopupWidth || 500,
-          'eventTrigger': attr.socialshareTrigger || 'click'
+        var key,
+          attributeName,
+          properties = {},
+          propDefaults = {
+          'url': '',
+          'provider': '',
+          'text': '',
+          'media': '',
+          'hashtags': '',
+          'via': '',
+          'popupHeight': 500,
+          'popupWidth': 500
         };
+
+        // Observe the values in each of the properties so that if they're updated elsewhere,
+        // they are updated in this directive.
+        for (key in propDefaults) {
+          if (propDefaults.hasOwnProperty(key)) {
+            attributeName = 'socialshare' + key.substring(0, 1).toUpperCase() + key.substring(1);
+            if (attr[attributeName]) {
+              (function (keyName) {
+                attr.$observe(attributeName, function (value) {
+                  properties[keyName] = value;
+                });
+              }(key));
+            } else {
+              // Use the default
+              properties[key] = propDefaults[key];
+            }
+          }
+        }
+
+        properties.eventTrigger = attr.socialshareTrigger || 'click';
 
         $scope.facebookShare = function manageFacebookShare (data) {
 
@@ -30,10 +53,28 @@
         };
 
         $scope.twitterShare = function manageTwitterShare (data) {
+          var urlString = '//www.twitter.com/intent/tweet?';
+
+          if (data.text) {
+            urlString += 'text=' + encodeURI(data.text);
+          }
+
+          if (data.via) {
+            urlString += '&via=' + encodeURI(data.via);
+          }
+
+          if (data.hashtags) {
+            urlString += '&hashtags=' + encodeURI(data.hashtags);
+          }
+
+          // Default to the current page if a URL isn't specified
+          urlString += '&url=' + encodeURI(data.url || $location.absUrl());
 
           $window.open(
-            '//www.twitter.com/intent/tweet?text=' + encodeURI(data.text) + '&via=' + encodeURI(data.via) + '&hashtags=' + encodeURI(data.hashtags) + '&url=' + encodeURI(data.url)
-            ,'sharer', 'toolbar=0,status=0,width=' + data.popupWidth + ',height=' + data.popupHeight);
+            urlString,
+            'sharer', 'toolbar=0,status=0,width=' + data.popupWidth + ',height=' + data.popupHeight
+          );
+
         };
 
         $scope.googlePlusShare = function manageGooglePlusShare (data) {
@@ -99,62 +140,62 @@
             ,'sharer', 'toolbar=0,status=0,width=' + data.popupWidth + ',height=' + data.popupHeight);
         };
 
-        element.bind(data.eventTrigger, function onEventTriggered() {
+        element.bind(properties.eventTrigger, function onEventTriggered() {
 
-          switch (data.provider) {
+          switch (properties.provider) {
             case 'facebook':
 
-              $scope.facebookShare(data);
+              $scope.facebookShare(properties);
               break;
 
             case 'google+':
 
-              $scope.googlePlusShare(data);
+              $scope.googlePlusShare(properties);
               break;
 
             case 'twitter':
 
-              $scope.twitterShare(data);
+              $scope.twitterShare(properties);
               break;
 
             case 'stumbleupon':
 
-              $scope.stumbleuponShare(data);
+              $scope.stumbleuponShare(properties);
               break;
 
             case 'reddit':
 
-              $scope.redditShare(data);
+              $scope.redditShare(properties);
               break;
 
             case 'pinterest':
 
-              $scope.pinterestShare(data);
+              $scope.pinterestShare(properties);
               break;
 
             case 'linkedin':
 
-              $scope.linkedinShare(data);
+              $scope.linkedinShare(properties);
               break;
 
             case 'digg':
 
-              $scope.diggShare(data);
+              $scope.diggShare(properties);
               break;
 
             case 'tumblr':
 
-              $scope.tumblrShare(data);
+              $scope.tumblrShare(properties);
               break;
 
             case 'delicious':
 
-              $scope.deliciousShare(data);
+              $scope.deliciousShare(properties);
               break;
 
             case 'vk':
 
-              $scope.vkShare(data);
+              $scope.vkShare(properties);
               break;
 
             default: return;
