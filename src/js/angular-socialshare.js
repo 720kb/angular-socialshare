@@ -5,7 +5,7 @@
   'use strict';
 
   angular.module('720kb.socialshare', [])
-  .directive('socialshare', ['$window', function manageDirective ($window, $location) {
+  .directive('socialshare', ['$window', '$location', function manageDirective ($window, $location) {
 
     return {
       'restrict': 'A',
