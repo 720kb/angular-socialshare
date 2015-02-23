@@ -56,7 +56,7 @@
           var urlString = '//www.twitter.com/intent/tweet?';
 
           if (data.text) {
-            urlString += 'text=' + encodeURI(data.text);
+            urlString += 'text=' + encodeURIComponent(data.text);
           }
 
           if (data.via) {
