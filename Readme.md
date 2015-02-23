@@ -101,7 +101,7 @@ You can set the social platform you want to share on using the `socialshare-prov
 <a href="#"
 socialshare
 socialshare-provider="reddit"
-socialshare-text="720kb is enought!" >
+socialshare-text="720kb is enough!" >
 Share me
 </a>
 ```
@@ -123,7 +123,7 @@ You can set the text to share using the `socialshare-text=""` attribute
 <a href="#"
 socialshare
 socialshare-provider="facebook"
-socialshare-text="720kb is enought!">
+socialshare-text="720kb is enough!">
 Share me
 </a>
 ```
