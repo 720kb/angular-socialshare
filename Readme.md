@@ -212,7 +212,7 @@ Share with a bigger popup
 
 ##Contributing
 
-We will be much greatful if you help us making this project to grow up.
+We will be much grateful if you help us making this project to grow up.
 Feel free to contribute by forking, opening issues, pull requests etc.
 
 ## License
