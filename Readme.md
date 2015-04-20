@@ -86,17 +86,17 @@ You can set the social platform you want to share on using the `socialshare-prov
 
 - facebook
 - twitter
-- buffer
-- vk
-- stumbleupon
 - google+
+- pinterest
+- tumbler
+- reddit
+- stubmleupon
+- buffer
 - digg
 - delicious
-- tumblr
-- pinterest
-- reddit
+- vk
 
-* use them all in lowercase (`socialshare-proivder="delicious"`)
+Please use them all in lowercase (`socialshare-proivder="delicious"`)
 
 ```html
 <a href="#"
