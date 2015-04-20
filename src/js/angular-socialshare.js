@@ -140,7 +140,7 @@
             , 'sharer', 'toolbar=0,status=0,width=' + data.popupWidth + ',height=' + data.popupHeight);
         };
 
-        $scope.bufferShare = function manageBufferShare ( data ) {
+        $scope.bufferShare = function manageBufferShare (data) {
           var urlString = '//bufferapp.com/add?';
 
           if (data.text) {
