@@ -13,7 +13,7 @@ The angular socialshare is developed by [720kb](http://720kb.net).
 AngularJS v1.2+
 
 ##Screen
-![Angular socialshare](http://i.imgur.com/WL03mNH.png)
+![Angular socialshare](http://i.imgur.com/uRg6mO5.jpg)
 
 ###Browser support
 
