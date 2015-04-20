@@ -86,6 +86,7 @@ You can set the social platform you want to share on using the `socialshare-prov
 
 - facebook
 - twitter
+- buffer
 - vk
 - stumbleupon
 - google+
