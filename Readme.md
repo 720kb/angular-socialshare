@@ -82,7 +82,7 @@ Angular socialshare allows you to use some options via `attribute` data
 ####Sharing Provider
 You can set the social platform you want to share on using the `socialshare-provider=""` attribute.
 
-#Here is the full list of all the available Providers:
+###Providers:
 
 - facebook
 - twitter
@@ -101,7 +101,7 @@ You can set the social platform you want to share on using the `socialshare-prov
 <a href="#"
 socialshare
 socialshare-provider="reddit"
-socialshare-text="720kb is enought!" >
+socialshare-text="720kb is enough!" >
 Share me
 </a>
 ```
@@ -123,7 +123,7 @@ You can set the text to share using the `socialshare-text=""` attribute
 <a href="#"
 socialshare
 socialshare-provider="facebook"
-socialshare-text="720kb is enought!">
+socialshare-text="720kb is enough!">
 Share me
 </a>
 ```
@@ -212,7 +212,7 @@ Share with a bigger popup
 
 ##Contributing
 
-We will be much greatful if you help us making this project to grow up.
+We will be much grateful if you help us making this project to grow up.
 Feel free to contribute by forking, opening issues, pull requests etc.
 
 ## License

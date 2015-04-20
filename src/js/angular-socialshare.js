@@ -49,7 +49,7 @@
 
           $window.open(
             '//www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(data.url)
-            ,'sharer', 'toolbar=0,status=0,width=' + data.popupWidth + ',height=' + data.popupHeight);
+            , 'sharer', 'toolbar=0,status=0,width=' + data.popupWidth + ',height=' + data.popupHeight);
         };
 
         $scope.twitterShare = function manageTwitterShare (data) {
@@ -81,63 +81,63 @@
 
           $window.open(
             '//plus.google.com/share?url=' + encodeURIComponent(data.url)
-            ,'sharer', 'toolbar=0,status=0,width=' + data.popupWidth + ',height=' + data.popupHeight);
+            , 'sharer', 'toolbar=0,status=0,width=' + data.popupWidth + ',height=' + data.popupHeight);
         };
 
         $scope.redditShare = function manageRedditShare (data) {
 
           $window.open(
             '//www.reddit.com/submit?url=' + encodeURIComponent(data.url) + '&title=' + encodeURI(data.text)
-            ,'sharer', 'toolbar=0,status=0,width=' + data.popupWidth + ',height=' + data.popupHeight);
+            , 'sharer', 'toolbar=0,status=0,width=' + data.popupWidth + ',height=' + data.popupHeight);
         };
 
         $scope.stumbleuponShare = function manageStumbleuponShare (data) {
 
           $window.open(
             '//www.stumbleupon.com/submit?url=' + encodeURIComponent(data.url) + '&title=' + encodeURI(data.text)
-            ,'sharer', 'toolbar=0,status=0,width=' + data.popupWidth + ',height=' + data.popupHeight);
+            , 'sharer', 'toolbar=0,status=0,width=' + data.popupWidth + ',height=' + data.popupHeight);
         };
 
         $scope.linkedinShare = function manageLinkedinShare (data) {
 
           $window.open(
             '//www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(data.url) + '&title=' + encodeURI(data.text)
-            ,'sharer', 'toolbar=0,status=0,width=' + data.popupWidth + ',height=' + data.popupHeight);
+            , 'sharer', 'toolbar=0,status=0,width=' + data.popupWidth + ',height=' + data.popupHeight);
         };
 
         $scope.pinterestShare = function managePinterestShare (data) {
 
           $window.open(
             '//www.pinterest.com/pin/create/button/?url=' + encodeURIComponent(data.url) + '&media=' + encodeURI(data.media) + '&description=' + encodeURI(data.text)
-            ,'sharer', 'toolbar=0,status=0,width=' + data.popupWidth + ',height=' + data.popupHeight);
+            , 'sharer', 'toolbar=0,status=0,width=' + data.popupWidth + ',height=' + data.popupHeight);
         };
 
         $scope.diggShare = function manageDiggShare (data) {
 
           $window.open(
             '//www.digg.com/submit?url=' + encodeURIComponent(data.url) + '&title=' + encodeURI(data.text)
-            ,'sharer', 'toolbar=0,status=0,width=' + data.popupWidth + ',height=' + data.popupHeight);
+            , 'sharer', 'toolbar=0,status=0,width=' + data.popupWidth + ',height=' + data.popupHeight);
         };
 
         $scope.tumblrShare = function manageTumblrShare (data) {
           //tumblr doesnt likes http:// or https:// actually its a mistery
           $window.open(
             '//www.tumblr.com/share/link?url=' + encodeURIComponent(data.url.replace('http://', '').replace('https://')) + '&description=' + encodeURI(data.text)
-            ,'sharer', 'toolbar=0,status=0,width=' + data.popupWidth + ',height=' + data.popupHeight);
+            , 'sharer', 'toolbar=0,status=0,width=' + data.popupWidth + ',height=' + data.popupHeight);
         };
 
         $scope.vkShare = function manageVkShare (data) {
 
          $window.open(
             '//www.vk.com/share.php?url=' + encodeURIComponent(data.url)
-            ,'sharer', 'toolbar=0,status=0,width=' + data.popupWidth + ',height=' + data.popupHeight);
+            , 'sharer', 'toolbar=0,status=0,width=' + data.popupWidth + ',height=' + data.popupHeight);
         };
 
         $scope.deliciousShare = function manageDeliciousShare (data) {
 
           $window.open(
             '//www.delicious.com/save?v=5&noui&jump=close&url=' + encodeURIComponent(data.url) + '&title=' + encodeURI(data.text)
-            ,'sharer', 'toolbar=0,status=0,width=' + data.popupWidth + ',height=' + data.popupHeight);
+            , 'sharer', 'toolbar=0,status=0,width=' + data.popupWidth + ',height=' + data.popupHeight);
         };
 
         element.bind(properties.eventTrigger, function onEventTriggered() {
