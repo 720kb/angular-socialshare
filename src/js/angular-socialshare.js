@@ -37,7 +37,7 @@
                   }
                 });
               }(key));
-              if(properties[key] === undefined){
+              if (properties[key] === undefined){
                   properties[key] = propDefaults[key];
               }
           }
