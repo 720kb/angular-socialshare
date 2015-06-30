@@ -88,6 +88,7 @@ You can set the social platform you want to share on using the `socialshare-prov
 
 - facebook
 - twitter
+- linkedin
 - google+
 - pinterest
 - tumbler
