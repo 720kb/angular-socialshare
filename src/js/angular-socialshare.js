@@ -30,16 +30,16 @@
         for (key in propDefaults) {
           if (propDefaults.hasOwnProperty(key)) {
             attributeName = 'socialshare' + key.substring(0, 1).toUpperCase() + key.substring(1);
-            if (attr[attributeName]) {
               (function (keyName) {
                 attr.$observe(attributeName, function (value) {
-                  properties[keyName] = value;
+                  if (value) {
+                    properties[keyName] = value;
+                  }
                 });
               }(key));
-            } else {
-              // Use the default
-              properties[key] = propDefaults[key];
-            }
+              if (properties[key] === undefined){
+                  properties[key] = propDefaults[key];
+              }
           }
         }
 
