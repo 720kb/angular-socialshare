@@ -30,16 +30,16 @@
         for (key in propDefaults) {
           if (propDefaults.hasOwnProperty(key)) {
             attributeName = 'socialshare' + key.substring(0, 1).toUpperCase() + key.substring(1);
-            if (attr[attributeName]) {
               (function (keyName) {
                 attr.$observe(attributeName, function (value) {
-                  properties[keyName] = value;
+                  if (value) {
+                    properties[keyName] = value;
+                  }
                 });
               }(key));
-            } else {
-              // Use the default
-              properties[key] = propDefaults[key];
-            }
+              if (properties[key] === undefined){
+                  properties[key] = propDefaults[key];
+              }
           }
         }
 
@@ -140,7 +140,7 @@
             , 'sharer', 'toolbar=0,status=0,width=' + data.popupWidth + ',height=' + data.popupHeight);
         };
 
-        $scope.bufferShare = function manageBufferShare ( data ) {
+        $scope.bufferShare = function manageBufferShare (data) {
           var urlString = '//bufferapp.com/add?';
 
           if (data.text) {

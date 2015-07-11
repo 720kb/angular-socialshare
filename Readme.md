@@ -1,6 +1,8 @@
 Angular Socialshare
 ==================
 
+[![Join the chat at https://gitter.im/720kb/angular-socialshare](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/720kb/angular-socialshare?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 
 Angular Socialshare is an angularjs directive for sharing urls and content on social networks such as (facebook, google+, twitter, pinterest and so on).
 
@@ -13,7 +15,7 @@ The angular socialshare is developed by [720kb](http://720kb.net).
 AngularJS v1.2+
 
 ##Screen
-![Angular socialshare](http://i.imgur.com/WL03mNH.png)
+![Angular socialshare](http://i.imgur.com/uRg6mO5.jpg)
 
 ###Browser support
 
@@ -86,17 +88,18 @@ You can set the social platform you want to share on using the `socialshare-prov
 
 - facebook
 - twitter
-- buffer
-- vk
-- stumbleupon
+- linkedin
 - google+
+- pinterest
+- tumbler
+- reddit
+- stubmleupon
+- buffer
 - digg
 - delicious
-- tumblr
-- pinterest
-- reddit
+- vk
 
-* use them all in lowercase (`socialshare-proivder="delicious"`)
+Please use them all in lowercase (`socialshare-proivder="delicious"`)
 
 ```html
 <a href="#"
