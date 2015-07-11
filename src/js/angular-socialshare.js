@@ -21,6 +21,7 @@
           'media': '',
           'hashtags': '',
           'via': '',
+          'subreddit': '',
           'popupHeight': 500,
           'popupWidth': 500
         };
@@ -85,9 +86,29 @@
         };
 
         $scope.redditShare = function manageRedditShare (data) {
+          var urlString = '//www.reddit.com/';
+
+          if (data.subreddit) {
+            urlString += 'r/' + data.subreddit + '/submit?url=';
+          } else {
+            urlString += 'submit?url=';
+          }
+
+          /*
+           * Reddit isn't responsive and at default width for our popups (500 x 500), everything is messed up.
+           * So, overriding the width if it is less than 900 (played around to settle on this) and height if
+           * it is less than 650px.
+          */
+          if (data.popupWidth < 900) {
+            data.popupWidth = 900;
+          }
+
+          if (data.popupHeight < 650) {
+            data.popupHeight = 650;
+          }
 
           $window.open(
-            '//www.reddit.com/submit?url=' + encodeURIComponent(data.url || $location.absUrl()) + '&title=' + encodeURI(data.text)
+            urlString + encodeURIComponent(data.url || $location.absUrl()) + '&title=' + encodeURI(data.text)
             , 'sharer', 'toolbar=0,status=0,width=' + data.popupWidth + ',height=' + data.popupHeight);
         };
 
