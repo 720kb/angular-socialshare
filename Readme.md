@@ -208,6 +208,21 @@ socialshare-popup-width="800">
 Share with a bigger popup
 </a>
 ```
+#### Sharing to a subreddit
+You can set `socialshare-subreddit` to specify the subreddit you want to share to. Example:
+
+```html
+<a href='#' 
+socialshare 
+socialshare-provider="reddit" 
+socialshare-subreddit="technology"
+socialshare-url="http://720kb.net"
+socialshare-text="Sharing it!"
+socialshare-popup-height="900"
+socialshare-popup-width="650"
+```
+
+**Note**: Minimum popup resolution for reddit popups is 900 x 650 pixels since the reddit submission page is not responsive and is broken on lesser widths.
 
 ## Example
 
