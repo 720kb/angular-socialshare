@@ -212,9 +212,9 @@ Share with a bigger popup
 You can set `socialshare-subreddit` to specify the subreddit you want to share to. Example:
 
 ```html
-<a href='#' 
-socialshare 
-socialshare-provider="reddit" 
+<a href='#'
+socialshare
+socialshare-provider="reddit"
 socialshare-subreddit="technology"
 socialshare-url="http://720kb.net"
 socialshare-text="Sharing it!"
