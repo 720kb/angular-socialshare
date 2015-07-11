@@ -16,8 +16,10 @@
           properties = {},
           propDefaults = {
           'url': '',
+          'redirectUri': '',
           'provider': '',
           'text': '',
+          'caption': '',
           'media': '',
           'hashtags': '',
           'via': '',
@@ -51,6 +53,32 @@
           $window.open(
             '//www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(data.url || $location.absUrl())
             , 'sharer', 'toolbar=0,status=0,width=' + data.popupWidth + ',height=' + data.popupHeight);
+        };
+
+        $scope.facebookFeedDialog = function manageFacebookFeedDialog (data) {
+          var urlString = 'https://www.facebook.com/dialog/feed?display=popup' +
+              '&app_id=' + encodeURI(data.via) +
+              '&redirect_uri=' + encodeURI(data.redirectUri);
+
+          if (data.url) {
+            urlString += '&link=' + encodeURIComponent(data.url);
+          }
+
+          if (data.text) {
+            urlString += '&name=' + encodeURIComponent(data.text);
+          }
+
+          if (data.caption) {
+            urlString += '&caption=' + encodeURIComponent(data.caption);
+          }
+
+          if (data.media) {
+            urlString += '&picture=' + encodeURIComponent(data.media);
+          }
+
+          $window.open(
+            urlString,
+            'sharer', 'toolbar=0,status=0,width=' + data.popupWidth + ',height=' + data.popupHeight);
         };
 
         $scope.twitterShare = function manageTwitterShare (data) {
@@ -187,6 +215,11 @@
             case 'facebook':
 
               $scope.facebookShare(properties);
+              break;
+
+            case 'facebook-alt':
+
+              $scope.facebookFeedDialog(properties);
               break;
 
             case 'google+':

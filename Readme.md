@@ -132,7 +132,7 @@ Share me
 </a>
 ```
 ####Sharing media
-You can set the media source to share using the `socialshare-media=""` attribute (for example, you will use it for pinterest)
+You can set the media source to share using the `socialshare-media=""` attribute (for example, you will use it for pinterest, or optionally for facebook (only if using `facebook-alt` provider)
 
 ```html
 <a href="#"
@@ -157,7 +157,7 @@ Share me
 ```
 
 ####Sharing "via"
-You can set the twitter via (actually no other social is allowing this tag) to share using the `socialshare-via=""` attribute
+You can set the twitter via to share using the `socialshare-via=""` attribute
 
 ```html
 <a href="#"
@@ -166,6 +166,22 @@ socialshare-provider="twitter"
 socialshare-via="@720kb"
 socialshare-url="http://720kb.net"
 socialshare-hashtags="woa, wonderful, interesting">
+Share me
+</a>
+```
+
+You can also use the `socialshare-via=""` to share to facebook via a facebook app, using the `facebook-alt` provider
+
+```html
+<a href="#"
+socialshare
+socialshare-provider="facebook-alt"
+socialshare-via="145634995501895"
+socialshare-media="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTWGNvatNjOUyli3tBacDdAHmienfptFVStj_olGCWmaUXoIGYI"
+socialshare-text="720kb"
+socialshare-caption="720kb is awesome"
+socialshare-url="http://720kb.net"
+socialshare-redirect-uri="https://developers.facebook.com/tools/explorer">
 Share me
 </a>
 ```
