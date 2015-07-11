@@ -48,7 +48,7 @@
         $scope.facebookShare = function manageFacebookShare (data) {
 
           $window.open(
-            '//www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(data.url)
+            '//www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(data.url || $location.absUrl())
             , 'sharer', 'toolbar=0,status=0,width=' + data.popupWidth + ',height=' + data.popupHeight);
         };
 
@@ -80,42 +80,42 @@
         $scope.googlePlusShare = function manageGooglePlusShare (data) {
 
           $window.open(
-            '//plus.google.com/share?url=' + encodeURIComponent(data.url)
+            '//plus.google.com/share?url=' + encodeURIComponent(data.url || $location.absUrl())
             , 'sharer', 'toolbar=0,status=0,width=' + data.popupWidth + ',height=' + data.popupHeight);
         };
 
         $scope.redditShare = function manageRedditShare (data) {
 
           $window.open(
-            '//www.reddit.com/submit?url=' + encodeURIComponent(data.url) + '&title=' + encodeURI(data.text)
+            '//www.reddit.com/submit?url=' + encodeURIComponent(data.url || $location.absUrl()) + '&title=' + encodeURI(data.text)
             , 'sharer', 'toolbar=0,status=0,width=' + data.popupWidth + ',height=' + data.popupHeight);
         };
 
         $scope.stumbleuponShare = function manageStumbleuponShare (data) {
 
           $window.open(
-            '//www.stumbleupon.com/submit?url=' + encodeURIComponent(data.url) + '&title=' + encodeURI(data.text)
+            '//www.stumbleupon.com/submit?url=' + encodeURIComponent(data.url || $location.absUrl()) + '&title=' + encodeURI(data.text)
             , 'sharer', 'toolbar=0,status=0,width=' + data.popupWidth + ',height=' + data.popupHeight);
         };
 
         $scope.linkedinShare = function manageLinkedinShare (data) {
 
           $window.open(
-            '//www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(data.url) + '&title=' + encodeURI(data.text)
+            '//www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(data.url || $location.absUrl()) + '&title=' + encodeURI(data.text)
             , 'sharer', 'toolbar=0,status=0,width=' + data.popupWidth + ',height=' + data.popupHeight);
         };
 
         $scope.pinterestShare = function managePinterestShare (data) {
 
           $window.open(
-            '//www.pinterest.com/pin/create/button/?url=' + encodeURIComponent(data.url) + '&media=' + encodeURI(data.media) + '&description=' + encodeURI(data.text)
+            '//www.pinterest.com/pin/create/button/?url=' + encodeURIComponent(data.url || $location.absUrl()) + '&media=' + encodeURI(data.media) + '&description=' + encodeURI(data.text)
             , 'sharer', 'toolbar=0,status=0,width=' + data.popupWidth + ',height=' + data.popupHeight);
         };
 
         $scope.diggShare = function manageDiggShare (data) {
 
           $window.open(
-            '//www.digg.com/submit?url=' + encodeURIComponent(data.url) + '&title=' + encodeURI(data.text)
+            '//www.digg.com/submit?url=' + encodeURIComponent(data.url || $location.absUrl()) + '&title=' + encodeURI(data.text)
             , 'sharer', 'toolbar=0,status=0,width=' + data.popupWidth + ',height=' + data.popupHeight);
         };
 
@@ -129,14 +129,14 @@
         $scope.vkShare = function manageVkShare (data) {
 
          $window.open(
-            '//www.vk.com/share.php?url=' + encodeURIComponent(data.url)
+            '//www.vk.com/share.php?url=' + encodeURIComponent(data.url || $location.absUrl())
             , 'sharer', 'toolbar=0,status=0,width=' + data.popupWidth + ',height=' + data.popupHeight);
         };
 
         $scope.deliciousShare = function manageDeliciousShare (data) {
 
           $window.open(
-            '//www.delicious.com/save?v=5&noui&jump=close&url=' + encodeURIComponent(data.url) + '&title=' + encodeURI(data.text)
+            '//www.delicious.com/save?v=5&noui&jump=close&url=' + encodeURIComponent(data.url || $location.absUrl()) + '&title=' + encodeURI(data.text)
             , 'sharer', 'toolbar=0,status=0,width=' + data.popupWidth + ',height=' + data.popupHeight);
         };
 
