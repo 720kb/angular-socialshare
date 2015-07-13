@@ -132,7 +132,7 @@ Share me
 </a>
 ```
 
-####Sharing "type"
+####Sharing type
 You can set the type of sharing window using the `socialshare-type=""` attribute (this currently only applies when using Facebook provider, as Facebook supports more than one way of sharing)
 
 Valid options:
