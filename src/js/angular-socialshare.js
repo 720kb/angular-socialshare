@@ -16,8 +16,11 @@
           properties = {},
           propDefaults = {
           'url': '',
+          'redirectUri': '',
           'provider': '',
+          'type': '',
           'text': '',
+          'caption': '',
           'media': '',
           'hashtags': '',
           'via': '',
@@ -48,9 +51,40 @@
 
         $scope.facebookShare = function manageFacebookShare (data) {
 
-          $window.open(
-            '//www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(data.url || $location.absUrl())
-            , 'sharer', 'toolbar=0,status=0,width=' + data.popupWidth + ',height=' + data.popupHeight);
+          if (data.type && data.type === 'feed') {
+
+
+            // If user specifies that they want to use the Facebook feed dialog (https://developers.facebook.com/docs/sharing/reference/feed-dialog/v2.4)
+            var urlString = 'https://www.facebook.com/dialog/feed?display=popup' +
+              '&app_id=' + encodeURI(data.via) +
+              '&redirect_uri=' + encodeURI(data.redirectUri);
+
+            if (data.url) {
+              urlString += '&link=' + encodeURIComponent(data.url);
+            }
+
+            if (data.text) {
+              urlString += '&name=' + encodeURIComponent(data.text);
+            }
+
+            if (data.caption) {
+              urlString += '&caption=' + encodeURIComponent(data.caption);
+            }
+
+            if (data.media) {
+              urlString += '&picture=' + encodeURIComponent(data.media);
+            }
+
+            $window.open(
+              urlString,
+              'sharer', 'toolbar=0,status=0,width=' + data.popupWidth + ',height=' + data.popupHeight);
+          } else {
+
+            // Otherwise default to using sharer.php
+            $window.open(
+              '//www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(data.url || $location.absUrl())
+              , 'sharer', 'toolbar=0,status=0,width=' + data.popupWidth + ',height=' + data.popupHeight);
+          }
         };
 
         $scope.twitterShare = function manageTwitterShare (data) {
