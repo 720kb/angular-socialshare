@@ -131,8 +131,31 @@ socialshare-text="720kb is enough!">
 Share me
 </a>
 ```
+
+####Sharing "type"
+You can set the type of sharing window using the `socialshare-type=""` attribute (this currently only applies when using Facebook provider, as Facebook supports more than one way of sharing)
+
+Valid options:
+- sharer (default, because it is the most commonly used)
+- feed (more flexible, for advanced usage like custom images etc)
+
+Note that when you are using `socialshare-type="feed"` you must also supply your facebook app id using `socialshare-via`, and a redirect uri using `socialshare-redirect-uri`.
+For more details see https://developers.facebook.com/docs/sharing/reference/feed-dialog/v2.4
+
+```html
+<a href="#"
+socialshare
+socialshare-provider="facebook"
+socialshare-type="feed"
+socialshare-via="145634995501895"
+socialshare-url="http://720kb.net">
+socialshare-redirect-uri="http://720kb.net">
+Share me
+</a>
+```
+
 ####Sharing media
-You can set the media source to share using the `socialshare-media=""` attribute (for example, you will use it for pinterest, or optionally for facebook (only if using `facebook-alt` provider)
+You can set the media source to share using the `socialshare-media=""` attribute (for example, you will use it for pinterest, or optionally for facebook (requires `socialshare-type=feed` to work with facebook)
 
 ```html
 <a href="#"
