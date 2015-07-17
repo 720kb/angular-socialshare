@@ -91,7 +91,7 @@ You can set the social platform you want to share on using the `socialshare-prov
 - linkedin
 - google+
 - pinterest
-- tumbler
+- tumblr
 - reddit
 - stubmleupon
 - buffer
