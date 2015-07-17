@@ -138,6 +138,7 @@ You can set the type of sharing window using the `socialshare-type=""` attribute
 Valid options for Facebook:
 - sharer (default, because it is the most commonly used)
 - feed (more flexible, for advanced usage like custom images etc)
+
 _Note that when you are using `socialshare-type="feed"` you must also supply your facebook app id using `socialshare-via`, and a redirect uri using `socialshare-redirect-uri`._
 _For more details see https://developers.facebook.com/docs/sharing/reference/feed-dialog/v2.4_
 
