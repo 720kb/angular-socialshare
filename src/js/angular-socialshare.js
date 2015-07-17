@@ -53,7 +53,6 @@
 
           if (data.type && data.type === 'feed') {
 
-
             // If user specifies that they want to use the Facebook feed dialog (https://developers.facebook.com/docs/sharing/reference/feed-dialog/v2.4)
             var urlString = 'https://www.facebook.com/dialog/feed?display=popup' +
               '&app_id=' + encodeURI(data.via) +
@@ -78,6 +77,7 @@
             $window.open(
               urlString,
               'sharer', 'toolbar=0,status=0,width=' + data.popupWidth + ',height=' + data.popupHeight);
+
           } else {
 
             // Otherwise default to using sharer.php
@@ -175,10 +175,27 @@
         };
 
         $scope.tumblrShare = function manageTumblrShare (data) {
-          //tumblr doesnt likes http:// or https:// actually its a mistery
-          $window.open(
-            '//www.tumblr.com/share/link?url=' + encodeURIComponent(data.url.replace('http://', '').replace('https://')) + '&description=' + encodeURI(data.text)
-            , 'sharer', 'toolbar=0,status=0,width=' + data.popupWidth + ',height=' + data.popupHeight);
+          // tumblr doesn't like http:// or https:// actually its a mystery
+
+          if (data.type && data.type === 'photo') {
+            var urlString = '//www.tumblr.com/share/photo?source=' + encodeURIComponent(data.media);
+
+            if (data.text) {
+              urlString += '&caption=' + encodeURI(data.text);
+            } else if (data.caption) {
+              urlString += '&caption=' + encodeURI(data.caption);
+            }
+
+            $window.open(
+                urlString,
+                'sharer', 'toolbar=0,status=0,width=' + data.popupWidth + ',height=' + data.popupHeight);
+
+          } else {
+
+            $window.open(
+                '//www.tumblr.com/share/link?url=' + encodeURIComponent(data.url.replace('http://', '').replace('https://', '')) + '&description=' + encodeURI(data.text)
+                , 'sharer', 'toolbar=0,status=0,width=' + data.popupWidth + ',height=' + data.popupHeight);
+          }
         };
 
         $scope.vkShare = function manageVkShare (data) {

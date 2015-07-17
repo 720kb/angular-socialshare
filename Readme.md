@@ -133,14 +133,17 @@ Share me
 ```
 
 ####Sharing type
-You can set the type of sharing window using the `socialshare-type=""` attribute (this currently only applies when using Facebook provider, as Facebook supports more than one way of sharing)
+You can set the type of sharing window using the `socialshare-type=""` attribute (can be used with Facebook and Tumblr providers)
 
-Valid options:
+Valid options for Facebook:
 - sharer (default, because it is the most commonly used)
 - feed (more flexible, for advanced usage like custom images etc)
+_Note that when you are using `socialshare-type="feed"` you must also supply your facebook app id using `socialshare-via`, and a redirect uri using `socialshare-redirect-uri`._
+_For more details see https://developers.facebook.com/docs/sharing/reference/feed-dialog/v2.4_
 
-Note that when you are using `socialshare-type="feed"` you must also supply your facebook app id using `socialshare-via`, and a redirect uri using `socialshare-redirect-uri`.
-For more details see https://developers.facebook.com/docs/sharing/reference/feed-dialog/v2.4
+Valid options for Tumblr:
+- link (default)
+- photo (see `socialshare-media`)
 
 ```html
 <a href="#"
@@ -155,7 +158,7 @@ Share me
 ```
 
 ####Sharing media
-You can set the media source to share using the `socialshare-media=""` attribute (for example, you will use it for pinterest, or optionally for facebook (requires `socialshare-type=feed` to work with facebook)
+You can set the media source to share using the `socialshare-media=""` attribute (for example, you will use it for pinterest, or optionally for tumblr or facebook (requires `socialshare-type=feed` to work with facebook)
 
 ```html
 <a href="#"
