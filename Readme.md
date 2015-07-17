@@ -193,12 +193,13 @@ Share me
 </a>
 ```
 
-You can also use the `socialshare-via=""` to share to facebook via a facebook app, using the `facebook-alt` provider
+You can also use the `socialshare-via=""` to share to facebook via a facebook app, using the `facebook` provider with `socialshare-type="feed"`
 
 ```html
 <a href="#"
 socialshare
-socialshare-provider="facebook-alt"
+socialshare-provider="facebook"
+socialshare-type="feed"
 socialshare-via="145634995501895"
 socialshare-media="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTWGNvatNjOUyli3tBacDdAHmienfptFVStj_olGCWmaUXoIGYI"
 socialshare-text="720kb"
