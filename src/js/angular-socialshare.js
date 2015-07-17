@@ -23,6 +23,7 @@
           'caption': '',
           'media': '',
           'hashtags': '',
+          'encodeUrl': 'true',
           'via': '',
           'subreddit': '',
           'popupHeight': 500,
@@ -155,8 +156,13 @@
 
         $scope.linkedinShare = function manageLinkedinShare (data) {
 
+          var url = data.url || $location.absUrl();
+          if (data.encodeUrl !== 'false'){
+            url = encodeURIComponent(url);
+          }
+
           $window.open(
-            '//www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(data.url || $location.absUrl()) + '&title=' + encodeURI(data.text)
+            '//www.linkedin.com/shareArticle?mini=true&url=' + url + '&title=' + encodeURI(data.text)
             , 'sharer', 'toolbar=0,status=0,width=' + data.popupWidth + ',height=' + data.popupHeight);
         };
 
