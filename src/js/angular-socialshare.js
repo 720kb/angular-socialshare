@@ -175,7 +175,6 @@
         };
 
         $scope.tumblrShare = function manageTumblrShare (data) {
-          // tumblr doesn't like http:// or https:// actually its a mystery
 
           if (data.type && data.type === 'photo') {
             var urlString = '//www.tumblr.com/share/photo?source=' + encodeURIComponent(data.media);
@@ -193,7 +192,7 @@
           } else {
 
             $window.open(
-                '//www.tumblr.com/share/link?url=' + encodeURIComponent(data.url.replace('http://', '').replace('https://', '')) + '&description=' + encodeURI(data.text)
+                '//www.tumblr.com/share/link?url=' + encodeURIComponent(data.url) + '&description=' + encodeURI(data.text)
                 , 'sharer', 'toolbar=0,status=0,width=' + data.popupWidth + ',height=' + data.popupHeight);
           }
         };
