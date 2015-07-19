@@ -202,7 +202,7 @@ Share me
 </a>
 ```
 
-####Sharing "via"
+####Sharing via
 You can set the twitter via to share using the `socialshare-via=""` attribute
 
 ```html
