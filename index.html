@@ -189,6 +189,22 @@
 
 </code>
 <div class="separator15"></div>
+<h4>Sharing Type</h4>
+<small class=" font-small color-muted">
+
+    You can set the type of sharing window using the <b>socialshare-type=""</b> attribute (can be used with Facebook and Tumblr providers).
+
+    Read more about it <a href="https://github.com/720kb/angular-socialshare#sharing-type" target="_blank">here</a>
+
+</small>
+<div class="separator10"></div>
+<code hljs="">
+  <button  socialshare socialshare-provider="facebook" socialshare-type="feed" socialshare-via="145634995501895" socialshare-url="http://720kb.net" socialshare-redirect-uri="http://720kb.net">
+    Share with Feed Dialog
+  </button>
+
+</code>
+<div class="separator15"></div>
 <h4>Sharing Media</h4>
 <small class=" font-small color-muted">
   You can use the <b>socialshare-media=""</b> attribute to set the media to share (for example, you will use it for pinterest)
@@ -198,6 +214,19 @@
   <button socialshare socialshare-provider="pinterest" socialshare-media="http://720kb.net/assets/img/logo.png" socialshare-url="http://720kb.net">
     Share a media
   </button>
+
+</code>
+<div class="separator15"></div>
+<h4>Sharing Caption</h4>
+<small class=" font-small color-muted">
+
+    When sharing to Facebook using <b>socialshare-type="feed"</b> you can optionally add a caption. If a caption is not provided, facebook will show the url instead. (more details <a href="https://developers.facebook.com/docs/sharing/reference/feed-dialog/v2.4" target="_blank">here</a> )
+</small>
+<div class="separator10"></div>
+<code hljs="">
+  <button href="#" socialshare socialshare-provider="facebook" socialshare-type="feed" socialshare-via="145634995501895" socialshare-text="720kb" socialshare-caption="720kb is enough" socialshare-url="http://720kb.net" socialshare-redirect-uri="https://developers.facebook.com/tools/explorer">
+  Share with caption
+</button>
 
 </code>
 <div class="separator15"></div>
