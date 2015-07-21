@@ -31,7 +31,7 @@ body {
 .btn-default{
   max-width:160px;
   font-size: 13px;
-  border:1px solid rgba(0,0,0,0.15);
+  border:1px solid rgba(0,0,0,0.1);
   border-radius:3px;
   color:#444;
   line-height: 20px;
