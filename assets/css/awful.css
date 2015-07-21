@@ -27,6 +27,20 @@ body {
 .color-default{
   color:#04C9DB;
 }
+/*buttons*/
+.btn-default{
+  max-width:160px;
+  font-size: 13px;
+  border:1px solid rgba(0,0,0,0.15);
+  border-radius:3px;
+  color:#444;
+  line-height: 20px;
+}
+.btn-default i {
+  font-size: 18px;
+  margin-top:-3px;
+  vertical-align: middle;
+}
 /*Extra*/
 code.hljs{
 	border-radius:5px;

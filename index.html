@@ -124,167 +124,22 @@
   </div>
 </div>
 
-<div class="separator30"></div>
-<h2>Usage</h2>
-<div class="separator15"></div>
-<h4>Html</h4>
-<small class="font-medium font-small color-muted">
-  Add the <b>socialshare</b> attribute to any of your elements
-</small>
-<div class="separator10"></div>
-<code hljs="">
-  <button socialshare socialshare-provider="facebook" socialshare-url="http://720kb.net">
-    Share on facebook
-  </button>
-
-</code>
-<div class="separator15"></div>
-<h4>Javascript</h4>
-<small class="font-medium font-small color-muted">
-  Add the socialshare module dependency
-</small>
-<div class="separator10"></div>
-<code hljs="">
-  angular.module('app', [
-  '720kb.socialshare'
-  ]);
-
-</code>
-<div class="separator30"></div>
-<h2>Options</h2>
-<div class="separator15"></div>
-<h4>Sharing Provider</h4>
-<small class=" font-small color-muted">
-  Set the platform you want to share on, use only lowercase (<i>twitter, facebook, google+, vk, stumbleupon, digg, delicious, reddit, pinterest, tumblr</i>)
-</small>
-<div class="separator10"></div>
-<code hljs="">
-  <button socialshare socialshare-provider="twitter" socialshare-url="http://720kb.net">
-    Share on twitter
-  </button>
-
-</code>
-<div class="separator15"></div>
-<h4>Sharing Url</h4>
-<small class=" font-small color-muted">
-  You can use the <b>socialshare-url=""</b> attribute to set the url to share
-</small>
-<div class="separator10"></div>
-<code hljs="">
-  <button socialshare socialshare-provider="reddit" socialshare-url="http://720kb.net">
-    Share me
-  </button>
-
-</code>
-<div class="separator15"></div>
-<h4>Sharing Content</h4>
-<small class=" font-small color-muted">
-  You can use the <b>socialshare-text=""</b> attribute to set the content to share
-</small>
-<div class="separator10"></div>
-<code hljs="">
-  <button socialshare socialshare-provider="tumblr" socialshare-text="720kb is enough" socialshare-url="http://720kb.net">
-    Share me
-  </button>
-
-</code>
-<div class="separator15"></div>
-<h4>Sharing Type</h4>
-<small class=" font-small color-muted">
-
-    You can set the type of sharing window using the <b>socialshare-type=""</b> attribute (can be used with Facebook and Tumblr providers).
-
-    Read more about it <a href="https://github.com/720kb/angular-socialshare#sharing-type" target="_blank">here</a>
-
-</small>
-<div class="separator10"></div>
-<code hljs="">
-  <button  socialshare socialshare-provider="facebook" socialshare-type="feed" socialshare-via="145634995501895" socialshare-url="http://720kb.net" socialshare-redirect-uri="http://720kb.net">
-    Share with Feed Dialog
-  </button>
-
-</code>
-<div class="separator15"></div>
-<h4>Sharing Media</h4>
-<small class=" font-small color-muted">
-  You can use the <b>socialshare-media=""</b> attribute to set the media to share (for example, you will use it for pinterest)
-</small>
-<div class="separator10"></div>
-<code hljs="">
-  <button socialshare socialshare-provider="pinterest" socialshare-media="http://720kb.net/assets/img/logo.png" socialshare-url="http://720kb.net">
-    Share a media
-  </button>
-
-</code>
-<div class="separator15"></div>
-<h4>Sharing Caption</h4>
-<small class=" font-small color-muted">
-
-    When sharing to Facebook using <b>socialshare-type="feed"</b> you can optionally add a caption. If a caption is not provided, facebook will show the url instead. (more details <a href="https://developers.facebook.com/docs/sharing/reference/feed-dialog/v2.4" target="_blank">here</a> )
-</small>
-<div class="separator10"></div>
-<code hljs="">
-  <button href="#" socialshare socialshare-provider="facebook" socialshare-type="feed" socialshare-via="145634995501895" socialshare-text="720kb" socialshare-caption="720kb is enough" socialshare-url="http://720kb.net" socialshare-redirect-uri="https://developers.facebook.com/tools/explorer">
-  Share with caption
-</button>
-
-</code>
-<div class="separator15"></div>
-<h4>Sharing Hashtags</h4>
-<small class=" font-small color-muted">
-  You can use the <b>socialshare-hastags=""</b> attribute to set the hashtags to share (for example, you will use it for twitter)
-</small>
-<div class="separator10"></div>
-<code hljs="">
-  <button socialshare socialshare-provider="twitter" socialshare-hashtags="720kb, opensource, angularjs" socialshare-url="http://720kb.net">
-    Share with hashtags
-  </button>
-
-</code>
-<div class="separator15"></div>
-<h4>Sharing Via</h4>
-<small class=" font-small color-muted">
-  You can use the <b>socialshare-via=""</b> attribute to set the twitter "via" option tag to share
-</small>
-<div class="separator10"></div>
-<code hljs="">
-  <button socialshare socialshare-provider="twitter" socialshare-via="@720kb" socialshare-hashtags="720kb, opensource, angularjs" socialshare-url="http://720kb.net">
-    Share with via on twitter
-  </button>
-
-</code>
-<div class="separator15"></div>
-<h4>Sharing Event Trigger</h4>
-<small class=" font-small color-muted">
-  You can use the <b>socialshare-trigger=""</b> attribte to set the event trigger to share (you can use all the <i>element.bind()</i> accepted triggers of angularjs)
-</small>
-<div class="separator10"></div>
-<code hljs="">
-  <button socialshare socialshare-provider="facebook" socialshare-trigger="mouseover" socialshare-url="http://720kb.net">
-    Share on mouseover
-  </button>
-
-</code>
-<div class="separator15"></div>
-<h4>Sharing Popup size</h4>
-<small class=" font-small color-muted">
-  You can use the <b>socialshare-popup-height=""</b> and <b>socialshare-popup-width=""</b> attributes to set sharer popup sizes
-</small>
-<div class="separator10"></div>
-<code hljs="">
-  <button socialshare socialshare-provider="facebook" socialshare-popup-height="800" socialshare-popup-width="800" socialshare-url="http://720kb.net">
-    Share with a bigger popup
-  </button>
-
-</code>
-<div class="separator15"></div>
-
-</div>
-</div>
-<!--Github fork me ribbon-->
-<a href="https://github.com/720kb/angular-socialshare">
-  <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/52760788cde945287fbb584134c4cbc2bc36f904/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f77686974655f6666666666662e706e67" alt="Github Source" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png">
+<div class="separator30"></div><div class="separator50"></div>
+<div class="line-compress center-content">
+<a class="btn btn-default" href="//github.com/720kb/angular-socialshare#angular-socialshare" target="_blank">
+  <i class="fa fa-github-alt"></i>
+  See on Github
 </a>
+<div class="separator50"></div>
+<!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/720kb/angular-socialshare" data-icon="octicon-star" data-count-href="/720kb/angular-socialshare/stargazers" data-count-api="/repos/720kb/angular-socialshare#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star 720kb/angular-socialshare on GitHub">Star</a>
+&nbsp;&nbsp;
+<!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/720kb/angular-socialshare/fork" data-icon="octicon-git-branch" data-count-href="/720kb/angular-socialshare/network" data-count-api="/repos/720kb/angular-socialshare#forks_count" data-count-aria-label="# forks on GitHub" aria-label="Fork 720kb/angular-socialshare on GitHub">Fork</a>
+&nbsp;&nbsp;
+<!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/720kb/angular-socialshare/archive/master.zip" data-icon="octicon-cloud-download" aria-label="Download 720kb/angular-socialshare on GitHub">Download</a>
+</div>
 <!--footer-->
 <div class="separator100"></div>
 <div class="hr"></div>
@@ -297,6 +152,8 @@
 <script src="//yandex.st/highlightjs/8.0/highlight.min.js"></script>
 <script type="text/javascript" src="//pc035860.github.io/angular-highlightjs/angular-highlightjs.min.js"></script>
 <script type="text/javascript" src="assets/js/index.js"></script>
+<!-- Place this tag right after the last button or just before your close body tag. -->
+<script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
 <!--G analytics-->
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
