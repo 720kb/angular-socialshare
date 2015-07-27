@@ -92,6 +92,8 @@
 
           if (data.text) {
             urlString += 'text=' + encodeURIComponent(data.text);
+          } else {
+            urlString += 'text=' + encodeURIComponent($window.document.title);
           }
 
           if (data.via) {
