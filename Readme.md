@@ -58,7 +58,7 @@ $ bower install angularjs-socialshare --save
 $ npm install angular-socialshare --save
 ```
 
-_then load the js files in your html_
+_then [load](https://github.com/720kb/angular-socialshare#load) it in your html_
 
 ###Add module dependency
 Add the 720kb.socialshare module dependency
@@ -295,7 +295,7 @@ socialshare-popup-width="650">
 
 ## Example
 
-###[Live demo](https://720kb.github.io/angular-socialshare)
+####[Live demo](https://720kb.github.io/angular-socialshare)
 
 
 ##Contributing
