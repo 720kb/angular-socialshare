@@ -1,6 +1,6 @@
 {
   "name": "angular-socialshare",
-  "version": "0.1.10",
+  "version": "0.1.11",
   "description": "A social urls and content sharing directive for angularjs.",
   "homepage": "http://720kb.githb.io/angular-socialshare",
     "keywords": [
@@ -8,6 +8,7 @@
     "socialshare",
     "input"
   ],
+  "main": "dist/angular-socialshare.min.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/720kb/angular-socialshare.git"
