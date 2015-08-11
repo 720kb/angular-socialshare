@@ -3,10 +3,13 @@
   "version": "0.1.11",
   "description": "A social urls and content sharing directive for angularjs.",
   "homepage": "http://720kb.githb.io/angular-socialshare",
-    "keywords": [
-    "date",
-    "socialshare",
-    "input"
+  "keywords": [
+    "social",
+    "sharing",
+    "buttons",
+    "share",
+    "angular",
+    "angularjs"
   ],
   "main": "dist/angular-socialshare.min.js",
   "repository": {
