@@ -45,12 +45,17 @@ To use the directive, include the angular socialshare's javascript file in your 
 </html>
 ```
 
-##Install
+##Installation
 
-###Bower installation
+####Bower
 
 ```
 $ bower install angularjs-socialshare --save
+```
+####Npm
+
+```
+$ npm install angular-socialshare --save
 ```
 
 _then load the js files in your html_
