@@ -179,6 +179,8 @@ Share me
 ####Sharing type
 You can set the type of sharing window using the `socialshare-type=""` attribute
 
+At the moment this option is only supported for Facebook feed dialog.
+
 _Note: when you are using `socialshare-type="feed"` you must also supply your facebook app id using `socialshare-via`, and a redirect uri using `socialshare-redirect-uri`._
 
 #####Facebook _Dialog_:
@@ -200,22 +202,6 @@ Share with Fb Dialog
 </a>
 ```
 _For more details see https://developers.facebook.com/docs/sharing/reference/feed-dialog/v2.4_
-
-#####Tumblr _Dialog_:
-
-Available options:
-
-```html
-<a href="#"
-socialshare
-socialshare-provider="tumblr"
-socialshare-type="feed"
-socialshare-via="145634995501895"
-socialshare-url="http://720kb.net">
-socialshare-redirect-uri="http://720kb.net">
-Share with Tumblr Dialog
-</a>
-```
 
 ####Sharing Event Trigger
 You can choose to bind a different event trigger for showing up the sharer popup using the `socialshare-trigger=""` attribute (you can use any angular `element.bind()` event you want)
