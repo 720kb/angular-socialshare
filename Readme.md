@@ -199,7 +199,7 @@ Share me
 You can set the type of sharing window using the `socialshare-type=""` attribute
 _Note: that when you are using `socialshare-type="feed"` you must also supply your facebook app id using `socialshare-via`, and a redirect uri using `socialshare-redirect-uri`._
 
-####Facebook Dialog:
+#####Facebook Dialog:
 
 Available options:
 
@@ -219,7 +219,7 @@ Share with Fb Dialog
 ```
 _For more details see https://developers.facebook.com/docs/sharing/reference/feed-dialog/v2.4_
 
-####Tumblr:
+#####Tumblr:
 
 Available options:
 
