@@ -98,7 +98,7 @@ You can set the social platform you want to share on using the `socialshare-prov
 - pinterest
 - tumblr
 - reddit
-- stubmleupon
+- stumbleupon
 - buffer
 - digg
 - delicious
