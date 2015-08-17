@@ -29,6 +29,7 @@
           'media': '',
           'hashtags': '',
           'via': '',
+          'description': '',
           'source': '',
           'subreddit': '',
           'popupHeight': 500,
