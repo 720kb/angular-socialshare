@@ -197,6 +197,7 @@ Share me
 
 ####Sharing type
 You can set the type of sharing window using the `socialshare-type=""` attribute
+
 _Note: that when you are using `socialshare-type="feed"` you must also supply your facebook app id using `socialshare-via`, and a redirect uri using `socialshare-redirect-uri`._
 
 #####Facebook Dialog:
