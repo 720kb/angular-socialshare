@@ -138,32 +138,13 @@ Share me
 ```
 
 ####Sharing media
-You can set the media source to share using the `socialshare-media=""` attribute (for example, you will use it for pinterest, or optionally for tumblr or facebook (requires `socialshare-type=feed` to work with facebook)
+You can set the media source to share using the `socialshare-media=""` attribute
 
 ```html
 <a href="#"
 socialshare
 socialshare-provider="pinterest"
 socialshare-media="http://720kb.net/assets/img/logo.png">
-Share me
-</a>
-```
-
-####Sharing caption
-When sharing to Facebook using `socialshare-type="feed"` you can optionally add a caption.
-If a caption is not provided, facebook will show the url instead.
-_(more details at https://developers.facebook.com/docs/sharing/reference/feed-dialog/v2.4)_
-
-```html
-<a href="#"
-socialshare
-socialshare-provider="facebook"
-socialshare-type="feed"
-socialshare-via="145634995501895"
-socialshare-text="720kb"
-socialshare-caption="720kb is awesome"
-socialshare-url="http://720kb.net"
-socialshare-redirect-uri="https://developers.facebook.com/tools/explorer">
 Share me
 </a>
 ```
