@@ -22,6 +22,10 @@
           'type': '',
           'text': '',
           'caption': '',
+          'to': '',
+          'ref': '',
+          'display': '',
+          'from': '',
           'media': '',
           'hashtags': '',
           'via': '',
@@ -63,6 +67,25 @@
               urlString += '&link=' + encodeURIComponent(data.url);
             }
 
+            if (data.to) {
+              urlString += '&to=' + encodeURIComponent(data.to);
+            }
+            if (data.display) {
+              urlString += '&display=' + encodeURIComponent(data.display);
+            }
+
+            if (data.ref) {
+              urlString += '&ref=' + encodeURIComponent(data.ref);
+            }
+
+            if (data.from) {
+              urlString += '&from=' + encodeURIComponent(data.from);
+            }
+
+            if (data.description) {
+              urlString += '&description=' + encodeURIComponent(data.description);
+            }
+
             if (data.text) {
               urlString += '&name=' + encodeURIComponent(data.text);
             }
@@ -73,6 +96,10 @@
 
             if (data.media) {
               urlString += '&picture=' + encodeURIComponent(data.media);
+            }
+
+            if (data.source) {
+              urlString += '&source=' + encodeURIComponent(data.source);
             }
 
             $window.open(
