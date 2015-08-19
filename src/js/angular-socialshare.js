@@ -144,7 +144,7 @@
         $scope.googlePlusShare = function manageGooglePlusShare(data) {
 
           $window.open(
-            '//plus.google.com/share?url=' + encodeURIComponent(data.url || $location.absUrl())
+            'https://plus.google.com/share?url=' + encodeURIComponent(data.url || $location.absUrl())
             , 'sharer', 'toolbar=0,status=0,width=' + data.popupWidth + ',height=' + data.popupHeight);
         };
 
@@ -238,7 +238,7 @@
         };
 
         $scope.bufferShare = function manageBufferShare(data) {
-          var urlString = '//bufferapp.com/add?';
+          var urlString = 'https://bufferapp.com/add?';
 
           if (data.text) {
             urlString += 'text=' + encodeURIComponent(data.text);
