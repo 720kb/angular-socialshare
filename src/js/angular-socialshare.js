@@ -185,7 +185,7 @@
         $scope.linkedinShare = function manageLinkedinShare(data) {
 
           $window.open(
-            'https://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(data.url || $location.absUrl()) + '&title=' + encodeURI(data.text)
+            'https://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(data.url || $location.absUrl()) + '&title=' + encodeURIComponent(data.text)
             , 'sharer', 'toolbar=0,status=0,width=' + data.popupWidth + ',height=' + data.popupHeight);
         };
 
