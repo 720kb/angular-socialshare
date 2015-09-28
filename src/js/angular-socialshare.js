@@ -171,35 +171,35 @@
           }
 
           $window.open(
-            urlString + encodeURIComponent(data.url || $location.absUrl()) + '&title=' + encodeURI(data.text)
+            urlString + encodeURIComponent(data.url || $location.absUrl()) + '&title=' + encodeURIComponent(data.text)
             , 'sharer', 'toolbar=0,status=0,width=' + data.popupWidth + ',height=' + data.popupHeight);
         };
 
         $scope.stumbleuponShare = function manageStumbleuponShare(data) {
 
           $window.open(
-            'https://www.stumbleupon.com/submit?url=' + encodeURIComponent(data.url || $location.absUrl()) + '&title=' + encodeURI(data.text)
+            'https://www.stumbleupon.com/submit?url=' + encodeURIComponent(data.url || $location.absUrl()) + '&title=' + encodeURIComponent(data.text)
             , 'sharer', 'toolbar=0,status=0,width=' + data.popupWidth + ',height=' + data.popupHeight);
         };
 
         $scope.linkedinShare = function manageLinkedinShare(data) {
 
           $window.open(
-            'https://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(data.url || $location.absUrl()) + '&title=' + encodeURI(data.text)
+            'https://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(data.url || $location.absUrl()) + '&title=' + encodeURIComponent(data.text)
             , 'sharer', 'toolbar=0,status=0,width=' + data.popupWidth + ',height=' + data.popupHeight);
         };
 
         $scope.pinterestShare = function managePinterestShare(data) {
 
           $window.open(
-            'https://www.pinterest.com/pin/create/button/?url=' + encodeURIComponent(data.url || $location.absUrl()) + '&media=' + encodeURI(data.media) + '&description=' + encodeURI(data.text)
+            'https://www.pinterest.com/pin/create/button/?url=' + encodeURIComponent(data.url || $location.absUrl()) + '&media=' + encodeURI(data.media) + '&description=' + encodeURIComponent(data.text)
             , 'sharer', 'toolbar=0,status=0,width=' + data.popupWidth + ',height=' + data.popupHeight);
         };
 
         $scope.diggShare = function manageDiggShare(data) {
 
           $window.open(
-            'https://www.digg.com/submit?url=' + encodeURIComponent(data.url || $location.absUrl()) + '&title=' + encodeURI(data.text)
+            'https://www.digg.com/submit?url=' + encodeURIComponent(data.url || $location.absUrl()) + '&title=' + encodeURIComponent(data.text)
             , 'sharer', 'toolbar=0,status=0,width=' + data.popupWidth + ',height=' + data.popupHeight);
         };
 
@@ -209,7 +209,7 @@
             var urlString = 'https://www.tumblr.com/share/photo?source=' + encodeURIComponent(data.media);
 
             if (data.text) {
-              urlString += '&caption=' + encodeURI(data.text);
+              urlString += '&caption=' + encodeURIComponent(data.text);
             }
 
             $window.open(
@@ -218,7 +218,7 @@
           } else {
 
             $window.open(
-                'https://www.tumblr.com/share/link?url=' + encodeURIComponent(data.url) + '&description=' + encodeURI(data.text)
+                'https://www.tumblr.com/share/link?url=' + encodeURIComponent(data.url) + '&description=' + encodeURIComponent(data.text)
                 , 'sharer', 'toolbar=0,status=0,width=' + data.popupWidth + ',height=' + data.popupHeight);
           }
         };
@@ -233,7 +233,7 @@
         $scope.deliciousShare = function manageDeliciousShare(data) {
 
           $window.open(
-            'https://www.delicious.com/save?v=5&noui&jump=close&url=' + encodeURIComponent(data.url || $location.absUrl()) + '&title=' + encodeURI(data.text)
+            'https://www.delicious.com/save?v=5&noui&jump=close&url=' + encodeURIComponent(data.url || $location.absUrl()) + '&title=' + encodeURIComponent(data.text)
             , 'sharer', 'toolbar=0,status=0,width=' + data.popupWidth + ',height=' + data.popupHeight);
         };
 
