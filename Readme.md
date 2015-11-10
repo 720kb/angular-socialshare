@@ -116,7 +116,7 @@ Provider  | Method | Option | Type | Default | Description
 Facebook  | 	sharer, dialog		| socialshare-url="" 	 | page URL | false |		Set the url to share 
   | 	sharer, dialog		| socialshare-content="" 	 | String |	 false	| Set the content to share
   | 	sharer, dialog		| socialshare-media="" 	 |	URL |	false | Set the media source to share
-    | 	dialog		| socialshare-text 	 | String | false |	Set the text to share
+  | 	dialog		| socialshare-text 	 | String | false |	Set the text to share
   | 	dialog		| socialshare-type	 | 'feed' | false |		Share via facebook feed dialog
   | 	dialog		| socialshare-via 	 |	String | false | 	Set the facebook app id
   | 	dialog		| socialshare-to 	 |	String	| false | Set the facebook to value
@@ -125,12 +125,12 @@ Facebook  | 	sharer, dialog		| socialshare-url="" 	 | page URL | false |		Set th
   | 	dialog		| socialshare-display 	 | 'popup' | false |	Set the to value
   | 	dialog		| socialshare-source 	 | ... | false |	Set the source value  
   | 	dialog		| socialshare-caption 	 | String | false |	Set the source value
-    | 	dialog		| socialshare-redirect-uri 	 | URL | false |	Set the redirect URI
+  | 	dialog		| socialshare-redirect-uri 	 | URL | false |	Set the redirect URI
 Twitter  | 	sharer		| socialshare-url 	 |	URL | page URL|	Set the url to share
-  	| 	sharer		| socialshare-content 	 | String	| false |	Set the url to share
- 	 | 	sharer		| socialshare-media 	 | URL | false |		Set the url to share
- 	 | 	sharer		| socialshare-via 	 | 	| false |	Set the url to share
-  	| 	sharer		| socialshare-hashtags 	 |	String('hash,tag,hastag')| false |	Set the hashtags to share
+  | 	sharer		| socialshare-content 	 | String	| false |	Set the url to share
+  | 	sharer		| socialshare-media 	 | URL | false |		Set the url to share
+  | 	sharer		| socialshare-via 	 | 	| false |	Set the url to share
+  | 	sharer		| socialshare-hashtags 	 |	String('hash,tag,hastag')| false   |	Set the hashtags to share
     
 .....to be continued
 
