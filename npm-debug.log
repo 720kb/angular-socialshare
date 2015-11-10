@@ -1,0 +1,110 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'publish' ]
+2 info using npm@3.3.12
+3 info using node@v0.12.7
+4 verbose publish [ '.' ]
+5 silly cache add args [ '.', null ]
+6 verbose cache add spec .
+7 silly cache add parsed spec { raw: '.',
+7 silly cache add   scope: null,
+7 silly cache add   name: null,
+7 silly cache add   rawSpec: '.',
+7 silly cache add   spec: '/Users/45kb/Projects/share',
+7 silly cache add   type: 'directory' }
+8 verbose addLocalDirectory /Users/45kb/.npm/angular-socialshare/0.1.15/package.tgz not in flight; packing
+9 info lifecycle angular-socialshare@0.1.15~prepublish: angular-socialshare@0.1.15
+10 silly lifecycle angular-socialshare@0.1.15~prepublish: no script for prepublish, continuing
+11 verbose tar pack [ '/Users/45kb/.npm/angular-socialshare/0.1.15/package.tgz',
+11 verbose tar pack   '/Users/45kb/Projects/share' ]
+12 verbose tarball /Users/45kb/.npm/angular-socialshare/0.1.15/package.tgz
+13 verbose folder /Users/45kb/Projects/share
+14 verbose addLocalTarball adding from inside cache /Users/45kb/.npm/angular-socialshare/0.1.15/package.tgz
+15 silly cache afterAdd angular-socialshare@0.1.15
+16 verbose afterAdd /Users/45kb/.npm/angular-socialshare/0.1.15/package/package.json not in flight; writing
+17 verbose afterAdd /Users/45kb/.npm/angular-socialshare/0.1.15/package/package.json written
+18 silly publish { name: 'angular-socialshare',
+18 silly publish   version: '0.1.15',
+18 silly publish   description: 'A social urls and content sharing directive for angularjs.',
+18 silly publish   homepage: 'http://720kb.githb.io/angular-socialshare',
+18 silly publish   keywords: [ 'social', 'sharing', 'buttons', 'share', 'angular', 'angularjs' ],
+18 silly publish   main: 'dist/angular-socialshare.min.js',
+18 silly publish   repository:
+18 silly publish    { type: 'git',
+18 silly publish      url: 'git+https://github.com/720kb/angular-socialshare.git' },
+18 silly publish   license: 'MIT',
+18 silly publish   devDependencies:
+18 silly publish    { 'connect-modrewrite': '*',
+18 silly publish      grunt: '*',
+18 silly publish      'grunt-concurrent': '*',
+18 silly publish      'grunt-contrib-connect': '*',
+18 silly publish      'grunt-contrib-csslint': '*',
+18 silly publish      'grunt-contrib-cssmin': '*',
+18 silly publish      'grunt-contrib-uglify': '*',
+18 silly publish      'grunt-contrib-watch': '*',
+18 silly publish      'grunt-eslint': '*' },
+18 silly publish   author:
+18 silly publish    { name: 'Filippo Oretti',
+18 silly publish      email: 'filippo.oretti@gmail.com',
+18 silly publish      url: 'https://github.com/45kb' },
+18 silly publish   contributors:
+18 silly publish    [ { name: 'Dario Andrei',
+18 silly publish        email: 'wouldgo84@gmail.com',
+18 silly publish        url: 'https://github.com/wouldgo' } ],
+18 silly publish   readme: 'Angular Socialshare\n==================\n\n![Angular socialshare](http://i.imgur.com/1c9C1T8.png)\n\n[![Join the chat at https://gitter.im/720kb/angular-socialshare](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/720kb/angular-socialshare?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)\n\n\nAngular Socialshare is an angularjs directive for sharing urls and content on social networks such as (facebook, google+, twitter, pinterest and so on).\n\n\nThe angular socialshare is developed by [720kb](http://720kb.net).\n\n####Requirements\n\n\nAngularJS v1.2+\n\n####Browser support\n\n\n![Chrome](https://raw.github.com/alrra/browser-logos/master/chrome/chrome_48x48.png) | ![Firefox](https://raw.github.com/alrra/browser-logos/master/firefox/firefox_48x48.png) | ![IE](https://raw.github.com/alrra/browser-logos/master/internet-explorer/internet-explorer_48x48.png) | ![Opera](https://raw.github.com/alrra/browser-logos/master/opera/opera_48x48.png) | ![Safari](https://raw.github.com/alrra/browser-logos/master/safari/safari_48x48.png)\n--- | --- | --- | --- | --- |\n ✔ | ✔ | IE9 + | ✔ | ✔ |\n\n\n## Load\n\nTo use the directive, include the angular socialshare\'s javascript file in your web page:\n\n```html\n<!DOCTYPE HTML>\n<html>\n<body ng-app="app">\n  //.....\n  <script src="src/js/angular-socialshare.js"></script>\n</body>\n</html>\n```\n\n##Installation\n\n####Bower\n\n```bash\n$ bower install angularjs-socialshare --save\n```\n####Npm\n\n```bash\n$ npm install angular-socialshare --save\n```\n\n_then [load](https://github.com/720kb/angular-socialshare#load) it in your html_\n\n####Add module dependency\nAdd the 720kb.socialshare module dependency\n\n```javascript\nangular.module(\'app\', [\n  \'720kb.socialshare\'\n ]);\n```\n\nCall the directive wherever you want in your html page\n\n```html\n<a href="#"\nsocialshare\nsocialshare-provider="facebook"\nsocialshare-text="720kb angular-socialshare"\nsocialshare-url="http://720kb.net">\nShare me\n</a>\n```\n\n##Usage\nAngular socialshare allows you to use sharing options via `attribute` data\n\n####Sharing Provider\nYou can set the social platform you want to share on using the `socialshare-provider=""` attribute.\n\n#####Providers:\n\n- facebook\n- twitter\n- linkedin\n- google+\n- pinterest\n- tumblr\n- reddit\n- stumbleupon\n- buffer\n- digg\n- delicious\n- vk\n- xing\n\nPlease use them all in lowercase (`socialshare-proivder="delicious"`)\n\n##Doc\nProvider  | Method | Option | Type | Default | Description\n------------- | ------------- | ------------- | ------------- | ------------- | -------------\nFacebook  | \tsharer, dialog\t\t| socialshare-url="" \t | page URL | false |\t\tSet the url to share\n          | \tsharer, dialog\t\t| socialshare-text="" \t | String |\t false\t| Set the content to share\n          | \tsharer, dialog\t\t| socialshare-media="" \t |\tURL |\tfalse | Set the media source to share\n          | \tdialog\t\t| socialshare-type=""\t | String(\'feed\') | false |\t\tShare via facebook feed dialog  - (info)[https://developers.facebook.com/docs/sharing/reference/feed-dialog/v2.4]\n          | \tdialog\t\t| socialshare-via="" \t |\tString | false | \tSet the APP ID value\n          | \tdialog\t\t| socialshare-to="" \t |\tString\t| false | Set the to value\n          | \tdialog\t\t| socialshare-from="" \t |\tString\t| false | Set the from to value\n          | \tdialog\t\t| socialshare-ref="" \t |\tString(\'comma,separated\') | false |\tSet the ref value\n          | \tdialog\t\t| socialshare-display="" \t | String(\'popup\') | false |\tSet the display value\n          | \tdialog\t\t| socialshare-source="" \t | URL | false |\tSet the source value\n          | \tdialog\t\t| socialshare-caption="" \t | String | false |\tSet the caption to share\n          | \tdialog\t\t| socialshare-redirect-uri="" \t | URL | false |\tSet the redirect URI\nTwitter  | \tsharer\t\t| socialshare-url="" \t |\tURL | page URL|\tSet the url to share\n         | \tsharer\t\t| socialshare-text="" \t | String\t| false |\tSet the content to share\n         | \tsharer\t\t| socialshare-media="" \t | URL | false |\t\tSet the media url to share\n         | \tsharer\t\t| socialshare-via="" \t | \tString(\'@username\') | false |\tSet the via to share\n         | \tsharer\t\t| socialshare-hashtags="" \t |\tString(\'hash,tag,hastag\')| false   |\tSet the hashtags to share\nLinkedin | \tsharer\t\t| socialshare-url="" \t |\tURL | page URL|\tSet the url to share\n         | \tsharer\t\t| socialshare-text="" \t | String\t| false |\tSet the content to share\n         | \tsharer\t\t| socialshare-media="" \t | URL | false |\t\tSet the media url to share\n Reddit  | \tsharer\t\t| socialshare-url="" \t |\tURL | page URL|\tSet the url to share\n         | \tsharer\t\t| socialshare-text="" \t | String\t| false |\tSet the content to share\n         | \tsharer\t\t| socialshare-subreddit="" \t | String(\'technology\')\t| false |\tSet the subreddit to share on\n Vk      | \tsharer\t\t| socialshare-url="" \t |\tURL | page URL|\tSet the url to share\n         | \tsharer\t\t| socialshare-text="" \t | String\t| false |\tSet the content to share\n         | \tsharer\t\t| socialshare-media="" \t | URL | false |\t\tSet the media url to share\n Digg    | \tsharer\t\t| socialshare-url="" \t |\tURL | page URL|\tSet the url to share\n         | \tsharer\t\t| socialshare-text="" \t | String\t| false |\tSet the content to share\n         | \tsharer\t\t| socialshare-media="" \t | URL | false |\t\tSet the media url to share\nDelicious| \tsharer\t\t| socialshare-url="" \t |\tURL | page URL|\tSet the url to share\n         | \tsharer\t\t| socialshare-text="" \t | String\t| false |\tSet the content to share\n         | \tsharer\t\t| socialshare-media="" \t | URL | false |\t\tSet the media url to share\nStumbleupon| \tsharer\t\t| socialshare-url="" \t |\tURL | page URL|\tSet the url to share\n         | \tsharer\t\t| socialshare-text="" \t | String\t| false |\tSet the content to share\n         | \tsharer\t\t| socialshare-media="" \t | URL | false |\t\tSet the media url to share\nPinterest| \tsharer\t\t| socialshare-url="" \t |\tURL | page URL|\tSet the url to share\n         | \tsharer\t\t| socialshare-text="" \t | String\t| false |\tSet the content to share\n         | \tsharer\t\t| socialshare-media="" \t | URL | false |\t\tSet the media url to share\nGoogle + | \tsharer\t\t| socialshare-url="" \t |\tURL | page URL|\tSet the url to share\n         | \tsharer\t\t| socialshare-text="" \t | String\t| false |\tSet the content to share\n         | \tsharer\t\t| socialshare-media="" \t | URL | false |\t\tSet the media url to share\nTumblr   | \tsharer\t\t| socialshare-url="" \t |\tURL | page URL|\tSet the url to share\n         | \tsharer\t\t| socialshare-text="" \t | String\t| false |\tSet the content to share\n         | \tsharer\t\t| socialshare-media="" \t | URL | false |\t\tSet the media url to share\nBuffer   | \tsharer\t\t| socialshare-url="" \t |\tURL | page URL|\tSet the url to share\n         | \tsharer\t\t| socialshare-text="" \t | String\t| false |\tSet the content to share\n         | \tsharer\t\t| socialshare-via="" \t | URL | false |\t\tSet the buffer via\nXing     | \tsharer\t\t| socialshare-url="" \t |\tURL | page URL|\tSet the url to share\n         | \tsharer\t\t| socialshare-text="" \t | String\t| false |\tSet the content to share\n         | \tsharer\t\t| socialshare-media="" \t | URL | false |\t\tSet the media url to share\n         | \tsharer\t\t| socialshare-follow="" \t | URL | false |\t\tSet the Xing page url which will be then suggested to you to follow\n         \n         \n\n\n##Options\n\n####Sharing Popup Size\nyou can set a specific Height or Width for the sharing popup using the `socialshare-popup-height=""` and `socialshare-popup-width=""` attributes\n\n```html\n<a href="#"\nsocialshare\nsocialshare-provider="reddit"\nsocialshare-url="http://720kb.net"\nsocialshare-text="Sharing it!"\nsocialshare-popup-height="800"\nsocialshare-popup-width="800">\nShare with a bigger popup\n</a>\n```\n\n####Sharing Event Trigger\nYou can choose to bind a different event trigger for showing up the sharer popup using the `socialshare-trigger=""` attribute (you can use any angular `element.bind()` event you want)\n\n```html\n<a href="#"\nsocialshare\nsocialshare-provider="reddit"\nsocialshare-text="Sharing on mouseover"\nsocialshare-trigger="mouseover">\nShare me when mouse is over\n</a>\n```\nor a set of\n\n```html\n<a href="#"\nsocialshare\nsocialshare-provider="reddit"\nsocialshare-text="Sharing on mouseover"\nsocialshare-trigger="focusout mouseleave">\nShare me when focusout or mouseleave\n</a>\n```\n\n####[Live demo](https://720kb.github.io/angular-socialshare)\n\n\n##Contributing\n\nWe will be much grateful if you help us making this project to grow up.\nFeel free to contribute by forking, opening issues, pull requests etc.\n\n## License\n\nThe MIT License (MIT)\n\nCopyright (c) 2014 Filippo Oretti, Dario Andrei\n\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n',
+18 silly publish   readmeFilename: 'Readme.md',
+18 silly publish   gitHead: '922a2dcc94be032b15ef6b3180ef7b0f139a4660',
+18 silly publish   bugs: { url: 'https://github.com/720kb/angular-socialshare/issues' },
+18 silly publish   _id: 'angular-socialshare@0.1.15',
+18 silly publish   scripts: {},
+18 silly publish   _shasum: '3bedf4891ef68ab7d98d398117ebc598443abf55',
+18 silly publish   _from: '.' }
+19 verbose getPublishConfig undefined
+20 silly mapToRegistry name angular-socialshare
+21 silly mapToRegistry using default registry
+22 silly mapToRegistry registry https://registry.npmjs.org/
+23 silly mapToRegistry uri https://registry.npmjs.org/angular-socialshare
+24 verbose publish registryBase https://registry.npmjs.org/
+25 silly publish uploading /Users/45kb/.npm/angular-socialshare/0.1.15/package.tgz
+26 verbose request uri https://registry.npmjs.org/angular-socialshare
+27 verbose request sending authorization for write operation
+28 info attempt registry request try #1 at 14:35:45
+29 verbose request using bearer token for auth
+30 verbose request id 9695b4a58117ec52
+31 http request PUT https://registry.npmjs.org/angular-socialshare
+32 http 403 https://registry.npmjs.org/angular-socialshare
+33 verbose headers { 'content-type': 'application/json',
+33 verbose headers   'cache-control': 'max-age=60',
+33 verbose headers   'content-length': '96',
+33 verbose headers   'accept-ranges': 'bytes',
+33 verbose headers   date: 'Tue, 10 Nov 2015 13:35:47 GMT',
+33 verbose headers   via: '1.1 varnish',
+33 verbose headers   connection: 'keep-alive',
+33 verbose headers   'x-served-by': 'cache-fra1231-FRA',
+33 verbose headers   'x-cache': 'MISS',
+33 verbose headers   'x-cache-hits': '0',
+33 verbose headers   'x-timer': 'S1447162546.565546,VS0,VE1177' }
+34 verbose request invalidating /Users/45kb/.npm/registry.npmjs.org/angular-socialshare on PUT
+35 error publish Failed PUT 403
+36 verbose stack Error: "You cannot publish over the previously published version 0.1.15." : angular-socialshare
+36 verbose stack     at makeError (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:264:12)
+36 verbose stack     at CachingRegistryClient.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:252:14)
+36 verbose stack     at Request._callback (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:172:14)
+36 verbose stack     at Request.self.callback (/usr/local/lib/node_modules/npm/node_modules/request/request.js:198:22)
+36 verbose stack     at Request.emit (events.js:110:17)
+36 verbose stack     at Request.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1082:10)
+36 verbose stack     at Request.emit (events.js:129:20)
+36 verbose stack     at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1009:12)
+36 verbose stack     at IncomingMessage.emit (events.js:129:20)
+36 verbose stack     at _stream_readable.js:908:16
+37 verbose statusCode 403
+38 verbose pkgid angular-socialshare
+39 verbose cwd /Users/45kb/Projects/share
+40 error Darwin 14.5.0
+41 error argv "node" "/usr/local/bin/npm" "publish"
+42 error node v0.12.7
+43 error npm  v3.3.12
+44 error code E403
+45 error "You cannot publish over the previously published version 0.1.15." : angular-socialshare
+46 error If you need help, you may report this error at:
+46 error     <https://github.com/npm/npm/issues>
+47 verbose exit [ 1, true ]
