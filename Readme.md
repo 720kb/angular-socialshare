@@ -131,6 +131,9 @@ Twitter  | 	sharer		| socialshare-url 	 |	URL | page URL|	Set the url to share
  	 | 	sharer		| socialshare-media 	 | URL | false |		Set the url to share
  	 | 	sharer		| socialshare-via 	 | 	| false |	Set the url to share
   	| 	sharer		| socialshare-hashtags 	 |	String('hash,tag,hastag')| false |	Set the hashtags to share
+    
+.....to be continued
+
 
 ####Sharing url
 You can set the url to share using the `socialshare-url=""` attribute
