@@ -259,7 +259,8 @@
         };
 
         $scope.xingShare = function manageXingShare(data) {
-          var followUrl = '';
+          var followUrl;
+
           if (data.follow) {
             followUrl = '&follow_url=' + encodeURIComponent(data.follow);
           }
