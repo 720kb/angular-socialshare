@@ -109,20 +109,19 @@ socialshare-text="720kb is enough!" >
 Share me
 </a>
 ```
-
 ##Doc
 Provider  | Method | Option | Type | Default | Description
 ------------- | ------------- | ------------- | ------------- | ------------- | -------------
 Facebook  | 	sharer, dialog		| socialshare-url="" 	 | page URL | false |		Set the url to share
           | 	sharer, dialog		| socialshare-text="" 	 | String |	 false	| Set the content to share
           | 	sharer, dialog		| socialshare-media="" 	 |	URL |	false | Set the media source to share
-          | 	dialog		| socialshare-type=""	 | 'feed' | false |		Share via facebook feed dialog  - (info)[https://developers.facebook.com/docs/sharing/reference/feed-dialog/v2.4]
+          | 	dialog		| socialshare-type=""	 | String('feed') | false |		Share via facebook feed dialog  - (info)[https://developers.facebook.com/docs/sharing/reference/feed-dialog/v2.4]
           | 	dialog		| socialshare-via="" 	 |	String | false | 	Set the APP ID value
-          | 	dialog		| socialshare-to="" 	 |	String	| false | Set the TO value
+          | 	dialog		| socialshare-to="" 	 |	String	| false | Set the to value
           | 	dialog		| socialshare-from="" 	 |	String	| false | Set the from to value
-          | 	dialog		| socialshare-ref="" 	 |	URL | false |	Set the to value
-          | 	dialog		| socialshare-display="" 	 | 'popup' | false |	Set the to value
-          | 	dialog		| socialshare-source="" 	 | ... | false |	Set the source
+          | 	dialog		| socialshare-ref="" 	 |	String('comma,separated') | false |	Set the ref value
+          | 	dialog		| socialshare-display="" 	 | String('popup') | false |	Set the display value
+          | 	dialog		| socialshare-source="" 	 | URL | false |	Set the source value
           | 	dialog		| socialshare-caption="" 	 | String | false |	Set the caption to share
           | 	dialog		| socialshare-redirect-uri="" 	 | URL | false |	Set the redirect URI
 Twitter  | 	sharer		| socialshare-url="" 	 |	URL | page URL|	Set the url to share
@@ -159,105 +158,42 @@ Tumblr   | 	sharer		| socialshare-url="" 	 |	URL | page URL|	Set the url to shar
          | 	sharer		| socialshare-media="" 	 | URL | false |		Set the media url to share
 Buffer   | 	sharer		| socialshare-url="" 	 |	URL | page URL|	Set the url to share
          | 	sharer		| socialshare-text="" 	 | String	| false |	Set the content to share
-         | 	sharer		| socialshare-media="" 	 | URL | false |		Set the media url to share
+         | 	sharer		| socialshare-via="" 	 | URL | false |		Set the buffer via
 Xing     | 	sharer		| socialshare-url="" 	 |	URL | page URL|	Set the url to share
          | 	sharer		| socialshare-text="" 	 | String	| false |	Set the content to share
          | 	sharer		| socialshare-media="" 	 | URL | false |		Set the media url to share
          | 	sharer		| socialshare-follow="" 	 | URL | false |		Set the Xing page url which will be then suggested to you to follow
          
-####Sharing url
-You can set the url to share using the `socialshare-url=""` attribute
-```html
-<a href="#"
-socialshare
-socialshare-provider="google+"
-socialshare-url="http://my_page_url">
-Share me
-</a>
-```
-####Sharing content
-You can set the text to share using the `socialshare-text=""` attribute
+         
+
+or a set of
 
 ```html
 <a href="#"
 socialshare
-socialshare-provider="facebook"
-socialshare-text="720kb is enough!">
-Share me
+socialshare-provider="reddit"
+socialshare-text="Sharing on mouseover"
+socialshare-trigger="focusout mouseleave">
+Share me when focusout or mouseleave
 </a>
 ```
 
-####Sharing media
-You can set the media source to share using the `socialshare-media=""` attribute
+##Options
+
+####Sharing Popup Size
+you can set a specific Height or Width for the sharing popup using the `socialshare-popup-height=""` and `socialshare-popup-width=""` attributes
 
 ```html
 <a href="#"
 socialshare
-socialshare-provider="pinterest"
-socialshare-media="http://720kb.net/assets/img/logo.png">
-Share me
-</a>
-```
-
-####Sharing hashtags
-You can set the hashtags to share using the `socialshare-hashtags=""` attribute (for example, you will use it for twitter)
-
-```html
-<a href="#"
-socialshare
-socialshare-provider="twitter"
+socialshare-provider="reddit"
 socialshare-url="http://720kb.net"
-socialshare-hashtags="woa, wonderful, interesting">
-Share me
+socialshare-text="Sharing it!"
+socialshare-popup-height="800"
+socialshare-popup-width="800">
+Share with a bigger popup
 </a>
 ```
-
-####Sharing via
-You can set the twitter via to share using the `socialshare-via=""` attribute
-
-```html
-<a href="#"
-socialshare
-socialshare-provider="twitter"
-socialshare-via="@720kb"
-socialshare-url="http://720kb.net"
-socialshare-hashtags="woa, wonderful, interesting">
-Share me
-</a>
-```
-
-####Sharing type
-You can set the type of sharing window using the `socialshare-type=""` attribute
-
-At the moment this option is only supported for Facebook feed dialog.
-
-_Note: when you are using `socialshare-type="feed"` you must also supply your facebook app id using `socialshare-via`, and a redirect uri using `socialshare-redirect-uri`._
-
-#####Facebook _Dialog_:
-
-Available options:
-
-```html
-<a href="#"
-socialshare
-socialshare-provider="facebook"
-socialshare-type="feed"
-socialshare-via="145634995501895"
-socialshare-to=""
-socialshare-from=""
-socialshare-ref=""
-socialshare-display="popup"
-socialshare-media="https://avatars0.githubusercontent.com/u/7762645?v=3&s=200"
-socialshare-source=""
-socialshare-description="Yes it's super awesome, seriously!"
-socialshare-text="720kb"
-socialshare-caption="720kb is awesome"
-socialshare-url="http://720kb.net"
-socialshare-redirect-uri="https://developers.facebook.com/tools/explorer">
-Share with Fb Dialog
-</a>
-```
-_For more details see https://developers.facebook.com/docs/sharing/reference/feed-dialog/v2.4_
 
 ####Sharing Event Trigger
 You can choose to bind a different event trigger for showing up the sharer popup using the `socialshare-trigger=""` attribute (you can use any angular `element.bind()` event you want)
@@ -283,40 +219,7 @@ Share me when focusout or mouseleave
 </a>
 ```
 
-####Sharing Popup Size
-you can set a specific Height or Width for the sharing popup using the `socialshare-popup-height=""` and `socialshare-popup-width=""` attributes
-
-```html
-<a href="#"
-socialshare
-socialshare-provider="reddit"
-socialshare-url="http://720kb.net"
-socialshare-text="Sharing it!"
-socialshare-popup-height="800"
-socialshare-popup-width="800">
-Share with a bigger popup
-</a>
-```
-#### Sharing to a subreddit
-You can set `socialshare-subreddit` to specify the subreddit you want to share to. Example:
-
-```html
-<a href='#'
-socialshare
-socialshare-provider="reddit"
-socialshare-subreddit="technology"
-socialshare-url="http://720kb.net"
-socialshare-text="Sharing it!"
-socialshare-popup-height="900"
-socialshare-popup-width="650">
-</a>
-```
-
-**Note**: Minimum popup resolution for reddit popups is 900 x 650 pixels since the reddit submission page is not responsive and is broken on lesser widths.
-
-## Example
-
-####[Live demo](https://720kb.github.io/angular-socialshare)
+[Live demo](https://720kb.github.io/angular-socialshare)
 
 
 ##Contributing
