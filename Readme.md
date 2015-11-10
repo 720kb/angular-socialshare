@@ -11,12 +11,12 @@ Angular Socialshare is an angularjs directive for sharing urls and content on so
 
 The angular socialshare is developed by [720kb](http://720kb.net).
 
-##Requirements
+####Requirements
 
 
 AngularJS v1.2+
 
-###Browser support
+####Browser support
 
 
 ![Chrome](https://raw.github.com/alrra/browser-logos/master/chrome/chrome_48x48.png) | ![Firefox](https://raw.github.com/alrra/browser-logos/master/firefox/firefox_48x48.png) | ![IE](https://raw.github.com/alrra/browser-logos/master/internet-explorer/internet-explorer_48x48.png) | ![Opera](https://raw.github.com/alrra/browser-logos/master/opera/opera_48x48.png) | ![Safari](https://raw.github.com/alrra/browser-logos/master/safari/safari_48x48.png)
