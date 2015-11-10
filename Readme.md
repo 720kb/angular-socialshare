@@ -43,12 +43,12 @@ To use the directive, include the angular socialshare's javascript file in your 
 
 ####Bower
 
-```
+```bash
 $ bower install angularjs-socialshare --save
 ```
 ####Npm
 
-```
+```bash
 $ npm install angular-socialshare --save
 ```
 
@@ -57,17 +57,15 @@ _then [load](https://github.com/720kb/angular-socialshare#load) it in your html_
 ###Add module dependency
 Add the 720kb.socialshare module dependency
 
-```js
+```javascript
 angular.module('app', [
   '720kb.socialshare'
  ]);
 ```
 
-
 Call the directive wherever you want in your html page
 
 ```html
-
 <a href="#"
 socialshare
 socialshare-provider="facebook"
@@ -75,8 +73,8 @@ socialshare-text="720kb angular-socialshare"
 socialshare-url="http://720kb.net">
 Share me
 </a>
-
 ```
+
 ##Usage
 Angular socialshare allows you to use sharing options via `attribute` data
 
@@ -101,14 +99,6 @@ You can set the social platform you want to share on using the `socialshare-prov
 
 Please use them all in lowercase (`socialshare-proivder="delicious"`)
 
-```html
-<a href="#"
-socialshare
-socialshare-provider="reddit"
-socialshare-text="720kb is enough!" >
-Share me
-</a>
-```
 ##Doc
 Provider  | Method | Option | Type | Default | Description
 ------------- | ------------- | ------------- | ------------- | ------------- | -------------
@@ -166,17 +156,6 @@ Xing     | 	sharer		| socialshare-url="" 	 |	URL | page URL|	Set the url to shar
          
          
 
-or a set of
-
-```html
-<a href="#"
-socialshare
-socialshare-provider="reddit"
-socialshare-text="Sharing on mouseover"
-socialshare-trigger="focusout mouseleave">
-Share me when focusout or mouseleave
-</a>
-```
 
 ##Options
 
