@@ -110,17 +110,27 @@ Share me
 </a>
 ```
 
-####Doc
-Provider  | Type | Options | Description
+##Doc
+Provider  | Method | Option | Type | Default | Description
 ------------- | ------------- 
-Facebook  | 	sharer		| socialshare-url 	 |		Set the url to share
-  | 	sharer		| socialshare-url 	 |		Set the url to share
-  | 	sharer		| socialshare-url 	 |		Set the url to share
-  | 	sharer		| socialshare-url 	 |		Set the url to share
-  | 	sharer		| socialshare-url 	 |		Set the url to share
-  | 	sharer		| socialshare-url 	 |		Set the url to share	
-Twitter  | 	sharer		| socialshare-url 	 |		Set the url to share
-..... TODO
+Facebook  | 	sharer, dialog		| socialshare-url="" 	 | page URL | false |		Set the url to share 
+  | 	sharer, dialog		| socialshare-content="" 	 | String |	 false	| Set the content to share
+  | 	sharer, dialog		| socialshare-media="" 	 |	URL |	false | Set the media source to share
+    | 	dialog		| socialshare-text 	 | String | false |	Set the text to share
+  | 	dialog		| socialshare-type	 | 'feed' | false |		Share via facebook feed dialog
+  | 	dialog		| socialshare-via 	 |	String | false | 	Set the facebook app id
+  | 	dialog		| socialshare-to 	 |	String	| false | Set the facebook to value
+  | 	dialog		| socialshare-from 	 |	String	| false | Set the from to value
+  | 	dialog		| socialshare-ref 	 |	URL | false |	Set the to value
+  | 	dialog		| socialshare-display 	 | 'popup' | false |	Set the to value
+  | 	dialog		| socialshare-source 	 | ... | false |	Set the source value  
+  | 	dialog		| socialshare-caption 	 | String | false |	Set the source value
+    | 	dialog		| socialshare-redirect-uri 	 | URL | false |	Set the redirect URI
+Twitter  | 	sharer		| socialshare-url 	 |	URL | page URL|	Set the url to share
+  	| 	sharer		| socialshare-content 	 | String	| false |	Set the url to share
+ 	 | 	sharer		| socialshare-media 	 | URL | false |		Set the url to share
+ 	 | 	sharer		| socialshare-via 	 | 	| false |	Set the url to share
+  	| 	sharer		| socialshare-hashtags 	 |	String('hash,tag,hastag')| false |	Set the hashtags to share
 
 ####Sharing url
 You can set the url to share using the `socialshare-url=""` attribute
