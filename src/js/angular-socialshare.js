@@ -32,6 +32,7 @@
             'description': '',
             'source': '',
             'subreddit': '',
+            'follow': '',
             'popupHeight': 500,
             'popupWidth': 500
           };
@@ -257,6 +258,16 @@
           );
         };
 
+        $scope.xingShare = function manageXingShare(data) {
+          var followUrl = '';
+          if (data.follow) {
+            followUrl = '&follow_url=' + encodeURIComponent(data.follow);
+          }
+          $window.open(
+              'https://www.xing.com/spi/shares/new?url=' + encodeURIComponent(data.url || $location.absUrl()) + followUrl
+              , 'sharer', 'toolbar=0,status=0,width=' + data.popupWidth + ',height=' + data.popupHeight);
+        };
+
         element.bind(properties.eventTrigger, function onEventTriggered() {
 
           switch (properties.provider) {
@@ -320,7 +331,13 @@
               $scope.bufferShare(properties);
               break;
 
-            default: return;
+            case 'xing':
+
+              $scope.xingShare(properties);
+              break;
+
+            default:
+              return;
           }
         });
       }

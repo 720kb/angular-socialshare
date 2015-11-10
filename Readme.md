@@ -97,6 +97,7 @@ You can set the social platform you want to share on using the `socialshare-prov
 - digg
 - delicious
 - vk
+- xing
 
 Please use them all in lowercase (`socialshare-proivder="delicious"`)
 
