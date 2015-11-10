@@ -77,8 +77,8 @@ Share me
 </a>
 
 ```
-##Options
-Angular socialshare allows you to use some options via `attribute` data
+##Usage
+Angular socialshare allows you to use sharing options via `attribute` data
 
 ####Sharing Provider
 You can set the social platform you want to share on using the `socialshare-provider=""` attribute.
@@ -109,6 +109,18 @@ socialshare-text="720kb is enough!" >
 Share me
 </a>
 ```
+
+####Doc
+Provider  | Type | Options | Description
+------------- | ------------- 
+Facebook  | 	sharer		| socialshare-url 	 |		Set the url to share
+  | 	sharer		| socialshare-url 	 |		Set the url to share
+  | 	sharer		| socialshare-url 	 |		Set the url to share
+  | 	sharer		| socialshare-url 	 |		Set the url to share
+  | 	sharer		| socialshare-url 	 |		Set the url to share
+  | 	sharer		| socialshare-url 	 |		Set the url to share	
+Twitter  | 	sharer		| socialshare-url 	 |		Set the url to share
+..... TODO
 
 ####Sharing url
 You can set the url to share using the `socialshare-url=""` attribute
