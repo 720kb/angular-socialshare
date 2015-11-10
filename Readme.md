@@ -1,6 +1,8 @@
 Angular Socialshare
 ==================
 
+![Angular socialshare](http://i.imgur.com/1c9C1T8.png)
+
 [![Join the chat at https://gitter.im/720kb/angular-socialshare](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/720kb/angular-socialshare?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 
@@ -13,9 +15,6 @@ The angular socialshare is developed by [720kb](http://720kb.net).
 
 
 AngularJS v1.2+
-
-##Screen
-![Angular socialshare](http://i.imgur.com/uRg6mO5.jpg)
 
 ###Browser support
 
