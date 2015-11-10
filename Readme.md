@@ -53,7 +53,7 @@ $ npm install angular-socialshare --save
 
 _then [load](https://github.com/720kb/angular-socialshare#load) it in your html_
 
-###Add module dependency
+####Add module dependency
 Add the 720kb.socialshare module dependency
 
 ```javascript
