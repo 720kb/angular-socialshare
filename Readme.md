@@ -1,4 +1,5 @@
 <p align="center">
+
 Angular Socialshare
 ==================
 ![Angular socialshare](http://i.imgur.com/1c9C1T8.png)
