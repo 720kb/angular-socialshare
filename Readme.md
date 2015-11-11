@@ -83,11 +83,11 @@ You can set the social platform you want to share on using the `socialshare-prov
 #####Providers:
 
 - [facebook](#facebook)
-- [twitter](#facebook)
-- [linkedin](#facebook)
+- [twitter](#twitter)
+- [linkedin](#linkedin)
 - [google+](#google+)
 - [pinterest](#pinterest)
-- [tumblr](#tubmlr)
+- [tumblr](#tumblr)
 - [reddit](#reddit)
 - [stumbleupon](#stumbleupon)
 - [buffer](#buffer)
