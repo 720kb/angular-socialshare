@@ -107,7 +107,7 @@ Method | Option | Type | Default | Description
  	sharer, dialog		| socialshare-url="" 	 | page URL | false |		Set the url to share
  	sharer, dialog		| socialshare-text="" 	 | String |	 false	| Set the content to share
  	sharer, dialog		| socialshare-media="" 	 |	URL |	false | Set the media source to share
- 	dialog		| socialshare-type=""	 | String('feed') | false |		Share via facebook feed dialog  - (info)[https://developers.facebook.com/docs/sharing/reference/feed-dialog/v2.4]
+ 	dialog		| socialshare-type=""	 | String('feed') | false |		Share via facebook feed dialog  - [info](https://developers.facebook.com/docs/sharing/reference/feed-dialog/v2.4)
  	dialog		| socialshare-via="" 	 |	String | false | 	Set the APP ID value
  	dialog		| socialshare-to="" 	 |	String	| false | Set the to value
  	dialog		| socialshare-from="" 	 |	String	| false | Set the from to value
