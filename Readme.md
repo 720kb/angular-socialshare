@@ -82,19 +82,19 @@ You can set the social platform you want to share on using the `socialshare-prov
 
 #####Providers:
 
-- facebook
-- twitter
-- linkedin
-- google+
-- pinterest
-- tumblr
-- reddit
-- stumbleupon
-- buffer
-- digg
-- delicious
-- vk
-- xing
+- [facebook](#facebook)
+- [twitter](#facebook)
+- [linkedin](#facebook)
+- [google+](#google+)
+- [pinterest](#pinterest)
+- [tumblr](#tubmlr)
+- [reddit](#reddit)
+- [stumbleupon](#stumbleupon)
+- [buffer](#buffer)
+- [digg](#digg)
+- [delicious](#delicious)
+- [vk](#vk)
+- [xing](#xing)
 
 Please use them all in lowercase (`socialshare-proivder="delicious"`)
 
