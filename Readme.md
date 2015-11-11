@@ -100,8 +100,6 @@ Please use them all in lowercase (`socialshare-proivder="delicious"`)
 
 ##Doc
 
-##Doc
-
 ####Facebook
 
 Method | Option | Type | Default | Description
