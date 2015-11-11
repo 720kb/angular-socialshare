@@ -9,7 +9,7 @@ Angular Socialshare
 Angular Socialshare is an angularjs directive for sharing urls and content on social networks such as (facebook, google+, twitter, pinterest and so on).
 
 
-The angular socialshare is developed by [720kb](http://720kb.net).
+The Angular Socialshare is developed by [720kb](http://720kb.net).
 
 ####Requirements
 
