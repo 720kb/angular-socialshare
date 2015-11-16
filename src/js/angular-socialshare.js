@@ -60,9 +60,7 @@
           if (data.type && data.type === 'feed') {
 
             // if user specifies that they want to use the Facebook feed dialog (https://developers.facebook.com/docs/sharing/reference/feed-dialog/v2.4)
-            var urlString = 'https://www.facebook.com/dialog/feed?display=popup' +
-              '&app_id=' + encodeURI(data.via) +
-              '&redirect_uri=' + encodeURI(data.redirectUri);
+            var urlString = 'https://www.facebook.com/dialog/feed?display=popup&app_id=' + encodeURI(data.via) + '&redirect_uri=' + encodeURI(data.redirectUri);
 
             if (data.url) {
               urlString += '&link=' + encodeURIComponent(data.url);
@@ -257,68 +255,127 @@
           );
         };
 
+        $scope.pocketShare = function managePocketShare(data) {
+          var urlString = 'https://getpocket.com/save?';
+
+          if (data.text) {
+            urlString += 'text=' + encodeURIComponent(data.text) + '&';
+          }
+
+          //default to the current page if a URL isn't specified
+          urlString += 'url=' + encodeURIComponent(data.url || $location.absUrl());
+
+          $window.open(
+            urlString,
+            'sharer', 'toolbar=0,status=0,width=' + data.popupWidth + ',height=' + data.popupHeight
+          );
+        };
+
+        $scope.wordpressShare = function manageWordpressShare(data) {
+          var urlString = 'http://wordpress.com/press-this.php?';
+
+          if (data.text) {
+            urlString += 't=' + encodeURIComponent(data.text) + '&';
+          }
+          if (data.media) {
+            urlString += 'i=' + encodeURIComponent(data.media) + '&';
+          }
+
+          //default to the current page if a URL isn't specified
+          urlString += 'u=' + encodeURIComponent(data.url || $location.absUrl());
+
+          $window.open(
+            urlString,
+            'sharer', 'toolbar=0,status=0,width=' + data.popupWidth + ',height=' + data.popupHeight
+          );
+        };
+
         element.bind(properties.eventTrigger, function onEventTriggered() {
 
           switch (properties.provider) {
-            case 'facebook':
+            case 'facebook': {
 
               $scope.facebookShare(properties);
               break;
+            }
 
-            case 'google+':
+            case 'google+': {
 
               $scope.googlePlusShare(properties);
               break;
+            }
 
-            case 'twitter':
+            case 'twitter': {
 
               $scope.twitterShare(properties);
               break;
+            }
 
-            case 'stumbleupon':
+            case 'stumbleupon': {
 
               $scope.stumbleuponShare(properties);
               break;
+            }
 
-            case 'reddit':
+            case 'reddit': {
 
               $scope.redditShare(properties);
               break;
+            }
 
-            case 'pinterest':
+            case 'pinterest': {
 
               $scope.pinterestShare(properties);
               break;
+            }
 
-            case 'linkedin':
+            case 'linkedin': {
 
               $scope.linkedinShare(properties);
               break;
+            }
 
-            case 'digg':
+            case 'digg': {
 
               $scope.diggShare(properties);
               break;
+            }
 
-            case 'tumblr':
+            case 'tumblr': {
 
               $scope.tumblrShare(properties);
               break;
+            }
 
-            case 'delicious':
+            case 'delicious': {
 
               $scope.deliciousShare(properties);
               break;
+            }
 
-            case 'vk':
+            case 'vk': {
 
               $scope.vkShare(properties);
               break;
+            }
 
-            case 'buffer':
+            case 'buffer': {
 
               $scope.bufferShare(properties);
               break;
+            }
+
+            case 'pocket': {
+
+              $scope.pocketShare(properties);
+              break;
+            }
+
+            case 'wordpress': {
+
+              $scope.wordpressShare(properties);
+              break;
+            }
 
             default: return;
           }
