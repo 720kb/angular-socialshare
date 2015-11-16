@@ -1,23 +1,22 @@
 Angular Socialshare
 ==================
 
+![Angular socialshare](http://i.imgur.com/XQZn0t4.png)
+
 [![Join the chat at https://gitter.im/720kb/angular-socialshare](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/720kb/angular-socialshare?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 
 Angular Socialshare is an angularjs directive for sharing urls and content on social networks such as (facebook, google+, twitter, pinterest and so on).
 
 
-The angular socialshare is developed by [720kb](http://720kb.net).
+The Angular Socialshare is developed by [720kb](http://720kb.net).
 
-##Requirements
+####Requirements
 
 
 AngularJS v1.2+
 
-##Screen
-![Angular socialshare](http://i.imgur.com/uRg6mO5.jpg)
-
-###Browser support
+####Browser support
 
 
 ![Chrome](https://raw.github.com/alrra/browser-logos/master/chrome/chrome_48x48.png) | ![Firefox](https://raw.github.com/alrra/browser-logos/master/firefox/firefox_48x48.png) | ![IE](https://raw.github.com/alrra/browser-logos/master/internet-explorer/internet-explorer_48x48.png) | ![Opera](https://raw.github.com/alrra/browser-logos/master/opera/opera_48x48.png) | ![Safari](https://raw.github.com/alrra/browser-logos/master/safari/safari_48x48.png)
@@ -43,31 +42,29 @@ To use the directive, include the angular socialshare's javascript file in your 
 
 ####Bower
 
-```
+```bash
 $ bower install angularjs-socialshare --save
 ```
 ####Npm
 
-```
+```bash
 $ npm install angular-socialshare --save
 ```
 
 _then [load](https://github.com/720kb/angular-socialshare#load) it in your html_
 
-###Add module dependency
+####Add module dependency
 Add the 720kb.socialshare module dependency
 
-```js
+```javascript
 angular.module('app', [
   '720kb.socialshare'
  ]);
 ```
 
-
 Call the directive wherever you want in your html page
 
 ```html
-
 <a href="#"
 socialshare
 socialshare-provider="facebook"
@@ -75,133 +72,168 @@ socialshare-text="720kb angular-socialshare"
 socialshare-url="http://720kb.net">
 Share me
 </a>
-
 ```
-##Options
-Angular socialshare allows you to use some options via `attribute` data
+
+##Usage
+Angular socialshare allows you to use sharing options via `attribute` data
 
 ####Sharing Provider
 You can set the social platform you want to share on using the `socialshare-provider=""` attribute.
 
 #####Providers:
 
-- facebook
-- twitter
-- linkedin
-- google+
-- pinterest
-- tumblr
-- reddit
-- stumbleupon
-- buffer
-- digg
-- delicious
-- vk
+- [facebook](#facebook)
+- [twitter](#twitter)
+- [linkedin](#linkedin)
+- [google+](#google)
+- [pinterest](#pinterest)
+- [tumblr](#tumblr)
+- [reddit](#reddit)
+- [stumbleupon](#stumbleupon)
+- [buffer](#buffer)
+- [digg](#digg)
+- [delicious](#delicious)
+- [vk](#vk)
+- [xing](#xing)
 
 Please use them all in lowercase (`socialshare-proivder="delicious"`)
+
+##Doc
+
+####Facebook
+
+Method | Option | Type | Default | Description
+------------- | ------------- | ------------- | ------------- | -------------
+ 	sharer, dialog		| socialshare-url="" 	 | page URL | false |		Set the url to share
+ 	sharer, dialog		| socialshare-text="" 	 | String |	 false	| Set the content to share
+ 	sharer, dialog		| socialshare-media="" 	 |	URL |	false | Set the media source to share
+ 	dialog		| socialshare-type=""	 | String('feed') | false |		Share via facebook feed dialog  - [info](https://developers.facebook.com/docs/sharing/reference/feed-dialog/v2.4)
+ 	dialog		| socialshare-via="" 	 |	String | false | 	Set the APP ID value
+ 	dialog		| socialshare-to="" 	 |	String	| false | Set the to value
+ 	dialog		| socialshare-from="" 	 |	String	| false | Set the from to value
+ 	dialog		| socialshare-ref="" 	 |	String('comma,separated') | false |	Set the ref value
+ 	dialog		| socialshare-display="" 	 | String('popup') | false |	Set the display value
+ 	dialog		| socialshare-source="" 	 | URL | false |	Set the source value
+ 	dialog		| socialshare-caption="" 	 | String | false |	Set the caption to share          
+  dialog		| socialshare-redirect-uri="" 	 | URL | false |	Set the redirect URI
+
+####Twitter
+
+Method | Option | Type | Default | Description
+------------- | ------------- | ------------- | ------------- | -------------
+ 	sharer		| socialshare-url="" |	URL | page URL|	Set the url to share
+ 	sharer		| socialshare-text="" | String	| false |	Set the content to share
+ 	sharer		| socialshare-media="" | URL | false |		Set the media url to share
+ 	sharer		| socialshare-via="" | String('@username') | false |	Set the via to share         
+  sharer		| socialshare-hashtags="" |	String('hash,tag,hastag')| false   |	Set the hashtags to share
+
+
+####Linkedin
+
+Method | Option | Type | Default | Description
+------------- | ------------- | ------------- | ------------- | -------------
+	sharer		| socialshare-url="" 	 |	URL | page URL|	Set the url to share
+	sharer		| socialshare-text=""  | String	| false |	Set the content to share         
+  sharer		| socialshare-media="" | URL | false | Set the media url to share
+  
+####Reddit
+
+Method | Option | Type | Default | Description
+------------- | ------------- | ------------- | ------------- | -------------
+ 	sharer		| socialshare-url="" 	 |	URL | page URL|	Set the url to share
+	sharer		| socialshare-text="" 	 | String	| false |	Set the content to share         
+  sharer		| socialshare-subreddit="" 	 | String('technology')	| false |	Set the subreddit to share on
+
+####Vk
+
+Method | Option | Type | Default | Description
+------------- | ------------- | ------------- | ------------- | -------------
+ 	sharer		| socialshare-url="" 	 |	URL | page URL|	Set the url to share
+	sharer		| socialshare-text="" 	 | String	| false |	Set the content to share
+	sharer		| socialshare-media="" 	 | URL | false |		Set the media url to share
+
+####Digg
+
+Method | Option | Type | Default | Description
+------------- | ------------- | ------------- | ------------- | -------------
+	sharer		| socialshare-url="" 	 |	URL | page URL|	Set the url to share
+	sharer		| socialshare-text="" 	 | String	| false |	Set the content to share
+	sharer		| socialshare-media="" 	 | URL | false |		Set the media url to share
+         
+####Delicious
+
+Method | Option | Type | Default | Description
+------------- | ------------- | ------------- | ------------- | -------------
+ 	sharer		| socialshare-url="" 	 |	URL | page URL|	Set the url to share
+ 	sharer		| socialshare-text="" 	 | String	| false |	Set the content to share         
+  sharer		| socialshare-media="" 	 | URL | false |		Set the media url to share
+
+####StumbleUpon
+
+Method | Option | Type | Default | Description
+------------- | ------------- | ------------- | ------------- | -------------
+  sharer		| socialshare-url="" 	 |	URL | page URL|	Set the url to share
+	sharer		| socialshare-text="" 	 | String	| false |	Set the content to share
+	sharer		| socialshare-media="" 	 | URL | false |		Set the media url to share
+
+####Pinterest
+
+Method | Option | Type | Default | Description
+------------- | ------------- | ------------- | ------------- | -------------
+	sharer		| socialshare-url="" 	 |	URL | page URL|	Set the url to share
+ 	sharer		| socialshare-text="" 	 | String	| false |	Set the content to share
+ 	sharer		| socialshare-media="" 	 | URL | false |		Set the media url to share
+
+####Google+
+
+Method | Option | Type | Default | Description
+------------- | ------------- | ------------- | ------------- | -------------
+	sharer		| socialshare-url="" 	 |	URL | page URL|	Set the url to share
+	sharer		| socialshare-text="" 	 | String	| false |	Set the content to share
+	sharer		| socialshare-media="" 	 | URL | false |		Set the media url to share
+
+####Tumblr
+
+Method | Option | Type | Default | Description
+------------- | ------------- | ------------- | ------------- | -------------
+  sharer		| socialshare-url="" 	 |	URL | page URL|	Set the url to share
+  sharer		| socialshare-text="" 	 | String	| false |	Set the content to share         
+  sharer		| socialshare-media="" 	 | URL | false |		Set the media url to share
+
+####Buffer
+
+Method | Option | Type | Default | Description
+------------- | ------------- | ------------- | ------------- | -------------
+	sharer		| socialshare-url="" 	 |	URL | page URL|	Set the url to share
+	sharer		| socialshare-text="" 	 | String	| false |	Set the content to share         
+  sharer		| socialshare-via="" 	 | URL | false |		Set the buffer via
+
+####Xing
+
+Method | Option | Type | Default | Description
+------------- | ------------- | ------------- | ------------- | -------------
+	sharer		| socialshare-url="" 	 |	URL | page URL|	Set the url to share
+	sharer		| socialshare-text="" 	 | String	| false |	Set the content to share
+	sharer		| socialshare-media="" 	 | URL | false |		Set the media url to share         
+  sharer		| socialshare-follow="" 	 | URL | false |		Set the Xing page url which will be then suggested to you to follow
+
+
+##Options
+
+####Sharing Popup Size
+you can set a specific Height or Width for the sharing popup using the `socialshare-popup-height=""` and `socialshare-popup-width=""` attributes
 
 ```html
 <a href="#"
 socialshare
 socialshare-provider="reddit"
-socialshare-text="720kb is enough!" >
-Share me
-</a>
-```
-
-####Sharing url
-You can set the url to share using the `socialshare-url=""` attribute
-```html
-<a href="#"
-socialshare
-socialshare-provider="google+"
-socialshare-url="http://my_page_url">
-Share me
-</a>
-```
-####Sharing content
-You can set the text to share using the `socialshare-text=""` attribute
-
-```html
-<a href="#"
-socialshare
-socialshare-provider="facebook"
-socialshare-text="720kb is enough!">
-Share me
-</a>
-```
-
-####Sharing media
-You can set the media source to share using the `socialshare-media=""` attribute
-
-```html
-<a href="#"
-socialshare
-socialshare-provider="pinterest"
-socialshare-media="http://720kb.net/assets/img/logo.png">
-Share me
-</a>
-```
-
-####Sharing hashtags
-You can set the hashtags to share using the `socialshare-hashtags=""` attribute (for example, you will use it for twitter)
-
-```html
-<a href="#"
-socialshare
-socialshare-provider="twitter"
 socialshare-url="http://720kb.net"
-socialshare-hashtags="woa, wonderful, interesting">
-Share me
+socialshare-text="Sharing it!"
+socialshare-popup-height="800"
+socialshare-popup-width="800">
+Share with a bigger popup
 </a>
 ```
-
-####Sharing via
-You can set the twitter via to share using the `socialshare-via=""` attribute
-
-```html
-<a href="#"
-socialshare
-socialshare-provider="twitter"
-socialshare-via="@720kb"
-socialshare-url="http://720kb.net"
-socialshare-hashtags="woa, wonderful, interesting">
-Share me
-</a>
-```
-
-####Sharing type
-You can set the type of sharing window using the `socialshare-type=""` attribute
-
-At the moment this option is only supported for Facebook feed dialog.
-
-_Note: when you are using `socialshare-type="feed"` you must also supply your facebook app id using `socialshare-via`, and a redirect uri using `socialshare-redirect-uri`._
-
-#####Facebook _Dialog_:
-
-Available options:
-
-```html
-<a href="#"
-socialshare
-socialshare-provider="facebook"
-socialshare-type="feed"
-socialshare-via="145634995501895"
-socialshare-to=""
-socialshare-from=""
-socialshare-ref=""
-socialshare-display="popup"
-socialshare-media="https://avatars0.githubusercontent.com/u/7762645?v=3&s=200"
-socialshare-source=""
-socialshare-description="Yes it's super awesome, seriously!"
-socialshare-text="720kb"
-socialshare-caption="720kb is awesome"
-socialshare-url="http://720kb.net"
-socialshare-redirect-uri="https://developers.facebook.com/tools/explorer">
-Share with Fb Dialog
-</a>
-```
-_For more details see https://developers.facebook.com/docs/sharing/reference/feed-dialog/v2.4_
 
 ####Sharing Event Trigger
 You can choose to bind a different event trigger for showing up the sharer popup using the `socialshare-trigger=""` attribute (you can use any angular `element.bind()` event you want)
@@ -226,39 +258,6 @@ socialshare-trigger="focusout mouseleave">
 Share me when focusout or mouseleave
 </a>
 ```
-
-####Sharing Popup Size
-you can set a specific Height or Width for the sharing popup using the `socialshare-popup-height=""` and `socialshare-popup-width=""` attributes
-
-```html
-<a href="#"
-socialshare
-socialshare-provider="reddit"
-socialshare-url="http://720kb.net"
-socialshare-text="Sharing it!"
-socialshare-popup-height="800"
-socialshare-popup-width="800">
-Share with a bigger popup
-</a>
-```
-#### Sharing to a subreddit
-You can set `socialshare-subreddit` to specify the subreddit you want to share to. Example:
-
-```html
-<a href='#'
-socialshare
-socialshare-provider="reddit"
-socialshare-subreddit="technology"
-socialshare-url="http://720kb.net"
-socialshare-text="Sharing it!"
-socialshare-popup-height="900"
-socialshare-popup-width="650">
-</a>
-```
-
-**Note**: Minimum popup resolution for reddit popups is 900 x 650 pixels since the reddit submission page is not responsive and is broken on lesser widths.
-
-## Example
 
 ####[Live demo](https://720kb.github.io/angular-socialshare)
 
