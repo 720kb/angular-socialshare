@@ -98,7 +98,7 @@ You can set the social platform you want to share on using the `socialshare-prov
 - [wordpress](#wordpress)
 - [flipboard](#flipboard)
 - [xing](#xing)
-- [hackernews](#hackernews)
+- [hackernews](#hacker-news)
 
 Please use them all in lowercase (`socialshare-proivder="delicious"`)
 
