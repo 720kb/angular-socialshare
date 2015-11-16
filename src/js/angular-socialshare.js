@@ -256,6 +256,38 @@
           );
         };
 
+        $scope.hackernewsShare = function manageHackernewsShare(data) {
+          var urlString = 'https://news.ycombinator.com/submitlink?';
+
+          if (data.text) {
+            urlString += 't=' + encodeURIComponent(data.text) + '&';
+          }
+
+          //default to the current page if a URL isn't specified
+          urlString += 'u=' + encodeURIComponent(data.url || $location.absUrl());
+
+          $window.open(
+            urlString,
+            'sharer', 'toolbar=0,status=0,width=' + data.popupWidth + ',height=' + data.popupHeight
+          );
+        };
+
+        $scope.flipboardShare = function manageFlipboardShare(data) {
+          var urlString = 'https://share.flipboard.com/bookmarklet/popout?v=2&';
+
+          if (data.text) {
+            urlString += 'title=' + encodeURIComponent(data.text) + '&';
+          }
+
+          //default to the current page if a URL isn't specified
+          urlString += 'url=' + encodeURIComponent(data.url || $location.absUrl());
+
+          $window.open(
+            urlString,
+            'sharer', 'toolbar=0,status=0,width=' + data.popupWidth + ',height=' + data.popupHeight
+          );
+        };
+
         $scope.pocketShare = function managePocketShare(data) {
           var urlString = 'https://getpocket.com/save?';
 
@@ -386,6 +418,18 @@
             case 'wordpress': {
 
               $scope.wordpressShare(properties);
+              break;
+            }
+
+            case 'flipboard': {
+
+              $scope.flipboardShare(properties);
+              break;
+            }
+
+            case 'hackernews': {
+
+              $scope.hackernewsShare(properties);
               break;
             }
 
