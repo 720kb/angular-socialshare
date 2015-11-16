@@ -94,6 +94,8 @@ You can set the social platform you want to share on using the `socialshare-prov
 - [digg](#digg)
 - [delicious](#delicious)
 - [vk](#vk)
+- [pocket](#pocket)
+- [wordpress](#wordpress)
 - [xing](#xing)
 
 Please use them all in lowercase (`socialshare-proivder="delicious"`)
@@ -135,7 +137,7 @@ Method | Option | Type | Default | Description
 	sharer		| socialshare-url="" 	 |	URL | page URL|	Set the url to share
 	sharer		| socialshare-text=""  | String	| false |	Set the content to share         
   sharer		| socialshare-media="" | URL | false | Set the media url to share
-  
+
 ####Reddit
 
 Method | Option | Type | Default | Description
@@ -159,7 +161,7 @@ Method | Option | Type | Default | Description
 	sharer		| socialshare-url="" 	 |	URL | page URL|	Set the url to share
 	sharer		| socialshare-text="" 	 | String	| false |	Set the content to share
 	sharer		| socialshare-media="" 	 | URL | false |		Set the media url to share
-         
+
 ####Delicious
 
 Method | Option | Type | Default | Description
@@ -207,6 +209,22 @@ Method | Option | Type | Default | Description
 	sharer		| socialshare-url="" 	 |	URL | page URL|	Set the url to share
 	sharer		| socialshare-text="" 	 | String	| false |	Set the content to share         
   sharer		| socialshare-via="" 	 | URL | false |		Set the buffer via
+
+####Pocket
+
+Method | Option | Type | Default | Description
+------------- | ------------- | ------------- | ------------- | -------------
+	sharer		| socialshare-url="" 	 |	URL | page URL|	Set the url to share
+	sharer		| socialshare-text=""  | String	| false |	Set the content to share
+
+####Wordpress
+
+Method | Option | Type | Default | Description
+------------- | ------------- | ------------- | ------------- | -------------
+	sharer		| socialshare-url="" 	 |	URL | page URL|	Set the url to share
+	sharer		| socialshare-text=""  | String	| false |	Set the content to share         
+  sharer		| socialshare-media="" | URL | false | Set the media url to share
+
 
 ####Xing
 
