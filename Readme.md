@@ -127,7 +127,6 @@ Method | Option | Type | Default | Description
 ------------- | ------------- | ------------- | ------------- | -------------
  	sharer		| socialshare-url="" |	URL | page URL|	Set the url to share
  	sharer		| socialshare-text="" | String	| false |	Set the content to share
- 	sharer		| socialshare-media="" | URL | false |		Set the media url to share
  	sharer		| socialshare-via="" | String('@username') | false |	Set the via to share         
   sharer		| socialshare-hashtags="" |	String('hash,tag,hastag')| false   |	Set the hashtags to share
 
