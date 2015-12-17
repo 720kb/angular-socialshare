@@ -136,8 +136,8 @@ Method | Option | Type | Default | Description
 Method | Option | Type | Default | Description
 ------------- | ------------- | ------------- | ------------- | -------------
 	sharer		| socialshare-url="" 	        |	URL     | page URL  |	Set the url to share
-	sharer		| socialshare-text=""           | String	| false     |	Set the title value that you wish you use
-    sharer		| socialshare-description=""    | String    | false     |   Set the description value that you wish you use
+	sharer		| socialshare-text=""           | String	| false     |	Set the title value that you wish to use
+    sharer		| socialshare-description=""    | String    | false     |   Set the description value that you wish to use
     sharer      | socialshare-source=""         | String    | false     |   Set the source of the content
 
 ####Reddit
