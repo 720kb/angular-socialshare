@@ -182,24 +182,25 @@
         };
 
         $scope.linkedinShare = function manageLinkedinShare(data) {
-            /*
-             * Refer: https://developer.linkedin.com/docs/share-on-linkedin
-             * Tab: Customized URL
-             */
-            var urlString = 'https://www.linkedin.com/shareArticle?mini=true';
-                urlString += '&url=' + encodeURIComponent(data.url || $location.absUrl());
+          /*
+           * Refer: https://developer.linkedin.com/docs/share-on-linkedin
+           * Tab: Customized URL
+           */
+          var urlString = 'https://www.linkedin.com/shareArticle?mini=true';
 
-            if (data.text) {
-                urlString += '&title=' + encodeURIComponent(data.text);
-            }
+          urlString += '&url=' + encodeURIComponent(data.url || $location.absUrl());
 
-            if (data.description) {
-                urlString += '&summary=' + encodeURIComponent(data.description);
-            }
+          if (data.text) {
+            urlString += '&title=' + encodeURIComponent(data.text);
+          }
 
-            if (data.source) {
-                urlString += '&source=' + encodeURIComponent(data.source);
-            }
+          if (data.description) {
+            urlString += '&summary=' + encodeURIComponent(data.description);
+          }
+
+          if (data.source) {
+            urlString += '&source=' + encodeURIComponent(data.source);
+          }
 
           $window.open(
               urlString,
