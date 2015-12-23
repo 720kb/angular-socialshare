@@ -1,6 +1,6 @@
 {
   "name": "angular-socialshare",
-  "version": "0.1.19",
+  "version": "0.1.20",
   "description": "A social urls and content sharing directive for angularjs.",
   "homepage": "http://720kb.githb.io/angular-socialshare",
   "keywords": [
@@ -11,6 +11,12 @@
     "angular",
     "angularjs"
   ],
+  "scripts": {
+    "precommit": "gulp lint",
+    "preversion": "gulp lint",
+    "version": "gulp minify && ./tasks/bower-version-bump && git add -A .",
+    "postversion": "git push && git push --tags"
+  },
   "main": "src/index.js",
   "repository": {
     "type": "git",

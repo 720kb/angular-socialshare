@@ -1,6 +1,6 @@
 /*
  * angular-socialshare
- * 0.1.19
+ * 0.1.20
  * 
  * A social urls and content sharing directive for angularjs.
  * http://720kb.githb.io/angular-socialshare
@@ -192,10 +192,29 @@
         };
 
         $scope.linkedinShare = function manageLinkedinShare(data) {
+          /*
+           * Refer: https://developer.linkedin.com/docs/share-on-linkedin
+           * Tab: Customized URL
+           */
+          var urlString = 'https://www.linkedin.com/shareArticle?mini=true';
+
+          urlString += '&url=' + encodeURIComponent(data.url || $location.absUrl());
+
+          if (data.text) {
+            urlString += '&title=' + encodeURIComponent(data.text);
+          }
+
+          if (data.description) {
+            urlString += '&summary=' + encodeURIComponent(data.description);
+          }
+
+          if (data.source) {
+            urlString += '&source=' + encodeURIComponent(data.source);
+          }
 
           $window.open(
-            'https://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(data.url || $location.absUrl()) + '&title=' + encodeURIComponent(data.text)
-            , 'sharer', 'toolbar=0,status=0,width=' + data.popupWidth + ',height=' + data.popupHeight);
+              urlString,
+              'sharer', 'toolbar=0,status=0,width=' + data.popupWidth + ',height=' + data.popupHeight);
         };
 
         $scope.pinterestShare = function managePinterestShare(data) {
