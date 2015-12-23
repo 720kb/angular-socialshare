@@ -98,7 +98,7 @@
     "no-spaced-func": 2,
     "semi-spacing": 2,
     "no-underscore-dangle": 2,
-    "no-extra-parens": 2,
+   // "no-extra-parens": 2,
     "quotes": [
       2,
       "single",

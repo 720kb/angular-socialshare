@@ -14,7 +14,7 @@ The Angular Socialshare is developed by [720kb](http://720kb.net).
 ####Requirements
 
 
-AngularJS v1.2+
+AngularJS v1.3+
 
 ####Browser support
 
