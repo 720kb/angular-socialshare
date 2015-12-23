@@ -14,7 +14,7 @@ The Angular Socialshare is developed by [720kb](http://720kb.net).
 ####Requirements
 
 
-AngularJS v1.2+
+AngularJS v1.3+
 
 ####Browser support
 
@@ -118,7 +118,7 @@ Method | Option | Type | Default | Description
  	dialog		| socialshare-ref="" 	 |	String('comma,separated') | false |	Set the ref value
  	dialog		| socialshare-display="" 	 | String('popup') | false |	Set the display value
  	dialog		| socialshare-source="" 	 | URL | false |	Set the source value
- 	dialog		| socialshare-caption="" 	 | String | false |	Set the caption to share          
+ 	dialog		| socialshare-caption="" 	 | String | false |	Set the caption to share
   dialog		| socialshare-redirect-uri="" 	 | URL | false |	Set the redirect URI
 
 ####Twitter
@@ -127,7 +127,7 @@ Method | Option | Type | Default | Description
 ------------- | ------------- | ------------- | ------------- | -------------
  	sharer		| socialshare-url="" |	URL | page URL|	Set the url to share
  	sharer		| socialshare-text="" | String	| false |	Set the content to share
- 	sharer		| socialshare-via="" | String('@username') | false |	Set the via to share         
+ 	sharer		| socialshare-via="" | String('@username') | false |	Set the via to share
   sharer		| socialshare-hashtags="" |	String('hash,tag,hastag')| false   |	Set the hashtags to share
 
 
@@ -135,16 +135,17 @@ Method | Option | Type | Default | Description
 
 Method | Option | Type | Default | Description
 ------------- | ------------- | ------------- | ------------- | -------------
-	sharer		| socialshare-url="" 	 |	URL | page URL|	Set the url to share
-	sharer		| socialshare-text=""  | String	| false |	Set the content to share         
-  sharer		| socialshare-media="" | URL | false | Set the media url to share
+	sharer		| socialshare-url="" 	        |	URL     | page URL  |	Set the url to share
+	sharer		| socialshare-text=""           | String	| false     |	Set the title value that you wish to use
+    sharer		| socialshare-description=""    | String    | false     |   Set the description value that you wish to use
+    sharer      | socialshare-source=""         | String    | false     |   Set the source of the content
 
 ####Reddit
 
 Method | Option | Type | Default | Description
 ------------- | ------------- | ------------- | ------------- | -------------
  	sharer		| socialshare-url="" 	 |	URL | page URL|	Set the url to share
-	sharer		| socialshare-text="" 	 | String	| false |	Set the content to share         
+	sharer		| socialshare-text="" 	 | String	| false |	Set the content to share
   sharer		| socialshare-subreddit="" 	 | String('technology')	| false |	Set the subreddit to share on
 
 ####Vk
@@ -168,7 +169,7 @@ Method | Option | Type | Default | Description
 Method | Option | Type | Default | Description
 ------------- | ------------- | ------------- | ------------- | -------------
  	sharer		| socialshare-url="" 	 |	URL | page URL|	Set the url to share
- 	sharer		| socialshare-text="" 	 | String	| false |	Set the content to share         
+ 	sharer		| socialshare-text="" 	 | String	| false |	Set the content to share
   sharer		| socialshare-media="" 	 | URL | false |		Set the media url to share
 
 ####StumbleUpon
@@ -200,7 +201,7 @@ Method | Option | Type | Default | Description
 Method | Option | Type | Default | Description
 ------------- | ------------- | ------------- | ------------- | -------------
   sharer		| socialshare-url="" 	 |	URL | page URL|	Set the url to share
-  sharer		| socialshare-text="" 	 | String	| false |	Set the content to share         
+  sharer		| socialshare-text="" 	 | String	| false |	Set the content to share
   sharer		| socialshare-media="" 	 | URL | false |		Set the media url to share
 
 ####Buffer
@@ -208,7 +209,7 @@ Method | Option | Type | Default | Description
 Method | Option | Type | Default | Description
 ------------- | ------------- | ------------- | ------------- | -------------
 	sharer		| socialshare-url="" 	 |	URL | page URL|	Set the url to share
-	sharer		| socialshare-text="" 	 | String	| false |	Set the content to share         
+	sharer		| socialshare-text="" 	 | String	| false |	Set the content to share
   sharer		| socialshare-via="" 	 | URL | false |		Set the buffer via
 
 ####Pocket
@@ -237,7 +238,7 @@ Method | Option | Type | Default | Description
 Method | Option | Type | Default | Description
 ------------- | ------------- | ------------- | ------------- | -------------
 	sharer		| socialshare-url="" 	 |	URL | page URL|	Set the url to share
-	sharer		| socialshare-text=""  | String	| false |	Set the content to share         
+	sharer		| socialshare-text=""  | String	| false |	Set the content to share
   sharer		| socialshare-media="" | URL | false | Set the media url to share
 
 
@@ -247,7 +248,7 @@ Method | Option | Type | Default | Description
 ------------- | ------------- | ------------- | ------------- | -------------
 	sharer		| socialshare-url="" 	 |	URL | page URL|	Set the url to share
 	sharer		| socialshare-text="" 	 | String	| false |	Set the content to share
-	sharer		| socialshare-media="" 	 | URL | false |		Set the media url to share         
+	sharer		| socialshare-media="" 	 | URL | false |		Set the media url to share
   sharer		| socialshare-follow="" 	 | URL | false |		Set the Xing page url which will be then suggested to you to follow
 
 
