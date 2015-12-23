@@ -8,7 +8,6 @@
   gulp.task('build', function onBuild(done) {
 
     return runSequence('clean', [
-      'scss',
       'annotate',
       'move'
     ],

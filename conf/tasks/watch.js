@@ -15,6 +15,5 @@
   gulp.task('watch', ['lint', 'build'], function onWatch() {
 
     gulp.watch([paths.lib + paths.files.unminified.js], ['annotate', browserSync.reload]).on('change', changed);
-    gulp.watch([paths.scss.files], ['scss']).on('change', changed);
   });
 }(require, console));
