@@ -1,6 +1,6 @@
 ﻿/*global require*/
 (function gulpConfig(require) {
-    'use strict';
+  'use strict';
 
-    require('require-dir')('conf/tasks');
+  require('require-dir')('conf/tasks');
 }(require));
