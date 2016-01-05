@@ -109,7 +109,8 @@ Please use them all in lowercase (`socialshare-proivder="delicious"`)
 Method | Option | Type | Default | Description
 ------------- | ------------- | ------------- | ------------- | -------------
  	sharer, dialog		| socialshare-url="" 	 | page URL | false |		Set the url to share
- 	dialog		| socialshare-text="" 	 | String |	 false	| Set the content to share
+ 	dialog		| socialshare-text="" 	 | String |	 false	| Set the headline to share
+ 	dialog		| socialshare-description="" 	 | String |	 false	| Set the content to share
  	dialog		| socialshare-media="" 	 |	URL |	false | Set the media source to share
  	dialog		| socialshare-type=""	 | String('feed') | false |		Share via facebook feed dialog  - [info](https://developers.facebook.com/docs/sharing/reference/feed-dialog/v2.4)
  	dialog		| socialshare-via="" 	 |	String | false | 	Set the APP ID value
