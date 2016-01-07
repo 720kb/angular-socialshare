@@ -67,8 +67,9 @@ Call the directive wherever you want in your html page
 ```html
 <a href="#"
 socialshare
-socialshare-provider="facebook"
-socialshare-text="720kb angular-socialshare"
+socialshare-provider="twitter"
+socialshare-text="720kb AngularJS Socialshare"
+socialshare-hashtags="angularjs, angular-socialshare"
 socialshare-url="http://720kb.net">
 Share me
 </a>
