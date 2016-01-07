@@ -10,12 +10,12 @@
   .config(['socialshareConfProvider', function configApp(socialshareConfProvider) {
 
     socialshareConfProvider.configure([{
-      'provider': 'stumbleupon',
+      'provider': 'twitter',
       'conf': {
-        'url': 'provider.com',
-        'text': 'provider',
-        'via': '@npm',
-        'hashtags': '',
+        'url': 'http://720kb.net',
+        'text': '720kb is enough',
+        'via': 'npm',
+        'hashtags': 'angularjs,socialshare,angular-socialshare',
         'trigger': 'click',
         'popupHeight': 800,
         'popupWidth' : 400
