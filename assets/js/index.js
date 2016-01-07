@@ -10,16 +10,23 @@
   .config(['socialshareConfProvider', function configApp(socialshareConfProvider) {
 
     socialshareConfProvider.configure([{
-      'provider': 'twitter',
+      'provider': 'stumbleupon',
       'conf': {
         'url': 'provider.com',
         'text': 'provider',
-        'via': '',
+        'via': '@npm',
         'hashtags': '',
         'trigger': 'click',
-        'popupHeight': 300,
-        'popupWidth' :400
+        'popupHeight': 800,
+        'popupWidth' : 400
       }
     }]);
+  }])
+  .controller('TestController', ['$scope', '$timeout', function testController($scope, $timeout) {
+    var that = this;
+    $timeout(function scopeValueTimeout() {
+
+      that.testValue = '720kb';
+    }, 3000);
   }]);
 }(angular));

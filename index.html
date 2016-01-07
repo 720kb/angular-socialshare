@@ -5,8 +5,12 @@
   <link rel="stylesheet" type="text/css" href="http://720kb.github.io/csshelper/assets/ext/src/helper.css">
   <title>Angularjs Socialshare</title>
 </head>
-<body class="center-content">
+<body class="center-content" ng-controller="TestController as test">
   <div class="separator100"></div>
+  <div class="line">
+    {{test.testValue}}
+  </div>
+    <div class="separator100"></div>
   <div class="col6 offset-left2">
     <div>
       <button class="btn btn-medium font-bold"
@@ -45,8 +49,8 @@
   socialshare
   socialshare-provider="twitter"
   socialshare-hashtags="720kb, apps, opensource, development, internet"
-  socialshare-via="720kb"
-  socialshare-text="720kb"
+  socialshare-via="twitter"
+  socialshare-text="720kb - test value is: {{test.testValue}}"
   socialshare-url="http://720kb.net"
   socialshare-popup-height="300"
   socialshare-popup-width="400"
@@ -65,7 +69,6 @@
   <button class="btn btn-medium font-bold"
   socialshare
   socialshare-provider="google+"
-  socialshare-text="720kb"
   socialshare-url="http://720kb.net"
   socialshare-popup-height="300"
   socialshare-popup-width="400"
@@ -78,7 +81,7 @@
   <button class="btn btn-medium font-bold"
   socialshare
   socialshare-provider="stumbleupon"
-  socialshare-text="720kb"
+  socialshare-text="{{test.testValue}}"
   socialshare-url="http://720kb.net"
   socialshare-popup-height="300"
   socialshare-popup-width="400"
@@ -87,11 +90,17 @@
 </button>
 </div>
 <div class="separator30"></div>
+<button class="btn btn-medium font-bold"
+ socialshare
+ socialshare-provider="stumbleupon">
+<i class="fa fa-twitter"></i> Share on stumbleupon BY PROVIDER CONFIG
+</button>
+<div class="separator30"></div>
 <div>
   <button class="btn btn-medium font-bold"
   socialshare
   socialshare-provider="reddit"
-  socialshare-text="720kb"
+  socialshare-text="{{test.testValue}}"
   socialshare-url="http://720kb.net"
   socialshare-popup-height="300"
   socialshare-popup-width="400"
@@ -104,9 +113,9 @@
   <button class="btn btn-medium font-bold"
   socialshare
   socialshare-provider="linkedin"
-  socialshare-text="720kb"
+  socialshare-text="{{test.testValue}}"
   socialshare-url="http://720kb.net"
-  socialshare-description="720kb linkedin summery"
+  socialshare-description="720kb linkedin summary"
   socialshare-source="720kb"
   socialshare-popup-height="300"
   socialshare-popup-width="400"
