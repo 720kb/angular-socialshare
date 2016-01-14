@@ -320,7 +320,8 @@ Sometimes you may need to set default values for all the sharing buttons, here i
       'popupHeight': 1300,
       'popupWidth' : 1000
     }
-  }, //etc....put all the providers you want]);
+  }, //etc....put all the providers you want
+  ]);
 }])
 ```
 *NB* if you define the provider settings, but then you change the option value by html attributes, the html attribute value will be the final one (the one that will be used)
