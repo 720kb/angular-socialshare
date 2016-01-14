@@ -293,6 +293,39 @@ Share me when focusout or mouseleave
 </a>
 ```
 
+##Globals
+####Provider setup
+Sometimes you may need to set default values for all the sharing buttons, here is how to setup this:
+
+```javascript
+.config(['socialshareConfProvider', function configApp(socialshareConfProvider) {
+
+  socialshareConfProvider.configure([{
+    'provider': 'twitter',
+    'conf': {
+      'url': 'http://720kb.net',
+      'text': '720kb is enough',
+      'via': 'npm',
+      'hashtags': 'angularjs,socialshare,angular-socialshare',
+      'trigger': 'click',
+      'popupHeight': 800,
+      'popupWidth' : 400
+    }
+  },
+  {
+    'provider': 'facebook',
+    'conf': {
+      'url': 'http://720kb.net',
+      'trigger': 'mouseover',
+      'popupHeight': 1300,
+      'popupWidth' : 1000
+    }
+  }, //etc....put all the providers you want]);
+}])
+```
+*NB* if you define the provider settings, but then you change the option value by html attributes, the html attribute value will be the final one (the one that will be used)
+
+
 ####[Live demo](https://720kb.github.io/angular-socialshare)
 
 
