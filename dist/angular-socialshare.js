@@ -1,12 +1,12 @@
 /*
  * angular-socialshare
- * 0.2.0-beta
+ * 0.2.1-beta
  * 
  * A social urls and content sharing directive for angularjs.
  * http://720kb.githb.io/angular-socialshare
  * 
  * MIT license
- * Thu Jan 14 2016
+ * Sun Jan 24 2016
  */
 /*global angular*/
 /*eslint no-loop-func:0, func-names:0*/
@@ -492,7 +492,7 @@
     , manageGooglePlusShare = function manageGooglePlusShare($window, $location, attrs) {
 
       $window.open(
-        'https://plus.google.com/share?text=sjsjsjs&url=' + encodeURIComponent(attrs.socialshareUrl || $location.absUrl())
+        'https://plus.google.com/share?url=' + encodeURIComponent(attrs.socialshareUrl || $location.absUrl())
         , 'sharer', 'toolbar=0,status=0,width=' + attrs.socialsharePopupWidth + ',height=' + attrs.socialsharePopupHeight
         + ',top=' + ($window.innerHeight - attrs.socialsharePopupHeight) / 2 + ',left=' + ($window.innerWidth - attrs.socialsharePopupWidth) / 2);
       }
