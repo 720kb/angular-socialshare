@@ -1,12 +1,22 @@
 /*
  * angular-socialshare
- * 0.2.1-beta
+ * 0.2.2-beta
  * 
  * A social urls and content sharing directive for angularjs.
  * http://720kb.githb.io/angular-socialshare
  * 
  * MIT license
- * Sun Jan 24 2016
+ * Thu Feb 04 2016
+ */
+/*
+ * angular-socialshare
+ * 0.2.1-beta
+ *
+ * A social urls and content sharing directive for angularjs.
+ * http://720kb.githb.io/angular-socialshare
+ *
+ * MIT license
+ * Thu Feb 04 2016
  */
 /*global angular*/
 /*eslint no-loop-func:0, func-names:0*/
@@ -32,7 +42,7 @@
             'display': '',
             'source': '',
             'caption': '',
-            'redirect-uri': '',
+            'redirectUri': '',
             'trigger': 'click',
             'popupHeight': 300,
             'popupWidth': 400
@@ -411,8 +421,15 @@
     , manageFacebookShare = function manageFacebookShare($window, $location, attrs) {
       if (attrs.socialshareType && attrs.socialshareType === 'feed') {
         // if user specifies that they want to use the Facebook feed dialog (https://developers.facebook.com/docs/sharing/reference/feed-dialog/v2.4)
-        var urlString = 'https://www.facebook.com/dialog/feed?display=popup&app_id=' + encodeURI(attrs.socialshareVia) + '&redirect_uri=' + encodeURI(attrs.redirectUri);
+        var urlString = 'https://www.facebook.com/dialog/feed?display=popup';
 
+        if (attrs.socialshareVia) {
+          urlString += '&app_id=' + encodeURIComponent(attrs.socialshareVia);
+        }
+
+        if (attrs.socialshareRedirectUri) {
+          urlString += '&redirect_uri=' + encodeURIComponent(attrs.socialshareRedirectUri);
+        }
         if (attrs.socialshareUrl) {
           urlString += '&link=' + encodeURIComponent(attrs.socialshareUrl);
         }
@@ -474,11 +491,11 @@
       }
 
       if (attrs.socialshareVia) {
-        urlString += '&via=' + encodeURI(attrs.socialshareVia);
+        urlString += '&via=' + encodeURIComponent(attrs.socialshareVia);
       }
 
       if (attrs.socialshareHashtags) {
-        urlString += '&hashtags=' + encodeURI(attrs.socialshareHashtags);
+        urlString += '&hashtags=' + encodeURIComponent(attrs.socialshareHashtags);
       }
 
       //default to the current page if a URL isn't specified
@@ -558,7 +575,7 @@
     , managePinterestShare = function managePinterestShare($window, $location, attrs) {
 
       $window.open(
-        'https://www.pinterest.com/pin/create/button/?url=' + encodeURIComponent(attrs.socialshareUrl || $location.absUrl()) + '&media=' + encodeURI(attrs.socialshareMedia) + '&description=' + encodeURIComponent(attrs.socialshareText)
+        'https://www.pinterest.com/pin/create/button/?url=' + encodeURIComponent(attrs.socialshareUrl || $location.absUrl()) + '&media=' + encodeURIComponent(attrs.socialshareMedia) + '&description=' + encodeURIComponent(attrs.socialshareText)
         , 'sharer', 'toolbar=0,status=0,width=' + attrs.socialsharePopupWidth + ',height=' + attrs.socialsharePopupHeight
         + ',top=' + ($window.innerHeight - attrs.socialsharePopupHeight) / 2 + ',left=' + ($window.innerWidth - attrs.socialsharePopupWidth) / 2);
     }
@@ -612,7 +629,7 @@
       }
 
       if (attrs.socialshareVia) {
-        urlString += '&via=' + encodeURI(attrs.socialshareVia);
+        urlString += '&via=' + encodeURIComponent(attrs.socialshareVia);
       }
 
       //default to the current page if a URL isn't specified
