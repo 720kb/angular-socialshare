@@ -6,7 +6,7 @@
  * http://720kb.githb.io/angular-socialshare
  * 
  * MIT license
- * Thu Feb 04 2016
+ * Mon Feb 08 2016
  */
 /*
  * angular-socialshare
@@ -25,7 +25,7 @@
   'use strict';
 
   var directiveName = 'socialshare'
-    , socialshareProviderNames = ['facebook','twitter','linkedin','google+','pinterest','tumblr','reddit','stumbleupon','buffer','digg','delicious','vk','pocket','wordpress','flipboard','xing','hackernews']
+    , socialshareProviderNames = ['facebook', 'twitter', 'linkedin', 'google+', 'pinterest', 'tumblr', 'reddit', 'stumbleupon', 'buffer', 'digg', 'delicious', 'vk', 'pocket', 'wordpress', 'flipboard', 'xing', 'hackernews', 'evernote']
     , socialshareConfigurationProvider = /*@ngInject*/ function socialshareConfigurationProvider() {
 
       var socialshareConfigurationDefault = [{
@@ -80,7 +80,7 @@
             'subreddit': '',
             'trigger': 'click',
             'popupHeight': 300,
-            'popupWidth' :400
+            'popupWidth': 400
           }
         },
         {
@@ -91,7 +91,7 @@
             'media': '',
             'trigger': 'click',
             'popupHeight': 300,
-            'popupWidth' :400
+            'popupWidth': 400
           }
         },
         {
@@ -102,7 +102,7 @@
             'media': '',
             'trigger': 'click',
             'popupHeight': 300,
-            'popupWidth' :400
+            'popupWidth': 400
           }
         },
         {
@@ -113,7 +113,7 @@
             'media': '',
             'trigger': 'click',
             'popupHeight': 300,
-            'popupWidth' :400
+            'popupWidth': 400
           }
         },
         {
@@ -124,7 +124,7 @@
             'media': '',
             'trigger': 'click',
             'popupHeight': 300,
-            'popupWidth' :400
+            'popupWidth': 400
           }
         },
         {
@@ -135,7 +135,7 @@
             'media': '',
             'trigger': 'click',
             'popupHeight': 300,
-            'popupWidth' :400
+            'popupWidth': 400
           }
         },
         {
@@ -146,7 +146,7 @@
             'media': '',
             'trigger': 'click',
             'popupHeight': 300,
-            'popupWidth' :400
+            'popupWidth': 400
           }
         },
         {
@@ -157,7 +157,7 @@
             'media': '',
             'trigger': 'click',
             'popupHeight': 300,
-            'popupWidth' :400
+            'popupWidth': 400
           }
         },
         {
@@ -168,7 +168,7 @@
             'via': '',
             'trigger': 'click',
             'popupHeight': 300,
-            'popupWidth' :400
+            'popupWidth': 400
           }
         },
         {
@@ -178,7 +178,7 @@
             'text': '',
             'trigger': 'click',
             'popupHeight': 300,
-            'popupWidth' :400
+            'popupWidth': 400
           }
         },
         {
@@ -188,7 +188,7 @@
             'text': '',
             'trigger': 'click',
             'popupHeight': 300,
-            'popupWidth' :400
+            'popupWidth': 400
           }
         },
         {
@@ -198,7 +198,7 @@
             'text': '',
             'trigger': 'click',
             'popupHeight': 300,
-            'popupWidth' :400
+            'popupWidth': 400
           }
         },
         {
@@ -209,7 +209,7 @@
             'media': '',
             'trigger': 'click',
             'popupHeight': 300,
-            'popupWidth' :400
+            'popupWidth': 400
           }
         },
         {
@@ -221,9 +221,19 @@
             'follow' : '',
             'trigger': 'click',
             'popupHeight': 300,
-            'popupWidth' :400
+            'popupWidth': 400
           }
-      }];
+        },
+        {
+          'provider': 'evernote',
+          'conf': {
+            'url': '',
+            'text': '',
+            'trigger': 'click',
+            'popupHeight': 300,
+            'popupWidth': 400
+          }
+        }];
 
       return {
         'configure': function configure(configuration) {
@@ -237,7 +247,6 @@
           //this is necessary becuase provider run before any service
           //so i have to take the log from another injector
           , $log = angular.injector(['ng']).get('$log');
-
 
           if (configuration && configuration.length > 0) {
             for (; configIndex < configuration.length; configIndex += 1) {
@@ -369,6 +378,11 @@
             case 'xing': {
 
               xingShare($window, $location, attrs);
+              break;
+            }
+            case 'evernote': {
+
+              evernoteShare($window, $location, attrs);
               break;
             }
             default: {
@@ -713,6 +727,19 @@
         , 'sharer', 'toolbar=0,status=0,width=' + attrs.socialsharePopupWidth + ',height=' + attrs.socialsharePopupHeight
         + ',top=' + ($window.innerHeight - attrs.socialsharePopupHeight) / 2 + ',left=' + ($window.innerWidth - attrs.socialsharePopupWidth) / 2);
     }
+    , manageEvernoteShare = function manageEvernoteShare($window, $location, attrs) {
+
+      var urlString = 'http://www.evernote.com/clip.action?url=' + encodeURIComponent(attrs.socialshareUrl || $location.absUrl());
+
+      if (attrs.socialshareText) {
+        urlString += '&title=' + encodeURIComponent(attrs.socialshareText);
+      }
+
+      $window.open(
+        urlString
+        , 'sharer', 'toolbar=0,status=0,width=' + attrs.socialsharePopupWidth + ',height=' + attrs.socialsharePopupHeight
+        + ',top=' + ($window.innerHeight - attrs.socialsharePopupHeight) / 2 + ',left=' + ($window.innerWidth - attrs.socialsharePopupWidth) / 2);
+    }
     , facebookShare = manageFacebookShare
     , twitterShare = manageTwitterShare
     , googlePlusShare = manageGooglePlusShare
@@ -729,7 +756,8 @@
     , flipboardShare = manageFlipboardShare
     , pocketShare = managePocketShare
     , wordpressShare = manageWordpressShare
-    , xingShare = manageXingShare;
+    , xingShare = manageXingShare
+    , evernoteShare = manageEvernoteShare;
 
 
   angular.module('720kb.socialshare', [])
