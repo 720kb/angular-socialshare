@@ -6,7 +6,7 @@
  * http://720kb.githb.io/angular-socialshare
  * 
  * MIT license
- * Mon Apr 11 2016
+ * Sun Apr 10 2016
  */
 /*
  * angular-socialshare
@@ -422,6 +422,31 @@
 
         if (attrs.socialshareSource) {
           urlString += '&source=' + encodeURIComponent(attrs.socialshareSource);
+        }
+
+        $window.open(
+          urlString,
+          'sharer', 'toolbar=0,status=0,width=' + attrs.socialsharePopupWidth + ',height=' + attrs.socialsharePopupHeight
+          + ',top=' + ($window.innerHeight - attrs.socialsharePopupHeight) / 2 + ',left=' + ($window.innerWidth - attrs.socialsharePopupWidth) / 2);
+
+      } else if (attrs.socialshareType && attrs.socialshareType === 'send') {
+        // if user specifies that they want to use the Facebook send dialog (https://developers.facebook.com/docs/sharing/reference/send-dialog)
+        var urlString = 'https://www.facebook.com/dialog/send?display=popup';
+
+        if (attrs.socialshareVia) {
+          urlString += '&app_id=' + encodeURIComponent(attrs.socialshareVia);
+        }
+
+        if (attrs.socialshareRedirectUri) {
+          urlString += '&redirect_uri=' + encodeURIComponent(attrs.socialshareRedirectUri);
+        }
+
+        if (attrs.socialshareUrl) {
+          urlString += '&link=' + encodeURIComponent(attrs.socialshareUrl);
+        }
+
+        if (attrs.socialshareTo) {
+          urlString += '&to=' + encodeURIComponent(attrs.socialshareTo);
         }
 
         $window.open(
