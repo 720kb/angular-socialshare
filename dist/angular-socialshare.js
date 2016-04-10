@@ -25,7 +25,7 @@
   'use strict';
 
   var directiveName = 'socialshare'
-    , socialshareProviderNames = ['facebook', 'twitter', 'linkedin', 'google+', 'pinterest', 'tumblr', 'reddit', 'stumbleupon', 'buffer', 'digg', 'delicious', 'vk', 'pocket', 'wordpress', 'flipboard', 'xing', 'hackernews', 'evernote']
+    , socialshareProviderNames = ['facebook', 'twitter', 'linkedin', 'google+', 'pinterest', 'tumblr', 'reddit', 'stumbleupon', 'buffer', 'digg', 'delicious', 'vk', 'pocket', 'wordpress', 'flipboard', 'xing', 'hackernews', 'evernote', 'skype']
     , socialshareConfigurationProvider = /*@ngInject*/ function socialshareConfigurationProvider() {
 
       var socialshareConfigurationDefault = [{
@@ -226,6 +226,16 @@
         },
         {
           'provider': 'evernote',
+          'conf': {
+            'url': '',
+            'text': '',
+            'trigger': 'click',
+            'popupHeight': 300,
+            'popupWidth': 400
+          }
+        },
+        {
+          'provider': 'skype',
           'conf': {
             'url': '',
             'text': '',
@@ -651,6 +661,19 @@
         , 'sharer', 'toolbar=0,status=0,width=' + attrs.socialsharePopupWidth + ',height=' + attrs.socialsharePopupHeight
         + ',top=' + ($window.innerHeight - attrs.socialsharePopupHeight) / 2 + ',left=' + ($window.innerWidth - attrs.socialsharePopupWidth) / 2);
     }
+    , skypeShare = function skypeShare($window, $location, attrs) {
+
+      var urlString = 'https://web.skype.com/share?source=button&url=' + encodeURIComponent(attrs.socialshareUrl || $location.absUrl());
+
+      if (attrs.socialshareText) {
+        urlString += '&text=' + encodeURIComponent(attrs.socialshareText);
+      }
+
+      $window.open(
+        urlString
+        , 'sharer', 'toolbar=0,status=0,width=' + attrs.socialsharePopupWidth + ',height=' + attrs.socialsharePopupHeight
+        + ',top=' + ($window.innerHeight - attrs.socialsharePopupHeight) / 2 + ',left=' + ($window.innerWidth - attrs.socialsharePopupWidth) / 2);
+    }
     , sharingFunctions = {
       facebook: manageFacebookShare
       , twitter: manageTwitterShare
@@ -670,6 +693,7 @@
       , wordpress: manageWordpressShare
       , xing: manageXingShare
       , evernote: manageEvernoteShare
+      , skype: skypeShare
     };
 
 
