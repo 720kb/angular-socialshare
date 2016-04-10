@@ -102,6 +102,7 @@ You can set the social platform you want to share on using the `socialshare-prov
 - [hackernews](#hacker-news)
 - [evernote](#evernote)
 - [whatsapp](#whatsapp)
+- [viber](#viber)
 
 Please use them all in lowercase (`socialshare-proivder="delicious"`)
 
@@ -261,7 +262,16 @@ Method | Option | Type | Default | Description
 	sharer		| socialshare-media="" 	 | URL | false |		Set the media url to share
   sharer		| socialshare-follow="" 	 | URL | false |		Set the Xing page url which will be then suggested to you to follow
 
+
 ####Whatsapp
+
+Method | Option | Type | Default | Description
+------------- | ------------- | ------------- | ------------- | -------------
+  sharer    | socialshare-url="" |  URL | page URL| Set the url to share
+  sharer    | socialshare-text="" | String  | false | Set the content to share
+
+
+####Viber
 
 Method | Option | Type | Default | Description
 ------------- | ------------- | ------------- | ------------- | -------------

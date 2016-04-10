@@ -25,7 +25,7 @@
   'use strict';
 
   var directiveName = 'socialshare'
-    , socialshareProviderNames = ['facebook', 'twitter', 'linkedin', 'google+', 'pinterest', 'tumblr', 'reddit', 'stumbleupon', 'buffer', 'digg', 'delicious', 'vk', 'pocket', 'wordpress', 'flipboard', 'xing', 'hackernews', 'evernote', 'whatsapp']
+    , socialshareProviderNames = ['facebook', 'twitter', 'linkedin', 'google+', 'pinterest', 'tumblr', 'reddit', 'stumbleupon', 'buffer', 'digg', 'delicious', 'vk', 'pocket', 'wordpress', 'flipboard', 'xing', 'hackernews', 'evernote', 'whatsapp', 'viber']
     , socialshareConfigurationProvider = /*@ngInject*/ function socialshareConfigurationProvider() {
 
       var socialshareConfigurationDefault = [{
@@ -236,6 +236,13 @@
         },
         {
           'provider': 'whatsapp',
+          'conf': {
+            'url': '',
+            'text': ''
+          }
+        },
+        {
+          'provider': 'viber',
           'conf': {
             'url': '',
             'text': ''
@@ -669,6 +676,12 @@
 
       element.attr('href', href);
     }
+    , manageViberShare = function manageViberShare($window, $location, attrs, element) {
+
+      var href = 'viber://forward?text=' + encodeURIComponent(attrs.socialshareText + ' ') + encodeURIComponent(attrs.socialshareUrl || $location.absUrl());
+
+      element.attr('href', href);
+    }
     , sharingFunctions = {
       facebook: manageFacebookShare
       , twitter: manageTwitterShare
@@ -689,6 +702,7 @@
       , xing: manageXingShare
       , evernote: manageEvernoteShare
       , whatsapp: manageWhatsappShare
+      , viber: manageViberShare
     };
 
 
