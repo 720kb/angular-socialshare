@@ -25,7 +25,7 @@
   'use strict';
 
   var directiveName = 'socialshare'
-    , socialshareProviderNames = ['facebook', 'twitter', 'linkedin', 'google+', 'pinterest', 'tumblr', 'reddit', 'stumbleupon', 'buffer', 'digg', 'delicious', 'vk', 'pocket', 'wordpress', 'flipboard', 'xing', 'hackernews', 'evernote']
+    , socialshareProviderNames = ['facebook', 'twitter', 'linkedin', 'google+', 'pinterest', 'tumblr', 'reddit', 'stumbleupon', 'buffer', 'digg', 'delicious', 'vk', 'pocket', 'wordpress', 'flipboard', 'xing', 'hackernews', 'evernote', 'viber']
     , socialshareConfigurationProvider = /*@ngInject*/ function socialshareConfigurationProvider() {
 
       var socialshareConfigurationDefault = [{
@@ -233,6 +233,13 @@
             'popupHeight': 300,
             'popupWidth': 400
           }
+        },
+        {
+          'provider': 'viber',
+          'conf': {
+            'url': '',
+            'text': ''
+          }
         }];
 
       return {
@@ -335,7 +342,12 @@
         attrs.socialshareFollow = attrs.socialshareFollow || configurationElement.conf.follow;
         attrs.socialshareHashtags = attrs.socialshareHashtags || configurationElement.conf.hashtags;
 
-        element.bind(attrs.socialshareTrigger, onEventTriggered);
+        if (attrs.socialshareTrigger) {
+          element.bind(attrs.socialshareTrigger, onEventTriggered);
+        }
+        else {
+          onEventTriggered();
+        }
       };
 
       return {
@@ -651,6 +663,12 @@
         , 'sharer', 'toolbar=0,status=0,width=' + attrs.socialsharePopupWidth + ',height=' + attrs.socialsharePopupHeight
         + ',top=' + ($window.innerHeight - attrs.socialsharePopupHeight) / 2 + ',left=' + ($window.innerWidth - attrs.socialsharePopupWidth) / 2);
     }
+    , manageViberShare = function manageViberShare($window, $location, attrs, element) {
+
+      var href = 'viber://forward?text=' + encodeURIComponent(attrs.socialshareText + ' ') + encodeURIComponent(attrs.socialshareUrl || $location.absUrl());
+
+      element.attr('href', href);
+    }
     , sharingFunctions = {
       facebook: manageFacebookShare
       , twitter: manageTwitterShare
@@ -670,6 +688,7 @@
       , wordpress: manageWordpressShare
       , xing: manageXingShare
       , evernote: manageEvernoteShare
+      , viber: manageViberShare
     };
 
 
