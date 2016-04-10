@@ -6,7 +6,7 @@
  * http://720kb.githb.io/angular-socialshare
  * 
  * MIT license
- * Sun Apr 10 2016
+ * Mon Apr 11 2016
  */
 /*
  * angular-socialshare
@@ -25,7 +25,7 @@
   'use strict';
 
   var directiveName = 'socialshare'
-    , socialshareProviderNames = ['facebook', 'twitter', 'linkedin', 'google+', 'pinterest', 'tumblr', 'reddit', 'stumbleupon', 'buffer', 'digg', 'delicious', 'vk', 'pocket', 'wordpress', 'flipboard', 'xing', 'hackernews', 'evernote', 'whatsapp', 'viber']
+    , socialshareProviderNames = ['facebook', 'twitter', 'linkedin', 'google+', 'pinterest', 'tumblr', 'reddit', 'stumbleupon', 'buffer', 'digg', 'delicious', 'vk', 'pocket', 'wordpress', 'flipboard', 'xing', 'hackernews', 'evernote', 'whatsapp', 'viber', 'skype']
     , socialshareConfigurationProvider = /*@ngInject*/ function socialshareConfigurationProvider() {
 
       var socialshareConfigurationDefault = [{
@@ -246,6 +246,16 @@
           'conf': {
             'url': '',
             'text': ''
+          }
+        },
+        {
+          'provider': 'skype',
+          'conf': {
+            'url': '',
+            'text': '',
+            'trigger': 'click',
+            'popupHeight': 300,
+            'popupWidth': 400
           }
         }];
 
@@ -682,6 +692,19 @@
 
       element.attr('href', href);
     }
+    , skypeShare = function skypeShare($window, $location, attrs) {
+
+      var urlString = 'https://web.skype.com/share?source=button&url=' + encodeURIComponent(attrs.socialshareUrl || $location.absUrl());
+
+      if (attrs.socialshareText) {
+        urlString += '&text=' + encodeURIComponent(attrs.socialshareText);
+      }
+
+      $window.open(
+        urlString
+        , 'sharer', 'toolbar=0,status=0,width=' + attrs.socialsharePopupWidth + ',height=' + attrs.socialsharePopupHeight
+        + ',top=' + ($window.innerHeight - attrs.socialsharePopupHeight) / 2 + ',left=' + ($window.innerWidth - attrs.socialsharePopupWidth) / 2);
+    }
     , sharingFunctions = {
       facebook: manageFacebookShare
       , twitter: manageTwitterShare
@@ -703,6 +726,7 @@
       , evernote: manageEvernoteShare
       , whatsapp: manageWhatsappShare
       , viber: manageViberShare
+      , skype: skypeShare
     };
 
 
