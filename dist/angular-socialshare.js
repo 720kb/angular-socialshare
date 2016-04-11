@@ -375,7 +375,7 @@
     , manageFacebookShare = function manageFacebookShare($window, $location, attrs) {
       if (attrs.socialshareType && attrs.socialshareType === 'feed') {
         // if user specifies that they want to use the Facebook feed dialog (https://developers.facebook.com/docs/sharing/reference/feed-dialog/v2.4)
-        var urlString = 'https://www.facebook.com/dialog/feed?display=popup';
+        var urlString = 'https://www.facebook.com/dialog/feed?';
 
         if (attrs.socialshareVia) {
           urlString += '&app_id=' + encodeURIComponent(attrs.socialshareVia);
@@ -431,7 +431,7 @@
 
       } else if (attrs.socialshareType && attrs.socialshareType === 'send') {
         // if user specifies that they want to use the Facebook send dialog (https://developers.facebook.com/docs/sharing/reference/send-dialog)
-        var urlString = 'https://www.facebook.com/dialog/send?display=popup';
+        var urlString = 'https://www.facebook.com/dialog/send?';
 
         if (attrs.socialshareVia) {
           urlString += '&app_id=' + encodeURIComponent(attrs.socialshareVia);
@@ -447,6 +447,14 @@
 
         if (attrs.socialshareTo) {
           urlString += '&to=' + encodeURIComponent(attrs.socialshareTo);
+        }
+
+        if (attrs.socialshareDisplay) {
+          urlString += '&display=' + encodeURIComponent(attrs.socialshareDisplay);
+        }
+
+        if (attrs.socialshareRef) {
+          urlString += '&ref=' + encodeURIComponent(attrs.socialshareRef);
         }
 
         $window.open(
