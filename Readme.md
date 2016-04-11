@@ -121,8 +121,8 @@ Method | Option | Type | Default | Description
  	dialog, send		| socialshare-via="" 	 |	String | false | 	Set the APP ID value
  	dialog	, send	| socialshare-to="" 	 |	String	| false | Set the to value
  	dialog		| socialshare-from="" 	 |	String	| false | Set the from to value
- 	dialog		| socialshare-ref="" 	 |	String('comma,separated') | false |	Set the ref value
- 	dialog		| socialshare-display="" 	 | String('popup') | false |	Set the display value
+ 	dialog, send		| socialshare-ref="" 	 |	String('comma,separated') | false |	Set the ref value
+ 	dialog, send		| socialshare-display="" 	 | String('popup') | false |	Set the display value
  	dialog		| socialshare-source="" 	 | URL | false |	Set the source value
  	dialog		| socialshare-caption="" 	 | String | false |	Set the caption to share
   dialog, send		| socialshare-redirect-uri="" 	 | URL | false |	Set the redirect URI
