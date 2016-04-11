@@ -6,7 +6,7 @@
  * http://720kb.githb.io/angular-socialshare
  * 
  * MIT license
- * Mon Feb 08 2016
+ * Sun Apr 10 2016
  */
 /*
  * angular-socialshare
@@ -25,7 +25,7 @@
   'use strict';
 
   var directiveName = 'socialshare'
-    , socialshareProviderNames = ['facebook', 'twitter', 'linkedin', 'google+', 'pinterest', 'tumblr', 'reddit', 'stumbleupon', 'buffer', 'digg', 'delicious', 'vk', 'pocket', 'wordpress', 'flipboard', 'xing', 'hackernews', 'evernote']
+    , socialshareProviderNames = ['facebook', 'twitter', 'linkedin', 'google+', 'pinterest', 'tumblr', 'reddit', 'stumbleupon', 'buffer', 'digg', 'delicious', 'vk', 'pocket', 'wordpress', 'flipboard', 'xing', 'hackernews', 'evernote', 'whatsapp']
     , socialshareConfigurationProvider = /*@ngInject*/ function socialshareConfigurationProvider() {
 
       var socialshareConfigurationDefault = [{
@@ -233,6 +233,13 @@
             'popupHeight': 300,
             'popupWidth': 400
           }
+        },
+        {
+          'provider': 'whatsapp',
+          'conf': {
+            'url': '',
+            'text': ''
+          }
         }];
 
       return {
@@ -294,100 +301,11 @@
         , index = 0
         , onEventTriggered = function onEventTriggered() {
           /*eslint-disable no-use-before-define*/
-          switch (attrs.socialshareProvider) {
-            case 'facebook': {
-
-              facebookShare($window, $location, attrs);
-              break;
-            }
-            case 'google+': {
-
-              googlePlusShare($window, $location, attrs);
-              break;
-            }
-            case 'twitter': {
-
-              twitterShare($window, $location, attrs);
-              break;
-            }
-            case 'stumbleupon': {
-
-              stumbleuponShare($window, $location, attrs);
-              break;
-            }
-            case 'reddit': {
-
-              redditShare($window, $location, attrs);
-              break;
-            }
-            case 'pinterest': {
-
-              pinterestShare($window, $location, attrs);
-              break;
-            }
-            case 'linkedin': {
-
-              linkedinShare($window, $location, attrs);
-              break;
-            }
-            case 'digg': {
-
-              diggShare($window, $location, attrs);
-              break;
-            }
-            case 'tumblr': {
-
-              tumblrShare($window, $location, attrs);
-              break;
-            }
-            case 'delicious': {
-
-              deliciousShare($window, $location, attrs);
-              break;
-            }
-            case 'vk': {
-
-              vkShare($window, $location, attrs);
-              break;
-            }
-            case 'buffer': {
-
-              bufferShare($window, $location, attrs);
-              break;
-            }
-            case 'pocket': {
-
-              pocketShare($window, $location, attrs);
-              break;
-            }
-            case 'wordpress': {
-
-              wordpressShare($window, $location, attrs);
-              break;
-            }
-            case 'flipboard': {
-
-              flipboardShare($window, $location, attrs);
-              break;
-            }
-            case 'hackernews': {
-
-              hackernewsShare($window, $location, attrs);
-              break;
-            }
-            case 'xing': {
-
-              xingShare($window, $location, attrs);
-              break;
-            }
-            case 'evernote': {
-
-              evernoteShare($window, $location, attrs);
-              break;
-            }
-            default: {
-              return true;
-            }
+          if (attrs.socialshareProvider in sharingFunctions) {
+            sharingFunctions[attrs.socialshareProvider]($window, $location, attrs, element);
+          }
+          else {
+            return true;
           }
         };
         /*eslint-enable no-use-before-define*/
@@ -424,7 +342,12 @@
         attrs.socialshareFollow = attrs.socialshareFollow || configurationElement.conf.follow;
         attrs.socialshareHashtags = attrs.socialshareHashtags || configurationElement.conf.hashtags;
 
-        element.bind(attrs.socialshareTrigger, onEventTriggered);
+        if (attrs.socialshareTrigger) {
+          element.bind(attrs.socialshareTrigger, onEventTriggered);
+        }
+        else {
+          onEventTriggered();
+        }
       };
 
       return {
@@ -740,24 +663,33 @@
         , 'sharer', 'toolbar=0,status=0,width=' + attrs.socialsharePopupWidth + ',height=' + attrs.socialsharePopupHeight
         + ',top=' + ($window.innerHeight - attrs.socialsharePopupHeight) / 2 + ',left=' + ($window.innerWidth - attrs.socialsharePopupWidth) / 2);
     }
-    , facebookShare = manageFacebookShare
-    , twitterShare = manageTwitterShare
-    , googlePlusShare = manageGooglePlusShare
-    , redditShare = manageRedditShare
-    , stumbleuponShare = manageStumbleuponShare
-    , linkedinShare = manageLinkedinShare
-    , pinterestShare = managePinterestShare
-    , diggShare = manageDiggShare
-    , tumblrShare = manageTumblrShare
-    , vkShare = manageVkShare
-    , deliciousShare = manageDeliciousShare
-    , bufferShare = manageBufferShare
-    , hackernewsShare = manageHackernewsShare
-    , flipboardShare = manageFlipboardShare
-    , pocketShare = managePocketShare
-    , wordpressShare = manageWordpressShare
-    , xingShare = manageXingShare
-    , evernoteShare = manageEvernoteShare;
+    , manageWhatsappShare = function manageWhatsappShare($window, $location, attrs, element) {
+
+      var href = 'whatsapp://send?text=' + encodeURIComponent(attrs.socialshareText + ' ') + encodeURIComponent(attrs.socialshareUrl || $location.absUrl());
+
+      element.attr('href', href);
+    }
+    , sharingFunctions = {
+      facebook: manageFacebookShare
+      , twitter: manageTwitterShare
+      , googlePlus: manageGooglePlusShare
+      , reddit: manageRedditShare
+      , stumbleupon: manageStumbleuponShare
+      , linkedin: manageLinkedinShare
+      , pinterest: managePinterestShare
+      , digg: manageDiggShare
+      , tumblr: manageTumblrShare
+      , vk: manageVkShare
+      , delicious: manageDeliciousShare
+      , buffer: manageBufferShare
+      , hackernews: manageHackernewsShare
+      , flipboard: manageFlipboardShare
+      , pocket: managePocketShare
+      , wordpress: manageWordpressShare
+      , xing: manageXingShare
+      , evernote: manageEvernoteShare
+      , whatsapp: manageWhatsappShare
+    };
 
 
   angular.module('720kb.socialshare', [])
