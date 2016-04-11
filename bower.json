@@ -20,10 +20,12 @@
   "license": "MIT",
   "homepage": "http://720kb.github.io/angular-socialshare/",
   "ignore": [
-  "**/.*",
-  "node_modules",
-  "bower_components",
-  "test",
-  "tests"
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "conf",
+    "gulpfile.js"
   ]
 }

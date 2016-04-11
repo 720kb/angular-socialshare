@@ -102,6 +102,8 @@ You can set the social platform you want to share on using the `socialshare-prov
 - [hackernews](#hacker-news)
 - [evernote](#evernote)
 - [whatsapp](#whatsapp)
+- [viber](#viber)
+- [skype](#skype)
 
 Please use them all in lowercase (`socialshare-proivder="delicious"`)
 
@@ -115,7 +117,7 @@ Method | Option | Type | Default | Description
  	dialog		| socialshare-text="" 	 | String |	 false	| Set the headline to share
  	dialog		| socialshare-description="" 	 | String |	 false	| Set the content to share
  	dialog		| socialshare-media="" 	 |	URL |	false | Set the media source to share
- 	dialog		| socialshare-type=""	 | String('feed') | false |		Share via facebook feed dialog  - [info](https://developers.facebook.com/docs/sharing/reference/feed-dialog/v2.4)
+ 	dialog		| socialshare-type=""	 | String('feed', 'send') | false |		Share via facebook feed dialog  - [info](https://developers.facebook.com/docs/sharing/reference/feed-dialog) or send dialog  - [info](https://developers.facebook.com/docs/sharing/reference/send-dialog)
  	dialog		| socialshare-via="" 	 |	String | false | 	Set the APP ID value
  	dialog		| socialshare-to="" 	 |	String	| false | Set the to value
  	dialog		| socialshare-from="" 	 |	String	| false | Set the from to value
@@ -124,6 +126,7 @@ Method | Option | Type | Default | Description
  	dialog		| socialshare-source="" 	 | URL | false |	Set the source value
  	dialog		| socialshare-caption="" 	 | String | false |	Set the caption to share
   dialog		| socialshare-redirect-uri="" 	 | URL | false |	Set the redirect URI
+
 
 ####Twitter
 
@@ -261,12 +264,29 @@ Method | Option | Type | Default | Description
 	sharer		| socialshare-media="" 	 | URL | false |		Set the media url to share
   sharer		| socialshare-follow="" 	 | URL | false |		Set the Xing page url which will be then suggested to you to follow
 
+
 ####Whatsapp
 
 Method | Option | Type | Default | Description
 ------------- | ------------- | ------------- | ------------- | -------------
   sharer    | socialshare-url="" |  URL | page URL| Set the url to share
   sharer    | socialshare-text="" | String  | false | Set the content to share
+
+
+####Viber
+
+Method | Option | Type | Default | Description
+------------- | ------------- | ------------- | ------------- | -------------
+  sharer    | socialshare-url="" |  URL | page URL| Set the url to share
+  sharer    | socialshare-text="" | String  | false | Set the content to share
+
+
+####Skype
+
+Method | Option | Type | Default | Description
+------------- | ------------- | ------------- | ------------- | -------------
+  sharer    | socialshare-url=""   |  URL | page URL| Set the url to share
+  sharer    | socialshare-text=""  | String | false | Set the content to share
 
 
 ##Options
