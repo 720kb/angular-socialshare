@@ -6,7 +6,7 @@
  * http://720kb.githb.io/angular-socialshare
  * 
  * MIT license
- * Sun Apr 10 2016
+ * Mon Apr 11 2016
  */
 /*
  * angular-socialshare
