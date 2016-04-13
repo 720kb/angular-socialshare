@@ -1,6 +1,6 @@
 /*
  * angular-socialshare
- * 2.1.0
+ * 2.1.1
  * 
  * A social urls and content sharing directive for angularjs.
  * http://720kb.githb.io/angular-socialshare
@@ -35,7 +35,8 @@
           'body': '',
           'to': '',
           'cc': '',
-          'bcc': ''
+          'bcc': '',
+          'trigger': 'click'
         }
       },
       {
@@ -248,14 +249,20 @@
           'provider': 'whatsapp',
           'conf': {
             'url': '',
-            'text': ''
+            'text': '',
+            'trigger': 'click',
+            'popupHeight': 300,
+            'popupWidth': 400
           }
         },
         {
           'provider': 'viber',
           'conf': {
             'url': '',
-            'text': ''
+            'text': '',
+            'trigger': 'click',
+            'popupHeight': 300,
+            'popupWidth': 400
           }
         },
         {
