@@ -83,10 +83,11 @@ You can set the social platform you want to share on using the `socialshare-prov
 
 #####Providers:
 
+- [email](#email)
 - [facebook](#facebook)
 - [twitter](#twitter)
 - [linkedin](#linkedin)
-- [google](#google-plus)
+- [google](#google)
 - [pinterest](#pinterest)
 - [tumblr](#tumblr)
 - [reddit](#reddit)
@@ -287,6 +288,16 @@ Method | Option | Type | Default | Description
 ------------- | ------------- | ------------- | ------------- | -------------
   sharer    | socialshare-url=""   |  URL | page URL| Set the url to share
   sharer    | socialshare-text=""  | String | false | Set the content to share
+
+####Email
+
+Method | Option | Type | Default | Description
+------------- | ------------- | ------------- | ------------- | -------------
+  mailto    | socialshare-subject=""   |  URL | page URL| Set the subject for the email
+  mailto    | socialshare-body=""  | String | false | Set the body content for the email
+  mailto    | socialshare-to=""  | String | false | Set the Receiver / Receivers
+  mailto    | socialshare-cc=""  | String | false | Set the CC / CCs for the email
+  mailto    | socialshare-bcc=""  | String | false | Set the BCC / BCCs for the email
 
 
 ##Options
