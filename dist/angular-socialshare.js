@@ -1,12 +1,12 @@
 /*
  * angular-socialshare
- * 0.2.5-beta
+ * 0.2.6-beta
  * 
  * A social urls and content sharing directive for angularjs.
  * http://720kb.githb.io/angular-socialshare
  * 
  * MIT license
- * Mon Apr 11 2016
+ * Wed Apr 13 2016
  */
 /*
  * angular-socialshare
@@ -139,7 +139,7 @@
           }
         },
         {
-          'provider': 'google+',
+          'provider': 'google',
           'conf': {
             'url': '',
             'text': '',
@@ -741,7 +741,7 @@
     , sharingFunctions = {
       facebook: manageFacebookShare
       , twitter: manageTwitterShare
-      , googlePlus: manageGooglePlusShare
+      , google: manageGooglePlusShare
       , reddit: manageRedditShare
       , stumbleupon: manageStumbleuponShare
       , linkedin: manageLinkedinShare
