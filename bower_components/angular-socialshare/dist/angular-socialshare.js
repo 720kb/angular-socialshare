@@ -1,6 +1,6 @@
 /*
  * angular-socialshare
- * 2.0.0
+ * 2.1.0
  * 
  * A social urls and content sharing directive for angularjs.
  * http://720kb.githb.io/angular-socialshare
@@ -10,7 +10,7 @@
  */
 /*
  * angular-socialshare
- * 0.2.1-beta
+ * @latest
  *
  * A social urls and content sharing directive for angularjs.
  * http://720kb.githb.io/angular-socialshare
@@ -25,10 +25,20 @@
   'use strict';
 
   var directiveName = 'socialshare'
-    , socialshareProviderNames = ['facebook', 'twitter', 'linkedin', 'google+', 'pinterest', 'tumblr', 'reddit', 'stumbleupon', 'buffer', 'digg', 'delicious', 'vk', 'pocket', 'wordpress', 'flipboard', 'xing', 'hackernews', 'evernote', 'whatsapp', 'viber', 'skype']
+    , socialshareProviderNames = ['facebook', 'twitter', 'linkedin', 'google', 'pinterest', 'tumblr', 'reddit', 'stumbleupon', 'buffer', 'digg', 'delicious', 'vk', 'pocket', 'wordpress', 'flipboard', 'xing', 'hackernews', 'evernote', 'whatsapp', 'viber', 'skype', 'email']
     , socialshareConfigurationProvider = /*@ngInject*/ function socialshareConfigurationProvider() {
 
       var socialshareConfigurationDefault = [{
+        'provider': 'email',
+        'conf': {
+          'subject': '',
+          'body': '',
+          'to': '',
+          'cc': '',
+          'bcc': ''
+        }
+      },
+      {
         'provider': 'facebook',
         'conf': {
             'url':'',
@@ -372,6 +382,33 @@
         'link': linkingFunction
       };
     }]
+    , manageEmailShare = function manageEmailShare($window, $location, attrs) {
+      var urlString = 'mailto:';
+
+      if (attrs.socialshareTo) {
+
+        urlString += encodeURIComponent(attrs.socialshareTo) + '?';
+      }
+      if (attrs.socialshareBody) {
+
+        urlString += 'body=' + encodeURIComponent(attrs.socialshareBody);
+      }
+
+      if (attrs.socialshareSubject) {
+
+        urlString += '&subject=' + encodeURIComponent(attrs.socialshareSubject);
+      }
+      if (attrs.socialshareCc) {
+
+        urlString += '&cc=' + encodeURIComponent(attrs.socialshareCc);
+      }
+      if (attrs.socialshareBcc) {
+
+        urlString += '&bcc=' + encodeURIComponent(attrs.socialshareBcc);
+      }
+
+      $window.open(urlString, '_self');
+    }
     , manageFacebookShare = function manageFacebookShare($window, $location, attrs) {
       if (attrs.socialshareType && attrs.socialshareType === 'feed') {
         // if user specifies that they want to use the Facebook feed dialog (https://developers.facebook.com/docs/sharing/reference/feed-dialog/v2.4)
@@ -739,7 +776,8 @@
         + ',top=' + ($window.innerHeight - attrs.socialsharePopupHeight) / 2 + ',left=' + ($window.innerWidth - attrs.socialsharePopupWidth) / 2);
     }
     , sharingFunctions = {
-      facebook: manageFacebookShare
+      email: manageEmailShare
+      , facebook: manageFacebookShare
       , twitter: manageTwitterShare
       , google: manageGooglePlusShare
       , reddit: manageRedditShare
