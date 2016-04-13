@@ -293,7 +293,7 @@ Method | Option | Type | Default | Description
 
 Method | Option | Type | Default | Description
 ------------- | ------------- | ------------- | ------------- | -------------
-  mailto    | socialshare-subject=""   |  URL | page URL| Set the subject for the email
+  mailto    | socialshare-subject=""   |  String | false | Set the subject for the email
   mailto    | socialshare-body=""  | String | false | Set the body content for the email
   mailto    | socialshare-to=""  | String | false | Set the Receiver / Receivers
   mailto    | socialshare-cc=""  | String | false | Set the CC / CCs for the email
