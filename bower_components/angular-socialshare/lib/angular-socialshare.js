@@ -15,7 +15,7 @@
   'use strict';
 
   var directiveName = 'socialshare'
-    , socialshareProviderNames = ['facebook', 'twitter', 'linkedin', 'google', 'pinterest', 'tumblr', 'reddit', 'stumbleupon', 'buffer', 'digg', 'delicious', 'vk', 'pocket', 'wordpress', 'flipboard', 'xing', 'hackernews', 'evernote', 'whatsapp', 'viber', 'skype', 'email']
+    , socialshareProviderNames = ['facebook', 'facebook-messenger', 'twitter', 'linkedin', 'google', 'pinterest', 'tumblr', 'reddit', 'stumbleupon', 'buffer', 'digg', 'delicious', 'vk', 'pocket', 'wordpress', 'flipboard', 'xing', 'hackernews', 'evernote', 'whatsapp', 'viber', 'skype', 'email']
     , socialshareConfigurationProvider = /*@ngInject*/ function socialshareConfigurationProvider() {
 
       var socialshareConfigurationDefault = [{
@@ -25,239 +25,246 @@
           'body': '',
           'to': '',
           'cc': '',
-          'bcc': ''
+          'bcc': '',
+          'trigger': 'click'
         }
       },
       {
         'provider': 'facebook',
         'conf': {
-            'url':'',
-            'text': '',
-            'media': '',
-            'type': '',
-            'via': '',
-            'to': '',
-            'from': '',
-            'ref': '',
-            'display': '',
-            'source': '',
-            'caption': '',
-            'redirectUri': '',
-            'trigger': 'click',
-            'popupHeight': 300,
-            'popupWidth': 400
-          }
-        },
-        {
-          'provider': 'twitter',
-          'conf': {
-            'url': '',
-            'text': '',
-            'via': '',
-            'hashtags': '',
-            'trigger': 'click',
-            'popupHeight': 300,
-            'popupWidth': 400
-          }
-        },
-        {
-          'provider': 'linkedin',
-          'conf': {
-            'url': '',
-            'text': '',
-            'description': '',
-            'source': '',
-            'trigger': 'click',
-            'popupHeight': 300,
-            'popupWidth': 400
-          }
-        },
-        {
-          'provider': 'reddit',
-          'conf': {
-            'url': '',
-            'text': '',
-            'subreddit': '',
-            'trigger': 'click',
-            'popupHeight': 300,
-            'popupWidth': 400
-          }
-        },
-        {
-          'provider': 'vk',
-          'conf': {
-            'url': '',
-            'text': '',
-            'media': '',
-            'trigger': 'click',
-            'popupHeight': 300,
-            'popupWidth': 400
-          }
-        },
-        {
-          'provider': 'digg',
-          'conf': {
-            'url': '',
-            'text': '',
-            'media': '',
-            'trigger': 'click',
-            'popupHeight': 300,
-            'popupWidth': 400
-          }
-        },
-        {
-          'provider': 'delicious',
-          'conf': {
-            'url': '',
-            'text': '',
-            'media': '',
-            'trigger': 'click',
-            'popupHeight': 300,
-            'popupWidth': 400
-          }
-        },
-        {
-          'provider': 'stumbleupon',
-          'conf': {
-            'url': '',
-            'text': '',
-            'media': '',
-            'trigger': 'click',
-            'popupHeight': 300,
-            'popupWidth': 400
-          }
-        },
-        {
-          'provider': 'pinterest',
-          'conf': {
-            'url': '',
-            'text': '',
-            'media': '',
-            'trigger': 'click',
-            'popupHeight': 300,
-            'popupWidth': 400
-          }
-        },
-        {
-          'provider': 'google',
-          'conf': {
-            'url': '',
-            'text': '',
-            'media': '',
-            'trigger': 'click',
-            'popupHeight': 300,
-            'popupWidth': 400
-          }
-        },
-        {
-          'provider': 'tumblr',
-          'conf': {
-            'url': '',
-            'text': '',
-            'media': '',
-            'trigger': 'click',
-            'popupHeight': 300,
-            'popupWidth': 400
-          }
-        },
-        {
-          'provider': 'buffer',
-          'conf': {
-            'url': '',
-            'text': '',
-            'via': '',
-            'trigger': 'click',
-            'popupHeight': 300,
-            'popupWidth': 400
-          }
-        },
-        {
-          'provider': 'pocket',
-          'conf': {
-            'url': '',
-            'text': '',
-            'trigger': 'click',
-            'popupHeight': 300,
-            'popupWidth': 400
-          }
-        },
-        {
-          'provider': 'flipboard',
-          'conf': {
-            'url': '',
-            'text': '',
-            'trigger': 'click',
-            'popupHeight': 300,
-            'popupWidth': 400
-          }
-        },
-        {
-          'provider': 'hackernews',
-          'conf': {
-            'url': '',
-            'text': '',
-            'trigger': 'click',
-            'popupHeight': 300,
-            'popupWidth': 400
-          }
-        },
-        {
-          'provider': 'wordpress',
-          'conf': {
-            'url': '',
-            'text': '',
-            'media': '',
-            'trigger': 'click',
-            'popupHeight': 300,
-            'popupWidth': 400
-          }
-        },
-        {
-          'provider': 'xing',
-          'conf': {
-            'url': '',
-            'text': '',
-            'media': '',
-            'follow' : '',
-            'trigger': 'click',
-            'popupHeight': 300,
-            'popupWidth': 400
-          }
-        },
-        {
-          'provider': 'evernote',
-          'conf': {
-            'url': '',
-            'text': '',
-            'trigger': 'click',
-            'popupHeight': 300,
-            'popupWidth': 400
-          }
-        },
-        {
-          'provider': 'whatsapp',
-          'conf': {
-            'url': '',
-            'text': ''
-          }
-        },
-        {
-          'provider': 'viber',
-          'conf': {
-            'url': '',
-            'text': ''
-          }
-        },
-        {
-          'provider': 'skype',
-          'conf': {
-            'url': '',
-            'text': '',
-            'trigger': 'click',
-            'popupHeight': 300,
-            'popupWidth': 400
-          }
-        }];
+          'url':'',
+          'text': '',
+          'media': '',
+          'type': '',
+          'via': '',
+          'to': '',
+          'from': '',
+          'ref': '',
+          'display': '',
+          'source': '',
+          'caption': '',
+          'redirectUri': '',
+          'trigger': 'click',
+          'popupHeight': 300,
+          'popupWidth': 400
+        }
+      },
+      {
+        'provider': 'facebook-messenger',
+        'conf': {
+          'url': ''
+        }
+      },
+      {
+        'provider': 'twitter',
+        'conf': {
+          'url': '',
+          'text': '',
+          'via': '',
+          'hashtags': '',
+          'trigger': 'click',
+          'popupHeight': 300,
+          'popupWidth': 400
+        }
+      },
+      {
+        'provider': 'linkedin',
+        'conf': {
+          'url': '',
+          'text': '',
+          'description': '',
+          'source': '',
+          'trigger': 'click',
+          'popupHeight': 300,
+          'popupWidth': 400
+        }
+      },
+      {
+        'provider': 'reddit',
+        'conf': {
+          'url': '',
+          'text': '',
+          'subreddit': '',
+          'trigger': 'click',
+          'popupHeight': 300,
+          'popupWidth': 400
+        }
+      },
+      {
+        'provider': 'vk',
+        'conf': {
+          'url': '',
+          'text': '',
+          'media': '',
+          'trigger': 'click',
+          'popupHeight': 300,
+          'popupWidth': 400
+        }
+      },
+      {
+        'provider': 'digg',
+        'conf': {
+          'url': '',
+          'text': '',
+          'media': '',
+          'trigger': 'click',
+          'popupHeight': 300,
+          'popupWidth': 400
+        }
+      },
+      {
+        'provider': 'delicious',
+        'conf': {
+          'url': '',
+          'text': '',
+          'media': '',
+          'trigger': 'click',
+          'popupHeight': 300,
+          'popupWidth': 400
+        }
+      },
+      {
+        'provider': 'stumbleupon',
+        'conf': {
+          'url': '',
+          'text': '',
+          'media': '',
+          'trigger': 'click',
+          'popupHeight': 300,
+          'popupWidth': 400
+        }
+      },
+      {
+        'provider': 'pinterest',
+        'conf': {
+          'url': '',
+          'text': '',
+          'media': '',
+          'trigger': 'click',
+          'popupHeight': 300,
+          'popupWidth': 400
+        }
+      },
+      {
+        'provider': 'google',
+        'conf': {
+          'url': '',
+          'text': '',
+          'media': '',
+          'trigger': 'click',
+          'popupHeight': 300,
+          'popupWidth': 400
+        }
+      },
+      {
+        'provider': 'tumblr',
+        'conf': {
+          'url': '',
+          'text': '',
+          'media': '',
+          'trigger': 'click',
+          'popupHeight': 300,
+          'popupWidth': 400
+        }
+      },
+      {
+        'provider': 'buffer',
+        'conf': {
+          'url': '',
+          'text': '',
+          'via': '',
+          'trigger': 'click',
+          'popupHeight': 300,
+          'popupWidth': 400
+        }
+      },
+      {
+        'provider': 'pocket',
+        'conf': {
+          'url': '',
+          'text': '',
+          'trigger': 'click',
+          'popupHeight': 300,
+          'popupWidth': 400
+        }
+      },
+      {
+        'provider': 'flipboard',
+        'conf': {
+          'url': '',
+          'text': '',
+          'trigger': 'click',
+          'popupHeight': 300,
+          'popupWidth': 400
+        }
+      },
+      {
+        'provider': 'hackernews',
+        'conf': {
+          'url': '',
+          'text': '',
+          'trigger': 'click',
+          'popupHeight': 300,
+          'popupWidth': 400
+        }
+      },
+      {
+        'provider': 'wordpress',
+        'conf': {
+          'url': '',
+          'text': '',
+          'media': '',
+          'trigger': 'click',
+          'popupHeight': 300,
+          'popupWidth': 400
+        }
+      },
+      {
+        'provider': 'xing',
+        'conf': {
+          'url': '',
+          'text': '',
+          'media': '',
+          'follow' : '',
+          'trigger': 'click',
+          'popupHeight': 300,
+          'popupWidth': 400
+        }
+      },
+      {
+        'provider': 'evernote',
+        'conf': {
+          'url': '',
+          'text': '',
+          'trigger': 'click',
+          'popupHeight': 300,
+          'popupWidth': 400
+        }
+      },
+      {
+        'provider': 'whatsapp',
+        'conf': {
+          'url': '',
+          'text': ''
+        }
+      },
+      {
+        'provider': 'viber',
+        'conf': {
+          'url': '',
+          'text': ''
+        }
+      },
+      {
+        'provider': 'skype',
+        'conf': {
+          'url': '',
+          'text': '',
+          'trigger': 'click',
+          'popupHeight': 300,
+          'popupWidth': 400
+        }
+      }];
 
       return {
         'configure': function configure(configuration) {
@@ -308,7 +315,7 @@
         }
       };
     }
-    , socialshareDirective = /*@ngInject*/ ["$window", "$location", "socialshareConf", "$log", function socialshareDirective($window, $location, socialshareConf, $log) {
+    , socialshareDirective = /*@ngInject*/ ['$window', '$location', 'socialshareConf', '$log', function socialshareDirective($window, $location, socialshareConf, $log) {
 
       var linkingFunction = function linkingFunction($scope, element, attrs) {
 
@@ -320,8 +327,7 @@
           /*eslint-disable no-use-before-define*/
           if (attrs.socialshareProvider in sharingFunctions) {
             sharingFunctions[attrs.socialshareProvider]($window, $location, attrs, element);
-          }
-          else {
+          } else {
             return true;
           }
         };
@@ -360,9 +366,10 @@
         attrs.socialshareHashtags = attrs.socialshareHashtags || configurationElement.conf.hashtags;
 
         if (attrs.socialshareTrigger) {
+
           element.bind(attrs.socialshareTrigger, onEventTriggered);
-        }
-        else {
+        } else {
+
           onEventTriggered();
         }
       };
@@ -400,9 +407,12 @@
       $window.open(urlString, '_self');
     }
     , manageFacebookShare = function manageFacebookShare($window, $location, attrs) {
+
+      var urlString;
+
       if (attrs.socialshareType && attrs.socialshareType === 'feed') {
         // if user specifies that they want to use the Facebook feed dialog (https://developers.facebook.com/docs/sharing/reference/feed-dialog/v2.4)
-        var urlString = 'https://www.facebook.com/dialog/feed?';
+        urlString = 'https://www.facebook.com/dialog/feed?';
 
         if (attrs.socialshareVia) {
           urlString += '&app_id=' + encodeURIComponent(attrs.socialshareVia);
@@ -458,7 +468,7 @@
 
       } else if (attrs.socialshareType && attrs.socialshareType === 'send') {
         // if user specifies that they want to use the Facebook send dialog (https://developers.facebook.com/docs/sharing/reference/send-dialog)
-        var urlString = 'https://www.facebook.com/dialog/send?';
+        urlString = 'https://www.facebook.com/dialog/send?';
 
         if (attrs.socialshareVia) {
           urlString += '&app_id=' + encodeURIComponent(attrs.socialshareVia);
@@ -496,6 +506,12 @@
           , 'sharer', 'toolbar=0,status=0,width=' + attrs.socialsharePopupWidth + ',height=' + attrs.socialsharePopupHeight
           + ',top=' + ($window.innerHeight - attrs.socialsharePopupHeight) / 2 + ',left=' + ($window.innerWidth - attrs.socialsharePopupWidth) / 2);
       }
+    }
+    , facebookMessengerShare = function facebookMessengerShare($window, $location, attrs, element) {
+
+      var href = 'fb-messenger://share?link=' + encodeURIComponent(attrs.socialshareUrl || $location.absUrl());
+
+      element.attr('href', href);
     }
     , manageTwitterShare = function manageTwitterShare($window, $location, attrs) {
       var urlString = 'https://www.twitter.com/intent/tweet?';
@@ -766,28 +782,29 @@
         + ',top=' + ($window.innerHeight - attrs.socialsharePopupHeight) / 2 + ',left=' + ($window.innerWidth - attrs.socialsharePopupWidth) / 2);
     }
     , sharingFunctions = {
-      email: manageEmailShare
-      , facebook: manageFacebookShare
-      , twitter: manageTwitterShare
-      , google: manageGooglePlusShare
-      , reddit: manageRedditShare
-      , stumbleupon: manageStumbleuponShare
-      , linkedin: manageLinkedinShare
-      , pinterest: managePinterestShare
-      , digg: manageDiggShare
-      , tumblr: manageTumblrShare
-      , vk: manageVkShare
-      , delicious: manageDeliciousShare
-      , buffer: manageBufferShare
-      , hackernews: manageHackernewsShare
-      , flipboard: manageFlipboardShare
-      , pocket: managePocketShare
-      , wordpress: manageWordpressShare
-      , xing: manageXingShare
-      , evernote: manageEvernoteShare
-      , whatsapp: manageWhatsappShare
-      , viber: manageViberShare
-      , skype: skypeShare
+      'email': manageEmailShare
+      , 'facebook': manageFacebookShare
+      , 'facebook-messenger': facebookMessengerShare
+      , 'twitter': manageTwitterShare
+      , 'google': manageGooglePlusShare
+      , 'reddit': manageRedditShare
+      , 'stumbleupon': manageStumbleuponShare
+      , 'linkedin': manageLinkedinShare
+      , 'pinterest': managePinterestShare
+      , 'digg': manageDiggShare
+      , 'tumblr': manageTumblrShare
+      , 'vk': manageVkShare
+      , 'delicious': manageDeliciousShare
+      , 'buffer': manageBufferShare
+      , 'hackernews': manageHackernewsShare
+      , 'flipboard': manageFlipboardShare
+      , 'pocket': managePocketShare
+      , 'wordpress': manageWordpressShare
+      , 'xing': manageXingShare
+      , 'evernote': manageEvernoteShare
+      , 'whatsapp': manageWhatsappShare
+      , 'viber': manageViberShare
+      , 'skype': skypeShare
     };
 
 

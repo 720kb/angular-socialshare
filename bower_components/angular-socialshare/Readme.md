@@ -1,7 +1,7 @@
 Angular Socialshare
 ==================
 
-![Angular socialshare](http://i.imgur.com/MjwpHEQ.png)
+![Angular socialshare](http://i.imgur.com/QOqpxqm.png)
 
 [![Join the chat at https://gitter.im/720kb/angular-socialshare](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/720kb/angular-socialshare?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
@@ -83,10 +83,12 @@ You can set the social platform you want to share on using the `socialshare-prov
 
 #####Providers:
 
+- [email](#email)
 - [facebook](#facebook)
+- [facebook-messenger](#facebook-messenger)
 - [twitter](#twitter)
 - [linkedin](#linkedin)
-- [google](#google-plus)
+- [google](#google)
 - [pinterest](#pinterest)
 - [tumblr](#tumblr)
 - [reddit](#reddit)
@@ -126,6 +128,14 @@ Method | Option | Type | Default | Description
  	dialog		| socialshare-source="" 	 | URL | false |	Set the source value
  	dialog		| socialshare-caption="" 	 | String | false |	Set the caption to share
   dialog, send		| socialshare-redirect-uri="" 	 | URL | false |	Set the redirect URI
+
+
+####Facebook Messenger 
+(works only for `<a>` elements, it is a direct link)
+
+Method | Option | Type | Default | Description
+------------- | ------------- | ------------- | ------------- | -------------
+  sharer    | socialshare-url="" |  URL | page URL| Set the url to share
 
 
 ####Twitter
@@ -266,6 +276,7 @@ Method | Option | Type | Default | Description
 
 
 ####Whatsapp
+(works only for `<a>` elements, it is a direct link)
 
 Method | Option | Type | Default | Description
 ------------- | ------------- | ------------- | ------------- | -------------
@@ -274,6 +285,7 @@ Method | Option | Type | Default | Description
 
 
 ####Viber
+(works only for `<a>` elements, it is a direct link)
 
 Method | Option | Type | Default | Description
 ------------- | ------------- | ------------- | ------------- | -------------
@@ -287,6 +299,16 @@ Method | Option | Type | Default | Description
 ------------- | ------------- | ------------- | ------------- | -------------
   sharer    | socialshare-url=""   |  URL | page URL| Set the url to share
   sharer    | socialshare-text=""  | String | false | Set the content to share
+
+####Email
+
+Method | Option | Type | Default | Description
+------------- | ------------- | ------------- | ------------- | -------------
+  mailto    | socialshare-subject=""   |  String | false | Set the subject for the email
+  mailto    | socialshare-body=""  | String | false | Set the body content for the email
+  mailto    | socialshare-to=""  | String | false | Set the Receiver / Receivers
+  mailto    | socialshare-cc=""  | String | false | Set the CC / CCs for the email
+  mailto    | socialshare-bcc=""  | String | false | Set the BCC / BCCs for the email
 
 
 ##Options
