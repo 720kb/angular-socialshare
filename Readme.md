@@ -85,7 +85,7 @@ You can set the social platform you want to share on using the `socialshare-prov
 
 - [email](#email)
 - [facebook](#facebook)
-- [facebook messenger](#facebook-messenger)
+- [facebook-messenger](#facebook-messenger)
 - [twitter](#twitter)
 - [linkedin](#linkedin)
 - [google](#google)
