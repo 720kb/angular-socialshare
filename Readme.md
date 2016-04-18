@@ -85,6 +85,7 @@ You can set the social platform you want to share on using the `socialshare-prov
 
 - [email](#email)
 - [facebook](#facebook)
+- [facebookMessenger](#facebookmessenger)
 - [twitter](#twitter)
 - [linkedin](#linkedin)
 - [google](#google)
@@ -127,6 +128,15 @@ Method | Option | Type | Default | Description
  	dialog		| socialshare-source="" 	 | URL | false |	Set the source value
  	dialog		| socialshare-caption="" 	 | String | false |	Set the caption to share
   dialog, send		| socialshare-redirect-uri="" 	 | URL | false |	Set the redirect URI
+
+
+####FacebookMessenger
+
+Method | Option | Type | Default | Description
+------------- | ------------- | ------------- | ------------- | -------------
+  sharer    | socialshare-url="" |  URL | page URL| Set the url to share
+
+If you know any other options not listed here, please report them in the [issues](https://github.com/720kb/angular-socialshare/issues).
 
 
 ####Twitter
