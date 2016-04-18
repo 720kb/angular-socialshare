@@ -85,7 +85,7 @@ You can set the social platform you want to share on using the `socialshare-prov
 
 - [email](#email)
 - [facebook](#facebook)
-- [facebookMessenger](#facebookmessenger)
+- [facebook messenger](#facebook-messenger)
 - [twitter](#twitter)
 - [linkedin](#linkedin)
 - [google](#google)
@@ -130,13 +130,12 @@ Method | Option | Type | Default | Description
   dialog, send		| socialshare-redirect-uri="" 	 | URL | false |	Set the redirect URI
 
 
-####FacebookMessenger
+####Facebook Messenger 
+(works only for `<a>` elements, it is a direct link)
 
 Method | Option | Type | Default | Description
 ------------- | ------------- | ------------- | ------------- | -------------
   sharer    | socialshare-url="" |  URL | page URL| Set the url to share
-
-If you know any other options not listed here, please report them in the [issues](https://github.com/720kb/angular-socialshare/issues).
 
 
 ####Twitter
@@ -277,6 +276,7 @@ Method | Option | Type | Default | Description
 
 
 ####Whatsapp
+(works only for `<a>` elements, it is a direct link)
 
 Method | Option | Type | Default | Description
 ------------- | ------------- | ------------- | ------------- | -------------
@@ -285,6 +285,7 @@ Method | Option | Type | Default | Description
 
 
 ####Viber
+(works only for `<a>` elements, it is a direct link)
 
 Method | Option | Type | Default | Description
 ------------- | ------------- | ------------- | ------------- | -------------
