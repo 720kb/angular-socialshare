@@ -1,12 +1,12 @@
 /*
  * angular-socialshare
- * 2.1.1
+ * 2.1.2
  * 
  * A social urls and content sharing directive for angularjs.
  * http://720kb.githb.io/angular-socialshare
  * 
  * MIT license
- * Sat Apr 16 2016
+ * Mon Apr 18 2016
  */
 /*
  * angular-socialshare
@@ -25,7 +25,7 @@
   'use strict';
 
   var directiveName = 'socialshare'
-    , socialshareProviderNames = ['facebook', 'twitter', 'linkedin', 'google', 'pinterest', 'tumblr', 'reddit', 'stumbleupon', 'buffer', 'digg', 'delicious', 'vk', 'pocket', 'wordpress', 'flipboard', 'xing', 'hackernews', 'evernote', 'whatsapp', 'viber', 'skype', 'email']
+    , socialshareProviderNames = ['facebook', 'facebook-messenger', 'twitter', 'linkedin', 'google', 'pinterest', 'tumblr', 'reddit', 'stumbleupon', 'buffer', 'digg', 'delicious', 'vk', 'pocket', 'wordpress', 'flipboard', 'xing', 'hackernews', 'evernote', 'whatsapp', 'viber', 'skype', 'email']
     , socialshareConfigurationProvider = /*@ngInject*/ function socialshareConfigurationProvider() {
 
       var socialshareConfigurationDefault = [{
@@ -60,9 +60,9 @@
         }
       },
       {
-        'provider': 'facebookMessenger',
+        'provider': 'facebook-messenger',
         'conf': {
-          'ur': ''
+          'url': ''
         }
       },
       {
@@ -325,7 +325,7 @@
         }
       };
     }
-    , socialshareDirective = /*@ngInject*/ ["$window", "$location", "socialshareConf", "$log", function socialshareDirective($window, $location, socialshareConf, $log) {
+    , socialshareDirective = /*@ngInject*/ ['$window', '$location', 'socialshareConf', '$log', function socialshareDirective($window, $location, socialshareConf, $log) {
 
       var linkingFunction = function linkingFunction($scope, element, attrs) {
 
@@ -337,8 +337,7 @@
           /*eslint-disable no-use-before-define*/
           if (attrs.socialshareProvider in sharingFunctions) {
             sharingFunctions[attrs.socialshareProvider]($window, $location, attrs, element);
-          }
-          else {
+          } else {
             return true;
           }
         };
@@ -377,9 +376,10 @@
         attrs.socialshareHashtags = attrs.socialshareHashtags || configurationElement.conf.hashtags;
 
         if (attrs.socialshareTrigger) {
+
           element.bind(attrs.socialshareTrigger, onEventTriggered);
-        }
-        else {
+        } else {
+
           onEventTriggered();
         }
       };
@@ -417,9 +417,12 @@
       $window.open(urlString, '_self');
     }
     , manageFacebookShare = function manageFacebookShare($window, $location, attrs) {
+
+      var urlString;
+
       if (attrs.socialshareType && attrs.socialshareType === 'feed') {
         // if user specifies that they want to use the Facebook feed dialog (https://developers.facebook.com/docs/sharing/reference/feed-dialog/v2.4)
-        var urlString = 'https://www.facebook.com/dialog/feed?';
+        urlString = 'https://www.facebook.com/dialog/feed?';
 
         if (attrs.socialshareVia) {
           urlString += '&app_id=' + encodeURIComponent(attrs.socialshareVia);
@@ -475,7 +478,7 @@
 
       } else if (attrs.socialshareType && attrs.socialshareType === 'send') {
         // if user specifies that they want to use the Facebook send dialog (https://developers.facebook.com/docs/sharing/reference/send-dialog)
-        var urlString = 'https://www.facebook.com/dialog/send?';
+        urlString = 'https://www.facebook.com/dialog/send?';
 
         if (attrs.socialshareVia) {
           urlString += '&app_id=' + encodeURIComponent(attrs.socialshareVia);
@@ -789,29 +792,29 @@
         + ',top=' + ($window.innerHeight - attrs.socialsharePopupHeight) / 2 + ',left=' + ($window.innerWidth - attrs.socialsharePopupWidth) / 2);
     }
     , sharingFunctions = {
-      email: manageEmailShare
-      , facebook: manageFacebookShare
-      , facebookMessenger: facebookMessengerShare
-      , twitter: manageTwitterShare
-      , google: manageGooglePlusShare
-      , reddit: manageRedditShare
-      , stumbleupon: manageStumbleuponShare
-      , linkedin: manageLinkedinShare
-      , pinterest: managePinterestShare
-      , digg: manageDiggShare
-      , tumblr: manageTumblrShare
-      , vk: manageVkShare
-      , delicious: manageDeliciousShare
-      , buffer: manageBufferShare
-      , hackernews: manageHackernewsShare
-      , flipboard: manageFlipboardShare
-      , pocket: managePocketShare
-      , wordpress: manageWordpressShare
-      , xing: manageXingShare
-      , evernote: manageEvernoteShare
-      , whatsapp: manageWhatsappShare
-      , viber: manageViberShare
-      , skype: skypeShare
+      'email': manageEmailShare
+      , 'facebook': manageFacebookShare
+      , 'facebook-messenger': facebookMessengerShare
+      , 'twitter': manageTwitterShare
+      , 'google': manageGooglePlusShare
+      , 'reddit': manageRedditShare
+      , 'stumbleupon': manageStumbleuponShare
+      , 'linkedin': manageLinkedinShare
+      , 'pinterest': managePinterestShare
+      , 'digg': manageDiggShare
+      , 'tumblr': manageTumblrShare
+      , 'vk': manageVkShare
+      , 'delicious': manageDeliciousShare
+      , 'buffer': manageBufferShare
+      , 'hackernews': manageHackernewsShare
+      , 'flipboard': manageFlipboardShare
+      , 'pocket': managePocketShare
+      , 'wordpress': manageWordpressShare
+      , 'xing': manageXingShare
+      , 'evernote': manageEvernoteShare
+      , 'whatsapp': manageWhatsappShare
+      , 'viber': manageViberShare
+      , 'skype': skypeShare
     };
 
 
