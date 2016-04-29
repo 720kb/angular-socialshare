@@ -6,7 +6,7 @@
  * http://720kb.githb.io/angular-socialshare
  * 
  * MIT license
- * Tue Apr 26 2016
+ * Fri Apr 29 2016
  */
 /*
  * angular-socialshare
@@ -106,6 +106,16 @@
           'url': '',
           'text': '',
           'media': '',
+          'trigger': 'click',
+          'popupHeight': 300,
+          'popupWidth': 400
+        }
+      },
+      {
+        'provider': 'ok',
+        'conf': {
+          'url': '',
+          'text': '',
           'trigger': 'click',
           'popupHeight': 300,
           'popupWidth': 400
@@ -657,6 +667,12 @@
        , 'sharer', 'toolbar=0,status=0,width=' + attrs.socialsharePopupWidth + ',height=' + attrs.socialsharePopupHeight
        + ',top=' + ($window.innerHeight - attrs.socialsharePopupHeight) / 2 + ',left=' + ($window.innerWidth - attrs.socialsharePopupWidth) / 2);
     }
+    , manageOkShare = function manageOkShare($window, $location, attrs) {
+      $window.open(
+        'http://www.odnoklassniki.ru/dk?st.cmd=addShare&st.s=1&st._surl=' + encodeURIComponent(attrs.socialshareUrl || $location.absUrl()) + '&st.comments=' + encodeURIComponent(attrs.socialshareText)
+        , 'sharer', 'toolbar=0,status=0,width=' + attrs.socialsharePopupWidth + ',height=' + attrs.socialsharePopupHeight
+        + ',top=' + ($window.innerHeight - attrs.socialsharePopupHeight) / 2 + ',left=' + ($window.innerWidth - attrs.socialsharePopupWidth) / 2);
+    }
     , manageDeliciousShare = function manageDeliciousShare($window, $location, attrs) {
 
      $window.open(
@@ -807,6 +823,7 @@
       , 'digg': manageDiggShare
       , 'tumblr': manageTumblrShare
       , 'vk': manageVkShare
+      , 'ok': manageOkShare
       , 'delicious': manageDeliciousShare
       , 'buffer': manageBufferShare
       , 'hackernews': manageHackernewsShare
