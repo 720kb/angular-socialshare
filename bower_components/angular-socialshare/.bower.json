@@ -1,6 +1,6 @@
 {
   "name": "angular-socialshare",
-  "version": "2.1.2",
+  "version": "2.1.4",
   "description": "A social url and content sharing directive for angularjs.",
   "authors": [
     "Filippo Oretti <filippo.oretti@gmail.com",
@@ -28,13 +28,14 @@
     "conf",
     "gulpfile.js"
   ],
-  "_release": "2.1.2",
+  "_release": "2.1.4",
   "_resolution": {
     "type": "version",
-    "tag": "2.1.2",
-    "commit": "3a70838f8f59b3e17dab6903c7a02400d02fd131"
+    "tag": "2.1.4",
+    "commit": "89886ec15c60ce1781f189abb4b115f2a0b703fa"
   },
   "_source": "https://github.com/720kb/angular-socialshare.git",
-  "_target": "^2.1.0",
-  "_originalSource": "angularjs-socialshare"
+  "_target": "^2.1.4",
+  "_originalSource": "angularjs-socialshare",
+  "_direct": true
 }

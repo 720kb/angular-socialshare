@@ -1,12 +1,12 @@
 /*
  * angular-socialshare
- * 2.1.2
+ * 2.1.4
  * 
  * A social urls and content sharing directive for angularjs.
  * http://720kb.githb.io/angular-socialshare
  * 
  * MIT license
- * Mon Apr 18 2016
+ * Fri Apr 29 2016
  */
 /*
  * angular-socialshare
@@ -25,7 +25,7 @@
   'use strict';
 
   var directiveName = 'socialshare'
-    , socialshareProviderNames = ['facebook', 'facebook-messenger', 'twitter', 'linkedin', 'google', 'pinterest', 'tumblr', 'reddit', 'stumbleupon', 'buffer', 'digg', 'delicious', 'vk', 'pocket', 'wordpress', 'flipboard', 'xing', 'hackernews', 'evernote', 'whatsapp', 'viber', 'skype', 'email']
+    , socialshareProviderNames = ['facebook', 'facebook-messenger', 'twitter', 'linkedin', 'google', 'pinterest', 'tumblr', 'reddit', 'stumbleupon', 'buffer', 'digg', 'delicious', 'vk', 'pocket', 'wordpress', 'flipboard', 'xing', 'hackernews', 'evernote', 'whatsapp', 'viber', 'skype', 'email', 'ok']
     , socialshareConfigurationProvider = /*@ngInject*/ function socialshareConfigurationProvider() {
 
       var socialshareConfigurationDefault = [{
@@ -55,8 +55,8 @@
           'caption': '',
           'redirectUri': '',
           'trigger': 'click',
-          'popupHeight': 300,
-          'popupWidth': 400
+          'popupHeight': 600,
+          'popupWidth': 500
         }
       },
       {
@@ -73,8 +73,8 @@
           'via': '',
           'hashtags': '',
           'trigger': 'click',
-          'popupHeight': 300,
-          'popupWidth': 400
+          'popupHeight': 600,
+          'popupWidth': 500
         }
       },
       {
@@ -85,8 +85,8 @@
           'description': '',
           'source': '',
           'trigger': 'click',
-          'popupHeight': 300,
-          'popupWidth': 400
+          'popupHeight': 600,
+          'popupWidth': 500
         }
       },
       {
@@ -96,8 +96,8 @@
           'text': '',
           'subreddit': '',
           'trigger': 'click',
-          'popupHeight': 300,
-          'popupWidth': 400
+          'popupHeight': 600,
+          'popupWidth': 500
         }
       },
       {
@@ -107,8 +107,18 @@
           'text': '',
           'media': '',
           'trigger': 'click',
-          'popupHeight': 300,
-          'popupWidth': 400
+          'popupHeight': 600,
+          'popupWidth': 500
+        }
+      },
+      {
+        'provider': 'ok',
+        'conf': {
+          'url': '',
+          'text': '',
+          'trigger': 'click',
+          'popupHeight': 600,
+          'popupWidth': 500
         }
       },
       {
@@ -118,8 +128,8 @@
           'text': '',
           'media': '',
           'trigger': 'click',
-          'popupHeight': 300,
-          'popupWidth': 400
+          'popupHeight': 600,
+          'popupWidth': 500
         }
       },
       {
@@ -129,8 +139,8 @@
           'text': '',
           'media': '',
           'trigger': 'click',
-          'popupHeight': 300,
-          'popupWidth': 400
+          'popupHeight': 600,
+          'popupWidth': 500
         }
       },
       {
@@ -140,8 +150,8 @@
           'text': '',
           'media': '',
           'trigger': 'click',
-          'popupHeight': 300,
-          'popupWidth': 400
+          'popupHeight': 600,
+          'popupWidth': 500
         }
       },
       {
@@ -151,8 +161,8 @@
           'text': '',
           'media': '',
           'trigger': 'click',
-          'popupHeight': 300,
-          'popupWidth': 400
+          'popupHeight': 600,
+          'popupWidth': 500
         }
       },
       {
@@ -162,8 +172,8 @@
           'text': '',
           'media': '',
           'trigger': 'click',
-          'popupHeight': 300,
-          'popupWidth': 400
+          'popupHeight': 600,
+          'popupWidth': 500
         }
       },
       {
@@ -173,8 +183,8 @@
           'text': '',
           'media': '',
           'trigger': 'click',
-          'popupHeight': 300,
-          'popupWidth': 400
+          'popupHeight': 600,
+          'popupWidth': 500
         }
       },
       {
@@ -184,8 +194,8 @@
           'text': '',
           'via': '',
           'trigger': 'click',
-          'popupHeight': 300,
-          'popupWidth': 400
+          'popupHeight': 600,
+          'popupWidth': 500
         }
       },
       {
@@ -194,8 +204,8 @@
           'url': '',
           'text': '',
           'trigger': 'click',
-          'popupHeight': 300,
-          'popupWidth': 400
+          'popupHeight': 600,
+          'popupWidth': 500
         }
       },
       {
@@ -204,8 +214,8 @@
           'url': '',
           'text': '',
           'trigger': 'click',
-          'popupHeight': 300,
-          'popupWidth': 400
+          'popupHeight': 600,
+          'popupWidth': 500
         }
       },
       {
@@ -214,8 +224,8 @@
           'url': '',
           'text': '',
           'trigger': 'click',
-          'popupHeight': 300,
-          'popupWidth': 400
+          'popupHeight': 600,
+          'popupWidth': 500
         }
       },
       {
@@ -225,8 +235,8 @@
           'text': '',
           'media': '',
           'trigger': 'click',
-          'popupHeight': 300,
-          'popupWidth': 400
+          'popupHeight': 600,
+          'popupWidth': 500
         }
       },
       {
@@ -237,8 +247,8 @@
           'media': '',
           'follow' : '',
           'trigger': 'click',
-          'popupHeight': 300,
-          'popupWidth': 400
+          'popupHeight': 600,
+          'popupWidth': 500
         }
       },
       {
@@ -247,8 +257,8 @@
           'url': '',
           'text': '',
           'trigger': 'click',
-          'popupHeight': 300,
-          'popupWidth': 400
+          'popupHeight': 600,
+          'popupWidth': 500
         }
       },
       {
@@ -271,8 +281,8 @@
           'url': '',
           'text': '',
           'trigger': 'click',
-          'popupHeight': 300,
-          'popupWidth': 400
+          'popupHeight': 600,
+          'popupWidth': 500
         }
       }];
 
@@ -394,8 +404,11 @@
 
       if (attrs.socialshareTo) {
 
-        urlString += encodeURIComponent(attrs.socialshareTo) + '?';
+        urlString += encodeURIComponent(attrs.socialshareTo);
       }
+
+      urlString += '?';
+
       if (attrs.socialshareBody) {
 
         urlString += 'body=' + encodeURIComponent(attrs.socialshareBody);
@@ -642,7 +655,7 @@
       } else {
 
         $window.open(
-          'https://www.tumblr.com/share/link?url=' + encodeURIComponent(attrs.socialshareUrl) + '&description=' + encodeURIComponent(attrs.socialshareText)
+          'https://www.tumblr.com/share/link?url=' + encodeURIComponent(attrs.socialshareUrl || $location.absUrl()) + '&description=' + encodeURIComponent(attrs.socialshareText)
           , 'sharer', 'toolbar=0,status=0,width=' + attrs.socialsharePopupWidth + ',height=' + attrs.socialsharePopupHeight
           + ',top=' + ($window.innerHeight - attrs.socialsharePopupHeight) / 2 + ',left=' + ($window.innerWidth - attrs.socialsharePopupWidth) / 2);
       }
@@ -653,6 +666,12 @@
        'https://www.vk.com/share.php?url=' + encodeURIComponent(attrs.socialshareUrl || $location.absUrl())
        , 'sharer', 'toolbar=0,status=0,width=' + attrs.socialsharePopupWidth + ',height=' + attrs.socialsharePopupHeight
        + ',top=' + ($window.innerHeight - attrs.socialsharePopupHeight) / 2 + ',left=' + ($window.innerWidth - attrs.socialsharePopupWidth) / 2);
+    }
+    , manageOkShare = function manageOkShare($window, $location, attrs) {
+      $window.open(
+        'http://www.odnoklassniki.ru/dk?st.cmd=addShare&st.s=1&st._surl=' + encodeURIComponent(attrs.socialshareUrl || $location.absUrl()) + '&st.comments=' + encodeURIComponent(attrs.socialshareText)
+        , 'sharer', 'toolbar=0,status=0,width=' + attrs.socialsharePopupWidth + ',height=' + attrs.socialsharePopupHeight
+        + ',top=' + ($window.innerHeight - attrs.socialsharePopupHeight) / 2 + ',left=' + ($window.innerWidth - attrs.socialsharePopupWidth) / 2);
     }
     , manageDeliciousShare = function manageDeliciousShare($window, $location, attrs) {
 
@@ -804,6 +823,7 @@
       , 'digg': manageDiggShare
       , 'tumblr': manageTumblrShare
       , 'vk': manageVkShare
+      , 'ok': manageOkShare
       , 'delicious': manageDeliciousShare
       , 'buffer': manageBufferShare
       , 'hackernews': manageHackernewsShare
