@@ -171,6 +171,9 @@ Method | Option | Type | Default | Description
 Method | Option | Type | Default | Description
 ------------- | ------------- | ------------- | ------------- | -------------
  	sharer		| socialshare-url="" 	 |	URL | page URL|	Set the url to share
+ 	sharer		| socialshare-text="" 	 | String |	 false	| Set the title to share
+ 	sharer		| socialshare-description="" 	 | String |	 false	| Set the content to share
+ 	sharer		| socialshare-media="" 	 | URL |	false | Set the image source to share
 ####OK
 (ok.ru)
 
