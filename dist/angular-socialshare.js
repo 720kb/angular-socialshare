@@ -6,7 +6,7 @@
  * http://720kb.githb.io/angular-socialshare
  * 
  * MIT license
- * Fri Apr 29 2016
+ * Fri May 06 2016
  */
 /*
  * angular-socialshare
@@ -661,9 +661,22 @@
       }
     }
     , manageVkShare = function manageVkShare($window, $location, attrs) {
+      var urlString = 'https://www.vk.com/share.php?url=' + encodeURIComponent(attrs.socialshareUrl || $location.absUrl());
 
-     $window.open(
-       'https://www.vk.com/share.php?url=' + encodeURIComponent(attrs.socialshareUrl || $location.absUrl())
+      if (attrs.socialshareText) {
+        urlString += '&title=' + encodeURIComponent(attrs.socialshareText);
+      }
+
+      if (attrs.socialshareMedia) {
+        urlString += '&image=' + encodeURIComponent(attrs.socialshareMedia);
+      }
+
+      if (attrs.socialshareDescription) {
+        urlString += '&description=' + encodeURIComponent(attrs.socialshareDescription);
+      }
+
+      $window.open(
+       urlString
        , 'sharer', 'toolbar=0,status=0,width=' + attrs.socialsharePopupWidth + ',height=' + attrs.socialsharePopupHeight
        + ',top=' + ($window.innerHeight - attrs.socialsharePopupHeight) / 2 + ',left=' + ($window.innerWidth - attrs.socialsharePopupWidth) / 2);
     }
