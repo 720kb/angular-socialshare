@@ -1,7 +1,7 @@
 Angular Socialshare
 ==================
 
-![Angular socialshare](http://i.imgur.com/sqnePat.png)
+![Angular socialshare](http://i.imgur.com/Uj7x8BD.png)
 
 [![Join the chat at https://gitter.im/720kb/angular-socialshare](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/720kb/angular-socialshare?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
@@ -97,6 +97,7 @@ You can set the social platform you want to share on using the `socialshare-prov
 - [digg](#digg)
 - [delicious](#delicious)
 - [vk](#vk)
+- [ok](#vk)
 - [pocket](#pocket)
 - [wordpress](#wordpress)
 - [flipboard](#flipboard)
@@ -170,8 +171,13 @@ Method | Option | Type | Default | Description
 Method | Option | Type | Default | Description
 ------------- | ------------- | ------------- | ------------- | -------------
  	sharer		| socialshare-url="" 	 |	URL | page URL|	Set the url to share
+####OK
+(ok.ru)
+
+Method | Option | Type | Default | Description
+------------- | ------------- | ------------- | ------------- | -------------
+ 	sharer		| socialshare-url="" 	 |	URL | page URL|	Set the url to share
 	sharer		| socialshare-text="" 	 | String	| false |	Set the content to share
-	sharer		| socialshare-media="" 	 | URL | false |		Set the media url to share
 
 ####Digg
 

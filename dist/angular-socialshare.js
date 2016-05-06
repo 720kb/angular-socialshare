@@ -1,6 +1,6 @@
 /*
  * angular-socialshare
- * 2.1.3
+ * 2.1.4
  * 
  * A social urls and content sharing directive for angularjs.
  * http://720kb.githb.io/angular-socialshare
@@ -25,7 +25,7 @@
   'use strict';
 
   var directiveName = 'socialshare'
-    , socialshareProviderNames = ['facebook', 'facebook-messenger', 'twitter', 'linkedin', 'google', 'pinterest', 'tumblr', 'reddit', 'stumbleupon', 'buffer', 'digg', 'delicious', 'vk', 'pocket', 'wordpress', 'flipboard', 'xing', 'hackernews', 'evernote', 'whatsapp', 'viber', 'skype', 'email']
+    , socialshareProviderNames = ['facebook', 'facebook-messenger', 'twitter', 'linkedin', 'google', 'pinterest', 'tumblr', 'reddit', 'stumbleupon', 'buffer', 'digg', 'delicious', 'vk', 'pocket', 'wordpress', 'flipboard', 'xing', 'hackernews', 'evernote', 'whatsapp', 'viber', 'skype', 'email', 'ok']
     , socialshareConfigurationProvider = /*@ngInject*/ function socialshareConfigurationProvider() {
 
       var socialshareConfigurationDefault = [{
@@ -55,8 +55,8 @@
           'caption': '',
           'redirectUri': '',
           'trigger': 'click',
-          'popupHeight': 300,
-          'popupWidth': 400
+          'popupHeight': 600,
+          'popupWidth': 500
         }
       },
       {
@@ -73,8 +73,8 @@
           'via': '',
           'hashtags': '',
           'trigger': 'click',
-          'popupHeight': 300,
-          'popupWidth': 400
+          'popupHeight': 600,
+          'popupWidth': 500
         }
       },
       {
@@ -85,8 +85,8 @@
           'description': '',
           'source': '',
           'trigger': 'click',
-          'popupHeight': 300,
-          'popupWidth': 400
+          'popupHeight': 600,
+          'popupWidth': 500
         }
       },
       {
@@ -96,8 +96,8 @@
           'text': '',
           'subreddit': '',
           'trigger': 'click',
-          'popupHeight': 300,
-          'popupWidth': 400
+          'popupHeight': 600,
+          'popupWidth': 500
         }
       },
       {
@@ -107,8 +107,8 @@
           'text': '',
           'media': '',
           'trigger': 'click',
-          'popupHeight': 300,
-          'popupWidth': 400
+          'popupHeight': 600,
+          'popupWidth': 500
         }
       },
       {
@@ -117,8 +117,8 @@
           'url': '',
           'text': '',
           'trigger': 'click',
-          'popupHeight': 300,
-          'popupWidth': 400
+          'popupHeight': 600,
+          'popupWidth': 500
         }
       },
       {
@@ -128,8 +128,8 @@
           'text': '',
           'media': '',
           'trigger': 'click',
-          'popupHeight': 300,
-          'popupWidth': 400
+          'popupHeight': 600,
+          'popupWidth': 500
         }
       },
       {
@@ -139,8 +139,8 @@
           'text': '',
           'media': '',
           'trigger': 'click',
-          'popupHeight': 300,
-          'popupWidth': 400
+          'popupHeight': 600,
+          'popupWidth': 500
         }
       },
       {
@@ -150,8 +150,8 @@
           'text': '',
           'media': '',
           'trigger': 'click',
-          'popupHeight': 300,
-          'popupWidth': 400
+          'popupHeight': 600,
+          'popupWidth': 500
         }
       },
       {
@@ -161,8 +161,8 @@
           'text': '',
           'media': '',
           'trigger': 'click',
-          'popupHeight': 300,
-          'popupWidth': 400
+          'popupHeight': 600,
+          'popupWidth': 500
         }
       },
       {
@@ -172,8 +172,8 @@
           'text': '',
           'media': '',
           'trigger': 'click',
-          'popupHeight': 300,
-          'popupWidth': 400
+          'popupHeight': 600,
+          'popupWidth': 500
         }
       },
       {
@@ -183,8 +183,8 @@
           'text': '',
           'media': '',
           'trigger': 'click',
-          'popupHeight': 300,
-          'popupWidth': 400
+          'popupHeight': 600,
+          'popupWidth': 500
         }
       },
       {
@@ -194,8 +194,8 @@
           'text': '',
           'via': '',
           'trigger': 'click',
-          'popupHeight': 300,
-          'popupWidth': 400
+          'popupHeight': 600,
+          'popupWidth': 500
         }
       },
       {
@@ -204,8 +204,8 @@
           'url': '',
           'text': '',
           'trigger': 'click',
-          'popupHeight': 300,
-          'popupWidth': 400
+          'popupHeight': 600,
+          'popupWidth': 500
         }
       },
       {
@@ -214,8 +214,8 @@
           'url': '',
           'text': '',
           'trigger': 'click',
-          'popupHeight': 300,
-          'popupWidth': 400
+          'popupHeight': 600,
+          'popupWidth': 500
         }
       },
       {
@@ -224,8 +224,8 @@
           'url': '',
           'text': '',
           'trigger': 'click',
-          'popupHeight': 300,
-          'popupWidth': 400
+          'popupHeight': 600,
+          'popupWidth': 500
         }
       },
       {
@@ -235,8 +235,8 @@
           'text': '',
           'media': '',
           'trigger': 'click',
-          'popupHeight': 300,
-          'popupWidth': 400
+          'popupHeight': 600,
+          'popupWidth': 500
         }
       },
       {
@@ -247,8 +247,8 @@
           'media': '',
           'follow' : '',
           'trigger': 'click',
-          'popupHeight': 300,
-          'popupWidth': 400
+          'popupHeight': 600,
+          'popupWidth': 500
         }
       },
       {
@@ -257,8 +257,8 @@
           'url': '',
           'text': '',
           'trigger': 'click',
-          'popupHeight': 300,
-          'popupWidth': 400
+          'popupHeight': 600,
+          'popupWidth': 500
         }
       },
       {
@@ -281,8 +281,8 @@
           'url': '',
           'text': '',
           'trigger': 'click',
-          'popupHeight': 300,
-          'popupWidth': 400
+          'popupHeight': 600,
+          'popupWidth': 500
         }
       }];
 
@@ -655,7 +655,7 @@
       } else {
 
         $window.open(
-          'https://www.tumblr.com/share/link?url=' + encodeURIComponent(attrs.socialshareUrl) + '&description=' + encodeURIComponent(attrs.socialshareText)
+          'https://www.tumblr.com/share/link?url=' + encodeURIComponent(attrs.socialshareUrl || $location.absUrl()) + '&description=' + encodeURIComponent(attrs.socialshareText)
           , 'sharer', 'toolbar=0,status=0,width=' + attrs.socialsharePopupWidth + ',height=' + attrs.socialsharePopupHeight
           + ',top=' + ($window.innerHeight - attrs.socialsharePopupHeight) / 2 + ',left=' + ($window.innerWidth - attrs.socialsharePopupWidth) / 2);
       }
