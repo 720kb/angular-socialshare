@@ -105,6 +105,7 @@ You can set the social platform you want to share on using the `socialshare-prov
 - [hackernews](#hacker-news)
 - [evernote](#evernote)
 - [whatsapp](#whatsapp)
+- [telegram](#telegram)
 - [viber](#viber)
 - [skype](#skype)
 
@@ -285,6 +286,14 @@ Method | Option | Type | Default | Description
 
 
 ####Whatsapp
+(works only for `<a>` elements, it is a direct link)
+
+Method | Option | Type | Default | Description
+------------- | ------------- | ------------- | ------------- | -------------
+  sharer    | socialshare-url="" |  URL | page URL| Set the url to share
+  sharer    | socialshare-text="" | String  | false | Set the content to share
+
+####Telegram
 (works only for `<a>` elements, it is a direct link)
 
 Method | Option | Type | Default | Description
