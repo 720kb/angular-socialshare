@@ -1,7 +1,7 @@
 {
   "name": "angular-socialshare",
-  "version": "2.1.5",
-  "description": "A social url and content sharing directive for angularjs.",
+  "version": "2.1.6",
+  "description": "A social media url and content share directive for angularjs.",
   "authors": [
     "Filippo Oretti <filippo.oretti@gmail.com",
     "Dario Andrei <wouldgo84@gmail.com>"
