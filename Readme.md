@@ -132,7 +132,7 @@ Method | Option | Type | Default | Description
   dialog, send		| socialshare-redirect-uri="" 	 | URL | false |	Set the redirect URI
 
 
-####Facebook Messenger 
+####Facebook Messenger  (Mobile only)
 (works only for `<a>` elements, it is a direct link)
 
 Method | Option | Type | Default | Description
@@ -285,7 +285,7 @@ Method | Option | Type | Default | Description
   sharer		| socialshare-follow="" 	 | URL | false |		Set the Xing page url which will be then suggested to you to follow
 
 
-####Whatsapp
+####Whatsapp (Mobile only)
 (works only for `<a>` elements, it is a direct link)
 
 Method | Option | Type | Default | Description
@@ -302,7 +302,7 @@ Method | Option | Type | Default | Description
   sharer    | socialshare-text="" | String  | false | Set the content to share
 
 
-####Viber
+####Viber (Mobile only)
 (works only for `<a>` elements, it is a direct link)
 
 Method | Option | Type | Default | Description
