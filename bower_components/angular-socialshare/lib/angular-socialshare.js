@@ -15,7 +15,7 @@
   'use strict';
 
   var directiveName = 'socialshare'
-    , socialshareProviderNames = ['facebook', 'facebook-messenger', 'twitter', 'linkedin', 'google', 'pinterest', 'tumblr', 'reddit', 'stumbleupon', 'buffer', 'digg', 'delicious', 'vk', 'pocket', 'wordpress', 'flipboard', 'xing', 'hackernews', 'evernote', 'whatsapp', 'viber', 'skype', 'email', 'ok']
+    , socialshareProviderNames = ['facebook', 'facebook-messenger', 'twitter', 'linkedin', 'google', 'pinterest', 'tumblr', 'reddit', 'stumbleupon', 'buffer', 'digg', 'delicious', 'vk', 'pocket', 'wordpress', 'flipboard', 'xing', 'hackernews', 'evernote', 'whatsapp', 'telegram', 'viber', 'skype', 'email', 'ok']
     , socialshareConfigurationProvider = /*@ngInject*/ function socialshareConfigurationProvider() {
 
       var socialshareConfigurationDefault = [{
@@ -253,6 +253,13 @@
       },
       {
         'provider': 'whatsapp',
+        'conf': {
+          'url': '',
+          'text': ''
+        }
+      },
+      {
+        'provider': 'telegram',
         'conf': {
           'url': '',
           'text': ''
@@ -651,9 +658,22 @@
       }
     }
     , manageVkShare = function manageVkShare($window, $location, attrs) {
+      var urlString = 'https://www.vk.com/share.php?url=' + encodeURIComponent(attrs.socialshareUrl || $location.absUrl());
 
-     $window.open(
-       'https://www.vk.com/share.php?url=' + encodeURIComponent(attrs.socialshareUrl || $location.absUrl())
+      if (attrs.socialshareText) {
+        urlString += '&title=' + encodeURIComponent(attrs.socialshareText);
+      }
+
+      if (attrs.socialshareMedia) {
+        urlString += '&image=' + encodeURIComponent(attrs.socialshareMedia);
+      }
+
+      if (attrs.socialshareDescription) {
+        urlString += '&description=' + encodeURIComponent(attrs.socialshareDescription);
+      }
+
+      $window.open(
+       urlString
        , 'sharer', 'toolbar=0,status=0,width=' + attrs.socialsharePopupWidth + ',height=' + attrs.socialsharePopupHeight
        + ',top=' + ($window.innerHeight - attrs.socialsharePopupHeight) / 2 + ',left=' + ($window.innerWidth - attrs.socialsharePopupWidth) / 2);
     }
@@ -787,6 +807,15 @@
 
       element.attr('href', href);
     }
+    , manageTelegramShare = function manageTelegramShare($window, $location, attrs, element) {
+      var href = 'https://telegram.me/share/url?url=' + encodeURIComponent(attrs.socialshareUrl || $location.absUrl());
+
+      if (attrs.socialshareText) {
+        href += '&text=' + encodeURIComponent(attrs.socialshareText);
+      }
+
+      element.attr('href', href);
+    }
     , skypeShare = function skypeShare($window, $location, attrs) {
 
       var urlString = 'https://web.skype.com/share?source=button&url=' + encodeURIComponent(attrs.socialshareUrl || $location.absUrl());
@@ -823,6 +852,7 @@
       , 'xing': manageXingShare
       , 'evernote': manageEvernoteShare
       , 'whatsapp': manageWhatsappShare
+      , 'telegram': manageTelegramShare
       , 'viber': manageViberShare
       , 'skype': skypeShare
     };

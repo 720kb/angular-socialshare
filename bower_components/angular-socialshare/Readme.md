@@ -1,7 +1,7 @@
 Angular Socialshare
 ==================
 
-![Angular socialshare](http://i.imgur.com/sqnePat.png)
+![Angular socialshare](http://i.imgur.com/Uj7x8BD.png)
 
 [![Join the chat at https://gitter.im/720kb/angular-socialshare](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/720kb/angular-socialshare?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
@@ -105,6 +105,7 @@ You can set the social platform you want to share on using the `socialshare-prov
 - [hackernews](#hacker-news)
 - [evernote](#evernote)
 - [whatsapp](#whatsapp)
+- [telegram](#telegram)
 - [viber](#viber)
 - [skype](#skype)
 
@@ -120,7 +121,7 @@ Method | Option | Type | Default | Description
  	dialog		| socialshare-text="" 	 | String |	 false	| Set the headline to share
  	dialog		| socialshare-description="" 	 | String |	 false	| Set the content to share
  	dialog		| socialshare-media="" 	 |	URL |	false | Set the media source to share
- 	dialog, send		| socialshare-type=""	 | String('feed', 'send') | false |		Share via facebook feed dialog  - [info](https://developers.facebook.com/docs/sharing/reference/feed-dialog) or send dialog  - [info](https://developers.facebook.com/docs/sharing/reference/send-dialog)
+ 	dialog, send		| socialshare-type=""	 | String('feed', 'send') | sharer |		Share via facebook feed dialog  - [info](https://developers.facebook.com/docs/sharing/reference/feed-dialog) or send dialog  - [info](https://developers.facebook.com/docs/sharing/reference/send-dialog)
  	dialog, send		| socialshare-via="" 	 |	String | false | 	Set the APP ID value
  	dialog	, send	| socialshare-to="" 	 |	String	| false | Set the to value
  	dialog		| socialshare-from="" 	 |	String	| false | Set the from to value
@@ -171,8 +172,9 @@ Method | Option | Type | Default | Description
 Method | Option | Type | Default | Description
 ------------- | ------------- | ------------- | ------------- | -------------
  	sharer		| socialshare-url="" 	 |	URL | page URL|	Set the url to share
-	sharer		| socialshare-text="" 	 | String	| false |	Set the content to share
-	sharer		| socialshare-media="" 	 | URL | false |		Set the media url to share
+ 	sharer		| socialshare-text="" 	 | String |	 false	| Set the title to share
+ 	sharer		| socialshare-description="" 	 | String |	 false	| Set the content to share
+ 	sharer		| socialshare-media="" 	 | URL |	false | Set the image source to share
 ####OK
 (ok.ru)
 
@@ -284,6 +286,14 @@ Method | Option | Type | Default | Description
 
 
 ####Whatsapp
+(works only for `<a>` elements, it is a direct link)
+
+Method | Option | Type | Default | Description
+------------- | ------------- | ------------- | ------------- | -------------
+  sharer    | socialshare-url="" |  URL | page URL| Set the url to share
+  sharer    | socialshare-text="" | String  | false | Set the content to share
+
+####Telegram
 (works only for `<a>` elements, it is a direct link)
 
 Method | Option | Type | Default | Description
