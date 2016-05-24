@@ -1,6 +1,6 @@
 /*
  * angular-socialshare
- * 2.1.4
+ * 2.1.5
  * 
  * A social urls and content sharing directive for angularjs.
  * http://720kb.githb.io/angular-socialshare
