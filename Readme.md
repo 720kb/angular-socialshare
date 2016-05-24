@@ -294,7 +294,6 @@ Method | Option | Type | Default | Description
   sharer    | socialshare-text="" | String  | false | Set the content to share
 
 ####Telegram
-(works only for `<a>` elements, it is a direct link)
 
 Method | Option | Type | Default | Description
 ------------- | ------------- | ------------- | ------------- | -------------
