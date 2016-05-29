@@ -1,10 +1,10 @@
 Angular Socialshare
 ==================
 
-![Angular socialshare](http://i.imgur.com/Uj7x8BD.png)
+![Angular socialshare](http://i.imgur.com/tXjUu0m.png)
 
 [![Join the chat at https://gitter.im/720kb/angular-socialshare](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/720kb/angular-socialshare?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-
+mobile
 
 Angular Socialshare is an angularjs directive for sharing urls and content on social networks such as (facebook, google+, twitter, pinterest and so on).
 
@@ -132,8 +132,8 @@ Method | Option | Type | Default | Description
   dialog, send		| socialshare-redirect-uri="" 	 | URL | false |	Set the redirect URI
 
 
-####Facebook Messenger 
-(works only for `<a>` elements, it is a direct link)
+####Facebook Messenger
+`mobile only` - (works only for `<a>` elements, it is a direct link)
 
 Method | Option | Type | Default | Description
 ------------- | ------------- | ------------- | ------------- | -------------
@@ -286,7 +286,7 @@ Method | Option | Type | Default | Description
 
 
 ####Whatsapp
-(works only for `<a>` elements, it is a direct link)
+`mobile only` - (works only for `<a>` elements, it is a direct link)
 
 Method | Option | Type | Default | Description
 ------------- | ------------- | ------------- | ------------- | -------------
@@ -294,7 +294,6 @@ Method | Option | Type | Default | Description
   sharer    | socialshare-text="" | String  | false | Set the content to share
 
 ####Telegram
-(works only for `<a>` elements, it is a direct link)
 
 Method | Option | Type | Default | Description
 ------------- | ------------- | ------------- | ------------- | -------------
@@ -303,7 +302,7 @@ Method | Option | Type | Default | Description
 
 
 ####Viber
-(works only for `<a>` elements, it is a direct link)
+`mobile only` -  (works only for `<a>` elements, it is a direct link)
 
 Method | Option | Type | Default | Description
 ------------- | ------------- | ------------- | ------------- | -------------

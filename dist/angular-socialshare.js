@@ -1,8 +1,8 @@
 /*
  * angular-socialshare
- * 2.1.5
+ * 2.1.6
  * 
- * A social urls and content sharing directive for angularjs.
+ * A social media url and content share directive for angularjs.
  * http://720kb.githb.io/angular-socialshare
  * 
  * MIT license
@@ -823,7 +823,7 @@
     , manageTelegramShare = function manageTelegramShare($window, $location, attrs, element) {
       var urlString = 'https://telegram.me/share/url?url=' + encodeURIComponent(attrs.socialshareUrl || $location.absUrl()) 
       if (attrs.socialshareText) {
-        urlString += '&text=' + encodeURIComponent(attrs.socialshareText)
+        urlString += '&text=' + encodeURIComponent(attrs.socialshareText);
       }
 
       $window.open(
