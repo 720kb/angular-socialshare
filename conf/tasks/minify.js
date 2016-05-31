@@ -33,8 +33,9 @@
         'sourceRoot': '../lib'
       }))
       .pipe(rename(function onFileRename(path) {
-
-        path.basename += '.min';
+        if (path.extname !== '.map') {
+          path.basename += '.min';
+        }
         return path;
       }))
       .pipe(gulp.dest(paths.output));
