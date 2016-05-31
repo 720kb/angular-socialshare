@@ -6,7 +6,7 @@
  * http://720kb.githb.io/angular-socialshare
  * 
  * MIT license
- * Tue May 24 2016
+ * Sun May 29 2016
  */
 /*
  * angular-socialshare
@@ -272,7 +272,10 @@
         'provider': 'telegram',
         'conf': {
           'url': '',
-          'text': ''
+          'text': '',
+          'trigger': 'click',
+          'popupHeight': 600,
+          'popupWidth': 500
         }
       },
       {
@@ -818,16 +821,17 @@
       element.attr('href', href);
     }
     , manageTelegramShare = function manageTelegramShare($window, $location, attrs, element) {
-      var href = 'https://telegram.me/share/url?url=' + encodeURIComponent(attrs.socialshareUrl || $location.absUrl());
-
+      var urlString = 'https://telegram.me/share/url?url=' + encodeURIComponent(attrs.socialshareUrl || $location.absUrl()) 
       if (attrs.socialshareText) {
-        href += '&text=' + encodeURIComponent(attrs.socialshareText);
+        urlString += '&text=' + encodeURIComponent(attrs.socialshareText);
       }
 
-      element.attr('href', href);
+      $window.open(
+        urlString
+        , 'sharer', 'toolbar=0,status=0,width=' + attrs.socialsharePopupWidth + ',height=' + attrs.socialsharePopupHeight
+        + ',top=' + ($window.innerHeight - attrs.socialsharePopupHeight) / 2 + ',left=' + ($window.innerWidth - attrs.socialsharePopupWidth) / 2);
     }
     , skypeShare = function skypeShare($window, $location, attrs) {
-
       var urlString = 'https://web.skype.com/share?source=button&url=' + encodeURIComponent(attrs.socialshareUrl || $location.absUrl());
 
       if (attrs.socialshareText) {
