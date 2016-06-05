@@ -109,7 +109,7 @@ You can set the social platform you want to share on using the `socialshare-prov
 - [viber](#viber)
 - [skype](#skype)
 
-Please use them all in lowercase (`socialshare-proivder="delicious"`)
+Please use them all in lowercase (`socialshare-provider="delicious"`)
 
 ##Doc
 
