@@ -1,6 +1,6 @@
 {
   "name": "angular-socialshare",
-  "version": "2.1.8",
+  "version": "2.1.9",
   "description": "A social media url and content share directive for angularjs.",
   "authors": [
     "Filippo Oretti <filippo.oretti@gmail.com",
@@ -26,6 +26,8 @@
     "test",
     "tests",
     "conf",
-    "gulpfile.js"
+    "gulpfile.js",
+    "index.html",
+    "assets"
   ]
 }
