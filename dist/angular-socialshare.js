@@ -1,12 +1,12 @@
 /*
  * angular-socialshare
- * 2.1.9
+ * 2.1.10
  * 
  * A social media url and content share directive for angularjs.
  * http://720kb.githb.io/angular-socialshare
  * 
  * MIT license
- * Sun Jun 05 2016
+ * Mon Jun 06 2016
  */
 /*
  * angular-socialshare
