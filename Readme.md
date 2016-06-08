@@ -375,7 +375,7 @@ Sometimes you may need to set default values for all the sharing buttons, here i
 
 ```javascript
 .config(['socialshareConfProvider', function configApp(socialshareConfProvider) {
-
+  //configure Twitter
   socialshareConfProvider.configure([{
     'provider': 'twitter',
     'conf': {
@@ -387,8 +387,10 @@ Sometimes you may need to set default values for all the sharing buttons, here i
       'popupHeight': 800,
       'popupWidth' : 400
     }
-  },
-  {
+  }]);
+  
+  //configure Facebook
+  socialshareConfProvider.configure([{{
     'provider': 'facebook',
     'conf': {
       'url': 'http://720kb.net',
@@ -396,8 +398,8 @@ Sometimes you may need to set default values for all the sharing buttons, here i
       'popupHeight': 1300,
       'popupWidth' : 1000
     }
-  }, //etc....put all the providers you want
-  ]);
+  }]);
+  //and so on ...
 }])
 ```
 *NB* if you define the provider settings, but then you change the option value by html attributes, the html attribute value will be the final one (the one that will be used)
