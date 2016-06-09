@@ -1,12 +1,12 @@
 /*
  * angular-socialshare
- * 2.1.10
+ * 2.1.11
  * 
  * A social media url and content share directive for angularjs.
  * http://720kb.githb.io/angular-socialshare
  * 
  * MIT license
- * Mon Jun 06 2016
+ * Thu Jun 09 2016
  */
 /*
  * angular-socialshare
@@ -394,6 +394,10 @@
         attrs.socialshareDescription = attrs.socialshareDescription || configurationElement.conf.description;
         attrs.socialshareFollow = attrs.socialshareFollow || configurationElement.conf.follow;
         attrs.socialshareHashtags = attrs.socialshareHashtags || configurationElement.conf.hashtags;
+        attrs.socialshareBody = attrs.socialshareBody || configurationElement.conf.body;
+        attrs.socialshareSubject = attrs.socialshareSubject || configurationElement.conf.subject;
+        attrs.socialshareCc = attrs.socialshareCc || configurationElement.conf.cc;
+        attrs.socialshareBcc = attrs.socialsharBcc || configurationElement.conf.bcc;
 
         if (attrs.socialshareTrigger) {
 
