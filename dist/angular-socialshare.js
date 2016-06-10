@@ -1,22 +1,12 @@
 /*
  * angular-socialshare
- * 2.1.11
+ * 2.1.12
  * 
- * A social media url and content share directive for angularjs.
+ * A social media url and content share module for angularjs.
  * http://720kb.githb.io/angular-socialshare
  * 
  * MIT license
- * Thu Jun 09 2016
- */
-/*
- * angular-socialshare
- * @latest
- *
- * A social urls and content sharing directive for angularjs.
- * http://720kb.githb.io/angular-socialshare
- *
- * MIT license
- * Thu Feb 04 2016
+ * Fri Jun 10 2016
  */
 /*global angular*/
 /*eslint no-loop-func:0, func-names:0*/
@@ -331,6 +321,12 @@
                           configElement.conf[aConfigurationKey] = configuration[configIndex].conf[aConfigurationKey];
                         }
                       }
+
+                      // once the provider has been found and configuration applied
+                      // we should reset the internIndex for the next provider match to work correctly
+                      // and break, to skip loops on unwanted next providers
+                      internIndex = 0;
+                      break;
                     }
                   }
                 } else {
@@ -500,7 +496,7 @@
 
         $window.open(
           urlString,
-          'sharer', 'toolbar=0,status=0,resizable=yes,width=' + attrs.socialsharePopupWidth + ',height=' + attrs.socialsharePopupHeight
+          'Facebook', 'toolbar=0,status=0,resizable=yes,width=' + attrs.socialsharePopupWidth + ',height=' + attrs.socialsharePopupHeight
           + ',top=' + ($window.innerHeight - attrs.socialsharePopupHeight) / 2 + ',left=' + ($window.innerWidth - attrs.socialsharePopupWidth) / 2);
 
       } else if (attrs.socialshareType && attrs.socialshareType === 'send') {
@@ -533,14 +529,14 @@
 
         $window.open(
           urlString,
-          'sharer', 'toolbar=0,status=0,resizable=yes,width=' + attrs.socialsharePopupWidth + ',height=' + attrs.socialsharePopupHeight
+          'Facebook', 'toolbar=0,status=0,resizable=yes,width=' + attrs.socialsharePopupWidth + ',height=' + attrs.socialsharePopupHeight
           + ',top=' + ($window.innerHeight - attrs.socialsharePopupHeight) / 2 + ',left=' + ($window.innerWidth - attrs.socialsharePopupWidth) / 2);
 
       } else {
         //otherwise default to using sharer.php
         $window.open(
           'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(attrs.socialshareUrl || $location.absUrl())
-          , 'sharer', 'toolbar=0,status=0,resizable=yes,width=' + attrs.socialsharePopupWidth + ',height=' + attrs.socialsharePopupHeight
+          , 'Facebook', 'toolbar=0,status=0,resizable=yes,width=' + attrs.socialsharePopupWidth + ',height=' + attrs.socialsharePopupHeight
           + ',top=' + ($window.innerHeight - attrs.socialsharePopupHeight) / 2 + ',left=' + ($window.innerWidth - attrs.socialsharePopupWidth) / 2);
       }
     }
@@ -570,14 +566,14 @@
 
       $window.open(
         urlString,
-        'sharer', 'toolbar=0,status=0,resizable=yes,width=' + attrs.socialsharePopupWidth + ',height=' + attrs.socialsharePopupHeight
+        'Twitter', 'toolbar=0,status=0,resizable=yes,width=' + attrs.socialsharePopupWidth + ',height=' + attrs.socialsharePopupHeight
         + ',top=' + ($window.innerHeight - attrs.socialsharePopupHeight) / 2 + ',left=' + ($window.innerWidth - attrs.socialsharePopupWidth) / 2);
     }
     , manageGooglePlusShare = function manageGooglePlusShare($window, $location, attrs) {
 
       $window.open(
         'https://plus.google.com/share?url=' + encodeURIComponent(attrs.socialshareUrl || $location.absUrl())
-        , 'sharer', 'toolbar=0,status=0,resizable=yes,width=' + attrs.socialsharePopupWidth + ',height=' + attrs.socialsharePopupHeight
+        , 'Google+', 'toolbar=0,status=0,resizable=yes,width=' + attrs.socialsharePopupWidth + ',height=' + attrs.socialsharePopupHeight
         + ',top=' + ($window.innerHeight - attrs.socialsharePopupHeight) / 2 + ',left=' + ($window.innerWidth - attrs.socialsharePopupWidth) / 2);
       }
     , manageRedditShare = function manageRedditShare($window, $location, attrs) {
@@ -603,14 +599,14 @@
 
       $window.open(
         urlString + encodeURIComponent(attrs.socialshareUrl || $location.absUrl()) + '&title=' + encodeURIComponent(attrs.socialshareText)
-        , 'sharer', 'toolbar=0,status=0,resizable=yes,width=' + attrs.socialsharePopupWidth + ',height=' + attrs.socialsharePopupHeight
+        , 'Reddit', 'toolbar=0,status=0,resizable=yes,width=' + attrs.socialsharePopupWidth + ',height=' + attrs.socialsharePopupHeight
         + ',top=' + ($window.innerHeight - attrs.socialsharePopupHeight) / 2 + ',left=' + ($window.innerWidth - attrs.socialsharePopupWidth) / 2);
       }
     , manageStumbleuponShare = function manageStumbleuponShare($window, $location, attrs) {
 
       $window.open(
         'https://www.stumbleupon.com/submit?url=' + encodeURIComponent(attrs.socialshareUrl || $location.absUrl()) + '&title=' + encodeURIComponent(attrs.socialshareText)
-        , 'sharer', 'toolbar=0,status=0,resizable=yes,width=' + attrs.socialsharePopupWidth + ',height=' + attrs.socialsharePopupHeight
+        , 'StumbleUpon', 'toolbar=0,status=0,resizable=yes,width=' + attrs.socialsharePopupWidth + ',height=' + attrs.socialsharePopupHeight
         + ',top=' + ($window.innerHeight - attrs.socialsharePopupHeight) / 2 + ',left=' + ($window.innerWidth - attrs.socialsharePopupWidth) / 2);
     }
     , manageLinkedinShare = function manageLinkedinShare($window, $location, attrs) {
@@ -636,21 +632,21 @@
 
       $window.open(
         urlString,
-        'sharer', 'toolbar=0,status=0,resizable=yes,width=' + attrs.socialsharePopupWidth + ',height=' + attrs.socialsharePopupHeight
+        'Linkedin', 'toolbar=0,status=0,resizable=yes,width=' + attrs.socialsharePopupWidth + ',height=' + attrs.socialsharePopupHeight
         + ',top=' + ($window.innerHeight - attrs.socialsharePopupHeight) / 2 + ',left=' + ($window.innerWidth - attrs.socialsharePopupWidth) / 2);
     }
     , managePinterestShare = function managePinterestShare($window, $location, attrs) {
 
       $window.open(
         'https://www.pinterest.com/pin/create/button/?url=' + encodeURIComponent(attrs.socialshareUrl || $location.absUrl()) + '&media=' + encodeURIComponent(attrs.socialshareMedia) + '&description=' + encodeURIComponent(attrs.socialshareText)
-        , 'sharer', 'toolbar=0,status=0,resizable=yes,width=' + attrs.socialsharePopupWidth + ',height=' + attrs.socialsharePopupHeight
+        , 'Pinterest', 'toolbar=0,status=0,resizable=yes,width=' + attrs.socialsharePopupWidth + ',height=' + attrs.socialsharePopupHeight
         + ',top=' + ($window.innerHeight - attrs.socialsharePopupHeight) / 2 + ',left=' + ($window.innerWidth - attrs.socialsharePopupWidth) / 2);
     }
     , manageDiggShare = function manageDiggShare($window, $location, attrs) {
 
       $window.open(
         'https://www.digg.com/submit?url=' + encodeURIComponent(attrs.socialshareUrl || $location.absUrl()) + '&title=' + encodeURIComponent(attrs.socialshareText)
-        , 'sharer', 'toolbar=0,status=0,resizable=yes,width=' + attrs.socialsharePopupWidth + ',height=' + attrs.socialsharePopupHeight
+        , 'Digg', 'toolbar=0,status=0,resizable=yes,width=' + attrs.socialsharePopupWidth + ',height=' + attrs.socialsharePopupHeight
         + ',top=' + ($window.innerHeight - attrs.socialsharePopupHeight) / 2 + ',left=' + ($window.innerWidth - attrs.socialsharePopupWidth) / 2);
     }
     , manageTumblrShare = function manageTumblrShare($window, $location, attrs) {
@@ -664,13 +660,13 @@
 
         $window.open(
           urlString,
-          'sharer', 'toolbar=0,status=0,resizable=yes,width=' + attrs.socialsharePopupWidth + ',height=' + attrs.socialsharePopupHeight
+          'Tumblr', 'toolbar=0,status=0,resizable=yes,width=' + attrs.socialsharePopupWidth + ',height=' + attrs.socialsharePopupHeight
           + ',top=' + ($window.innerHeight - attrs.socialsharePopupHeight) / 2 + ',left=' + ($window.innerWidth - attrs.socialsharePopupWidth) / 2);
       } else {
 
         $window.open(
           'https://www.tumblr.com/share/link?url=' + encodeURIComponent(attrs.socialshareUrl || $location.absUrl()) + '&description=' + encodeURIComponent(attrs.socialshareText)
-          , 'sharer', 'toolbar=0,status=0,resizable=yes,width=' + attrs.socialsharePopupWidth + ',height=' + attrs.socialsharePopupHeight
+          , 'Tumblr', 'toolbar=0,status=0,resizable=yes,width=' + attrs.socialsharePopupWidth + ',height=' + attrs.socialsharePopupHeight
           + ',top=' + ($window.innerHeight - attrs.socialsharePopupHeight) / 2 + ',left=' + ($window.innerWidth - attrs.socialsharePopupWidth) / 2);
       }
     }
@@ -691,20 +687,20 @@
 
       $window.open(
        urlString
-       , 'sharer', 'toolbar=0,status=0,resizable=yes,width=' + attrs.socialsharePopupWidth + ',height=' + attrs.socialsharePopupHeight
+       , 'Vk', 'toolbar=0,status=0,resizable=yes,width=' + attrs.socialsharePopupWidth + ',height=' + attrs.socialsharePopupHeight
        + ',top=' + ($window.innerHeight - attrs.socialsharePopupHeight) / 2 + ',left=' + ($window.innerWidth - attrs.socialsharePopupWidth) / 2);
     }
     , manageOkShare = function manageOkShare($window, $location, attrs) {
       $window.open(
         'http://www.odnoklassniki.ru/dk?st.cmd=addShare&st.s=1&st._surl=' + encodeURIComponent(attrs.socialshareUrl || $location.absUrl()) + '&st.comments=' + encodeURIComponent(attrs.socialshareText)
-        , 'sharer', 'toolbar=0,status=0,resizable=yes,width=' + attrs.socialsharePopupWidth + ',height=' + attrs.socialsharePopupHeight
+        , 'Ok', 'toolbar=0,status=0,resizable=yes,width=' + attrs.socialsharePopupWidth + ',height=' + attrs.socialsharePopupHeight
         + ',top=' + ($window.innerHeight - attrs.socialsharePopupHeight) / 2 + ',left=' + ($window.innerWidth - attrs.socialsharePopupWidth) / 2);
     }
     , manageDeliciousShare = function manageDeliciousShare($window, $location, attrs) {
 
      $window.open(
        'https://www.delicious.com/save?v=5&noui&jump=close&url=' + encodeURIComponent(attrs.socialshareUrl || $location.absUrl()) + '&title=' + encodeURIComponent(attrs.socialshareText)
-       , 'sharer', 'toolbar=0,status=0,resizable=yes,width=' + attrs.socialsharePopupWidth + ',height=' + attrs.socialsharePopupHeight
+       , 'Delicious', 'toolbar=0,status=0,resizable=yes,width=' + attrs.socialsharePopupWidth + ',height=' + attrs.socialsharePopupHeight
        + ',top=' + ($window.innerHeight - attrs.socialsharePopupHeight) / 2 + ',left=' + ($window.innerWidth - attrs.socialsharePopupWidth) / 2);
     }
     , manageBufferShare = function manageBufferShare($window, $location, attrs) {
@@ -723,7 +719,7 @@
 
       $window.open(
         urlString,
-        'sharer', 'toolbar=0,status=0,resizable=yes,width=' + attrs.socialsharePopupWidth + ',height=' + attrs.socialsharePopupHeight
+        'Buffer', 'toolbar=0,status=0,resizable=yes,width=' + attrs.socialsharePopupWidth + ',height=' + attrs.socialsharePopupHeight
         + ',top=' + ($window.innerHeight - attrs.socialsharePopupHeight) / 2 + ',left=' + ($window.innerWidth - attrs.socialsharePopupWidth) / 2);
     }
     , manageHackernewsShare = function manageHackernewsShare($window, $location, attrs) {
@@ -737,7 +733,7 @@
 
       $window.open(
        urlString,
-       'sharer', 'toolbar=0,status=0,resizable=yes,width=' + attrs.socialsharePopupWidth + ',height=' + attrs.socialsharePopupHeight
+       'Hackernews', 'toolbar=0,status=0,resizable=yes,width=' + attrs.socialsharePopupWidth + ',height=' + attrs.socialsharePopupHeight
       + ',top=' + ($window.innerHeight - attrs.socialsharePopupHeight) / 2 + ',left=' + ($window.innerWidth - attrs.socialsharePopupWidth) / 2);
     }
     , manageFlipboardShare = function manageFlipboardShare($window, $location, attrs) {
@@ -752,7 +748,7 @@
 
       $window.open(
         urlString,
-        'sharer', 'toolbar=0,status=0,resizable=yes,width=' + attrs.socialsharePopupWidth + ',height=' + attrs.socialsharePopupHeight
+        'Flipboard', 'toolbar=0,status=0,resizable=yes,width=' + attrs.socialsharePopupWidth + ',height=' + attrs.socialsharePopupHeight
         + ',top=' + ($window.innerHeight - attrs.socialsharePopupHeight) / 2 + ',left=' + ($window.innerWidth - attrs.socialsharePopupWidth) / 2);
     }
     , managePocketShare = function managePocketShare($window, $location, attrs) {
@@ -767,7 +763,7 @@
 
       $window.open(
         urlString,
-        'sharer', 'toolbar=0,status=0,resizable=yes,width=' + attrs.socialsharePopupWidth + ',height=' + attrs.socialsharePopupHeight
+        'Pocket', 'toolbar=0,status=0,resizable=yes,width=' + attrs.socialsharePopupWidth + ',height=' + attrs.socialsharePopupHeight
         + ',top=' + ($window.innerHeight - attrs.socialsharePopupHeight) / 2 + ',left=' + ($window.innerWidth - attrs.socialsharePopupWidth) / 2);
     }
     , manageWordpressShare = function manageWordpressShare($window, $location, attrs) {
@@ -785,7 +781,7 @@
 
       $window.open(
         urlString,
-        'sharer', 'toolbar=0,status=0,resizable=yes,width=' + attrs.socialsharePopupWidth + ',height=' + attrs.socialsharePopupHeight
+        'Wordpress', 'toolbar=0,status=0,resizable=yes,width=' + attrs.socialsharePopupWidth + ',height=' + attrs.socialsharePopupHeight
         + ',top=' + ($window.innerHeight - attrs.socialsharePopupHeight) / 2 + ',left=' + ($window.innerWidth - attrs.socialsharePopupWidth) / 2);
     }
     , manageXingShare = function manageXingShare($window, $location, attrs) {
@@ -796,7 +792,7 @@
       }
       $window.open(
         'https://www.xing.com/spi/shares/new?url=' + encodeURIComponent(attrs.socialshareUrl || $location.absUrl()) + followUrl
-        , 'sharer', 'toolbar=0,status=0,resizable=yes,width=' + attrs.socialsharePopupWidth + ',height=' + attrs.socialsharePopupHeight
+        , 'Xing', 'toolbar=0,status=0,resizable=yes,width=' + attrs.socialsharePopupWidth + ',height=' + attrs.socialsharePopupHeight
         + ',top=' + ($window.innerHeight - attrs.socialsharePopupHeight) / 2 + ',left=' + ($window.innerWidth - attrs.socialsharePopupWidth) / 2);
     }
     , manageEvernoteShare = function manageEvernoteShare($window, $location, attrs) {
@@ -809,7 +805,7 @@
 
       $window.open(
         urlString
-        , 'sharer', 'toolbar=0,status=0,resizable=yes,width=' + attrs.socialsharePopupWidth + ',height=' + attrs.socialsharePopupHeight
+        , 'Evernote', 'toolbar=0,status=0,resizable=yes,width=' + attrs.socialsharePopupWidth + ',height=' + attrs.socialsharePopupHeight
         + ',top=' + ($window.innerHeight - attrs.socialsharePopupHeight) / 2 + ',left=' + ($window.innerWidth - attrs.socialsharePopupWidth) / 2);
     }
     , manageWhatsappShare = function manageWhatsappShare($window, $location, attrs, element) {
@@ -834,7 +830,7 @@
 
       $window.open(
         urlString
-        , 'sharer', 'toolbar=0,status=0,resizable=yes,width=' + attrs.socialsharePopupWidth + ',height=' + attrs.socialsharePopupHeight
+        , 'Telegram', 'toolbar=0,status=0,resizable=yes,width=' + attrs.socialsharePopupWidth + ',height=' + attrs.socialsharePopupHeight
         + ',top=' + ($window.innerHeight - attrs.socialsharePopupHeight) / 2 + ',left=' + ($window.innerWidth - attrs.socialsharePopupWidth) / 2);
     }
     , skypeShare = function skypeShare($window, $location, attrs) {
@@ -846,7 +842,7 @@
 
       $window.open(
         urlString
-        , 'sharer', 'toolbar=0,status=0,resizable=yes,width=' + attrs.socialsharePopupWidth + ',height=' + attrs.socialsharePopupHeight
+        , 'Skype', 'toolbar=0,status=0,resizable=yes,width=' + attrs.socialsharePopupWidth + ',height=' + attrs.socialsharePopupHeight
         + ',top=' + ($window.innerHeight - attrs.socialsharePopupHeight) / 2 + ',left=' + ($window.innerWidth - attrs.socialsharePopupWidth) / 2);
     }
     , sharingFunctions = {
