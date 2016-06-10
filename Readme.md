@@ -375,7 +375,7 @@ Sometimes you may need to set default values for all the sharing buttons, here i
 
 ```javascript
 .config(['socialshareConfProvider', function configApp(socialshareConfProvider) {
-  //configure Twitter
+
   socialshareConfProvider.configure([
     {
       'provider': 'twitter',
