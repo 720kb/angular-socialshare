@@ -407,6 +407,7 @@ You may need to share from a controller (for example), this is how to use the `S
     //every attrs must be in camel case as showed above
     //this will open the share popup immediately without any trigger event required
 ```
+_Some providers (specially mobile provider, such as: Viber, Whatsapp etc..) do not work with a Service call, because their API or Usage does not allow a trigger event on them_
 
 ##Globals
 
