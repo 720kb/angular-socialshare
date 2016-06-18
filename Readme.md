@@ -4,7 +4,7 @@ Angular Socialshare
 ![Angular socialshare](http://i.imgur.com/tXjUu0m.png)
 
 [![Join the chat at https://gitter.im/720kb/angular-socialshare](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/720kb/angular-socialshare?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-mobile
+
 
 Angular Socialshare is an angularjs directive for sharing urls and content on social networks such as (facebook, google+, twitter, pinterest and so on).
 
@@ -74,6 +74,21 @@ socialshare-url="http://720kb.net">
 Share me
 </a>
 ```
+OR
+
+Call the Socialshare [service](#service)
+
+```javascript
+  .controller('Ctrl', ['Socialshare', function testController(Socialshare) {
+
+    Socialshare.share({
+      'provider': 'facebook',
+      'attrs': {
+        'socialshareUrl': 'http://720kb.net'
+      }
+    });
+```
+
 
 ##Usage
 Angular socialshare allows you to use sharing options via `attribute` data
@@ -369,7 +384,32 @@ Share me when focusout or mouseleave
 </a>
 ```
 
+##Service
+You may need to share from a controller (for example), this is how to use the `Socialshare` service:
+
+```javascript
+  .controller('Ctrl', ['Socialshare', function testController(Socialshare) {
+
+    Socialshare.share({
+      'provider': 'facebook',
+      'attrs': {
+        'socialshareUrl': 'http://720kb.net'
+      }
+    });
+
+    Socialshare.share({
+      'provider': 'twitter',
+      'attrs': {
+        'socialshareUrl': 'http://720kb.net',
+        'socialshareHashtags': '720kb, angular, socialshare'
+      }
+    });
+    //every attrs must be in camel case as showed above
+    //this will open the share popup immediately without any trigger event required
+```
+
 ##Globals
+
 ####Provider setup
 Sometimes you may need to set default values for all the sharing buttons, here is how to setup this:
 
