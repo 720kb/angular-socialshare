@@ -346,7 +346,7 @@ Method | Option | Type | Default | Description
 ##Options
 
 ####Sharing Popup Size
-you can set a specific Height or Width for the sharing popup using the `socialshare-popup-height=""` and `socialshare-popup-width=""` attributes
+You can set a specific Height or Width for the sharing popup using the `socialshare-popup-height=""` and `socialshare-popup-width=""` attributes (sometimes, if if the popup is too small, it gets resized by third parties)
 
 ```html
 <a href="#"
