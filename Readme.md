@@ -405,6 +405,7 @@ You may need to share from a controller (for example), this is how to use the `S
       }
     });
     //every attrs must be in camel case as showed above
+    //this will open the share popup immediately without any trigger event required
 ```
 
 ##Globals
