@@ -22,8 +22,15 @@
       }
     }]);
   }])
-  .controller('TestController', ['$scope', '$timeout', function testController($scope, $timeout) {
+  .controller('TestController', ['$scope', '$timeout', 'Socialshare', function testController($scope, $timeout, Socialshare) {
     var that = this;
+    /*Call service to trigger immediately the sharing method
+    Socialshare.share({
+      'provider': 'facebook',
+      'attrs': {
+        'socialshareUrl': 'http://google.com'
+      }
+    });*/
     $timeout(function scopeValueTimeout() {
 
       that.testValue = '720kb';
