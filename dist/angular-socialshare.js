@@ -1,12 +1,12 @@
 /*
  * angular-socialshare
- * 2.2.0
+ * 2.2.1
  * 
  * A social media url and content share module for angularjs.
  * http://720kb.githb.io/angular-socialshare
  * 
  * MIT license
- * Sat Jun 18 2016
+ * Tue Jun 21 2016
  */
 /*global angular*/
 /*eslint no-loop-func:0, func-names:0*/
@@ -958,7 +958,7 @@
         attrs.socialshareBody = attrs.socialshareBody || configurationElement.conf.body;
         attrs.socialshareSubject = attrs.socialshareSubject || configurationElement.conf.subject;
         attrs.socialshareCc = attrs.socialshareCc || configurationElement.conf.cc;
-        attrs.socialshareBcc = attrs.socialsharBcc || configurationElement.conf.bcc;
+        attrs.socialshareBcc = attrs.socialshareBcc || configurationElement.conf.bcc;
 
         if (attrs.socialshareTrigger) {
 
