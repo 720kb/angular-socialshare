@@ -24,11 +24,12 @@
   }])
   .controller('TestController', ['$scope', '$timeout', 'Socialshare', function testController($scope, $timeout, Socialshare) {
     var that = this;
-    /*Call service to trigger immediately the sharing method
-    Socialshare.share({
-      'provider': 'facebook',
+    //Call service to trigger immediately the sharing method
+    /*Socialshare.share({
+      'provider': 'twitter',
       'attrs': {
-        'socialshareUrl': 'http://google.com'
+        'socialshareUrl': 'http://720kb.net',
+        'socialshareHashtags': '720kb,angular, socialshare'
       }
     });*/
     $timeout(function scopeValueTimeout() {

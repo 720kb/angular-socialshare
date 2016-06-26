@@ -6,7 +6,7 @@
  * http://720kb.githb.io/angular-socialshare
  * 
  * MIT license
- * Tue Jun 21 2016
+ * Sun Jun 26 2016
  */
 /*global angular*/
 /*eslint no-loop-func:0, func-names:0*/
@@ -342,7 +342,7 @@
         }
       };
     }
-    , manageFacebookShare = function manageFacebookShare($window, $location, attrs) {
+    , manageFacebookShare = function manageFacebookShare($window, attrs) {
 
       var urlString;
 
@@ -438,12 +438,12 @@
       } else {
         //otherwise default to using sharer.php
         $window.open(
-          'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(attrs.socialshareUrl || $location.absUrl())
+          'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(attrs.socialshareUrl || $window.location.href)
           , 'Facebook', 'toolbar=0,status=0,resizable=yes,width=' + attrs.socialsharePopupWidth + ',height=' + attrs.socialsharePopupHeight
           + ',top=' + ($window.innerHeight - attrs.socialsharePopupHeight) / 2 + ',left=' + ($window.innerWidth - attrs.socialsharePopupWidth) / 2);
       }
     }
-    , manageEmailShare = function manageEmailShare($window, $location, attrs) {
+    , manageEmailShare = function manageEmailShare($window, attrs) {
       var urlString = 'mailto:';
 
       if (attrs.socialshareTo) {
@@ -473,13 +473,13 @@
 
       $window.open(urlString, '_self');
     }
-    , facebookMessengerShare = function facebookMessengerShare($window, $location, attrs, element) {
+    , facebookMessengerShare = function facebookMessengerShare($window, attrs, element) {
 
-      var href = 'fb-messenger://share?link=' + encodeURIComponent(attrs.socialshareUrl || $location.absUrl());
+      var href = 'fb-messenger://share?link=' + encodeURIComponent(attrs.socialshareUrl || $window.location.href);
 
       element.attr('href', href);
     }
-    , manageTwitterShare = function manageTwitterShare($window, $location, attrs) {
+    , manageTwitterShare = function manageTwitterShare($window, attrs) {
       var urlString = 'https://www.twitter.com/intent/tweet?';
 
       if (attrs.socialshareText) {
@@ -495,21 +495,21 @@
       }
 
       //default to the current page if a URL isn't specified
-      urlString += '&url=' + encodeURIComponent(attrs.socialshareUrl || $location.absUrl());
+      urlString += '&url=' + encodeURIComponent(attrs.socialshareUrl || $window.location.href);
 
       $window.open(
         urlString,
         'Twitter', 'toolbar=0,status=0,resizable=yes,width=' + attrs.socialsharePopupWidth + ',height=' + attrs.socialsharePopupHeight
         + ',top=' + ($window.innerHeight - attrs.socialsharePopupHeight) / 2 + ',left=' + ($window.innerWidth - attrs.socialsharePopupWidth) / 2);
     }
-    , manageGooglePlusShare = function manageGooglePlusShare($window, $location, attrs) {
+    , manageGooglePlusShare = function manageGooglePlusShare($window, attrs) {
 
       $window.open(
-        'https://plus.google.com/share?url=' + encodeURIComponent(attrs.socialshareUrl || $location.absUrl())
+        'https://plus.google.com/share?url=' + encodeURIComponent(attrs.socialshareUrl || $window.location.href)
         , 'Google+', 'toolbar=0,status=0,resizable=yes,width=' + attrs.socialsharePopupWidth + ',height=' + attrs.socialsharePopupHeight
         + ',top=' + ($window.innerHeight - attrs.socialsharePopupHeight) / 2 + ',left=' + ($window.innerWidth - attrs.socialsharePopupWidth) / 2);
       }
-    , manageRedditShare = function manageRedditShare($window, $location, attrs) {
+    , manageRedditShare = function manageRedditShare($window, attrs) {
       var urlString = 'https://www.reddit.com/';
 
       if (attrs.socialshareSubreddit) {
@@ -531,25 +531,25 @@
       }
 
       $window.open(
-        urlString + encodeURIComponent(attrs.socialshareUrl || $location.absUrl()) + '&title=' + encodeURIComponent(attrs.socialshareText)
+        urlString + encodeURIComponent(attrs.socialshareUrl || $window.location.href) + '&title=' + encodeURIComponent(attrs.socialshareText)
         , 'Reddit', 'toolbar=0,status=0,resizable=yes,width=' + attrs.socialsharePopupWidth + ',height=' + attrs.socialsharePopupHeight
         + ',top=' + ($window.innerHeight - attrs.socialsharePopupHeight) / 2 + ',left=' + ($window.innerWidth - attrs.socialsharePopupWidth) / 2);
       }
-    , manageStumbleuponShare = function manageStumbleuponShare($window, $location, attrs) {
+    , manageStumbleuponShare = function manageStumbleuponShare($window, attrs) {
 
       $window.open(
-        'https://www.stumbleupon.com/submit?url=' + encodeURIComponent(attrs.socialshareUrl || $location.absUrl()) + '&title=' + encodeURIComponent(attrs.socialshareText)
+        'https://www.stumbleupon.com/submit?url=' + encodeURIComponent(attrs.socialshareUrl || $window.location.href) + '&title=' + encodeURIComponent(attrs.socialshareText)
         , 'StumbleUpon', 'toolbar=0,status=0,resizable=yes,width=' + attrs.socialsharePopupWidth + ',height=' + attrs.socialsharePopupHeight
         + ',top=' + ($window.innerHeight - attrs.socialsharePopupHeight) / 2 + ',left=' + ($window.innerWidth - attrs.socialsharePopupWidth) / 2);
     }
-    , manageLinkedinShare = function manageLinkedinShare($window, $location, attrs) {
+    , manageLinkedinShare = function manageLinkedinShare($window, attrs) {
       /*
       * Refer: https://developer.linkedin.com/docs/share-on-linkedin
       * Tab: Customized URL
       */
       var urlString = 'https://www.linkedin.com/shareArticle?mini=true';
 
-      urlString += '&url=' + encodeURIComponent(attrs.socialshareUrl || $location.absUrl());
+      urlString += '&url=' + encodeURIComponent(attrs.socialshareUrl || $window.location.href);
 
       if (attrs.socialshareText) {
         urlString += '&title=' + encodeURIComponent(attrs.socialshareText);
@@ -568,21 +568,21 @@
         'Linkedin', 'toolbar=0,status=0,resizable=yes,width=' + attrs.socialsharePopupWidth + ',height=' + attrs.socialsharePopupHeight
         + ',top=' + ($window.innerHeight - attrs.socialsharePopupHeight) / 2 + ',left=' + ($window.innerWidth - attrs.socialsharePopupWidth) / 2);
     }
-    , managePinterestShare = function managePinterestShare($window, $location, attrs) {
+    , managePinterestShare = function managePinterestShare($window, attrs) {
 
       $window.open(
-        'https://www.pinterest.com/pin/create/button/?url=' + encodeURIComponent(attrs.socialshareUrl || $location.absUrl()) + '&media=' + encodeURIComponent(attrs.socialshareMedia) + '&description=' + encodeURIComponent(attrs.socialshareText)
+        'https://www.pinterest.com/pin/create/button/?url=' + encodeURIComponent(attrs.socialshareUrl || $window.location.href) + '&media=' + encodeURIComponent(attrs.socialshareMedia) + '&description=' + encodeURIComponent(attrs.socialshareText)
         , 'Pinterest', 'toolbar=0,status=0,resizable=yes,width=' + attrs.socialsharePopupWidth + ',height=' + attrs.socialsharePopupHeight
         + ',top=' + ($window.innerHeight - attrs.socialsharePopupHeight) / 2 + ',left=' + ($window.innerWidth - attrs.socialsharePopupWidth) / 2);
     }
-    , manageDiggShare = function manageDiggShare($window, $location, attrs) {
+    , manageDiggShare = function manageDiggShare($window, attrs) {
 
       $window.open(
-        'https://www.digg.com/submit?url=' + encodeURIComponent(attrs.socialshareUrl || $location.absUrl()) + '&title=' + encodeURIComponent(attrs.socialshareText)
+        'https://www.digg.com/submit?url=' + encodeURIComponent(attrs.socialshareUrl || $window.location.href) + '&title=' + encodeURIComponent(attrs.socialshareText)
         , 'Digg', 'toolbar=0,status=0,resizable=yes,width=' + attrs.socialsharePopupWidth + ',height=' + attrs.socialsharePopupHeight
         + ',top=' + ($window.innerHeight - attrs.socialsharePopupHeight) / 2 + ',left=' + ($window.innerWidth - attrs.socialsharePopupWidth) / 2);
     }
-    , manageTumblrShare = function manageTumblrShare($window, $location, attrs) {
+    , manageTumblrShare = function manageTumblrShare($window, attrs) {
 
       if (attrs.socialshareMedia) {
         var urlString = 'https://www.tumblr.com/share/photo?source=' + encodeURIComponent(attrs.socialshareMedia);
@@ -598,13 +598,13 @@
       } else {
 
         $window.open(
-          'https://www.tumblr.com/share/link?url=' + encodeURIComponent(attrs.socialshareUrl || $location.absUrl()) + '&description=' + encodeURIComponent(attrs.socialshareText)
+          'https://www.tumblr.com/share/link?url=' + encodeURIComponent(attrs.socialshareUrl || $window.location.href) + '&description=' + encodeURIComponent(attrs.socialshareText)
           , 'Tumblr', 'toolbar=0,status=0,resizable=yes,width=' + attrs.socialsharePopupWidth + ',height=' + attrs.socialsharePopupHeight
           + ',top=' + ($window.innerHeight - attrs.socialsharePopupHeight) / 2 + ',left=' + ($window.innerWidth - attrs.socialsharePopupWidth) / 2);
       }
     }
-    , manageVkShare = function manageVkShare($window, $location, attrs) {
-      var urlString = 'https://www.vk.com/share.php?url=' + encodeURIComponent(attrs.socialshareUrl || $location.absUrl());
+    , manageVkShare = function manageVkShare($window, attrs) {
+      var urlString = 'https://www.vk.com/share.php?url=' + encodeURIComponent(attrs.socialshareUrl || $window.location.href);
 
       if (attrs.socialshareText) {
         urlString += '&title=' + encodeURIComponent(attrs.socialshareText);
@@ -623,20 +623,20 @@
        , 'Vk', 'toolbar=0,status=0,resizable=yes,width=' + attrs.socialsharePopupWidth + ',height=' + attrs.socialsharePopupHeight
        + ',top=' + ($window.innerHeight - attrs.socialsharePopupHeight) / 2 + ',left=' + ($window.innerWidth - attrs.socialsharePopupWidth) / 2);
     }
-    , manageOkShare = function manageOkShare($window, $location, attrs) {
+    , manageOkShare = function manageOkShare($window, attrs) {
       $window.open(
-        'http://www.odnoklassniki.ru/dk?st.cmd=addShare&st.s=1&st._surl=' + encodeURIComponent(attrs.socialshareUrl || $location.absUrl()) + '&st.comments=' + encodeURIComponent(attrs.socialshareText)
+        'http://www.odnoklassniki.ru/dk?st.cmd=addShare&st.s=1&st._surl=' + encodeURIComponent(attrs.socialshareUrl || $window.location.href) + '&st.comments=' + encodeURIComponent(attrs.socialshareText)
         , 'Ok', 'toolbar=0,status=0,resizable=yes,width=' + attrs.socialsharePopupWidth + ',height=' + attrs.socialsharePopupHeight
         + ',top=' + ($window.innerHeight - attrs.socialsharePopupHeight) / 2 + ',left=' + ($window.innerWidth - attrs.socialsharePopupWidth) / 2);
     }
-    , manageDeliciousShare = function manageDeliciousShare($window, $location, attrs) {
+    , manageDeliciousShare = function manageDeliciousShare($window, attrs) {
 
      $window.open(
-       'https://www.delicious.com/save?v=5&noui&jump=close&url=' + encodeURIComponent(attrs.socialshareUrl || $location.absUrl()) + '&title=' + encodeURIComponent(attrs.socialshareText)
+       'https://www.delicious.com/save?v=5&noui&jump=close&url=' + encodeURIComponent(attrs.socialshareUrl || $window.location.href) + '&title=' + encodeURIComponent(attrs.socialshareText)
        , 'Delicious', 'toolbar=0,status=0,resizable=yes,width=' + attrs.socialsharePopupWidth + ',height=' + attrs.socialsharePopupHeight
        + ',top=' + ($window.innerHeight - attrs.socialsharePopupHeight) / 2 + ',left=' + ($window.innerWidth - attrs.socialsharePopupWidth) / 2);
     }
-    , manageBufferShare = function manageBufferShare($window, $location, attrs) {
+    , manageBufferShare = function manageBufferShare($window, attrs) {
       var urlString = 'https://bufferapp.com/add?';
 
       if (attrs.socialshareText) {
@@ -648,28 +648,28 @@
       }
 
       //default to the current page if a URL isn't specified
-      urlString += '&url=' + encodeURIComponent(attrs.socialshareUrl || $location.absUrl());
+      urlString += '&url=' + encodeURIComponent(attrs.socialshareUrl || $window.location.href);
 
       $window.open(
         urlString,
         'Buffer', 'toolbar=0,status=0,resizable=yes,width=' + attrs.socialsharePopupWidth + ',height=' + attrs.socialsharePopupHeight
         + ',top=' + ($window.innerHeight - attrs.socialsharePopupHeight) / 2 + ',left=' + ($window.innerWidth - attrs.socialsharePopupWidth) / 2);
     }
-    , manageHackernewsShare = function manageHackernewsShare($window, $location, attrs) {
+    , manageHackernewsShare = function manageHackernewsShare($window, attrs) {
       var urlString = 'https://news.ycombinator.com/submitlink?';
 
       if (attrs.socialshareText) {
         urlString += 't=' + encodeURIComponent(attrs.socialshareText) + '&';
       }
       //default to the current page if a URL isn't specified
-      urlString += 'u=' + encodeURIComponent(attrs.socialshareUrl || $location.absUrl());
+      urlString += 'u=' + encodeURIComponent(attrs.socialshareUrl || $window.location.href);
 
       $window.open(
        urlString,
        'Hackernews', 'toolbar=0,status=0,resizable=yes,width=' + attrs.socialsharePopupWidth + ',height=' + attrs.socialsharePopupHeight
       + ',top=' + ($window.innerHeight - attrs.socialsharePopupHeight) / 2 + ',left=' + ($window.innerWidth - attrs.socialsharePopupWidth) / 2);
     }
-    , manageFlipboardShare = function manageFlipboardShare($window, $location, attrs) {
+    , manageFlipboardShare = function manageFlipboardShare($window, attrs) {
       var urlString = 'https://share.flipboard.com/bookmarklet/popout?v=2&';
 
       if (attrs.socialshareText) {
@@ -677,14 +677,14 @@
       }
 
       //default to the current page if a URL isn't specified
-      urlString += 'url=' + encodeURIComponent(attrs.socialshareUrl || $location.absUrl());
+      urlString += 'url=' + encodeURIComponent(attrs.socialshareUrl || $window.location.href);
 
       $window.open(
         urlString,
         'Flipboard', 'toolbar=0,status=0,resizable=yes,width=' + attrs.socialsharePopupWidth + ',height=' + attrs.socialsharePopupHeight
         + ',top=' + ($window.innerHeight - attrs.socialsharePopupHeight) / 2 + ',left=' + ($window.innerWidth - attrs.socialsharePopupWidth) / 2);
     }
-    , managePocketShare = function managePocketShare($window, $location, attrs) {
+    , managePocketShare = function managePocketShare($window, attrs) {
       var urlString = 'https://getpocket.com/save?';
 
       if (attrs.socialshareText) {
@@ -692,14 +692,14 @@
       }
 
       //default to the current page if a URL isn't specified
-      urlString += 'url=' + encodeURIComponent(attrs.socialshareUrl || $location.absUrl());
+      urlString += 'url=' + encodeURIComponent(attrs.socialshareUrl || $window.location.href);
 
       $window.open(
         urlString,
         'Pocket', 'toolbar=0,status=0,resizable=yes,width=' + attrs.socialsharePopupWidth + ',height=' + attrs.socialsharePopupHeight
         + ',top=' + ($window.innerHeight - attrs.socialsharePopupHeight) / 2 + ',left=' + ($window.innerWidth - attrs.socialsharePopupWidth) / 2);
     }
-    , manageWordpressShare = function manageWordpressShare($window, $location, attrs) {
+    , manageWordpressShare = function manageWordpressShare($window, attrs) {
       var urlString = 'http://wordpress.com/press-this.php?';
 
       if (attrs.socialshareText) {
@@ -710,27 +710,27 @@
       }
 
       //default to the current page if a URL isn't specified
-      urlString += 'u=' + encodeURIComponent(attrs.socialshareUrl || $location.absUrl());
+      urlString += 'u=' + encodeURIComponent(attrs.socialshareUrl || $window.location.href);
 
       $window.open(
         urlString,
         'Wordpress', 'toolbar=0,status=0,resizable=yes,width=' + attrs.socialsharePopupWidth + ',height=' + attrs.socialsharePopupHeight
         + ',top=' + ($window.innerHeight - attrs.socialsharePopupHeight) / 2 + ',left=' + ($window.innerWidth - attrs.socialsharePopupWidth) / 2);
     }
-    , manageXingShare = function manageXingShare($window, $location, attrs) {
+    , manageXingShare = function manageXingShare($window, attrs) {
       var followUrl = '';
 
       if (attrs.socialshareFollow) {
         followUrl = '&follow_url=' + encodeURIComponent(attrs.socialshareFollow);
       }
       $window.open(
-        'https://www.xing.com/spi/shares/new?url=' + encodeURIComponent(attrs.socialshareUrl || $location.absUrl()) + followUrl
+        'https://www.xing.com/spi/shares/new?url=' + encodeURIComponent(attrs.socialshareUrl || $window.location.href) + followUrl
         , 'Xing', 'toolbar=0,status=0,resizable=yes,width=' + attrs.socialsharePopupWidth + ',height=' + attrs.socialsharePopupHeight
         + ',top=' + ($window.innerHeight - attrs.socialsharePopupHeight) / 2 + ',left=' + ($window.innerWidth - attrs.socialsharePopupWidth) / 2);
     }
-    , manageEvernoteShare = function manageEvernoteShare($window, $location, attrs) {
+    , manageEvernoteShare = function manageEvernoteShare($window, attrs) {
 
-      var urlString = 'http://www.evernote.com/clip.action?url=' + encodeURIComponent(attrs.socialshareUrl || $location.absUrl());
+      var urlString = 'http://www.evernote.com/clip.action?url=' + encodeURIComponent(attrs.socialshareUrl || $window.location.href);
 
       if (attrs.socialshareText) {
         urlString += '&title=' + encodeURIComponent(attrs.socialshareText);
@@ -741,21 +741,21 @@
         , 'Evernote', 'toolbar=0,status=0,resizable=yes,width=' + attrs.socialsharePopupWidth + ',height=' + attrs.socialsharePopupHeight
         + ',top=' + ($window.innerHeight - attrs.socialsharePopupHeight) / 2 + ',left=' + ($window.innerWidth - attrs.socialsharePopupWidth) / 2);
     }
-    , manageWhatsappShare = function manageWhatsappShare($window, $location, attrs, element) {
+    , manageWhatsappShare = function manageWhatsappShare($window, attrs, element) {
 
-      var href = 'whatsapp://send?text=' + encodeURIComponent(attrs.socialshareText + ' ') + encodeURIComponent(attrs.socialshareUrl || $location.absUrl());
-
-      element.attr('href', href);
-    }
-    , manageViberShare = function manageViberShare($window, $location, attrs, element) {
-
-      var href = 'viber://forward?text=' + encodeURIComponent(attrs.socialshareText + ' ') + encodeURIComponent(attrs.socialshareUrl || $location.absUrl());
+      var href = 'whatsapp://send?text=' + encodeURIComponent(attrs.socialshareText + ' ') + encodeURIComponent(attrs.socialshareUrl || $window.location.href);
 
       element.attr('href', href);
     }
-    , manageTelegramShare = function manageTelegramShare($window, $location, attrs) {
+    , manageViberShare = function manageViberShare($window, attrs, element) {
 
-      var urlString = 'https://telegram.me/share/url?url=' + encodeURIComponent(attrs.socialshareUrl || $location.absUrl());
+      var href = 'viber://forward?text=' + encodeURIComponent(attrs.socialshareText + ' ') + encodeURIComponent(attrs.socialshareUrl || $window.location.href);
+
+      element.attr('href', href);
+    }
+    , manageTelegramShare = function manageTelegramShare($window, attrs) {
+
+      var urlString = 'https://telegram.me/share/url?url=' + encodeURIComponent(attrs.socialshareUrl || $window.location.href);
 
       if (attrs.socialshareText) {
         urlString += '&text=' + encodeURIComponent(attrs.socialshareText);
@@ -766,8 +766,8 @@
         , 'Telegram', 'toolbar=0,status=0,resizable=yes,width=' + attrs.socialsharePopupWidth + ',height=' + attrs.socialsharePopupHeight
         + ',top=' + ($window.innerHeight - attrs.socialsharePopupHeight) / 2 + ',left=' + ($window.innerWidth - attrs.socialsharePopupWidth) / 2);
     }
-    , skypeShare = function skypeShare($window, $location, attrs) {
-      var urlString = 'https://web.skype.com/share?source=button&url=' + encodeURIComponent(attrs.socialshareUrl || $location.absUrl());
+    , skypeShare = function skypeShare($window, attrs) {
+      var urlString = 'https://web.skype.com/share?source=button&url=' + encodeURIComponent(attrs.socialshareUrl || $window.location.href);
 
       if (attrs.socialshareText) {
         urlString += '&text=' + encodeURIComponent(attrs.socialshareText);
@@ -778,7 +778,7 @@
         , 'Skype', 'toolbar=0,status=0,resizable=yes,width=' + attrs.socialsharePopupWidth + ',height=' + attrs.socialsharePopupHeight
         + ',top=' + ($window.innerHeight - attrs.socialsharePopupHeight) / 2 + ',left=' + ($window.innerWidth - attrs.socialsharePopupWidth) / 2);
     }
-    , socialshareService = /*@ngInject*/  ['$window', '$location', function socialshareService($window, $location) {
+    , socialshareService = /*@ngInject*/  ['$window', function socialshareService($window) {
 
       this.emailShare = manageEmailShare;
       this.facebookShare = manageFacebookShare;
@@ -813,91 +813,91 @@
 
         switch (serviceShareConf.provider) {
           case 'email': {
-            this.emailShare($window, $location, serviceShareConf.attrs);
+            this.emailShare($window, serviceShareConf.attrs);
             break;
           }
           case 'facebook': {
-            this.facebookShare($window, $location, serviceShareConf.attrs);
+            this.facebookShare($window, serviceShareConf.attrs);
             break;
           }
           case 'twitter': {
-            this.twitterShare($window, $location, serviceShareConf.attrs);
+            this.twitterShare($window, serviceShareConf.attrs);
             break;
           }
           case 'pinterest': {
-            this.pinterestShare($window, $location, serviceShareConf.attrs);
+            this.pinterestShare($window, serviceShareConf.attrs);
             break;
           }
           case 'ok': {
-            this.okShare($window, $location, serviceShareConf.attrs);
+            this.okShare($window, serviceShareConf.attrs);
             break;
           }
           case 'vk': {
-            this.vkShare($window, $location, serviceShareConf.attrs);
+            this.vkShare($window, serviceShareConf.attrs);
             break;
           }
           case 'delicious': {
-            this.deliciousShare($window, $location, serviceShareConf.attrs);
+            this.deliciousShare($window, serviceShareConf.attrs);
             break;
           }
           case 'digg': {
-            this.diggShare($window, $location, serviceShareConf.attrs);
+            this.diggShare($window, serviceShareConf.attrs);
             break;
           }
           case 'google+': {
-            this.googleShare($window, $location, serviceShareConf.attrs);
+            this.googleShare($window, serviceShareConf.attrs);
             break;
           }
           case 'reddit': {
-            this.redditShare($window, $location, serviceShareConf.attrs);
+            this.redditShare($window, serviceShareConf.attrs);
             break;
           }
           case 'hackernews': {
-            this.hackernewsShare($window, $location, serviceShareConf.attrs);
+            this.hackernewsShare($window, serviceShareConf.attrs);
             break;
           }
           case 'skype': {
-            this.skypeShare($window, $location, serviceShareConf.attrs);
+            this.skypeShare($window, serviceShareConf.attrs);
             break;
           }
           case 'evernote': {
-            this.evernoteShare($window, $location, serviceShareConf.attrs);
+            this.evernoteShare($window, serviceShareConf.attrs);
             break;
           }
           case 'pocket': {
-            this.pocketShare($window, $location, serviceShareConf.attrs);
+            this.pocketShare($window, serviceShareConf.attrs);
             break;
           }
           case 'tumblr': {
-            this.tumblrShare($window, $location, serviceShareConf.attrs);
+            this.tumblrShare($window, serviceShareConf.attrs);
             break;
           }
           case 'telegram': {
-            this.telegramShare($window, $location, serviceShareConf.attrs);
+            this.telegramShare($window, serviceShareConf.attrs);
             break;
           }
           case 'xing': {
-            this.xingShare($window, $location, serviceShareConf.attrs);
+            this.xingShare($window, serviceShareConf.attrs);
             break;
           }
           case 'buffer': {
-            this.bufferShare($window, $location, serviceShareConf.attrs);
+            this.bufferShare($window, serviceShareConf.attrs);
             break;
           }
           case 'stumbleupon': {
-            this.stumbleuponShare($window, $location, serviceShareConf.attrs);
+            this.stumbleuponShare($window, serviceShareConf.attrs);
             break;
           }
           case 'linkedin': {
-            this.linkedinShare($window, $location, serviceShareConf.attrs);
+            this.linkedinShare($window, serviceShareConf.attrs);
             break;
           }
           case 'wordpress': {
-            this.wordpressShare($window, $location, serviceShareConf.attrs);
+            this.wordpressShare($window, serviceShareConf.attrs);
             break;
           }
           case 'flipboard': {
-            this.flipboardShare($window, $location, serviceShareConf.attrs);
+            this.flipboardShare($window, serviceShareConf.attrs);
             break;
           }
           default: {
@@ -906,7 +906,7 @@
         }
       };
     }]
-    , socialshareDirective = /*@ngInject*/ ['$window', '$location', 'socialshareConf', 'Socialshare', '$log', function socialshareDirective($window, $location, socialshareConf, $log) {
+    , socialshareDirective = /*@ngInject*/ ['$window', 'socialshareConf', 'Socialshare', '$log', function socialshareDirective($window, socialshareConf, $log) {
 
       var linkingFunction = function linkingFunction($scope, element, attrs) {
 
@@ -917,7 +917,7 @@
         , onEventTriggered = function onEventTriggered() {
           /*eslint-disable no-use-before-define*/
           if (attrs.socialshareProvider in sharingFunctions) {
-            sharingFunctions[attrs.socialshareProvider]($window, $location, attrs, element);
+            sharingFunctions[attrs.socialshareProvider]($window, attrs, element);
           } else {
             return true;
           }
