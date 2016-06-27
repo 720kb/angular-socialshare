@@ -17,7 +17,7 @@
     "version": "gulp minify && ./tasks/bower-version-bump && git add -A .",
     "postversion": "git push && git push --tags"
   },
-  "main": "src/index.js",
+  "main": "dist/angular-socialshare.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/720kb/angular-socialshare.git"
