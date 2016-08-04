@@ -1,12 +1,12 @@
 /*
  * angular-socialshare
- * 2.2.3
+ * 2.2.4
  * 
  * A social media url and content share module for angularjs.
  * http://720kb.githb.io/angular-socialshare
  * 
  * MIT license
- * Tue Jun 28 2016
+ * Thu Aug 04 2016
  */
 /*global angular*/
 /*eslint no-loop-func:0, func-names:0*/
@@ -478,7 +478,8 @@
       var href = 'fb-messenger://share?link=' + encodeURIComponent(attrs.socialshareUrl || $window.location.href);
 
       element.attr('href', href);
-    }
+      element.attr('target', '_top');
+  }
     , manageTwitterShare = function manageTwitterShare($window, attrs) {
       var urlString = 'https://www.twitter.com/intent/tweet?';
 
@@ -746,12 +747,15 @@
       var href = 'whatsapp://send?text=' + encodeURIComponent(attrs.socialshareText + ' ') + encodeURIComponent(attrs.socialshareUrl || $window.location.href);
 
       element.attr('href', href);
+      element.attr('target', '_top');
+
     }
     , manageViberShare = function manageViberShare($window, attrs, element) {
 
       var href = 'viber://forward?text=' + encodeURIComponent(attrs.socialshareText + ' ') + encodeURIComponent(attrs.socialshareUrl || $window.location.href);
 
       element.attr('href', href);
+      element.attr('target', '_top');
     }
     , manageTelegramShare = function manageTelegramShare($window, attrs) {
 
