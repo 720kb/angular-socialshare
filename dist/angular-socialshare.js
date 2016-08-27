@@ -1,12 +1,12 @@
 /*
  * angular-socialshare
- * 2.2.4
+ * 2.2.5
  * 
  * A social media url and content share module for angularjs.
  * http://720kb.githb.io/angular-socialshare
  * 
  * MIT license
- * Thu Aug 04 2016
+ * Sat Aug 27 2016
  */
 /*global angular*/
 /*eslint no-loop-func:0, func-names:0*/
@@ -848,7 +848,7 @@
             this.diggShare($window, serviceShareConf.attrs);
             break;
           }
-          case 'google+': {
+          case 'google': {
             this.googleShare($window, serviceShareConf.attrs);
             break;
           }
