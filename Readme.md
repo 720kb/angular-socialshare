@@ -251,6 +251,7 @@ Method | Option | Type | Default | Description
 	sharer		| socialshare-url="" 	 |	URL | page URL|	Set the url to share
 	sharer		| socialshare-text="" 	 | String	| false |	Set the content to share
   sharer		| socialshare-via="" 	 | URL | false |		Set the buffer via
+  sharer    | socialshare-media="" | URL | false | Set the image url to share 
 
 ####Pocket
 
