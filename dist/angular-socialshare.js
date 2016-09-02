@@ -6,7 +6,7 @@
  * http://720kb.githb.io/angular-socialshare
  * 
  * MIT license
- * Sat Aug 27 2016
+ * Fri Sep 02 2016
  */
 /*global angular*/
 /*eslint no-loop-func:0, func-names:0*/
@@ -184,6 +184,7 @@
           'url': '',
           'text': '',
           'via': '',
+          'media': '',
           'trigger': 'click',
           'popupHeight': 600,
           'popupWidth': 500
@@ -646,6 +647,10 @@
 
       if (attrs.socialshareVia) {
         urlString += '&via=' + encodeURIComponent(attrs.socialshareVia);
+      }
+
+      if (attrs.socialshareMedia) {
+        urlString += '&picture=' + encodeURIComponent(attrs.socialshareMedia);
       }
 
       //default to the current page if a URL isn't specified
