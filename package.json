@@ -1,28 +1,52 @@
 {
   "name": "angular-socialshare",
-  "version": "0.1.8",
-  "description": "A social urls and content sharing directive for angularjs.",
+  "version": "2.2.7",
+  "description": "A social media url and content share module for angularjs.",
   "homepage": "http://720kb.githb.io/angular-socialshare",
-    "keywords": [
-    "date",
-    "socialshare",
-    "input"
+  "keywords": [
+    "social",
+    "sharing",
+    "buttons",
+    "share",
+    "angular",
+    "angularjs"
   ],
+  "scripts": {
+    "precommit": "gulp lint",
+    "preversion": "gulp lint",
+    "version": "gulp minify && ./tasks/bower-version-bump && git add -A .",
+    "postversion": "git push && git push --tags"
+  },
+  "files": [
+    "dist",
+    "index.js"
+  ],
+  "main": "index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/720kb/angular-socialshare.git"
   },
   "license": "MIT",
   "devDependencies": {
-    "connect-modrewrite": "*",
-    "grunt": "*",
-    "grunt-concurrent": "*",
-    "grunt-contrib-connect": "*",
-    "grunt-contrib-csslint": "*",
-    "grunt-contrib-cssmin": "*",
-    "grunt-contrib-uglify": "*",
-    "grunt-contrib-watch": "*",
-    "grunt-eslint": "*"
+    "browser-sync": "^2.9.11",
+    "connect-history-api-fallback": "^1.1.0",
+    "del": "^2.0.2",
+    "gulp": "^3.9.0",
+    "gulp-changed": "^1.3.0",
+    "gulp-eslint": "^1.0.0",
+    "gulp-header": "^1.7.1",
+    "gulp-jscs": "^3.0.2",
+    "gulp-jshint": "^1.12.0",
+    "gulp-ng-annotate": "^1.1.0",
+    "gulp-plumber": "^1.0.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-uglify": "^1.4.2",
+    "husky": "^0.10.2",
+    "jshint-stylish": "^2.0.1",
+    "require-dir": "^0.3.0",
+    "run-sequence": "^1.1.4",
+    "vinyl-paths": "^2.0.0"
   },
   "author": {
     "name": "Filippo Oretti",
@@ -34,6 +58,11 @@
       "name": "Dario Andrei",
       "email": "wouldgo84@gmail.com",
       "url": "https://github.com/wouldgo"
+    },
+    {
+      "name": "Luca Bressanelli",
+      "email": "luca.bressanelli@gmail.com",
+      "url": "https://github.com/ryppy"
     }
   ]
 }
