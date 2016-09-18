@@ -4,6 +4,7 @@
   <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
   <link rel="stylesheet" type="text/css" href="http://720kb.github.io/csshelper/assets/ext/src/helper.css">
   <title>Angularjs Socialshare</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body class="center-content" ng-controller="TestController as test">
   <div class="separator100"></div>
@@ -27,16 +28,6 @@
     </button>
     </div>
     <div class="separator30"></div>
-    <div>
-      <button class="btn btn-medium font-bold"
-      socialshare
-      socialshare-provider="sms"
-      socialshare-text="Hello!"
-      socialshare-url="http://720kb.net">
-      <i class="fa fa-sms"></i> Share on sms
-    </button>
-  </div>
-  <div class="separator30"></div>
   <div>
       <button class="btn btn-medium font-bold"
       socialshare
@@ -371,6 +362,17 @@
   <i class="fa fa-whatsapp"></i> Share on Whatsapp (iOs / Android only)
 </a>
 </div>
+<div class="separator30"></div>
+<div>
+  <a class="font-bold"
+  socialshare
+  socialshare-provider="sms"
+  socialshare-text="Hello!"
+  socialshare-url="http://720kb.net">
+  <i class="fa fa-comments"></i> Share on sms
+</a>
+</div>
+
 <div class="separator30"></div>
 <div>
   <button class="btn btn-medium font-bold"
