@@ -1,12 +1,12 @@
 /*
  * angular-socialshare
- * 2.2.8
+ * 2.2.9
  * 
  * A social media url and content share module for angularjs.
  * http://720kb.githb.io/angular-socialshare
  * 
  * MIT license
- * Sun Sep 18 2016
+ * Mon Sep 19 2016
  */
 /*global angular*/
 /*eslint no-loop-func:0, func-names:0*/
@@ -263,7 +263,6 @@
       {
         'provider': 'sms',
         'conf': {
-          'url': '',
           'text': '',
           'to': '',
           'trigger': 'click'
@@ -766,12 +765,12 @@
     }
     ,manageSmsShare = function smsShare($window, attrs, element) {
 
-    var body = encodeURIComponent(attrs.socialshareText.replace('%','percent')) + ' - ' + encodeURIComponent(attrs.socialshareUrl);
-    var toPhoneNumber = attrs.socialshareTo || '';
-    var urlString = 'sms:' + toPhoneNumber + '?&body=' + body;
+      var body = encodeURIComponent(attrs.socialshareText)
+        , toPhoneNumber = attrs.socialshareTo || ''
+        , urlString = 'sms:' + toPhoneNumber + '?&body=' + body;
 
-    element.attr('href', urlString);
-    element.attr('target', '_blank');
+      element.attr('href', urlString);
+      element.attr('target', '_blank');
     }
     , manageViberShare = function manageViberShare($window, attrs, element) {
 
