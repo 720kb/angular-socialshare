@@ -1,7 +1,7 @@
 Angular Socialshare
 ==================
 
-![Angular socialshare](http://i.imgur.com/Uj7x8BD.png)
+![Angular socialshare](http://i.imgur.com/tXjUu0m.png)
 
 [![Join the chat at https://gitter.im/720kb/angular-socialshare](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/720kb/angular-socialshare?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
@@ -74,6 +74,21 @@ socialshare-url="http://720kb.net">
 Share me
 </a>
 ```
+OR
+
+Call the Socialshare [service](#service)
+
+```javascript
+  .controller('Ctrl', ['Socialshare', function testController(Socialshare) {
+
+    Socialshare.share({
+      'provider': 'facebook',
+      'attrs': {
+        'socialshareUrl': 'http://720kb.net'
+      }
+    });
+```
+
 
 ##Usage
 Angular socialshare allows you to use sharing options via `attribute` data
@@ -88,7 +103,7 @@ You can set the social platform you want to share on using the `socialshare-prov
 - [facebook-messenger](#facebook-messenger)
 - [twitter](#twitter)
 - [linkedin](#linkedin)
-- [google](#google)
+- [google](#google-plus)
 - [pinterest](#pinterest)
 - [tumblr](#tumblr)
 - [reddit](#reddit)
@@ -108,8 +123,9 @@ You can set the social platform you want to share on using the `socialshare-prov
 - [telegram](#telegram)
 - [viber](#viber)
 - [skype](#skype)
+- [sms](#sms)
 
-Please use them all in lowercase (`socialshare-proivder="delicious"`)
+Please use them all in lowercase (`socialshare-provider="delicious"`)
 
 ##Doc
 
@@ -132,8 +148,8 @@ Method | Option | Type | Default | Description
   dialog, send		| socialshare-redirect-uri="" 	 | URL | false |	Set the redirect URI
 
 
-####Facebook Messenger 
-(works only for `<a>` elements, it is a direct link)
+####Facebook Messenger
+`mobile only` - (works only for `<a>` elements, it is a direct link)
 
 Method | Option | Type | Default | Description
 ------------- | ------------- | ------------- | ------------- | -------------
@@ -236,6 +252,7 @@ Method | Option | Type | Default | Description
 	sharer		| socialshare-url="" 	 |	URL | page URL|	Set the url to share
 	sharer		| socialshare-text="" 	 | String	| false |	Set the content to share
   sharer		| socialshare-via="" 	 | URL | false |		Set the buffer via
+  sharer    | socialshare-media="" | URL | false | Set the image url to share 
 
 ####Pocket
 
@@ -286,7 +303,7 @@ Method | Option | Type | Default | Description
 
 
 ####Whatsapp
-(works only for `<a>` elements, it is a direct link)
+`mobile only` - (works only for `<a>` elements, it is a direct link)
 
 Method | Option | Type | Default | Description
 ------------- | ------------- | ------------- | ------------- | -------------
@@ -294,7 +311,6 @@ Method | Option | Type | Default | Description
   sharer    | socialshare-text="" | String  | false | Set the content to share
 
 ####Telegram
-(works only for `<a>` elements, it is a direct link)
 
 Method | Option | Type | Default | Description
 ------------- | ------------- | ------------- | ------------- | -------------
@@ -303,7 +319,7 @@ Method | Option | Type | Default | Description
 
 
 ####Viber
-(works only for `<a>` elements, it is a direct link)
+`mobile only` -  (works only for `<a>` elements, it is a direct link)
 
 Method | Option | Type | Default | Description
 ------------- | ------------- | ------------- | ------------- | -------------
@@ -328,11 +344,18 @@ Method | Option | Type | Default | Description
   mailto    | socialshare-cc=""  | String | false | Set the CC / CCs for the email
   mailto    | socialshare-bcc=""  | String | false | Set the BCC / BCCs for the email
 
+####Sms
+(works only for `<a>` elements, it is a direct link)
 
+Method | Option | Type | Default | Description
+------------- | ------------- | ------------- | ------------- | -------------
+  sharer    | socialshare-to="" |  URL | page URL| Set the phone number of the contact
+  sharer    | socialshare-text="" | String  | false | Set the content to share
+  
 ##Options
 
 ####Sharing Popup Size
-you can set a specific Height or Width for the sharing popup using the `socialshare-popup-height=""` and `socialshare-popup-width=""` attributes
+You can set a specific Height or Width for the sharing popup using the `socialshare-popup-height=""` and `socialshare-popup-width=""` attributes (sometimes, if if the popup is too small, it gets resized by third parties)
 
 ```html
 <a href="#"
@@ -370,36 +393,64 @@ Share me when focusout or mouseleave
 </a>
 ```
 
+##Service
+You may need to share from a controller (for example), this is how to use the `Socialshare` service:
+
+```javascript
+  .controller('Ctrl', ['Socialshare', function testController(Socialshare) {
+
+    Socialshare.share({
+      'provider': 'facebook',
+      'attrs': {
+        'socialshareUrl': 'http://720kb.net'
+      }
+    });
+
+    Socialshare.share({
+      'provider': 'twitter',
+      'attrs': {
+        'socialshareUrl': 'http://720kb.net',
+        'socialshareHashtags': '720kb, angular, socialshare'
+      }
+    });
+    //every attrs must be in camel case as showed above
+    //this will open the share popup immediately without any trigger event required
+```
+_Some providers (specially mobile provider, such as: Viber, Whatsapp etc..) do not work with a Service call, because their API or Usage does not allow a trigger event on them_
+
 ##Globals
+
 ####Provider setup
 Sometimes you may need to set default values for all the sharing buttons, here is how to setup this:
 
 ```javascript
 .config(['socialshareConfProvider', function configApp(socialshareConfProvider) {
 
-  socialshareConfProvider.configure([{
-    'provider': 'twitter',
-    'conf': {
-      'url': 'http://720kb.net',
-      'text': '720kb is enough',
-      'via': 'npm',
-      'hashtags': 'angularjs,socialshare,angular-socialshare',
-      'trigger': 'click',
-      'popupHeight': 800,
-      'popupWidth' : 400
+  socialshareConfProvider.configure([
+    {
+      'provider': 'twitter',
+      'conf': {
+        'url': 'http://720kb.net',
+        'text': '720kb is enough',
+        'via': 'npm',
+        'hashtags': 'angularjs,socialshare,angular-socialshare',
+        'trigger': 'click',
+        'popupHeight': 800,
+        'popupWidth' : 400
+      }
+    },
+    {
+      'provider': 'facebook',
+      'conf': {
+        'url': 'http://720kb.net',
+        'trigger': 'mouseover',
+        'popupHeight': 1300,
+        'popupWidth' : 1000
+      }
     }
-  },
-  {
-    'provider': 'facebook',
-    'conf': {
-      'url': 'http://720kb.net',
-      'trigger': 'mouseover',
-      'popupHeight': 1300,
-      'popupWidth' : 1000
-    }
-  }, //etc....put all the providers you want
+  //and so on ...
   ]);
-}])
+}]);
 ```
 *NB* if you define the provider settings, but then you change the option value by html attributes, the html attribute value will be the final one (the one that will be used)
 
