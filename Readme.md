@@ -123,6 +123,7 @@ You can set the social platform you want to share on using the `socialshare-prov
 - [telegram](#telegram)
 - [viber](#viber)
 - [skype](#skype)
+- [sms](#sms)
 
 Please use them all in lowercase (`socialshare-provider="delicious"`)
 
@@ -343,7 +344,14 @@ Method | Option | Type | Default | Description
   mailto    | socialshare-cc=""  | String | false | Set the CC / CCs for the email
   mailto    | socialshare-bcc=""  | String | false | Set the BCC / BCCs for the email
 
+####Sms
+(works only for `<a>` elements, it is a direct link)
 
+Method | Option | Type | Default | Description
+------------- | ------------- | ------------- | ------------- | -------------
+  sharer    | socialshare-to="" |  URL | page URL| Set the phone number of the contact
+  sharer    | socialshare-text="" | String  | false | Set the content to share
+  
 ##Options
 
 ####Sharing Popup Size
