@@ -6,7 +6,7 @@
  * http://720kb.githb.io/angular-socialshare
  * 
  * MIT license
- * Fri Sep 02 2016
+ * Sun Sep 18 2016
  */
 /*global angular*/
 /*eslint no-loop-func:0, func-names:0*/
@@ -16,7 +16,7 @@
 
   var directiveName = 'socialshare'
     , serviceName = 'Socialshare'
-    , socialshareProviderNames = ['facebook', 'facebook-messenger', 'twitter', 'linkedin', 'google', 'pinterest', 'tumblr', 'reddit', 'stumbleupon', 'buffer', 'digg', 'delicious', 'vk', 'pocket', 'wordpress', 'flipboard', 'xing', 'hackernews', 'evernote', 'whatsapp', 'telegram', 'viber', 'skype', 'email', 'ok']
+    , socialshareProviderNames = ['facebook', 'facebook-messenger','sms', 'twitter', 'linkedin', 'google', 'pinterest', 'tumblr', 'reddit', 'stumbleupon', 'buffer', 'digg', 'delicious', 'vk', 'pocket', 'wordpress', 'flipboard', 'xing', 'hackernews', 'evernote', 'whatsapp', 'telegram', 'viber', 'skype', 'email', 'ok']
     , socialshareConfigurationProvider = /*@ngInject*/ function socialshareConfigurationProvider() {
 
       var socialshareConfigurationDefault = [{
@@ -258,6 +258,15 @@
         'conf': {
           'url': '',
           'text': ''
+        }
+      },
+      {
+        'provider': 'sms',
+        'conf': {
+          'url': '',
+          'text': '',
+          'to': '',
+          'trigger': 'click'
         }
       },
       {
@@ -755,6 +764,15 @@
       element.attr('target', '_top');
 
     }
+    ,manageSmsShare = function smsShare($window, attrs, element) {
+
+    var body = encodeURIComponent(attrs.socialshareText.replace('%','percent')) + ' - ' + encodeURIComponent(attrs.socialshareUrl);
+    var toPhoneNumber = attrs.socialshareTo || '';
+    var urlString = 'sms:' + toPhoneNumber + '?&body=' + body;
+
+    element.attr('href', urlString);
+    element.attr('target', '_blank');
+    }
     , manageViberShare = function manageViberShare($window, attrs, element) {
 
       var href = 'viber://forward?text=' + encodeURIComponent(attrs.socialshareText + ' ') + encodeURIComponent(attrs.socialshareUrl || $window.location.href);
@@ -1006,6 +1024,7 @@
       , 'xing': manageXingShare
       , 'evernote': manageEvernoteShare
       , 'whatsapp': manageWhatsappShare
+      , 'sms': manageSmsShare
       , 'telegram': manageTelegramShare
       , 'viber': manageViberShare
       , 'skype': skypeShare
