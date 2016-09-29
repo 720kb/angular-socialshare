@@ -6,7 +6,7 @@
  * http://720kb.github.io/angular-socialshare
  * 
  * MIT license
- * Tue Sep 27 2016
+ * Wed Sep 28 2016
  */
 /*global angular*/
 /*eslint no-loop-func:0, func-names:0*/
@@ -263,6 +263,7 @@
       {
         'provider': 'sms',
         'conf': {
+          'url': '',
           'text': '',
           'to': '',
           'trigger': 'click'
@@ -765,7 +766,12 @@
     }
     ,manageSmsShare = function smsShare($window, attrs, element) {
 
-      var body = encodeURIComponent(attrs.socialshareText)
+      if(attrs.socialshareText.indexOf('%')>=0)
+      {
+        $log.warn('sending sms text with "%" sign is not supported');
+      }
+
+      var body = encodeURIComponent(attrs.socialshareText.replace('%','')) + ' - ' + encodeURIComponent(attrs.socialshareUrl)
         , toPhoneNumber = attrs.socialshareTo || ''
         , urlString = 'sms:' + toPhoneNumber + '?&body=' + body;
 
