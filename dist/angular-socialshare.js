@@ -1,12 +1,12 @@
 /*
  * angular-socialshare
- * 2.3.0
+ * 2.3.1
  * 
  * A social media url and content share module for angularjs.
  * http://720kb.github.io/angular-socialshare
  * 
  * MIT license
- * Wed Sep 28 2016
+ * Thu Sep 29 2016
  */
 /*global angular*/
 /*eslint no-loop-func:0, func-names:0*/
@@ -764,10 +764,9 @@
       element.attr('target', '_top');
 
     }
-    ,manageSmsShare = function smsShare($window, attrs, element) {
+    , manageSmsShare = function smsShare($window, attrs, element) {
 
-      if(attrs.socialshareText.indexOf('%')>=0)
-      {
+      if(attrs.socialshareText.indexOf('%') >= 0) {
         $log.warn('sending sms text with "%" sign is not supported');
       }
 
@@ -810,7 +809,7 @@
         , 'Skype', 'toolbar=0,status=0,resizable=yes,width=' + attrs.socialsharePopupWidth + ',height=' + attrs.socialsharePopupHeight
         + ',top=' + ($window.innerHeight - attrs.socialsharePopupHeight) / 2 + ',left=' + ($window.innerWidth - attrs.socialsharePopupWidth) / 2);
     }
-    , socialshareService = /*@ngInject*/  ['$window', function socialshareService($window) {
+    , socialshareService = /*@ngInject*/  ['$window', '$log', function socialshareService($window, $log) {
 
       this.emailShare = manageEmailShare;
       this.facebookShare = manageFacebookShare;
@@ -840,12 +839,17 @@
       //**** whatsapp can't share without an element clicked (href)
       //this.whatsappShare = manageWhatsappShare;
       this.skypeShare = skypeShare;
+      this.smsShare = manageSmsShare;
 
       this.share = function shareTrigger(serviceShareConf) {
 
         switch (serviceShareConf.provider) {
           case 'email': {
             this.emailShare($window, serviceShareConf.attrs);
+            break;
+          }
+          case 'sms': {
+            this.smsShare($window, $log, serviceShareConf.attrs);
             break;
           }
           case 'facebook': {
