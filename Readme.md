@@ -131,6 +131,8 @@ Please use them all in lowercase (`socialshare-provider="delicious"`)
 
 ####Facebook
 
+(`socialshare-provider="facebook"`)
+
 Method | Option | Type | Default | Description
 ------------- | ------------- | ------------- | ------------- | -------------
  	sharer, dialog, send		| socialshare-url="" 	 | page URL | false |		Set the url to share
@@ -151,12 +153,16 @@ Method | Option | Type | Default | Description
 ####Facebook Messenger
 `mobile only` - (works only for `<a>` elements, it is a direct link)
 
+(`socialshare-provider="facebook-messenger"`)
+
 Method | Option | Type | Default | Description
 ------------- | ------------- | ------------- | ------------- | -------------
   sharer    | socialshare-url="" |  URL | page URL| Set the url to share
 
 
 ####Twitter
+
+(`socialshare-provider="twitter"`)
 
 Method | Option | Type | Default | Description
 ------------- | ------------- | ------------- | ------------- | -------------
@@ -168,6 +174,8 @@ Method | Option | Type | Default | Description
 
 ####Linkedin
 
+(`socialshare-provider="linkedin"`)
+
 Method | Option | Type | Default | Description
 ------------- | ------------- | ------------- | ------------- | -------------
 	sharer		| socialshare-url="" 	        |	URL     | page URL  |	Set the url to share
@@ -177,6 +185,8 @@ Method | Option | Type | Default | Description
 
 ####Reddit
 
+(`socialshare-provider="reddit"`)
+
 Method | Option | Type | Default | Description
 ------------- | ------------- | ------------- | ------------- | -------------
  	sharer		| socialshare-url="" 	 |	URL | page URL|	Set the url to share
@@ -184,6 +194,8 @@ Method | Option | Type | Default | Description
   sharer		| socialshare-subreddit="" 	 | String('technology')	| false |	Set the subreddit to share on
 
 ####Vk
+
+(`socialshare-provider="vk"`)
 
 Method | Option | Type | Default | Description
 ------------- | ------------- | ------------- | ------------- | -------------
@@ -193,6 +205,8 @@ Method | Option | Type | Default | Description
  	sharer		| socialshare-media="" 	 | URL |	false | Set the image source to share
 ####OK
 (ok.ru)
+
+(`socialshare-provider="ok"`)
 
 Method | Option | Type | Default | Description
 ------------- | ------------- | ------------- | ------------- | -------------
@@ -209,6 +223,8 @@ Method | Option | Type | Default | Description
 
 ####Delicious
 
+(`socialshare-provider="delicious"`)
+
 Method | Option | Type | Default | Description
 ------------- | ------------- | ------------- | ------------- | -------------
  	sharer		| socialshare-url="" 	 |	URL | page URL|	Set the url to share
@@ -216,6 +232,8 @@ Method | Option | Type | Default | Description
   sharer		| socialshare-media="" 	 | URL | false |		Set the media url to share
 
 ####StumbleUpon
+
+(`socialshare-provider="stumbleupon"`)
 
 Method | Option | Type | Default | Description
 ------------- | ------------- | ------------- | ------------- | -------------
@@ -225,6 +243,8 @@ Method | Option | Type | Default | Description
 
 ####Pinterest
 
+(`socialshare-provider="pinterest"`)
+
 Method | Option | Type | Default | Description
 ------------- | ------------- | ------------- | ------------- | -------------
 	sharer		| socialshare-url="" 	 |	URL | page URL|	Set the url to share
@@ -233,11 +253,15 @@ Method | Option | Type | Default | Description
 
 ####Google (Plus)
 
+(`socialshare-provider="google"`)
+
 Method | Option | Type | Default | Description
 ------------- | ------------- | ------------- | ------------- | -------------
 	sharer		| socialshare-url="" 	 |	URL | page URL|	Set the url to share
 
 ####Tumblr
+
+(`socialshare-provider="tumblr"`)
 
 Method | Option | Type | Default | Description
 ------------- | ------------- | ------------- | ------------- | -------------
@@ -246,6 +270,8 @@ Method | Option | Type | Default | Description
   sharer		| socialshare-media="" 	 | URL | false |		Set the media url to share
 
 ####Buffer
+
+(`socialshare-provider="buffer"`)
 
 Method | Option | Type | Default | Description
 ------------- | ------------- | ------------- | ------------- | -------------
@@ -256,6 +282,8 @@ Method | Option | Type | Default | Description
 
 ####Pocket
 
+(`socialshare-provider="pocket"`)
+
 Method | Option | Type | Default | Description
 ------------- | ------------- | ------------- | ------------- | -------------
 	sharer		| socialshare-url="" 	 |	URL | page URL|	Set the url to share
@@ -263,12 +291,16 @@ Method | Option | Type | Default | Description
 
 ####Flipboard
 
+(`socialshare-provider="flipboard"`)
+
 Method | Option | Type | Default | Description
 ------------- | ------------- | ------------- | ------------- | -------------
 	sharer		| socialshare-url="" 	 |	URL | page URL|	Set the url to share
 	sharer		| socialshare-text=""  | String	| false |	Set the content to share
 
 ####Evernote
+
+(`socialshare-provider="evernote"`)
 
 Method | Option | Type | Default | Description
 ------------- | ------------- | ------------- | ------------- | -------------
@@ -278,12 +310,16 @@ Method | Option | Type | Default | Description
 
 ####Hacker News
 
+(`socialshare-provider="hackernews"`)
+
 Method | Option | Type | Default | Description
 ------------- | ------------- | ------------- | ------------- | -------------
 	sharer		| socialshare-url="" 	 |	URL | page URL|	Set the url to share
 	sharer		| socialshare-text=""  | String	| false |	Set the content to share
 
 ####Wordpress
+
+(`socialshare-provider="wordpress"`)
 
 Method | Option | Type | Default | Description
 ------------- | ------------- | ------------- | ------------- | -------------
@@ -293,6 +329,8 @@ Method | Option | Type | Default | Description
 
 
 ####Xing
+
+(`socialshare-provider="xing"`)
 
 Method | Option | Type | Default | Description
 ------------- | ------------- | ------------- | ------------- | -------------
@@ -305,12 +343,16 @@ Method | Option | Type | Default | Description
 ####Whatsapp
 `mobile only` - (works only for `<a>` elements, it is a direct link)
 
+(`socialshare-provider="whatsapp"`)
+
 Method | Option | Type | Default | Description
 ------------- | ------------- | ------------- | ------------- | -------------
   sharer    | socialshare-url="" |  URL | page URL| Set the url to share
   sharer    | socialshare-text="" | String  | false | Set the content to share
 
 ####Telegram
+
+(`socialshare-provider="telegram"`)
 
 Method | Option | Type | Default | Description
 ------------- | ------------- | ------------- | ------------- | -------------
@@ -321,6 +363,8 @@ Method | Option | Type | Default | Description
 ####Viber
 `mobile only` -  (works only for `<a>` elements, it is a direct link)
 
+(`socialshare-provider="viber"`)
+
 Method | Option | Type | Default | Description
 ------------- | ------------- | ------------- | ------------- | -------------
   sharer    | socialshare-url="" |  URL | page URL| Set the url to share
@@ -329,12 +373,16 @@ Method | Option | Type | Default | Description
 
 ####Skype
 
+(`socialshare-provider="skype"`)
+
 Method | Option | Type | Default | Description
 ------------- | ------------- | ------------- | ------------- | -------------
   sharer    | socialshare-url=""   |  URL | page URL| Set the url to share
   sharer    | socialshare-text=""  | String | false | Set the content to share
 
 ####Email
+
+(`socialshare-provider="email"`)
 
 Method | Option | Type | Default | Description
 ------------- | ------------- | ------------- | ------------- | -------------
@@ -346,6 +394,8 @@ Method | Option | Type | Default | Description
 
 ####Sms
 (works only for `<a>` elements, it is a direct link)
+
+(`socialshare-provider="sms"`)
 
 Method | Option | Type | Default | Description
 ------------- | ------------- | ------------- | ------------- | -------------
