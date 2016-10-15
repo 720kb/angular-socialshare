@@ -6,7 +6,7 @@
  * http://720kb.github.io/angular-socialshare
  * 
  * MIT license
- * Thu Sep 29 2016
+ * Sat Oct 15 2016
  */
 /*global angular*/
 /*eslint no-loop-func:0, func-names:0*/
@@ -34,6 +34,8 @@
         'provider': 'facebook',
         'conf': {
           'url':'',
+          'quote':'',
+          'hashtags':'',
           'text': '',
           'media': '',
           'type': '',
@@ -373,6 +375,14 @@
 
         if (attrs.socialshareTo) {
           urlString += '&to=' + encodeURIComponent(attrs.socialshareTo);
+        }
+
+        if (attrs.socialshareQuote) {
+          urlString += '&quote=' + encodeURIComponent(attrs.socialshareQuote);
+        }
+
+        if (attrs.socialshareHashtags) {
+          urlString += '&hashtag=' + encodeURIComponent(attrs.socialshareHashtags);
         }
 
         if (attrs.socialshareDisplay) {
@@ -972,6 +982,8 @@
         }
 
         //if some attribute is not define provide a default one
+        attrs.socialshareQuote = attrs.socialshareQuote || configurationElement.conf.quote;
+        attrs.socialshareTitle = attrs.socialshareTitle || configurationElement.conf.title;
         attrs.socialshareUrl = attrs.socialshareUrl || configurationElement.conf.url;
         attrs.socialshareText = attrs.socialshareText || configurationElement.conf.text;
         attrs.socialshareMedia = attrs.socialshareMedia || configurationElement.conf.media;
