@@ -6,7 +6,7 @@
  * http://720kb.github.io/angular-socialshare
  * 
  * MIT license
- * Thu Sep 29 2016
+ * Sat Oct 22 2016
  */
 /*global angular*/
 /*eslint no-loop-func:0, func-names:0*/
@@ -480,8 +480,12 @@
 
         urlString += '&bcc=' + encodeURIComponent(attrs.socialshareBcc);
       }
-
-      $window.open(urlString, '_blank');
+      if($window.self !== $window.top) {
+        $window.open(urlString, '_blank');
+      } else {
+        $window.open(urlString, '_self');
+      }
+      
     }
     , facebookMessengerShare = function facebookMessengerShare($window, attrs, element) {
 
