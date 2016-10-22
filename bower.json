@@ -1,6 +1,6 @@
 {
   "name": "angular-socialshare",
-  "version": "2.3.1",
+  "version": "2.3.2",
   "description": "A social media url and content share module for angularjs.",
   "authors": [
     "Filippo Oretti <filippo.oretti@gmail.com",
@@ -27,7 +27,7 @@
     "angularjs"
   ],
   "main": [
-    "./dist/angular-socialshare.min.js"
+    "./dist/angular-socialshare.js"
   ],
   "license": "MIT",
   "homepage": "http://720kb.github.io/angular-socialshare/",
