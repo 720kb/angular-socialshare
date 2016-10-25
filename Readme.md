@@ -133,6 +133,8 @@ Please use them all in lowercase (`socialshare-provider="delicious"`)
 
 (`socialshare-provider="facebook"`)
 
+`sharer` = [Facebook simple share](https://developers.facebook.com/docs/plugins/share-button), `send` = [Facebook Dialog Send](https://developers.facebook.com/docs/sharing/reference/send-dialog), `feed` = [Facebook Dialog Feed](https://developers.facebook.com/docs/sharing/reference/feed-dialog)
+
 Method | Option | Type | Default | Description
 ------------- | ------------- | ------------- | ------------- | -------------
  	sharer, feed, send		| socialshare-url="" 	 | page URL | false |		Set the url to share
