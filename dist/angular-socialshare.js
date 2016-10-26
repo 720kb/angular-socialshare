@@ -1,10 +1,10 @@
 /*
  * angular-socialshare
- * 2.3.1
- * 
+ * 2.3.2
+ *
  * A social media url and content share module for angularjs.
  * http://720kb.github.io/angular-socialshare
- * 
+ *
  * MIT license
  * Wed Oct 26 2016
  */
@@ -536,8 +536,12 @@
 
         urlString += '&bcc=' + encodeURIComponent(attrs.socialshareBcc);
       }
+      if($window.self !== $window.top) {
+        $window.open(urlString, '_blank');
+      } else {
+        $window.open(urlString, '_self');
+      }
 
-      $window.open(urlString, '_blank');
     }
     , facebookMessengerShare = function facebookMessengerShare($window, attrs, element) {
 

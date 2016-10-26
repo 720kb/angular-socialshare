@@ -133,21 +133,23 @@ Please use them all in lowercase (`socialshare-provider="delicious"`)
 
 (`socialshare-provider="facebook"`)
 
+`sharer` = [Facebook simple share](https://developers.facebook.com/docs/plugins/share-button), `send` = [Facebook Dialog Send](https://developers.facebook.com/docs/sharing/reference/send-dialog), `feed` = [Facebook Dialog Feed](https://developers.facebook.com/docs/sharing/reference/feed-dialog)
+
 Method | Option | Type | Default | Description
 ------------- | ------------- | ------------- | ------------- | -------------
- 	sharer, dialog, send		| socialshare-url="" 	 | page URL | false |		Set the url to share
- 	dialog		| socialshare-text="" 	 | String |	 false	| Set the headline to share
- 	dialog		| socialshare-description="" 	 | String |	 false	| Set the content to share
- 	dialog		| socialshare-media="" 	 |	URL |	false | Set the media source to share
- 	dialog, send		| socialshare-type=""	 | String('feed', 'send') | sharer |		Share via facebook feed dialog  - [info](https://developers.facebook.com/docs/sharing/reference/feed-dialog) or send dialog  - [info](https://developers.facebook.com/docs/sharing/reference/send-dialog)
- 	dialog, send		| socialshare-via="" 	 |	String | false | 	Set the APP ID value
- 	dialog	, send	| socialshare-to="" 	 |	String	| false | Set the to value
- 	dialog		| socialshare-from="" 	 |	String	| false | Set the from to value
- 	dialog, send		| socialshare-ref="" 	 |	String('comma,separated') | false |	Set the ref value
- 	dialog, send		| socialshare-display="" 	 | String('popup') | false |	Set the display value
- 	dialog		| socialshare-source="" 	 | URL | false |	Set the source value
- 	dialog		| socialshare-caption="" 	 | String | false |	Set the caption to share
-  dialog, send		| socialshare-redirect-uri="" 	 | URL | false |	Set the redirect URI
+ 	sharer, feed, send		| socialshare-url="" 	 | page URL | false |		Set the url to share
+ 	feed		| socialshare-text="" 	 | String |	 false	| Set the headline to share
+ 	feed		| socialshare-description="" 	 | String |	 false	| Set the content to share
+ 	feed		| socialshare-media="" 	 |	URL |	false | Set the media source to share
+ 	feed, send		| socialshare-type=""	 | String('feed', 'send') | sharer |		Share via facebook feed dialog  - [info](https://developers.facebook.com/docs/sharing/reference/feed-dialog) or send dialog  - [info](https://developers.facebook.com/docs/sharing/reference/send-dialog)
+ 	feed, send		| socialshare-via="" 	 |	String | false | 	Set the APP ID value
+ 	feed	, send	| socialshare-to="" 	 |	String	| false | Set the to value
+ 	feed		| socialshare-from="" 	 |	String	| false | Set the from to value
+ 	feed, send		| socialshare-ref="" 	 |	String('comma,separated') | false |	Set the ref value
+ 	feed, send		| socialshare-display="" 	 | String('popup') | false |	Set the display value
+ 	feed		| socialshare-source="" 	 | URL | false |	Set the source value
+ 	feed		| socialshare-caption="" 	 | String | false |	Set the caption to share
+  feed, send		| socialshare-redirect-uri="" 	 | URL | false |	Set the redirect URI
 
 
 ####Facebook Messenger
