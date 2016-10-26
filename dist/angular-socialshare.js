@@ -6,7 +6,7 @@
  * http://720kb.github.io/angular-socialshare
  * 
  * MIT license
- * Sat Oct 15 2016
+ * Wed Oct 26 2016
  */
 /*global angular*/
 /*eslint no-loop-func:0, func-names:0*/
