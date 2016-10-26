@@ -1,6 +1,6 @@
 /*
  * angular-socialshare
- * 2.3.2
+ * 2.3.3
  * 
  * A social media url and content share module for angularjs.
  * http://720kb.github.io/angular-socialshare
