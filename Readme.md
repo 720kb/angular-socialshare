@@ -148,8 +148,8 @@ Method | Option | Type | Default | Description
  	feed		| socialshare-from="" 	 |	String	| false | Set the from to value
  	feed, send		| socialshare-ref="" 	 |	String('comma,separated') | false |	Set the ref value
  	feed, send, share		| socialshare-display="" 	 | String('popup') | false |	Set the display value
- 	feed, share		| socialshare-quote="" 	 | String | false |	Set the display value
-	feed, share		| socialshare-hashtags="" 	 | String | false |	Set the display value
+ 	feed, share		| socialshare-quote="" 	 | String | false |	Set the display text 
+	feed, share		| socialshare-hashtags="" 	 | String | false |	Set the display value along with #     Eg:#facebook
  	feed		| socialshare-source="" 	 | URL | false |	Set the source value
  	feed, share		| socialshare-caption="" 	 | String | false |	Set the caption to share
   feed, send		| socialshare-redirect-uri="" 	 | URL | false |	Set the redirect URI
