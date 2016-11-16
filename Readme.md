@@ -133,10 +133,7 @@ Please use them all in lowercase (`socialshare-provider="delicious"`)
 
 (`socialshare-provider="facebook"`)
 
-`share` = [Facebook Dialog Share](https://developers.facebook.com/docs/sharing/reference/share-dialog),
-`feed` = [Facebook Dialog Feed](https://developers.facebook.com/docs/sharing/reference/feed-dialog),
-`send` = [Facebook Dialog Send](https://developers.facebook.com/docs/sharing/reference/send-dialog),
-`sharer` = [Facebook simple share](https://developers.facebook.com/docs/plugins/share-button),
+`share` = [Facebook Dialog Share](https://developers.facebook.com/docs/sharing/reference/share-dialog),    `feed` = [Facebook Dialog Feed](https://developers.facebook.com/docs/sharing/reference/feed-dialog), `send` = [Facebook Dialog Send](https://developers.facebook.com/docs/sharing/reference/send-dialog),  `sharer` = [Facebook simple share](https://developers.facebook.com/docs/plugins/share-button) 
 
 Method | Option | Type | Default | Description
 ------------- | ------------- | ------------- | ------------- | -------------
