@@ -142,7 +142,7 @@ Method | Option | Type | Default | Description
 	share		| socialshare-title="" 	 | String |	 false	| Set the title headline to share
  	feed,share		| socialshare-description="" 	 | String |	 false	| Set the content to share
  	feed, share		| socialshare-media="" 	 |	URL |	false | Set the media source to share
- 	feed, send, share		| socialshare-type=""	 | String('feed', 'send', 'share') | sharer |		facebook share dialog  - [info](https://developers.facebook.com/docs/sharing/reference/share-dialog), facebook feed dialog  - [info](https://developers.facebook.com/docs/sharing/reference/feed-dialog) and send dialog  - [info](https://developers.facebook.com/docs/sharing/reference/send-dialog)
+ 	feed, send, share		| socialshare-type=""	 | String('feed', 'send', 'share') | share |		facebook share dialog  - [info](https://developers.facebook.com/docs/sharing/reference/share-dialog), facebook feed dialog  - [info](https://developers.facebook.com/docs/sharing/reference/feed-dialog) and send dialog  - [info](https://developers.facebook.com/docs/sharing/reference/send-dialog)
  	feed, send, share		| socialshare-via="" 	 |	String | false | 	Set the FB APP ID value
  	feed, send	| socialshare-to="" 	 |	String	| false | Set the to value
  	feed		| socialshare-from="" 	 |	String	| false | Set the from to value
