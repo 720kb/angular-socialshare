@@ -1,12 +1,12 @@
 /*
  * angular-socialshare
- * 2.3.2
- *
+ * 2.3.3
+ * 
  * A social media url and content share module for angularjs.
  * http://720kb.github.io/angular-socialshare
- *
+ * 
  * MIT license
- * Wed Oct 26 2016
+ * Wed Nov 30 2016
  */
 /*global angular*/
 /*eslint no-loop-func:0, func-names:0*/
@@ -536,12 +536,12 @@
 
         urlString += '&bcc=' + encodeURIComponent(attrs.socialshareBcc);
       }
-      if ($window.self !== $window.top) {
+      if($window.self !== $window.top) {
         $window.open(urlString, '_blank');
       } else {
         $window.open(urlString, '_self');
       }
-
+      
     }
     , facebookMessengerShare = function facebookMessengerShare($window, attrs, element) {
 
@@ -826,7 +826,7 @@
     }
     , manageSmsShare = function smsShare($window, attrs, element) {
 
-      if (attrs.socialshareText.indexOf('%') >= 0) {
+      if(attrs.socialshareText.indexOf('%') >= 0) {
         $log.warn('sending sms text with "%" sign is not supported');
       }
 
@@ -1064,6 +1064,8 @@
         } else {
 
           onEventTriggered();
+          attrs.$observe('socialshareUrl', onEventTriggered);
+          attrs.$observe('socialshareText', onEventTriggered);
         }
       };
 
