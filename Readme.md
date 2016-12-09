@@ -133,13 +133,7 @@ Please use them all in lowercase (`socialshare-provider="delicious"`)
 
 (`socialshare-provider="facebook"`)
 
-<<<<<<< HEAD
-
 `share` = [Facebook Dialog Share](https://developers.facebook.com/docs/sharing/reference/share-dialog),    `feed` = [Facebook Dialog Feed](https://developers.facebook.com/docs/sharing/reference/feed-dialog), `send` = [Facebook Dialog Send](https://developers.facebook.com/docs/sharing/reference/send-dialog),  `sharer` = [Facebook simple share](https://developers.facebook.com/docs/plugins/share-button)
-
-=======
-`share` = [Facebook Dialog Share](https://developers.facebook.com/docs/sharing/reference/share-dialog),    `feed` = [Facebook Dialog Feed](https://developers.facebook.com/docs/sharing/reference/feed-dialog), `send` = [Facebook Dialog Send](https://developers.facebook.com/docs/sharing/reference/send-dialog),  `sharer` = [Facebook simple share](https://developers.facebook.com/docs/plugins/share-button)
->>>>>>> f849cf31f666142a3c307afa0533e42aa73ab8e2
 
 Method | Option | Type | Default | Description
 ------------- | ------------- | ------------- | ------------- | -------------
@@ -148,21 +142,13 @@ Method | Option | Type | Default | Description
 	share		| socialshare-title="" 	 | String |	 false	| Set the title headline to share
  	feed,share		| socialshare-description="" 	 | String |	 false	| Set the content to share
  	feed, share		| socialshare-media="" 	 |	URL |	false | Set the media source to share
-<<<<<<< HEAD
- 	feed, send, share		| socialshare-type=""	 | String('feed', 'send', 'share') | sharer |		facebook share dialog  - [info](https://developers.facebook.com/docs/sharing/reference/share-dialog), facebook feed dialog  - [info](https://developers.facebook.com/docs/sharing/reference/feed-dialog) and send dialog  - [info](https://developers.facebook.com/docs/sharing/reference/send-dialog)
-=======
  	feed, send, share		| socialshare-type=""	 | String('feed', 'send', 'share') | share |		facebook share dialog  - [info](https://developers.facebook.com/docs/sharing/reference/share-dialog), facebook feed dialog  - [info](https://developers.facebook.com/docs/sharing/reference/feed-dialog) and send dialog  - [info](https://developers.facebook.com/docs/sharing/reference/send-dialog)
->>>>>>> f849cf31f666142a3c307afa0533e42aa73ab8e2
  	feed, send, share		| socialshare-via="" 	 |	String | false | 	Set the FB APP ID value
  	feed, send	| socialshare-to="" 	 |	String	| false | Set the to value
  	feed		| socialshare-from="" 	 |	String	| false | Set the from to value
  	feed, send		| socialshare-ref="" 	 |	String('comma,separated') | false |	Set the ref value
  	feed, send, share		| socialshare-display="" 	 | String('popup') | false |	Set the display value
-<<<<<<< HEAD
  	feed, share		| socialshare-quote="" 	 | String | false |	Set the display text
-=======
- 	feed, share		| socialshare-quote="" 	 | String | false |	Set the display text 
->>>>>>> f849cf31f666142a3c307afa0533e42aa73ab8e2
 	feed, share		| socialshare-hashtags="" 	 | String | false |	Set the display value along with #     Eg:#facebook
  	feed		| socialshare-source="" 	 | URL | false |	Set the source value
  	feed, share		| socialshare-caption="" 	 | String | false |	Set the caption to share
