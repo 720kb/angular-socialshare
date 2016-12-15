@@ -1,12 +1,12 @@
 /*
  * angular-socialshare
- * 2.3.2
- *
+ * 2.3.3
+ * 
  * A social media url and content share module for angularjs.
  * http://720kb.github.io/angular-socialshare
- *
+ * 
  * MIT license
- * Wed Oct 26 2016
+ * Thu Dec 15 2016
  */
 /*global angular*/
 /*eslint no-loop-func:0, func-names:0*/
@@ -536,12 +536,12 @@
 
         urlString += '&bcc=' + encodeURIComponent(attrs.socialshareBcc);
       }
-      if ($window.self !== $window.top) {
+      if($window.self !== $window.top) {
         $window.open(urlString, '_blank');
       } else {
         $window.open(urlString, '_self');
       }
-
+      
     }
     , facebookMessengerShare = function facebookMessengerShare($window, attrs, element) {
 
@@ -818,7 +818,7 @@
     }
     , manageWhatsappShare = function manageWhatsappShare($window, attrs, element) {
 
-      var href = 'whatsapp://send?text=' + encodeURIComponent(attrs.socialshareText + ' ') + encodeURIComponent(attrs.socialshareUrl || $window.location.href);
+      var href = 'whatsapp://send?text=' + encodeURIComponent(attrs.socialshareText) + encodeURIComponent(attrs.socialshareUrl || $window.location.href);
 
       element.attr('href', href);
       element.attr('target', '_top');
@@ -826,11 +826,11 @@
     }
     , manageSmsShare = function smsShare($window, attrs, element) {
 
-      if (attrs.socialshareText.indexOf('%') >= 0) {
+      if(attrs.socialshareText.indexOf('%') >= 0) {
         $log.warn('sending sms text with "%" sign is not supported');
       }
 
-      var body = encodeURIComponent(attrs.socialshareText.replace('%','')) + ' - ' + encodeURIComponent(attrs.socialshareUrl)
+      var body = encodeURIComponent(attrs.socialshareText.replace('%','')) + encodeURIComponent(attrs.socialshareUrl)
         , toPhoneNumber = attrs.socialshareTo || ''
         , urlString = 'sms:' + toPhoneNumber + '?&body=' + body;
 
@@ -839,7 +839,7 @@
     }
     , manageViberShare = function manageViberShare($window, attrs, element) {
 
-      var href = 'viber://forward?text=' + encodeURIComponent(attrs.socialshareText + ' ') + encodeURIComponent(attrs.socialshareUrl || $window.location.href);
+      var href = 'viber://forward?text=' + encodeURIComponent(attrs.socialshareText) + encodeURIComponent(attrs.socialshareUrl || $window.location.href);
 
       element.attr('href', href);
       element.attr('target', '_top');
