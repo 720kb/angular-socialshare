@@ -512,7 +512,9 @@ Sometimes you may need to set default values for all the sharing buttons, here i
 
 ####[Live demo](https://720kb.github.io/angular-socialshare)
 
-
+[![OpenCollective](https://opencollective.com/angular-socialshare/backers/badge.svg)](#backers) 
+[![OpenCollective](https://opencollective.com/angular-socialshare/sponsors/badge.svg)](#sponsors)
+ 
 ##Contributing
 
 We will be much grateful if you help us making this project to grow up.
