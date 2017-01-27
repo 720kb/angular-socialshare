@@ -1,12 +1,12 @@
 /*
  * angular-socialshare
- * 2.3.4
+ * 2.3.5
  * 
  * A social media url and content share module for angularjs.
  * http://720kb.github.io/angular-socialshare
  * 
  * MIT license
- * Fri Dec 16 2016
+ * Fri Jan 27 2017
  */
 /*global angular*/
 /*eslint no-loop-func:0, func-names:0*/
@@ -830,10 +830,15 @@
         $log.warn('sending sms text with "%" sign is not supported');
       }
 
-      var body = encodeURIComponent(attrs.socialshareText.replace('%','')) + encodeURIComponent(attrs.socialshareUrl)
-        , toPhoneNumber = attrs.socialshareTo || ''
-        , urlString = 'sms:' + toPhoneNumber + '?&body=' + body;
-
+      var body = encodeURIComponent(attrs.socialshareText.replace('%',''))
+        , toPhoneNumber = attrs.socialshareTo || '';
+      
+      if (attrs.socialshareUrl) {
+        body += encodeURIComponent(attrs.socialshareUrl);
+      }
+      
+      var urlString = 'sms:' + toPhoneNumber + '?&body=' + body;
+      
       element.attr('href', urlString);
       element.attr('target', '_blank');
     }
