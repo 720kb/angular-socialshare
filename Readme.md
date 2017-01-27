@@ -404,7 +404,7 @@ Method | Option | Type | Default | Description
 
 Method | Option | Type | Default | Description
 ------------- | ------------- | ------------- | ------------- | -------------
-  sharer    | socialshare-to="" |  URL | page URL| Set the phone number of the contact
+  sharer    | socialshare-to="" |  URL | false | Set the phone number of the contact
   sharer    | socialshare-text="" | String  | false | Set the content to share
   sharer    | socialshare-url=""  | URL | page URL| Set the url to share
   
