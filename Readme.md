@@ -124,6 +124,7 @@ You can set the social platform you want to share on using the `socialshare-prov
 - [viber](#viber)
 - [skype](#skype)
 - [sms](#sms)
+- [weibo](#weibo)
 
 Please use them all in lowercase (`socialshare-provider="delicious"`)
 
@@ -408,6 +409,15 @@ Method | Option | Type | Default | Description
   sharer    | socialshare-text="" | String  | false | Set the content to share
   sharer    | socialshare-url=""  | URL | page URL| Set the url to share
   
+####Weibo
+
+(`socialshare-provider="weibo"`)
+
+Method | Option | Type | Default | Description
+------------- | ------------- | ------------- | ------------- | -------------
+  sharer    | socialshare-url=""   |  URL | page URL| Set the url to share
+  sharer    | socialshare-text=""  | String | false | Set the content to share
+
 ##Options
 
 ####Sharing Popup Size
