@@ -1,12 +1,12 @@
 /*
  * angular-socialshare
- * 2.3.5
+ * 2.3.6
  * 
  * A social media url and content share module for angularjs.
  * http://720kb.github.io/angular-socialshare
  * 
  * MIT license
- * Fri Jan 27 2017
+ * Tue Feb 07 2017
  */
 /*global angular*/
 /*eslint no-loop-func:0, func-names:0*/
@@ -16,7 +16,7 @@
 
   var directiveName = 'socialshare'
     , serviceName = 'Socialshare'
-    , socialshareProviderNames = ['facebook', 'facebook-messenger','sms', 'twitter', 'linkedin', 'google', 'pinterest', 'tumblr', 'reddit', 'stumbleupon', 'buffer', 'digg', 'delicious', 'vk', 'pocket', 'wordpress', 'flipboard', 'xing', 'hackernews', 'evernote', 'whatsapp', 'telegram', 'viber', 'skype', 'email', 'ok']
+    , socialshareProviderNames = ['facebook', 'facebook-messenger','sms', 'twitter', 'linkedin', 'google', 'pinterest', 'tumblr', 'reddit', 'stumbleupon', 'buffer', 'digg', 'delicious', 'vk', 'pocket', 'wordpress', 'flipboard', 'xing', 'hackernews', 'evernote', 'whatsapp', 'telegram', 'viber', 'skype', 'email', 'ok', 'weibo']
     , socialshareConfigurationProvider = /*@ngInject*/ function socialshareConfigurationProvider() {
 
       var socialshareConfigurationDefault = [{
@@ -292,6 +292,16 @@
       },
       {
         'provider': 'skype',
+        'conf': {
+          'url': '',
+          'text': '',
+          'trigger': 'click',
+          'popupHeight': 600,
+          'popupWidth': 500
+        }
+      },
+      {
+        'provider': 'weibo',
         'conf': {
           'url': '',
           'text': '',
@@ -874,6 +884,18 @@
         , 'Skype', 'toolbar=0,status=0,resizable=yes,width=' + attrs.socialsharePopupWidth + ',height=' + attrs.socialsharePopupHeight
         + ',top=' + ($window.innerHeight - attrs.socialsharePopupHeight) / 2 + ',left=' + ($window.innerWidth - attrs.socialsharePopupWidth) / 2);
     }
+    , weiboShare = function weiboShare($window, attrs) {
+      var urlString = 'http://service.weibo.com/share/share.php?url=' + encodeURIComponent(attrs.socialshareUrl || $window.location.href);
+
+      if (attrs.socialshareText) {
+        urlString += '&title=' + encodeURIComponent(attrs.socialshareText);
+      }
+
+      $window.open(
+        urlString
+        , 'Weibo', 'toolbar=0,status=0,resizable=yes,width=' + attrs.socialsharePopupWidth + ',height=' + attrs.socialsharePopupHeight
+        + ',top=' + ($window.innerHeight - attrs.socialsharePopupHeight) / 2 + ',left=' + ($window.innerWidth - attrs.socialsharePopupWidth) / 2);
+    }
     , socialshareService = /*@ngInject*/  ['$window', '$log', function socialshareService($window, $log) {
 
       this.emailShare = manageEmailShare;
@@ -905,6 +927,7 @@
       //this.whatsappShare = manageWhatsappShare;
       this.skypeShare = skypeShare;
       this.smsShare = manageSmsShare;
+      this.weiboShare = weiboShare;
 
       this.share = function shareTrigger(serviceShareConf) {
 
@@ -999,6 +1022,10 @@
           }
           case 'flipboard': {
             this.flipboardShare($window, serviceShareConf.attrs);
+            break;
+          }
+          case 'weibo': {
+            this.weiboShare($window, serviceShareConf.attrs);
             break;
           }
           default: {
@@ -1104,6 +1131,7 @@
       , 'telegram': manageTelegramShare
       , 'viber': manageViberShare
       , 'skype': skypeShare
+      , 'weibo': weiboShare
     };
 
 
