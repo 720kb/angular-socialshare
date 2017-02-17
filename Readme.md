@@ -1,7 +1,7 @@
 Angular Socialshare
 ==================
 
-![Angular socialshare](http://i.imgur.com/bEpeJk7.png)
+![Angular socialshare](http://i.imgur.com/dvoeyBu.png)
 
 [![Join the chat at https://gitter.im/720kb/angular-socialshare](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/720kb/angular-socialshare?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
@@ -124,6 +124,7 @@ You can set the social platform you want to share on using the `socialshare-prov
 - [viber](#viber)
 - [skype](#skype)
 - [sms](#sms)
+- [weibo](#weibo)
 
 Please use them all in lowercase (`socialshare-provider="delicious"`)
 
@@ -404,8 +405,19 @@ Method | Option | Type | Default | Description
 
 Method | Option | Type | Default | Description
 ------------- | ------------- | ------------- | ------------- | -------------
-  sharer    | socialshare-to="" |  URL | page URL| Set the phone number of the contact
+  sharer    | socialshare-to="" |  URL | false | Set the phone number of the contact
   sharer    | socialshare-text="" | String  | false | Set the content to share
+
+  sharer    | socialshare-url=""  | URL | page URL| Set the url to share
+
+####Weibo
+
+(`socialshare-provider="weibo"`)
+
+Method | Option | Type | Default | Description
+------------- | ------------- | ------------- | ------------- | -------------
+  sharer    | socialshare-url=""   |  URL | page URL| Set the url to share
+  sharer    | socialshare-text=""  | String | false | Set the content to share
 
 ##Options
 
@@ -512,7 +524,7 @@ Sometimes you may need to set default values for all the sharing buttons, here i
 
 ####[Live demo](https://720kb.github.io/angular-socialshare)
 
- 
+
 ##Contributing
 
 We will be much grateful if you help us making this project to grow up.

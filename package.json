@@ -1,6 +1,6 @@
 {
   "name": "angular-socialshare",
-  "version": "2.3.4",
+  "version": "2.3.6",
   "description": "A social media url and content share module for angularjs.",
   "homepage": "http://720kb.github.io/angular-socialshare",
   "keywords": [
@@ -14,6 +14,8 @@
   "scripts": {
     "precommit": "gulp lint",
     "preversion": "gulp lint",
+    "lint": "gulp lint",
+    "minify": "gulp minify",
     "version": "gulp minify && ./tasks/bower-version-bump && git add -A .",
     "postversion": "git push && git push --tags"
   },
