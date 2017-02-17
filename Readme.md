@@ -154,6 +154,7 @@ Method | Option | Type | Default | Description
  	feed		| socialshare-source="" 	 | URL | false |	Set the source value
  	feed, share		| socialshare-caption="" 	 | String | false |	Set the caption to share
   feed, send		| socialshare-redirect-uri="" 	 | URL | false |	Set the redirect URI
+  share 				| socialshare-mobileiframe=""		| boolean | false | If set to true the share button will open the share dialog in an iframe on top of your website. This option is only available for mobile, not desktop.
 
 
 ####Facebook Messenger
@@ -407,7 +408,6 @@ Method | Option | Type | Default | Description
 ------------- | ------------- | ------------- | ------------- | -------------
   sharer    | socialshare-to="" |  URL | false | Set the phone number of the contact
   sharer    | socialshare-text="" | String  | false | Set the content to share
-
   sharer    | socialshare-url=""  | URL | page URL| Set the url to share
 
 ####Weibo
