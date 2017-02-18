@@ -149,11 +149,12 @@ Method | Option | Type | Default | Description
  	feed		| socialshare-from="" 	 |	String	| false | Set the from to value
  	feed, send		| socialshare-ref="" 	 |	String('comma,separated') | false |	Set the ref value
  	feed, send, share		| socialshare-display="" 	 | String('popup') | false |	Set the display value
- 	feed, share		| socialshare-quote="" 	 | String | false |	Set the display text 
+ 	feed, share		| socialshare-quote="" 	 | String | false |	Set the display text
 	feed, share		| socialshare-hashtags="" 	 | String | false |	Set the display value along with #     Eg:#facebook
  	feed		| socialshare-source="" 	 | URL | false |	Set the source value
  	feed, share		| socialshare-caption="" 	 | String | false |	Set the caption to share
   feed, send		| socialshare-redirect-uri="" 	 | URL | false |	Set the redirect URI
+  share 				| socialshare-mobileiframe=""		| boolean | false | If set to true the share button will open the share dialog in an iframe on top of your website. This option is only available for mobile, not desktop.
 
 
 ####Facebook Messenger
@@ -284,7 +285,7 @@ Method | Option | Type | Default | Description
 	sharer		| socialshare-url="" 	 |	URL | page URL|	Set the url to share
 	sharer		| socialshare-text="" 	 | String	| false |	Set the content to share
   sharer		| socialshare-via="" 	 | URL | false |		Set the buffer via
-  sharer    | socialshare-media="" | URL | false | Set the image url to share 
+  sharer    | socialshare-media="" | URL | false | Set the image url to share
 
 ####Pocket
 
@@ -408,7 +409,7 @@ Method | Option | Type | Default | Description
   sharer    | socialshare-to="" |  URL | false | Set the phone number of the contact
   sharer    | socialshare-text="" | String  | false | Set the content to share
   sharer    | socialshare-url=""  | URL | page URL| Set the url to share
-  
+
 ####Weibo
 
 (`socialshare-provider="weibo"`)
@@ -523,7 +524,7 @@ Sometimes you may need to set default values for all the sharing buttons, here i
 
 ####[Live demo](https://720kb.github.io/angular-socialshare)
 
- 
+
 ##Contributing
 
 We will be much grateful if you help us making this project to grow up.

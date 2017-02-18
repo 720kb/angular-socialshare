@@ -6,7 +6,7 @@
  * http://720kb.github.io/angular-socialshare
  * 
  * MIT license
- * Tue Feb 07 2017
+ * Fri Feb 17 2017
  */
 /*global angular*/
 /*eslint no-loop-func:0, func-names:0*/
@@ -40,6 +40,7 @@
           'hashtags':'',
           'text': '',
           'media': '',
+          'mobile_iframe': '',
           'type': '',
           'via': '',
           'to': '',
@@ -457,6 +458,10 @@
          urlString += '&display=' + encodeURIComponent(attrs.socialshareDisplay);
        }
 
+       if (attrs.socialshareMobileiframe) {
+       urlString += '&mobile_iframe=' + encodeURIComponent(attrs.socialshareMobileiframe);
+       }
+
       if (attrs.socialshareDescription) {
          urlString += '&description=' + encodeURIComponent(attrs.socialshareDescription);
        }
@@ -551,7 +556,7 @@
       } else {
         $window.open(urlString, '_self');
       }
-      
+
     }
     , facebookMessengerShare = function facebookMessengerShare($window, attrs, element) {
 
@@ -842,13 +847,13 @@
 
       var body = encodeURIComponent(attrs.socialshareText.replace('%',''))
         , toPhoneNumber = attrs.socialshareTo || '';
-      
+
       if (attrs.socialshareUrl) {
         body += encodeURIComponent(attrs.socialshareUrl);
       }
-      
+
       var urlString = 'sms:' + toPhoneNumber + '?&body=' + body;
-      
+
       element.attr('href', urlString);
       element.attr('target', '_blank');
     }
@@ -1064,6 +1069,7 @@
         }
 
         //if some attribute is not define provide a default one
+        attrs.socialshareMobileiframe = attrs.socialshareMobileiframe || configurationElement.conf.mobile_iframe;
         attrs.socialshareQuote = attrs.socialshareQuote || configurationElement.conf.quote;
         attrs.socialshareTitle = attrs.socialshareTitle || configurationElement.conf.title;
         attrs.socialshareUrl = attrs.socialshareUrl || configurationElement.conf.url || configurationElement.conf.href;
