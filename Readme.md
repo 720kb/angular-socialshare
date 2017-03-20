@@ -38,14 +38,15 @@ To use the directive, include the angular socialshare's javascript file in your 
 </html>
 ```
 
-##Installation
+## Installation
 
-####Bower
+
+#### Bower
 
 ```bash
 $ bower install angularjs-socialshare --save
 ```
-####Npm
+#### npm
 
 ```bash
 $ npm install angular-socialshare --save
@@ -53,7 +54,7 @@ $ npm install angular-socialshare --save
 
 _then [load](https://github.com/720kb/angular-socialshare#load) it in your html_
 
-####Add module dependency
+#### Add module dependency
 Add the 720kb.socialshare module dependency
 
 ```javascript
@@ -90,15 +91,15 @@ Call the Socialshare [service](#service)
 ```
 
 
-##Usage
+## Usage
 
 Angular socialshare allows you to use sharing options via `attribute` data
 
-####Sharing Provider
+#### Sharing Provider
 
 You can set the social platform you want to share on using the `socialshare-provider=""` attribute.
 
-#####Providers:
+##### Providers:
 
 - [email](#email)
 - [facebook](#facebook)
@@ -130,9 +131,9 @@ You can set the social platform you want to share on using the `socialshare-prov
 
 Please use them all in lowercase (`socialshare-provider="delicious"`)
 
-##Doc
+## Doc
 
-####Facebook
+#### Facebook
 
 (`socialshare-provider="facebook"`)
 
@@ -159,7 +160,7 @@ Method | Option | Type | Default | Description
   share 				| socialshare-mobileiframe=""		| boolean | false | If set to true the share button will open the share dialog in an iframe on top of your website. This option is only available for mobile, not desktop.
 
 
-####Facebook Messenger
+#### Facebook Messenger
 `mobile only` - (works only for `<a>` elements, it is a direct link)
 
 (`socialshare-provider="facebook-messenger"`)
@@ -169,7 +170,7 @@ Method | Option | Type | Default | Description
   sharer    | socialshare-url="" |  URL | page URL| Set the url to share
 
 
-####Twitter
+#### Twitter
 
 (`socialshare-provider="twitter"`)
 
@@ -181,7 +182,7 @@ Method | Option | Type | Default | Description
   sharer		| socialshare-hashtags="" |	String('hash,tag,hastag')| false   |	Set the hashtags to share
 
 
-####Linkedin
+#### Linkedin
 
 (`socialshare-provider="linkedin"`)
 
@@ -192,7 +193,7 @@ Method | Option | Type | Default | Description
     sharer		| socialshare-description=""    | String    | false     |   Set the description value that you wish to use
     sharer      | socialshare-source=""         | String    | false     |   Set the source of the content
 
-####Reddit
+#### Reddit
 
 (`socialshare-provider="reddit"`)
 
@@ -202,7 +203,7 @@ Method | Option | Type | Default | Description
 	sharer		| socialshare-text="" 	 | String	| false |	Set the content to share
   sharer		| socialshare-subreddit="" 	 | String('technology')	| false |	Set the subreddit to share on
 
-####Vk
+#### Vk
 
 (`socialshare-provider="vk"`)
 
@@ -212,7 +213,7 @@ Method | Option | Type | Default | Description
  	sharer		| socialshare-text="" 	 | String |	 false	| Set the title to share
  	sharer		| socialshare-description="" 	 | String |	 false	| Set the content to share
  	sharer		| socialshare-media="" 	 | URL |	false | Set the image source to share
-####OK
+#### OK
 (ok.ru)
 
 (`socialshare-provider="ok"`)
@@ -222,7 +223,7 @@ Method | Option | Type | Default | Description
  	sharer		| socialshare-url="" 	 |	URL | page URL|	Set the url to share
 	sharer		| socialshare-text="" 	 | String	| false |	Set the content to share
 
-####Digg
+#### Digg
 
 Method | Option | Type | Default | Description
 ------------- | ------------- | ------------- | ------------- | -------------
@@ -230,7 +231,7 @@ Method | Option | Type | Default | Description
 	sharer		| socialshare-text="" 	 | String	| false |	Set the content to share
 	sharer		| socialshare-media="" 	 | URL | false |		Set the media url to share
 
-####Delicious
+#### Delicious
 
 (`socialshare-provider="delicious"`)
 
@@ -240,7 +241,7 @@ Method | Option | Type | Default | Description
  	sharer		| socialshare-text="" 	 | String	| false |	Set the content to share
   sharer		| socialshare-media="" 	 | URL | false |		Set the media url to share
 
-####StumbleUpon
+#### StumbleUpon
 
 (`socialshare-provider="stumbleupon"`)
 
@@ -250,7 +251,7 @@ Method | Option | Type | Default | Description
 	sharer		| socialshare-text="" 	 | String	| false |	Set the content to share
 	sharer		| socialshare-media="" 	 | URL | false |		Set the media url to share
 
-####Pinterest
+#### Pinterest
 
 (`socialshare-provider="pinterest"`)
 
@@ -260,7 +261,7 @@ Method | Option | Type | Default | Description
  	sharer		| socialshare-text="" 	 | String	| false |	Set the content to share
  	sharer		| socialshare-media="" 	 | URL | false |		Set the media url to share
 
-####Google (Plus)
+#### Google (Plus)
 
 (`socialshare-provider="google"`)
 
@@ -268,7 +269,7 @@ Method | Option | Type | Default | Description
 ------------- | ------------- | ------------- | ------------- | -------------
 	sharer		| socialshare-url="" 	 |	URL | page URL|	Set the url to share
 
-####Tumblr
+#### Tumblr
 
 (`socialshare-provider="tumblr"`)
 
@@ -278,7 +279,7 @@ Method | Option | Type | Default | Description
   sharer		| socialshare-text="" 	 | String	| false |	Set the content to share
   sharer		| socialshare-media="" 	 | URL | false |		Set the media url to share
 
-####Buffer
+#### Buffer
 
 (`socialshare-provider="buffer"`)
 
@@ -289,7 +290,7 @@ Method | Option | Type | Default | Description
   sharer		| socialshare-via="" 	 | URL | false |		Set the buffer via
   sharer    | socialshare-media="" | URL | false | Set the image url to share
 
-####Pocket
+#### Pocket
 
 (`socialshare-provider="pocket"`)
 
@@ -298,7 +299,7 @@ Method | Option | Type | Default | Description
 	sharer		| socialshare-url="" 	 |	URL | page URL|	Set the url to share
 	sharer		| socialshare-text=""  | String	| false |	Set the content to share
 
-####Flipboard
+#### Flipboard
 
 (`socialshare-provider="flipboard"`)
 
@@ -307,7 +308,7 @@ Method | Option | Type | Default | Description
 	sharer		| socialshare-url="" 	 |	URL | page URL|	Set the url to share
 	sharer		| socialshare-text=""  | String	| false |	Set the content to share
 
-####Evernote
+#### Evernote
 
 (`socialshare-provider="evernote"`)
 
@@ -317,7 +318,7 @@ Method | Option | Type | Default | Description
  	sharer		| socialshare-text="" | String	| false |	Set the content title to share
 
 
-####Hacker News
+#### Hacker News
 
 (`socialshare-provider="hackernews"`)
 
@@ -326,7 +327,7 @@ Method | Option | Type | Default | Description
 	sharer		| socialshare-url="" 	 |	URL | page URL|	Set the url to share
 	sharer		| socialshare-text=""  | String	| false |	Set the content to share
 
-####Wordpress
+#### Wordpress
 
 (`socialshare-provider="wordpress"`)
 
@@ -337,7 +338,7 @@ Method | Option | Type | Default | Description
   sharer		| socialshare-media="" | URL | false | Set the media url to share
 
 
-####Xing
+#### Xing
 
 (`socialshare-provider="xing"`)
 
@@ -349,7 +350,7 @@ Method | Option | Type | Default | Description
   sharer		| socialshare-follow="" 	 | URL | false |		Set the Xing page url which will be then suggested to you to follow
 
 
-####Whatsapp
+#### Whatsapp
 `mobile only` - (works only for `<a>` elements, it is a direct link)
 
 (`socialshare-provider="whatsapp"`)
@@ -359,7 +360,7 @@ Method | Option | Type | Default | Description
   sharer    | socialshare-url="" |  URL | page URL| Set the url to share
   sharer    | socialshare-text="" | String  | false | Set the content to share
 
-####Telegram
+#### Telegram
 
 (`socialshare-provider="telegram"`)
 
@@ -369,7 +370,7 @@ Method | Option | Type | Default | Description
   sharer    | socialshare-text="" | String  | false | Set the content to share
 
 
-####Viber
+#### Viber
 `mobile only` -  (works only for `<a>` elements, it is a direct link)
 
 (`socialshare-provider="viber"`)
@@ -380,7 +381,7 @@ Method | Option | Type | Default | Description
   sharer    | socialshare-text="" | String  | false | Set the content to share
 
 
-####Skype
+#### Skype
 
 (`socialshare-provider="skype"`)
 
@@ -389,7 +390,7 @@ Method | Option | Type | Default | Description
   sharer    | socialshare-url=""   |  URL | page URL| Set the url to share
   sharer    | socialshare-text=""  | String | false | Set the content to share
 
-####Email
+#### Email
 
 (`socialshare-provider="email"`)
 
@@ -401,7 +402,7 @@ Method | Option | Type | Default | Description
   mailto    | socialshare-cc=""  | String | false | Set the CC / CCs for the email
   mailto    | socialshare-bcc=""  | String | false | Set the BCC / BCCs for the email
 
-####Sms
+#### Sms
 (works only for `<a>` elements, it is a direct link)
 
 (`socialshare-provider="sms"`)
@@ -412,7 +413,7 @@ Method | Option | Type | Default | Description
   sharer    | socialshare-text="" | String  | false | Set the content to share
   sharer    | socialshare-url=""  | URL | page URL| Set the url to share
 
-####Weibo
+#### Weibo
 
 (`socialshare-provider="weibo"`)
 
@@ -421,9 +422,9 @@ Method | Option | Type | Default | Description
   sharer    | socialshare-url=""   |  URL | page URL| Set the url to share
   sharer    | socialshare-text=""  | String | false | Set the content to share
 
-##Options
+## Options
 
-####Sharing Popup Size
+#### Sharing Popup Size
 You can set a specific Height or Width for the sharing popup using the `socialshare-popup-height=""` and `socialshare-popup-width=""` attributes (sometimes, if if the popup is too small, it gets resized by third parties)
 
 ```html
@@ -438,7 +439,7 @@ Share with a bigger popup
 </a>
 ```
 
-####Sharing Event Trigger
+#### Sharing Event Trigger
 You can choose to bind a different event trigger for showing up the sharer popup using the `socialshare-trigger=""` attribute (you can use any angular `element.bind()` event you want)
 
 ```html
@@ -462,7 +463,7 @@ Share me when focusout or mouseleave
 </a>
 ```
 
-##Service
+## Service
 You may need to share from a controller (for example), this is how to use the `Socialshare` service:
 
 ```javascript
@@ -487,9 +488,9 @@ You may need to share from a controller (for example), this is how to use the `S
 ```
 _Some providers (specially mobile provider, such as: Viber, Whatsapp etc..) do not work with a Service call, because their API or Usage does not allow a trigger event on them_
 
-##Globals
+## Globals
 
-####Provider setup
+#### Provider setup
 Sometimes you may need to set default values for all the sharing buttons, here is how to setup this:
 
 ```javascript
@@ -524,10 +525,10 @@ Sometimes you may need to set default values for all the sharing buttons, here i
 *NB* if you define the provider settings, but then you change the option value by html attributes, the html attribute value will be the final one (the one that will be used)
 
 
-####[Live demo](https://720kb.github.io/angular-socialshare)
+#### [Live demo](https://720kb.github.io/angular-socialshare)
 
 
-##Contributing
+## Contributing
 
 We will be much grateful if you help us making this project to grow up.
 Feel free to contribute by forking, opening issues, pull requests etc.
