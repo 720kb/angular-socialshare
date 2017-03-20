@@ -167,7 +167,7 @@ share|socialshare-mobileiframe=""|boolean|false|If set to true the share button 
 
 Method | Option | Type | Default | Description
 ------------- | ------------- | ------------- | ------------- | -------------
-  sharer    | socialshare-url="" |  URL | page URL| Set the url to share
+sharer|socialshare-url=""|URL|page URL|Set the url to share
 
 
 #### Twitter
@@ -176,10 +176,10 @@ Method | Option | Type | Default | Description
 
 Method | Option | Type | Default | Description
 ------------- | ------------- | ------------- | ------------- | -------------
- 	sharer		| socialshare-url="" |	URL | page URL|	Set the url to share
- 	sharer		| socialshare-text="" | String	| false |	Set the content to share
- 	sharer		| socialshare-via="" | String('username') | false |	Set the via to share
-  sharer		| socialshare-hashtags="" |	String('hash,tag,hastag')| false   |	Set the hashtags to share
+sharer|socialshare-url=""|URL | page URL|Set the url to share
+sharer|socialshare-text=""|String|false|Set the content to share
+sharer|socialshare-via=""|String('username')|false|Set the via to share
+sharer|socialshare-hashtags=""|String('hash,tag,hastag')|false|Set the hashtags to share
 
 
 #### Linkedin
@@ -187,11 +187,11 @@ Method | Option | Type | Default | Description
 (`socialshare-provider="linkedin"`)
 
 Method | Option | Type | Default | Description
-------------- | ------------- | ------------- | ------------- | -------------
-	sharer		| socialshare-url="" 	        |	URL     | page URL  |	Set the url to share
-	sharer		| socialshare-text=""           | String	| false     |	Set the title value that you wish to use
-    sharer		| socialshare-description=""    | String    | false     |   Set the description value that you wish to use
-    sharer      | socialshare-source=""         | String    | false     |   Set the source of the content
+-------------|-------------|-------------|-------------|-------------
+sharer|socialshare-url=""|URL|pageURL|Set the url to share
+sharer|socialshare-text=""|String|false|Set the title value that you wish to use
+sharer|socialshare-description=""|String|false|Set the description value that you wish to use
+sharer|socialshare-source=""|String|false|Set the source of the content
 
 #### Reddit
 
@@ -199,9 +199,9 @@ Method | Option | Type | Default | Description
 
 Method | Option | Type | Default | Description
 ------------- | ------------- | ------------- | ------------- | -------------
- 	sharer		| socialshare-url="" 	 |	URL | page URL|	Set the url to share
-	sharer		| socialshare-text="" 	 | String	| false |	Set the content to share
-  sharer		| socialshare-subreddit="" 	 | String('technology')	| false |	Set the subreddit to share on
+sharer|socialshare-url=""|URL|pageURL|Set the url to share
+sharer|socialshare-text=""|String|false|Set the text content to share
+sharer|socialshare-subreddit=""|String('technology')|false|Set the subreddit to share on
 
 #### Vk
 
@@ -209,27 +209,29 @@ Method | Option | Type | Default | Description
 
 Method | Option | Type | Default | Description
 ------------- | ------------- | ------------- | ------------- | -------------
- 	sharer		| socialshare-url="" 	 |	URL | page URL|	Set the url to share
- 	sharer		| socialshare-text="" 	 | String |	 false	| Set the title to share
- 	sharer		| socialshare-description="" 	 | String |	 false	| Set the content to share
- 	sharer		| socialshare-media="" 	 | URL |	false | Set the image source to share
+sharer|socialshare-url=""|URL|page URL|Set the url to share
+sharer|socialshare-text=""|String|false|Set the title to share
+sharer|socialshare-description=""|String|false| Set the content to share
+sharer|socialshare-media=""|URL|false|Set the image source to share
+ 
 #### OK
+
 (ok.ru)
 
 (`socialshare-provider="ok"`)
 
 Method | Option | Type | Default | Description
 ------------- | ------------- | ------------- | ------------- | -------------
- 	sharer		| socialshare-url="" 	 |	URL | page URL|	Set the url to share
-	sharer		| socialshare-text="" 	 | String	| false |	Set the content to share
+sharer|socialshare-url=""|URL|page URL|Set the url to share
+sharer|socialshare-text=""|String|false|Set the content to share
 
 #### Digg
 
 Method | Option | Type | Default | Description
 ------------- | ------------- | ------------- | ------------- | -------------
-	sharer		| socialshare-url="" 	 |	URL | page URL|	Set the url to share
-	sharer		| socialshare-text="" 	 | String	| false |	Set the content to share
-	sharer		| socialshare-media="" 	 | URL | false |		Set the media url to share
+sharer|socialshare-url=""|URL|page URL|Set the url to share
+sharer|socialshare-text=""|String|false|Set the content to share
+sharer|socialshare-media=""|URL|false|Set the media url to share
 
 #### Delicious
 
@@ -237,9 +239,9 @@ Method | Option | Type | Default | Description
 
 Method | Option | Type | Default | Description
 ------------- | ------------- | ------------- | ------------- | -------------
- 	sharer		| socialshare-url="" 	 |	URL | page URL|	Set the url to share
- 	sharer		| socialshare-text="" 	 | String	| false |	Set the content to share
-  sharer		| socialshare-media="" 	 | URL | false |		Set the media url to share
+sharer|socialshare-url=""|URL|page URL|Set the url to share
+sharer|socialshare-text=""|String|false|Set the content to share
+sharer|socialshare-media=""|URL|false|Set the media url to share
 
 #### StumbleUpon
 
@@ -247,9 +249,9 @@ Method | Option | Type | Default | Description
 
 Method | Option | Type | Default | Description
 ------------- | ------------- | ------------- | ------------- | -------------
-  sharer		| socialshare-url="" 	 |	URL | page URL|	Set the url to share
-	sharer		| socialshare-text="" 	 | String	| false |	Set the content to share
-	sharer		| socialshare-media="" 	 | URL | false |		Set the media url to share
+sharer|socialshare-url=""|URL|page URL|Set the url to share
+sharer|socialshare-text=""|String|false|Set the content to share
+sharer|socialshare-media=""|URL|false|Set the media url to share
 
 #### Pinterest
 
@@ -257,9 +259,9 @@ Method | Option | Type | Default | Description
 
 Method | Option | Type | Default | Description
 ------------- | ------------- | ------------- | ------------- | -------------
-	sharer		| socialshare-url="" 	 |	URL | page URL|	Set the url to share
- 	sharer		| socialshare-text="" 	 | String	| false |	Set the content to share
- 	sharer		| socialshare-media="" 	 | URL | false |		Set the media url to share
+sharer|socialshare-url=""|URL|page URL|Set the url to share
+sharer|socialshare-text=""|String|false|Set the content to share
+sharer|socialshare-media=""|URL|false|Set the media url to share
 
 #### Google (Plus)
 
@@ -267,7 +269,7 @@ Method | Option | Type | Default | Description
 
 Method | Option | Type | Default | Description
 ------------- | ------------- | ------------- | ------------- | -------------
-	sharer		| socialshare-url="" 	 |	URL | page URL|	Set the url to share
+sharer|socialshare-url=""|URL|page URL|Set the url to share
 
 #### Tumblr
 
@@ -275,9 +277,9 @@ Method | Option | Type | Default | Description
 
 Method | Option | Type | Default | Description
 ------------- | ------------- | ------------- | ------------- | -------------
-  sharer		| socialshare-url="" 	 |	URL | page URL|	Set the url to share
-  sharer		| socialshare-text="" 	 | String	| false |	Set the content to share
-  sharer		| socialshare-media="" 	 | URL | false |		Set the media url to share
+sharer|socialshare-url=""|URL|page URL|Set the url to share
+sharer|socialshare-text=""|String|false|Set the content to share
+sharer|socialshare-media=""|URL|false|Set the media url to share
 
 #### Buffer
 
@@ -285,10 +287,10 @@ Method | Option | Type | Default | Description
 
 Method | Option | Type | Default | Description
 ------------- | ------------- | ------------- | ------------- | -------------
-	sharer		| socialshare-url="" 	 |	URL | page URL|	Set the url to share
-	sharer		| socialshare-text="" 	 | String	| false |	Set the content to share
-  sharer		| socialshare-via="" 	 | URL | false |		Set the buffer via
-  sharer    | socialshare-media="" | URL | false | Set the image url to share
+sharer|socialshare-url=""|URL|page URL|Set the url to share
+sharer|socialshare-text=""|String|false|Set the content to share
+sharer|socialshare-media=""|URL|false|Set the media url to share
+sharer|socialshare-via=""|URL|false|Set the buffer via
 
 #### Pocket
 
@@ -296,8 +298,8 @@ Method | Option | Type | Default | Description
 
 Method | Option | Type | Default | Description
 ------------- | ------------- | ------------- | ------------- | -------------
-	sharer		| socialshare-url="" 	 |	URL | page URL|	Set the url to share
-	sharer		| socialshare-text=""  | String	| false |	Set the content to share
+sharer|socialshare-url=""|URL|page URL|Set the url to share
+sharer|socialshare-text=""|String|false|Set the content to share
 
 #### Flipboard
 
@@ -305,8 +307,8 @@ Method | Option | Type | Default | Description
 
 Method | Option | Type | Default | Description
 ------------- | ------------- | ------------- | ------------- | -------------
-	sharer		| socialshare-url="" 	 |	URL | page URL|	Set the url to share
-	sharer		| socialshare-text=""  | String	| false |	Set the content to share
+sharer|socialshare-url=""|URL|page URL|Set the url to share
+sharer|socialshare-text=""|String|false|Set the content to share
 
 #### Evernote
 
@@ -314,8 +316,8 @@ Method | Option | Type | Default | Description
 
 Method | Option | Type | Default | Description
 ------------- | ------------- | ------------- | ------------- | -------------
- 	sharer		| socialshare-url="" |	URL | page URL|	Set the url to share
- 	sharer		| socialshare-text="" | String	| false |	Set the content title to share
+sharer|socialshare-url=""|URL|page URL|Set the url to share
+sharer|socialshare-text=""|String|false|Set the content to share
 
 
 #### Hacker News
@@ -324,8 +326,8 @@ Method | Option | Type | Default | Description
 
 Method | Option | Type | Default | Description
 ------------- | ------------- | ------------- | ------------- | -------------
-	sharer		| socialshare-url="" 	 |	URL | page URL|	Set the url to share
-	sharer		| socialshare-text=""  | String	| false |	Set the content to share
+sharer|socialshare-url=""|URL|page URL|Set the url to share
+sharer|socialshare-text=""|String|false|Set the content to share
 
 #### Wordpress
 
@@ -333,9 +335,9 @@ Method | Option | Type | Default | Description
 
 Method | Option | Type | Default | Description
 ------------- | ------------- | ------------- | ------------- | -------------
-	sharer		| socialshare-url="" 	 |	URL | page URL|	Set the url to share
-	sharer		| socialshare-text=""  | String	| false |	Set the content to share
-  sharer		| socialshare-media="" | URL | false | Set the media url to share
+sharer|socialshare-url=""|URL|page URL|Set the url to share
+sharer|socialshare-text=""|String|false|Set the content to share
+sharer|socialshare-media=""|URL|false|Set the media url to share
 
 
 #### Xing
@@ -344,10 +346,10 @@ Method | Option | Type | Default | Description
 
 Method | Option | Type | Default | Description
 ------------- | ------------- | ------------- | ------------- | -------------
-	sharer		| socialshare-url="" 	 |	URL | page URL|	Set the url to share
-	sharer		| socialshare-text="" 	 | String	| false |	Set the content to share
-	sharer		| socialshare-media="" 	 | URL | false |		Set the media url to share
-  sharer		| socialshare-follow="" 	 | URL | false |		Set the Xing page url which will be then suggested to you to follow
+sharer|socialshare-url=""|URL|page URL|Set the url to share
+sharer|socialshare-text=""|String|false|Set the content to share
+sharer|socialshare-media=""|URL|false|Set the media url to share
+sharer|socialshare-follow=""|URL|false|	Set the Xing page url which will be then suggested to you to follow
 
 
 #### Whatsapp
@@ -357,8 +359,8 @@ Method | Option | Type | Default | Description
 
 Method | Option | Type | Default | Description
 ------------- | ------------- | ------------- | ------------- | -------------
-  sharer    | socialshare-url="" |  URL | page URL| Set the url to share
-  sharer    | socialshare-text="" | String  | false | Set the content to share
+sharer|socialshare-url=""|URL|page URL|Set the url to share
+sharer|socialshare-text=""|String|false|Set the content to share
 
 #### Telegram
 
@@ -366,8 +368,8 @@ Method | Option | Type | Default | Description
 
 Method | Option | Type | Default | Description
 ------------- | ------------- | ------------- | ------------- | -------------
-  sharer    | socialshare-url="" |  URL | page URL| Set the url to share
-  sharer    | socialshare-text="" | String  | false | Set the content to share
+sharer|socialshare-url=""|URL|page URL|Set the url to share
+sharer|socialshare-text=""|String|false|Set the content to share
 
 
 #### Viber
@@ -377,8 +379,8 @@ Method | Option | Type | Default | Description
 
 Method | Option | Type | Default | Description
 ------------- | ------------- | ------------- | ------------- | -------------
-  sharer    | socialshare-url="" |  URL | page URL| Set the url to share
-  sharer    | socialshare-text="" | String  | false | Set the content to share
+sharer|socialshare-url=""|URL|page URL|Set the url to share
+sharer|socialshare-text=""|String|false|Set the content to share
 
 
 #### Skype
@@ -387,8 +389,8 @@ Method | Option | Type | Default | Description
 
 Method | Option | Type | Default | Description
 ------------- | ------------- | ------------- | ------------- | -------------
-  sharer    | socialshare-url=""   |  URL | page URL| Set the url to share
-  sharer    | socialshare-text=""  | String | false | Set the content to share
+sharer|socialshare-url=""|URL|page URL|Set the url to share
+sharer|socialshare-text=""|String|false|Set the content to share
 
 #### Email
 
@@ -396,11 +398,11 @@ Method | Option | Type | Default | Description
 
 Method | Option | Type | Default | Description
 ------------- | ------------- | ------------- | ------------- | -------------
-  mailto    | socialshare-subject=""   |  String | false | Set the subject for the email
-  mailto    | socialshare-body=""  | String | false | Set the body content for the email
-  mailto    | socialshare-to=""  | String | false | Set the Receiver / Receivers
-  mailto    | socialshare-cc=""  | String | false | Set the CC / CCs for the email
-  mailto    | socialshare-bcc=""  | String | false | Set the BCC / BCCs for the email
+mailto|socialshare-subject=""|String|false|Set the subject for the email
+mailto|socialshare-body=""|String|false|Set the body content for the email
+mailto|socialshare-to=""|String|false|Set the Receiver / Receivers
+mailto|socialshare-cc=""|String|false|Set the CC / CCs for the email
+mailto|socialshare-bcc=""|String|false|Set the BCC / BCCs for the email
 
 #### Sms
 (works only for `<a>` elements, it is a direct link)
@@ -409,9 +411,10 @@ Method | Option | Type | Default | Description
 
 Method | Option | Type | Default | Description
 ------------- | ------------- | ------------- | ------------- | -------------
-  sharer    | socialshare-to="" |  URL | false | Set the phone number of the contact
-  sharer    | socialshare-text="" | String  | false | Set the content to share
-  sharer    | socialshare-url=""  | URL | page URL| Set the url to share
+sharer|socialshare-url=""|URL|page URL|Set the url to share
+sharer|socialshare-text=""|String|false|Set the content to share
+sharer|socialshare-to=""|URL|false|Set the phone number of the contact
+
 
 #### Weibo
 
@@ -419,8 +422,8 @@ Method | Option | Type | Default | Description
 
 Method | Option | Type | Default | Description
 ------------- | ------------- | ------------- | ------------- | -------------
-  sharer    | socialshare-url=""   |  URL | page URL| Set the url to share
-  sharer    | socialshare-text=""  | String | false | Set the content to share
+sharer|socialshare-url=""|URL|page URL|Set the url to share
+sharer|socialshare-text=""|String|false|Set the content to share
 
 ## Options
 
