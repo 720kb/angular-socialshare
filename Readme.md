@@ -91,9 +91,11 @@ Call the Socialshare [service](#service)
 
 
 ##Usage
+
 Angular socialshare allows you to use sharing options via `attribute` data
 
 ####Sharing Provider
+
 You can set the social platform you want to share on using the `socialshare-provider=""` attribute.
 
 #####Providers:
