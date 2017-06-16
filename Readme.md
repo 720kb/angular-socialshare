@@ -153,7 +153,6 @@ feed, send, share|socialshare-display=""|String('popup')|false|Set the display v
 share|socialshare-quote=""|String|false|Set the display text
 share|socialshare-hashtags=""|String|false|Set the display value along with # Eg:#facebook (one only hashtag)
 feed|socialshare-source=""|URL|false| Set the URL of a media file (either SWF or MP3) attached to this post
-share|socialshare-caption=""|String|false|Set the caption to share
 feed, send|socialshare-redirect-uri=""|URL|false|Set the redirect URI
 share|socialshare-mobileiframe=""|boolean|false|If set to true the share button will open the 
 share dialog in an iframe on top of your website. This option is only available for mobile, not desktop.
