@@ -137,15 +137,15 @@ Please use them all in lowercase (`socialshare-provider="delicious"`)
 
 (`socialshare-provider="facebook"`)
 
-`share` = [Facebook Dialog Share](https://developers.facebook.com/docs/sharing/reference/share-dialog),    `feed` = [Facebook Dialog Feed](https://developers.facebook.com/docs/sharing/reference/feed-dialog), `send` = [Facebook Dialog Send](https://developers.facebook.com/docs/sharing/reference/send-dialog),  `sharer` = [Facebook simple share](https://developers.facebook.com/docs/plugins/share-button)
+`simple sharer` = [Facebook simple share](https://developers.facebook.com/docs/plugins/share-button) , `share` = [Facebook Dialog Share](https://developers.facebook.com/docs/sharing/reference/share-dialog),    `feed` = [Facebook Dialog Feed](https://developers.facebook.com/docs/sharing/reference/feed-dialog), `send` = [Facebook Dialog Send](https://developers.facebook.com/docs/sharing/reference/send-dialog)
 
 Method | Option | Type | Default | Description
 ------------- | ------------- | ------------- | ------------- | -------------
-share,feed,send,sharer|socialshare-url=""|page URL|false|Set the url/link to share
+share,feed,send,simple sharer|socialshare-url=""|page URL|false|Set the url/link to share
 share|socialshare-title=""|String|false|Set the title headline to share
 share|socialshare-description=""|String|false|Set the content to share
 share|socialshare-media=""|URL|false|Set the media source to share
-feed, send, share|socialshare-type=""|String('feed', 'send', 'share')|share|facebook share dialog - [info](https://developers.facebook.com/docs/sharing/reference/share-dialog), facebook feed dialog - [info](https://developers.facebook.com/docs/sharing/reference/feed-dialog) and send dialog  - [info](https://developers.facebook.com/docs/sharing/reference/send-dialog)
+feed, send, share|socialshare-type=""|String('feed' or 'send' or 'share')|simple sharer|facebook share dialog - [info](https://developers.facebook.com/docs/sharing/reference/share-dialog), facebook feed dialog - [info](https://developers.facebook.com/docs/sharing/reference/feed-dialog) and send dialog  - [info](https://developers.facebook.com/docs/sharing/reference/send-dialog)
 feed, send, share|socialshare-via=""|String|false|Set the FB APP ID value
 feed, send|socialshare-to=""|String|false|Set the to value
 feed | socialshare-from=""|String|false|Set the from to value
@@ -157,7 +157,6 @@ feed|socialshare-source=""|URL|false|Set the source value
  share|socialshare-caption=""|String|false|Set the caption to share
 feed, send|socialshare-redirect-uri=""|URL|false|Set the redirect URI
 share|socialshare-mobileiframe=""|boolean|false|If set to true the share button will open the share dialog in an iframe on top of your website. This option is only available for mobile, not desktop.
-
 
 #### Facebook Messenger
 `mobile only` - (works only for `<a>` elements, it is a direct link)
