@@ -143,8 +143,8 @@ Please use them all in lowercase (`socialshare-provider="delicious"`)
 
 Method | Option | Type | Default | Description
 ------------- | ------------- | ------------- | ------------- | -------------
-share,feed,send,simple sharer|socialshare-url=""|page URL|false|Set the url/link to share
-feed, send, share|socialshare-type=""|String('feed' or 'send' or 'share')|simple sharer|Use Simple Sharer or Dialog Send or Dialog Share or Dialog Feed
+share, feed, send, **simple sharer**|socialshare-url=""|page URL|false|Set the url/link to share
+feed, send, share|socialshare-type=""|String('feed' or 'send' or 'share')|**simple sharer**|Use a **simple sharer** or Dialog Send or Dialog Share or Dialog Feed
 feed, send, share|socialshare-via=""|String|false|Set the FB APP ID value
 feed, send|socialshare-to=""|String|false|Set the to value
 feed | socialshare-from=""|String|false|Set the from to value
