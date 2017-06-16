@@ -1,12 +1,12 @@
 /*
  * angular-socialshare
- * 2.3.8
+ * 2.3.9
  * 
  * A social media url and content share module for angularjs.
  * http://720kb.github.io/angular-socialshare
  * 
  * MIT license
- * Tue May 02 2017
+ * Fri Jun 16 2017
  */
 /*global angular*/
 /*eslint no-loop-func:0, func-names:0*/
@@ -390,14 +390,6 @@
           urlString += '&to=' + encodeURIComponent(attrs.socialshareTo);
         }
 
-        if (attrs.socialshareQuote) {
-          urlString += '&quote=' + encodeURIComponent(attrs.socialshareQuote);
-        }
-
-        if (attrs.socialshareHashtags) {
-          urlString += '&hashtag=' + encodeURIComponent(attrs.socialshareHashtags);
-        }
-
         if (attrs.socialshareDisplay) {
           urlString += '&display=' + encodeURIComponent(attrs.socialshareDisplay);
         }
@@ -408,22 +400,6 @@
 
         if (attrs.socialshareFrom) {
           urlString += '&from=' + encodeURIComponent(attrs.socialshareFrom);
-        }
-
-        if (attrs.socialshareDescription) {
-          urlString += '&description=' + encodeURIComponent(attrs.socialshareDescription);
-        }
-
-        if (attrs.socialshareText) {
-          urlString += '&name=' + encodeURIComponent(attrs.socialshareText);
-        }
-
-        if (attrs.socialshareCaption) {
-          urlString += '&caption=' + encodeURIComponent(attrs.socialshareCaption);
-        }
-
-        if (attrs.socialshareMedia) {
-          urlString += '&picture=' + encodeURIComponent(attrs.socialshareMedia);
         }
 
         if (attrs.socialshareSource) {
