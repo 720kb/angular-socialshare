@@ -1,12 +1,12 @@
 /*
  * angular-socialshare
- * 2.3.10
+ * 2.3.11
  * 
  * A social media url and content share module for angularjs.
  * http://720kb.github.io/angular-socialshare
  * 
  * MIT license
- * Fri Jun 16 2017
+ * Fri Jun 23 2017
  */
 /*global angular*/
 /*eslint no-loop-func:0, func-names:0*/
@@ -798,7 +798,7 @@
     }
     , manageWhatsappShare = function manageWhatsappShare($window, attrs, element) {
 
-      var href = 'whatsapp://send?text=' + encodeURIComponent(attrs.socialshareText) + encodeURIComponent(attrs.socialshareUrl || $window.location.href);
+      var href = 'whatsapp://send?text=' + encodeURIComponent(attrs.socialshareText) + '%0A' + encodeURIComponent(attrs.socialshareUrl || $window.location.href);
 
       element.attr('href', href);
       element.attr('target', '_top');
