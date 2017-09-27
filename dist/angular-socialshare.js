@@ -6,7 +6,7 @@
  * http://720kb.github.io/angular-socialshare
  * 
  * MIT license
- * Fri Jun 23 2017
+ * Wed Sep 27 2017
  */
 /*global angular*/
 /*eslint no-loop-func:0, func-names:0*/
@@ -908,7 +908,7 @@
             break;
           }
           case 'sms': {
-            this.smsShare($window, $log, serviceShareConf.attrs);
+            this.smsShare($window, serviceShareConf.attrs);
             break;
           }
           case 'facebook': {
