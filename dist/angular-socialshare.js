@@ -6,7 +6,7 @@
  * http://720kb.github.io/angular-socialshare
  * 
  * MIT license
- * Fri Jun 23 2017
+ * Sun Nov 05 2017
  */
 /*global angular*/
 /*eslint no-loop-func:0, func-names:0*/
@@ -554,11 +554,12 @@
         + ',top=' + ($window.innerHeight - attrs.socialsharePopupHeight) / 2 + ',left=' + ($window.innerWidth - attrs.socialsharePopupWidth) / 2);
     }
     , manageGooglePlusShare = function manageGooglePlusShare($window, attrs) {
-
+      
       $window.open(
-        'https://plus.google.com/share?url=' + encodeURIComponent(attrs.socialshareUrl || $window.location.href)
+        'https://plus.google.com/share?url=' + encodeURIComponent(attrs.socialshareUrl || $window.location.href)+'&prefilltext='+attrs.socialshareText
         , 'Google+', 'toolbar=0,status=0,resizable=yes,width=' + attrs.socialsharePopupWidth + ',height=' + attrs.socialsharePopupHeight
         + ',top=' + ($window.innerHeight - attrs.socialsharePopupHeight) / 2 + ',left=' + ($window.innerWidth - attrs.socialsharePopupWidth) / 2);
+      return false;
       }
     , manageRedditShare = function manageRedditShare($window, attrs) {
       var urlString = 'https://www.reddit.com/';

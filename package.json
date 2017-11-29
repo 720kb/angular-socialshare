@@ -30,6 +30,8 @@
   },
   "license": "MIT",
   "devDependencies": {
+    "@angular/cli": "^1.5.4",
+    "@angular/compiler-cli": "^5.0.3",
     "browser-sync": "^2.9.11",
     "connect-history-api-fallback": "^1.1.0",
     "del": "^2.0.2",
